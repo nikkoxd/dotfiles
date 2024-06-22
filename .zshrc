@@ -1,5 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# env vars
+export PATH=$PATH:~/.spoof-dpi/bin:~/pickup/target/release
 export ZSH="$HOME/.oh-my-zsh"
 
 # omz theme and plugins
@@ -17,9 +17,6 @@ plugins=(
 # omz path
 source $ZSH/oh-my-zsh.sh
 
-# env vars
-export PATH=$PATH:~/.spoof-dpi/bin:~/pickup/target/release
-
 # aliases
 alias ls="eza"
 alias cd="z"
@@ -30,6 +27,3 @@ alias cd="z"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-
-export HOMEBREW_NO_AUTO_UPDATE=true
