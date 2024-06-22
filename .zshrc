@@ -3,7 +3,7 @@ export PATH=$PATH:~/.spoof-dpi/bin:~/pickup/target/release
 export ZSH="$HOME/.oh-my-zsh"
 
 # omz theme and plugins
-ZSH_THEME="jovial"
+ZSH_THEME="nikko"
 plugins=(
   git
   autojump
