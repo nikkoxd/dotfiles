@@ -13,6 +13,7 @@ plugins=(
   jovial
   z
 )
+ZLE_RPROMPT_INDENT=0
 
 # omz path
 source $ZSH/oh-my-zsh.sh
