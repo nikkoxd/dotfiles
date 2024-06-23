@@ -10,8 +10,7 @@ plugins=(
   urltools
   bgnotify
   zsh-autosuggestions
-  jovial
-  z
+  zoxide
 )
 ZLE_RPROMPT_INDENT=0
 
