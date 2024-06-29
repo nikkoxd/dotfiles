@@ -17,7 +17,7 @@ hyper - b : yabai -m space --balance
 hyper - r : yabai -m space --rotate 90
 
 # fullscreen a window
-cmd + alt - f : yabai -m window --toggle zoom-fullscreen
+cmd + alt - return : yabai -m window --toggle zoom-fullscreen
 
 # resizing window
 hyper - h : yabai -m window --resize right:-20:0; \
