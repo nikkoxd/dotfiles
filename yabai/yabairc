@@ -27,3 +27,4 @@ yabai -m config mouse_follows_focus on
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Просмотр$" manage=off
