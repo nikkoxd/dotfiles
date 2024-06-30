@@ -1,6 +1,7 @@
 # env vars
 export PATH=$PATH:~/.spoof-dpi/bin:~/pickup/target/release:~/Library/Python/3.10/lib/python/site-packages
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="nvim"
 
 # omz theme and plugins
 ZSH_THEME="nikko"
