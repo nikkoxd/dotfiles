@@ -22,21 +22,19 @@ source $ZSH/oh-my-zsh.sh
 alias ls="eza"
 alias cd="z"
 alias toggleconda='eval "$(/Users/nikko/anaconda3/bin/conda shell.zsh hook)"'
-alias pip="pip3"
 alias python="python3"
+alias fwal="fixed-wal"
 
 # custom functions
-wal-set() {
+fixed-wal() {
+  local imagePath="$(pwd)/$@"
   wal -n -i "$@"
-  local imagePath="$(pwd)/$1"
-  
-  osascript -e '
-    tell application "System Events"
-      repeat with desktopIndex from 1 to count of desktops
-        set picture of desktop desktopIndex to POSIX file "'"$imagePath"'"
-      end repeat
-    end tell
-  '
+  border
+
+  echo $imagePath
+  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
+
+  killall WallpaperAgent
 }
 
 yy() {
