@@ -29,7 +29,8 @@ alias fwal="fixed-wal"
 fixed-wal() {
   local imagePath="$(pwd)/$@"
   wal -n -i "$@"
-  border
+  yabai --restart-service
+  kill -SIGUSR1 $(pgrep kitty)
 
   echo $imagePath
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
