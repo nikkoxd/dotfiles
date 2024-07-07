@@ -29,7 +29,7 @@ alias fwal="fixed-wal"
 fixed-wal() {
   local imagePath="$(pwd)/$@"
   wal -n -i "$@"
-  yabai --restart-service
+  brew services restart borders
   kill -SIGUSR1 $(pgrep kitty)
 
   echo $imagePath
