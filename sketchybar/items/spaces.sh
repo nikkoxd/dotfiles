@@ -9,6 +9,7 @@ do
     icon="${SPACE_ICONS[i]}"
     padding_left=0
     padding_right=0
+    icon.font="$FONT:Bold:16.0"
     icon.padding_left=10
     icon.padding_right=10
     icon.highlight_color=$BLACK
