@@ -5,6 +5,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
 FONT="FantasqueSansM Nerd Font"
+ICON_FONT="SF Pro"
 
 bar=(
   color=$BACKGROUND
@@ -26,7 +27,7 @@ sketchybar --bar "${bar[@]}"
 default=(
   padding_left=5
   padding_right=5
-  icon.font="$FONT:Bold:17.0"
+  icon.font="$ICON_FONT:Regular:16.0"
   label.font="$FONT:Bold:16:0"
   icon.color=$WHITE
   label.color=$WHITE
@@ -47,7 +48,7 @@ sketchybar --add item clock center \
            --set clock update_freq=60 icon.drawing=off script="$PLUGIN_DIR/clock.sh"
 
 sketchybar --add item date right \
-           --set date update_freq=120 icon=  script="$PLUGIN_DIR/date.sh"
+           --set date update_freq=120 icon=􀧞  script="$PLUGIN_DIR/date.sh"
 
 sketchybar --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
@@ -58,6 +59,6 @@ sketchybar --add item battery right \
            --subscribe battery system_woke power_source_change
 
 sketchybar --add item vpn right \
-           --set vpn update_freq=5 icon=󰖂  script="$PLUGIN_DIR/vpn.sh"
+           --set vpn update_freq=5 icon=󰖂 icon.font="$FONT:Regular:17.0" icon.padding_right=3 script="$PLUGIN_DIR/vpn.sh"
 
 sketchybar --update
