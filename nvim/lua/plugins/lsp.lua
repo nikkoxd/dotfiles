@@ -47,7 +47,7 @@ return {
         "tailwindcss",
         "marksman",
         "pyright",
-        "json-language-server",
+        "jsonls",
       },
 
 
@@ -71,7 +71,7 @@ return {
           }
         end,
 
-        ["json-language-server"] = function ()
+        ["jsonls"] = function ()
           local lspconfig = require("lspconfig")
           lspconfig.jsonls.setup {
             settings = {
