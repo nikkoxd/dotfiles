@@ -47,6 +47,9 @@ source "$ITEM_DIR/spaces.sh"
 sketchybar --add item clock center \
            --set clock update_freq=60 icon.drawing=off script="$PLUGIN_DIR/clock.sh"
 
+sketchybar --add item layout right \
+           --set layout update_freq=1 icon.drawing=off script="$PLUGIN_DIR/layout.sh"
+
 sketchybar --add item date right \
            --set date update_freq=120 icon=􀧞  script="$PLUGIN_DIR/date.sh"
 
