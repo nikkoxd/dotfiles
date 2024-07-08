@@ -1,4 +1,4 @@
-## Requirements
+# dotfiles
+My macOS dotfiles
 
-- Grep
-- Something else probably
+![Screenshot](screenshot.png)
