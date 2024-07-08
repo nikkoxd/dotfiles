@@ -40,12 +40,12 @@ hyper - 5 : yabai -m space --focus 5
 hyper - 6 : yabai -m space --focus 6
 
 # move window to space
-cmd + hyper - 1 : yabai -m window --space 1 --focus
-cmd + hyper - 2 : yabai -m window --space 2 --focus
-cmd + hyper - 3 : yabai -m window --space 3 --focus
-cmd + hyper - 4 : yabai -m window --space 4 --focus
-cmd + hyper - 5 : yabai -m window --space 5 --focus
-cmd + hyper - 6 : yabai -m window --space 6 --focus
+cmd + alt - 1 : yabai -m window --space 1 --focus
+cmd + alt - 2 : yabai -m window --space 2 --focus
+cmd + alt - 3 : yabai -m window --space 3 --focus
+cmd + alt - 4 : yabai -m window --space 4 --focus
+cmd + alt - 5 : yabai -m window --space 5 --focus
+cmd + alt - 6 : yabai -m window --space 6 --focus
 
 # toggle float
 ctrl + alt - f : yabai -m window --toggle float
