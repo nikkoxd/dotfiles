@@ -42,11 +42,17 @@ default=(
 
 sketchybar --default "${default[@]}"
 
+##### LEFT ITEMS #####
 source "$ITEM_DIR/spaces.sh"
 
+sketchybar --add item weather left \
+           --set weather update_freq=60 script="$PLUGIN_DIR/weather.sh"
+
+##### CENTER ITEMS #####
 sketchybar --add item clock center \
            --set clock update_freq=60 icon.drawing=off script="$PLUGIN_DIR/clock.sh"
 
+##### RIGHT ITEMS #####
 sketchybar --add item layout right \
            --set layout update_freq=1 icon.drawing=off script="$PLUGIN_DIR/layout.sh"
 
