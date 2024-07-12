@@ -49,6 +49,7 @@ return {
         { name = "path" }, -- file system paths
         { name = "emoji" },
         { name = "supermaven" },
+        { name = "neorg" },
       }),
 
       formatting = {
