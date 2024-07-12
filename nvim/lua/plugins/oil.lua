@@ -6,5 +6,7 @@ return {
   keys = {
     { "-", "<cmd>Oil<CR>", desc = "Open parent directory" },
   },
-  opts = {}
+  opts = {
+    delete_to_trash = true,
+  }
 }
