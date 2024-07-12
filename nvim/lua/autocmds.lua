@@ -12,8 +12,21 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = nikko_autocmds,
   pattern = "*.norg",
   callback = function()
-    vim.cmd("silent !git add * && (git diff-index --quiet HEAD || git commit -am \"" .. os.date("%c") .. "\") && git pull && git push")
-    vim.notify("Synced notes with git")
+    local cmd = "git add * && (git diff-index --quiet HEAD || git commit -am \"" .. os.date("%c") .. "\") && git pull && git push"
+
+    local function on_exit(_, exit_code, _)
+      if exit_code == 0 then
+        vim.notify("Synced notes with git")
+      else
+        vim.notify("Failed to sync notes with git")
+      end
+    end
+
+    vim.fn.jobstart(cmd, {
+      on_exit = on_exit,
+      stdout_buffered = true,
+      stderr_buffered = true,
+    })
   end,
 })
 
@@ -23,10 +36,22 @@ vim.api.nvim_create_autocmd('BufRead', {
   pattern = "*.norg",
   callback = function()
     if not vim.g.has_pulled_notes then
-      -- vim.cmd("silent !bash -c 'cd ~/neorg && git pull && echo \"Notes pulled from git\" && cd -'")
-      vim.cmd("silent !git pull")
-      vim.notify("Pulled notes from git")
-      vim.g.has_pulled_notes = true
+      local cmd = "git pull"
+
+      local function on_exit(_, exit_code, _)
+        if exit_code == 0 then
+          vim.notify("Pulled notes from git")
+          vim.g.has_pulled_notes = true
+        else
+          vim.notify("Failed to pull notes with git")
+        end
+      end
+
+      vim.fn.jobstart(cmd, {
+        on_exit = on_exit,
+        stdout_buffered = true,
+        stderr_buffered = true,
+      })
     end
   end
 })
