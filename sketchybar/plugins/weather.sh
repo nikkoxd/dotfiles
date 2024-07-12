@@ -7,97 +7,97 @@ echo "'$WEATHER'"
 
 if [ "$WEATHER" == "Clear " ]; then
     ICON="􀆬"
-elif [ "$WEATHER" == "Sunny " ]; then
+elif [ "$WEATHER" == "Sunny" ]; then
     ICON="􀆮"
-elif [ "$WEATHER" == "Partly cloudy " ]; then
+elif [ "$WEATHER" == "Partly cloudy" ]; then
     ICON="􀇕"
-elif [ "$WEATHER" == "Cloudy " ]; then
+elif [ "$WEATHER" == "Cloudy" ]; then
     ICON="􀇃"
-elif [ "$WEATHER" == "Overcast " ]; then
+elif [ "$WEATHER" == "Overcast" ]; then
     ICON="􀇃"
-elif [ "$WEATHER" == "Mist " ]; then
+elif [ "$WEATHER" == "Mist" ]; then
     ICON="􀇋"
-elif [ "$WEATHER" == "Patchy rain possible " ]; then
+elif [ "$WEATHER" == "Patchy rain possible" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Patchy snow possible " ]; then
+elif [ "$WEATHER" == "Patchy snow possible" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Patchy sleet possible " ]; then
+elif [ "$WEATHER" == "Patchy sleet possible" ]; then
     ICON="􀇑"
-elif [ "$WEATHER" == "Patchy freezing drizzle possible " ]; then
+elif [ "$WEATHER" == "Patchy freezing drizzle possible" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Thundery outbreaks possible " ]; then
+elif [ "$WEATHER" == "Thundery outbreaks possible" ]; then
     ICON="􀇟"
-elif [ "$WEATHER" == "Blowing snow " ]; then
+elif [ "$WEATHER" == "Blowing snow" ]; then
     ICON="􀇦"
-elif [ "$WEATHER" == "Blizzard " ]; then
+elif [ "$WEATHER" == "Blizzard" ]; then
     ICON="􀇦"
-elif [ "$WEATHER" == "Fog " ]; then
+elif [ "$WEATHER" == "Fog" ]; then
     ICON="􀇋"
-elif [ "$WEATHER" == "Freezing fog " ]; then
+elif [ "$WEATHER" == "Freezing fog" ]; then
     ICON="􀇋"
-elif [ "$WEATHER" == "Patchy light drizzle " ]; then
+elif [ "$WEATHER" == "Patchy light drizzle" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Light drizzle " ]; then
+elif [ "$WEATHER" == "Light drizzle" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Freezing drizzle " ]; then
+elif [ "$WEATHER" == "Freezing drizzle" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Heavy freezing drizzle " ]; then
+elif [ "$WEATHER" == "Heavy freezing drizzle" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Patchy light rain " ]; then
+elif [ "$WEATHER" == "Patchy light rain" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Light rain " ]; then
+elif [ "$WEATHER" == "Light rain" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Moderate rain at times " ]; then
+elif [ "$WEATHER" == "Moderate rain at times" ]; then
     ICON="􀇉"
-elif [ "$WEATHER" == "Moderate rain " ]; then
+elif [ "$WEATHER" == "Moderate rain" ]; then
     ICON="􀇉"
-elif [ "$WEATHER" == "Heavy rain at times " ]; then
+elif [ "$WEATHER" == "Heavy rain at times" ]; then
     ICON="􀇉"
-elif [ "$WEATHER" == "Heavy rain " ]; then
+elif [ "$WEATHER" == "Heavy rain" ]; then
     ICON="􀇉"
-elif [ "$WEATHER" == "Light freezing rain " ]; then
+elif [ "$WEATHER" == "Light freezing rain" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Moderate or heavy freezing rain " ]; then
+elif [ "$WEATHER" == "Moderate or heavy freezing rain" ]; then
     ICON="􀇇"
-elif [ "$WEATHER" == "Light sleet " ]; then
+elif [ "$WEATHER" == "Light sleet" ]; then
     ICON="􀇑"
-elif [ "$WEATHER" == "Moderate or heavy sleet " ]; then
+elif [ "$WEATHER" == "Moderate or heavy sleet" ]; then
     ICON="􀇑"
-elif [ "$WEATHER" == "Patchy light snow " ]; then
+elif [ "$WEATHER" == "Patchy light snow" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Light snow " ]; then
+elif [ "$WEATHER" == "Light snow" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Patchy moderate snow " ]; then
+elif [ "$WEATHER" == "Patchy moderate snow" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Moderate snow " ]; then
+elif [ "$WEATHER" == "Moderate snow" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Patchy heavy snow " ]; then
+elif [ "$WEATHER" == "Patchy heavy snow" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Heavy snow " ]; then
+elif [ "$WEATHER" == "Heavy snow" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Ice pellets " ]; then
+elif [ "$WEATHER" == "Ice pellets" ]; then
     ICON="􀇏"
 elif [ "$WEATHER" == "Light rain shower" ]; then
     ICON="􀇅"
-elif [ "$WEATHER" == "Moderate or heavy rain showers " ]; then
+elif [ "$WEATHER" == "Moderate or heavy rain showers" ]; then
     ICON="􀇇"
-elif [ "$WEATHER" == "Torrential rain showers " ]; then
+elif [ "$WEATHER" == "Torrential rain showers" ]; then
     ICON="􀇉"
-elif [ "$WEATHER" == "Light sleet showers " ]; then
+elif [ "$WEATHER" == "Light sleet showers" ]; then
     ICON="􀇑"
-elif [ "$WEATHER" == "Moderate or heavy sleet showers " ]; then
+elif [ "$WEATHER" == "Moderate or heavy sleet showers" ]; then
     ICON="􀇑"
-elif [ "$WEATHER" == "Light snow shower " ]; then
+elif [ "$WEATHER" == "Light snow shower" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Moderate or heavy snow showers " ]; then
+elif [ "$WEATHER" == "Moderate or heavy snow showers" ]; then
     ICON="􀇏"
-elif [ "$WEATHER" == "Patchy light rain with thunder " ]; then
+elif [ "$WEATHER" == "Patchy light rain with thunder" ]; then
     ICON="􀇟"
-elif [ "$WEATHER" == "Moderate or heavy rain with thunder " ]; then
+elif [ "$WEATHER" == "Moderate or heavy rain with thunder" ]; then
     ICON="􀇟"
-elif [ "$WEATHER" == "Patchy light snow with thunder " ]; then
+elif [ "$WEATHER" == "Patchy light snow with thunder" ]; then
     ICON="􀇓"
-elif [ "$WEATHER" == "Moderate or heavy snow with thunder " ]; then
+elif [ "$WEATHER" == "Moderate or heavy snow with thunder" ]; then
     ICON="􀇓"
 else
     ICON=""
