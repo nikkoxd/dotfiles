@@ -4,10 +4,11 @@ My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ
 ![Screenshot](screenshot.png)
 
 ## Requirements
-- Grep
+- grep
 - FantasqueSansM Nerd Font
 - ImageMagick
-- Somthing else probably
+- fd is optional
+- something else probably
 
 ## Generating colorschemes
 You can use my custom function:
