@@ -1,4 +1,5 @@
 require("remap")
+require("autocmds")
 require("opts")
 
 local lazypath = vim.fn.stdpath("data") .. "lazy/lazy.nvim"
@@ -15,13 +16,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
--- automatically reload kitty on config change
-local autocmd = vim.api.nvim_create_autocmd
-autocmd("BufWritePost", {
-  pattern = "~/.config/kitty/kitty.conf",
-  command = "silent !kill -SIGUSR1 $(pgrep -a kitty)"
-})
 
 -- start godot server if project.godot exists
 local gdproject = io.open(vim.fn.getcwd().."/project.godot", "r")
