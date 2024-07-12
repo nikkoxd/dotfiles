@@ -5,8 +5,9 @@ My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ
 
 ## Requirements
 - grep
-- FantasqueSansM Nerd Font
-- ImageMagick
+- imagemagick
+- gcc-14
+- fantasquesansm nerd font
 - fd is optional
 - something else probably
 
