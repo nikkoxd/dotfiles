@@ -5,8 +5,13 @@ return {
     {
       "vhyrro/luarocks.nvim",
       priority=1000,
-      config = true
+      opts = {}
     }
   },
-  config = true
+  opts = {
+    load = {
+      ["core.defaults"] = {},
+      ["core.concealer"] = {},
+    }
+  }
 }
