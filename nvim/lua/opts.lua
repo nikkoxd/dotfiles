@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+opt.conceallevel = 3
+opt.concealcursor = "n"
+
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
