@@ -25,8 +25,7 @@ return {
       ["core.integrations.nvim-cmp"] = {},
       ["core.concealer"] = {},
       ["core.integrations.image"] = {},
-      ["core.ui"] = {},
-      ["core.ui.calendar"] = {},
+      ["core.summary"] = {},
     }
   }
 }
