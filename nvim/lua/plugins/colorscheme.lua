@@ -1,7 +1,7 @@
 return {
-  "uZer/pywal16.nvim",
-  name = "pywal16",
+  "AlphaTechnolog/pywal.nvim",
+  name = "pywal",
   config = function()
-    vim.cmd("colorscheme pywal16")
-  end
+    vim.cmd("colorscheme pywal")
+  end,
 }
