@@ -28,7 +28,7 @@ alias fwal="fixed-wal"
 # custom functions
 fixed-wal() {
   local imagePath="$(pwd)/$@"
-  wal -n -i "$@"
+  wal -n -i "$@" --cols16 lighten
   brew services restart borders
   sketchybar --reload
   kill -SIGUSR1 $(pgrep kitty)
