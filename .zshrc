@@ -30,7 +30,7 @@ fixed-wal() {
   local imagePath="$(pwd)/$@"
   wal -n -i "$@"
   brew services restart borders
-  brew services restart sketchybar
+  sketchybar --reload
   kill -SIGUSR1 $(pgrep kitty)
 
   echo $imagePath
