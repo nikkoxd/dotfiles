@@ -11,7 +11,7 @@ if [[ "$WEATHER" != *"Unknown"* ]]; then
     "Sunny")
       ICON="􀆮"
       ;;
-    "Partly cloudy")
+    "Partly cloudy ")
       ICON="􀇕"
       ;;
     "Cloudy" | "Overcast")
