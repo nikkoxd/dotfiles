@@ -53,27 +53,27 @@ sketchybar --add item weather left \
 
 ##### CENTER ITEMS #####
 sketchybar --add item clock center \
-           --set clock update_freq=60 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
+           --set clock update_freq=2 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
 
-sketchybar --add item spotify center \
-           --set spotify update_freq=2 script="$PLUGIN_DIR/spotify.sh"
+source "$ITEM_DIR/spotify.sh"
 
 ##### RIGHT ITEMS #####
 sketchybar --add item layout right \
-           --set layout update_freq=1 icon.drawing=off script="$PLUGIN_DIR/layout.sh"
+           --set layout update_freq=1 icon=􀺑  icon.padding_left=3 script="$PLUGIN_DIR/layout.sh"
 
 sketchybar --add item date right \
-           --set date update_freq=120 icon=􀧞  script="$PLUGIN_DIR/date.sh"
+           --set date update_freq=60 icon=􀧞  script="$PLUGIN_DIR/date.sh"
 
 sketchybar --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" icon.padding_left=3 \
            --subscribe volume volume_change
 
 sketchybar --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           --set battery update_freq=60 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
 sketchybar --add item vpn right \
-           --set vpn update_freq=5 icon=󰖂 icon.font="$FONT:Regular:17.0" icon.padding_right=3 script="$PLUGIN_DIR/vpn.sh"
+           --set vpn update_freq=5 icon=󰖂 icon.font="$FONT:Regular:17.0" icon.padding_right=3 script="$PLUGIN_DIR/vpn.sh" \
+           --subscribe vpn mouse.clicked
 
 sketchybar --update
