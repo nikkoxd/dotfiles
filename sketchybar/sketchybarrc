@@ -7,19 +7,18 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 FONT="FantasqueSansM Nerd Font"
 ICON_FONT="SF Pro"
 
+sketchybar --hotload true
+
 bar=(
-  color=$BACKGROUND
+  color=$TRANSPARENT
   position=top
-  height=35
+  height=30
   margin=10
   y_offset=5
-  corner_radius=10
-  blur_radius=20
   padding_right=10
   padding_left=10
   display=all
   sticky=on
-  shadow=on
 )
 
 sketchybar --bar "${bar[@]}"
@@ -28,15 +27,19 @@ default=(
   padding_left=5
   padding_right=5
   icon.font="$ICON_FONT:Regular:16.0"
-  label.font="$FONT:Bold:16:0"
-  icon.color=$WHITE
-  label.color=$WHITE
+  icon.color=$BLACK
   icon.padding_left=5
   icon.padding_right=5
-  label.padding_left=5
-  label.padding_right=5
-  background.color=$BACKGROUND2
-  background.height=25
+  icon.background.color=$ACCENT
+  icon.background.height=28
+  icon.background.corner_radius=5
+  label.font="$FONT:Bold:16:0"
+  label.color=$WHITE
+  label.padding_left=10
+  label.padding_right=10
+  background.color=$BACKGROUND
+  background.border_width=2
+  background.border_color=$ACCENT
   background.corner_radius=5
 )
 
@@ -50,7 +53,7 @@ sketchybar --add item weather left \
 
 ##### CENTER ITEMS #####
 sketchybar --add item clock center \
-           --set clock update_freq=60 icon.drawing=off script="$PLUGIN_DIR/clock.sh"
+           --set clock update_freq=60 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
 
 ##### RIGHT ITEMS #####
 sketchybar --add item layout right \
@@ -60,7 +63,7 @@ sketchybar --add item date right \
            --set date update_freq=120 icon=􀧞  script="$PLUGIN_DIR/date.sh"
 
 sketchybar --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --set volume script="$PLUGIN_DIR/volume.sh" icon.padding_left=3 \
            --subscribe volume volume_change
 
 sketchybar --add item battery right \

@@ -12,10 +12,11 @@ do
     icon.font="$FONT:Bold:16.0"
     icon.padding_left=10
     icon.padding_right=10
+    icon.background.color=$TRANSPARENT
+    icon.color=$WHITE
     icon.highlight_color=$BLACK
     background.color=$ACCENT
     background.corner_radius=5
-    background.height=25
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )
@@ -25,11 +26,9 @@ do
 done
 
 spaces=(
-  background.color=$BACKGROUND2
-  background.border_color=$ACCENT
-  background.border_width=2
+  background.color=$BACKGROUND
   background.corner_radius=5
-  background.height=25
+  background.height=28
   background.drawing=on
 )
 
