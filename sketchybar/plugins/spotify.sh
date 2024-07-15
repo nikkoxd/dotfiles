@@ -44,20 +44,34 @@ shuffle() {
   SHUFFLE=$(osascript -e 'tell application "Spotify" to shuffling')
   if [ "$SHUFFLE" == "false" ]; then
     osascript -e 'tell application "Spotify" to set shuffling to true'
+    disable_popup
+    sketchybar --animate sin 30 --set spotify label="Shuffling is on"
+    sleep 2
+    update
   else
     osascript -e 'tell application "Spotify" to set shuffling to false'
+    disable_popup
+    sketchybar --animate sin 30 --set spotify label="Shuffling is off"
+    sleep 2
+    update
   fi
-  disable_popup
 }
 
 repeat() {
   REPEAT=$(osascript -e 'tell application "Spotify" to repeating')
   if [ "$REPEAT" == "false" ]; then
     osascript -e 'tell application "Spotify" to set repeating to true'
+    disable_popup
+    sketchybar --animate sin 30 --set spotify label="Repeat is on"
+    sleep 2
+    update
   else
     osascript -e 'tell application "Spotify" to set repeating to false'
+    disable_popup
+    sketchybar --animate sin 30 --set spotify label="Repeat is off"
+    sleep 2
+    update
   fi
-  disable_popup
 }
 
 hide() {
