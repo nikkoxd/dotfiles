@@ -40,6 +40,18 @@ spotify() {
   fi
 }
 
+next() {
+  osascript -e 'tell application "Spotify" to next track'
+  disable_popup
+  update
+}
+
+prev() {
+  osascript -e 'tell application "Spotify" to previous track'
+  disable_popup
+  update
+}
+
 shuffle() {
   SHUFFLE=$(osascript -e 'tell application "Spotify" to shuffling')
   if [ "$SHUFFLE" == "false" ]; then
@@ -87,6 +99,10 @@ hide() {
 mouse_clicked() {
   case "$NAME" in
     "spotify") spotify
+    ;;
+    "spotify.next") next
+    ;;
+    "spotify.prev") prev
     ;;
     "spotify.shuffle") shuffle
     ;;

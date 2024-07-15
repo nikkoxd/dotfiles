@@ -11,6 +11,24 @@ spotify=(
   script="$PLUGIN_DIR/spotify.sh"
 )
 
+spotify_next=(
+  icon=􁋱
+  icon.color=$ACCENT
+  icon.background.drawing=off
+  label="Next Track"
+  background.border_width=0
+  script="$PLUGIN_DIR/spotify.sh"
+)
+
+spotify_prev=(
+  icon=􁋯
+  icon.color=$ACCENT
+  icon.background.drawing=off
+  label="Previous Track"
+  background.border_width=0
+  script="$PLUGIN_DIR/spotify.sh"
+)
+
 spotify_shuffle=(
   icon=􀵊
   icon.color=$ACCENT
@@ -41,6 +59,14 @@ spotify_hide=(
 sketchybar --add item spotify center \
            --set spotify "${spotify[@]}" \
            --subscribe spotify mouse.clicked \
+           \
+           --add item spotify.next popup.spotify \
+           --set spotify.next "${spotify_next[@]}" \
+           --subscribe spotify.next mouse.clicked \
+           \
+           --add item spotify.prev popup.spotify \
+           --set spotify.prev "${spotify_prev[@]}" \
+           --subscribe spotify.prev mouse.clicked \
            \
            --add item spotify.shuffle popup.spotify \
            --set spotify.shuffle "${spotify_shuffle[@]}" \
