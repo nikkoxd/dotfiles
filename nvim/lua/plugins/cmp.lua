@@ -51,14 +51,6 @@ return {
         { name = "supermaven" },
         { name = "neorg" },
       }),
-
-      formatting = {
-        format = lspkind.cmp_format({
-          mode = "symbol",
-          maxwidth = 50,
-          symbol_map = { Supermaven = "" },
-        }),
-      },
     })
   end,
 }
