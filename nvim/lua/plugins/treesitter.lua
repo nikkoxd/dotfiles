@@ -11,6 +11,7 @@ return {
     require("nvim-treesitter.install").compilers = { "gcc-14" }
     local configs = require("nvim-treesitter.configs")
 
+    ---@diagnostic disable-next-line: missing-fields
     configs.setup({
       ensure_installed = {
         "gdscript",
