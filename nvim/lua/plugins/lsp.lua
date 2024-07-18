@@ -5,6 +5,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "b0o/schemastore.nvim",
+    "SmiteshP/nvim-navic",
   },
 
   config = function()
@@ -29,12 +30,19 @@ return {
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
     }
 
+    local navic = require("nvim-navic")
+    local on_attach = function(client, bufnr)
+      if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+      end
+    end,
+
+    ---@diagnostic disable-next-line: redundant-value
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -48,11 +56,11 @@ return {
         "jsonls",
       },
 
-
       handlers = {
         function (server_name)
           require("lspconfig")[server_name].setup {
             capabilities = capabilities,
+            on_attach = on_attach
           }
         end,
 
@@ -65,7 +73,8 @@ return {
                   globals = { "vim" }
                 }
               }
-            }
+            },
+            on_attach = on_attach
           }
         end,
 
@@ -77,7 +86,8 @@ return {
                 schemas = require("schemastore").json.schemas(),
                 validate = { enable = true },
               }
-            }
+            },
+            on_attach = on_attach
           }
         end,
       }
@@ -85,30 +95,9 @@ return {
 
     require("lspconfig")["gdscript"].setup({
       name = "godot",
-      cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+      cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
     })
 
     require("lspconfig")["gdshader_lsp"].setup({})
-
-    vim.diagnostic.config({
-      float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = true,
-        header = "",
-        prefix = "",
-      }
-    })
-
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-      vim.lsp.handlers.hover,
-      { border = "rounded" }
-    )
-
-    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-      vim.lsp.handlers.signature_help,
-      { border = "rounded" }
-    )
   end
 }

@@ -10,6 +10,11 @@ return {
         right = ""
       },
     },
+    winbar = {
+      lualine_c = {
+        { "navic" }
+      }
+    },
     sections = {
       lualine_a = {
         {
