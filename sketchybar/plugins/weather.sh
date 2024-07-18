@@ -3,7 +3,9 @@
 WEATHER=$(curl -s https://wttr.in/Izhevsk?format=%C)
 TEMPERATURE=$(curl -s https://wttr.in/Izhevsk?format=%t)
 
-if [[ "$WEATHER" != *"Unknown"* ]]; then
+if [[ "$WEATHER" == *"Unknown"* ]]; then
+  sketchybar --set "$NAME" drawing=off
+else
   case "$WEATHER" in
     "Clear ")
       ICON="􀆬"
@@ -20,7 +22,7 @@ if [[ "$WEATHER" != *"Unknown"* ]]; then
     "Mist" | "Fog" | "Freezing fog")
       ICON="􀇋"
       ;;
-    "Patchy rain possible" | "Patchy light drizzle" | "Light drizzle" | "Freezing drizzle" | "Heavy freezing drizzle" | "Patchy light rain" | "Light rain" | "Light freezing rain" | "Light rain shower")
+    "Patchy rain possible" | "Patchy rain nearby" | "Patchy light drizzle" | "Light drizzle" | "Freezing drizzle" | "Heavy freezing drizzle" | "Patchy light rain" | "Light rain" | "Light freezing rain" | "Light rain shower")
       ICON="􀇅"
       ;;
     "Patchy snow possible" | "Patchy freezing drizzle possible" | "Patchy light snow" | "Light snow" | "Patchy moderate snow" | "Moderate snow" | "Patchy heavy snow" | "Heavy snow" | "Ice pellets" | "Light snow shower" | "Moderate or heavy snow showers")
@@ -49,7 +51,5 @@ if [[ "$WEATHER" != *"Unknown"* ]]; then
       ;;
   esac
   sketchybar --set "$NAME" icon="$ICON" label="$TEMPERATURE"
-else
-  sketchybar --set "$NAME" drawing=off
 fi
 
