@@ -4,7 +4,6 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "hrsh7th/cmp-nvim-lsp",
-    "j-hui/fidget.nvim",
     "b0o/schemastore.nvim",
   },
 
@@ -36,7 +35,6 @@ return {
       lineFoldingOnly = true,
     }
 
-    require("fidget").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -97,7 +95,7 @@ return {
         focusable = false,
         style = "minimal",
         border = "rounded",
-        source = "always",
+        source = true,
         header = "",
         prefix = "",
       }
