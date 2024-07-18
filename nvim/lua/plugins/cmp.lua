@@ -21,7 +21,6 @@ return {
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
-
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
@@ -44,6 +43,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp"},
+        { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
@@ -51,6 +51,10 @@ return {
         { name = "supermaven" },
         { name = "neorg" },
       }),
+      --- @diagnostic disable-next-line: missing-fields 
+      formatting = {
+        format = lspkind.cmp_format()
+      }
     })
   end,
 }
