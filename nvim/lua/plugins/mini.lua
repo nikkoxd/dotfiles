@@ -3,11 +3,11 @@ return {
     "echasnovski/mini.files",
     version = "*",
     keys = {
-      { "<leader>pv", function() MiniFiles.open() end, desc = "Path view" }
+      { "<leader>pv", function() if not MiniFiles.close() then MiniFiles.open() end end, desc = "Path view" }
     },
     opts = {
       options = {
-        permament_delete = false,
+        permament_delete = false
       }
     },
   },
