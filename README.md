@@ -23,7 +23,7 @@ This will:
 
 To reload spicetify, either do:
 ```bash
-spicetify reload
+spicetify apply
 ```
 or run spicetify with automatic reloading enabled:
 ```bash
