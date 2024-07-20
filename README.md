@@ -1,5 +1,5 @@
-# dotfiles
-My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ
+<h1 align="center">dotfiles</h1>
+<p align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</p>
 
 ![Screenshot](screenshot.png)
 
