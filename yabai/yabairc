@@ -14,17 +14,8 @@ yabai -m config left_padding 10
 yabai -m config right_padding 10
 yabai -m config window_gap 10
 
-# window follow mouse and vice versa
-# yabai -m config focus_follows_mouse autoraise
-# yabai -m config mouse_follows_focus on
-
-# decorations
-# yabai -m config window_opacity on
-# yabai -m config active_window_opacity 1.0
-# yabai -m config normal_window_opacity 0.9
-
 # disable specific apps
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Просмотр$" manage=off
+yabai -m rule --add app="^Системные настройки" manage=off
