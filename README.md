@@ -19,7 +19,7 @@ fwal path/to/your/image.png
 This will:
 - generate a colorscheme using [pywal16](https://github.com/eylles/pywal16)
 - automatically reload everything except neovim, spicetify and discord
-- automatically apply the wallpaper (for this to work, set your current wallpaper to be shown in all spaces)
+- automatically apply the wallpaper
 
 To reload spicetify, either do:
 ```bash
@@ -29,6 +29,11 @@ or run spicetify with automatic reloading enabled:
 ```bash
 spicetify watch -s
 ```
+
+## Applying the wallpaper
+If your wallpaper doesn't apply automatically,
+enable System Preferences > Wallpaper > Show on all Spaces
+![Applying the wallpaper](applying-the-wallpaper.png)
 
 ## TODOs
 - [ ] Add an install script
