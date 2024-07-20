@@ -25,18 +25,24 @@ alias toggleconda='eval "$(/Users/nikko/anaconda3/bin/conda shell.zsh hook)"'
 alias python="python3"
 alias fwal="fixed-wal"
 
+source "$HOME/.cache/wal/colors.sh"
+
 # custom functions
 fixed-wal() {
   local imagePath="$(pwd)/$@"
   wal -n -i "$@" --cols16 lighten
-  brew services restart borders
-  sketchybar --reload
-  kill -SIGUSR1 $(pgrep kitty)
 
-  echo $imagePath
+  # set wallpaper and restart dock
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
-
   killall WallpaperAgent
+
+  # reload apps
+  kill -SIGUSR1 $(pgrep kitty)
+  sketchybar --reload
+  brew services restart borders
+
+  # update spicetify colors
+  source "$HOME/.config/spicetify/Themes/Comfy/update-colors.sh"
 }
 
 yy() {
