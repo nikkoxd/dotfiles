@@ -18,17 +18,8 @@ fwal path/to/your/image.png
 ```
 This will:
 - generate a colorscheme using [pywal16](https://github.com/eylles/pywal16)
-- automatically reload everything except neovim, spicetify and discord
+- automatically reload everything except neovim and discord
 - automatically apply the wallpaper
-
-To reload spicetify, either do:
-```bash
-spicetify apply
-```
-or run spicetify with automatic reloading enabled:
-```bash
-spicetify watch -s
-```
 
 ## Applying the wallpaper
 If your wallpaper doesn't apply automatically,
