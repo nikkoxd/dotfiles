@@ -25,7 +25,7 @@ To reload spicetify, either do:
 ```bash
 spicetify reload
 ```
-or enable automatic reloading:
+or run spicetify with automatic reloading enabled:
 ```bash
 spicetify watch -s
 ```
