@@ -34,10 +34,12 @@ spicetify watch -s
 If your wallpaper doesn't apply automatically,
 enable System Preferences > Wallpaper > Show on all Spaces
 
-<details open>
+<details>
 <summary>Screenshot</summary>
 <br>
+
 ![Applying the wallpaper](applying-the-wallpaper.png)
+
 </details>
 
 ## TODOs
