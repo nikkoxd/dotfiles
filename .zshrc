@@ -43,6 +43,8 @@ fixed-wal() {
 
   # update spicetify colors
   source "$HOME/.config/spicetify/Themes/Comfy/update-colors.sh"
+  spicetify watch -s &
+  sleep 1 && pkill spicetify
 }
 
 yy() {
