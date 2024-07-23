@@ -16,7 +16,7 @@ else
     "Partly cloudy ")
       ICON="􀇕"
       ;;
-    "Cloudy" | "Overcast")
+    "Cloudy" | "Overcast ")
       ICON="􀇃"
       ;;
     "Mist" | "Fog" | "Freezing fog")
