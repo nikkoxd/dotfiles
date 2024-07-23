@@ -62,7 +62,7 @@ sketchybar --add item layout right \
            --set layout update_freq=1 icon=􀺑  icon.padding_left=3 script="$PLUGIN_DIR/layout.sh"
 
 sketchybar --add item date right \
-           --set date update_freq=60 icon=􀧞  script="$PLUGIN_DIR/date.sh"
+           --set date update_freq=60 icon=􀧞  script="$PLUGIN_DIR/date.sh" click_script="open -a Calendar"
 
 sketchybar --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" icon.padding_left=3 \
