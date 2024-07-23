@@ -17,31 +17,26 @@ return {
     "onsails/lspkind.nvim",
   },
 
-  config = function()
-    local cmp = require("cmp")
-    local luasnip = require("luasnip")
-    local lspkind = require("lspkind")
-    require("luasnip.loaders.from_vscode").lazy_load()
-
-    cmp.setup({
+  opts = function()
+    return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
       snippet = {
         expand = function(args)
-          luasnip.lsp_expand(args.body)
+          require("luasnip").lsp_expand(args.body)
         end,
       },
-      mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+      mapping = require("cmp").mapping.preset.insert({
+        ["<C-p>"] = require("cmp").mapping.select_prev_item(), -- previous suggestion
+        ["<C-n>"] = require("cmp").mapping.select_next_item(), -- next suggestion
+        ["<C-b>"] = require("cmp").mapping.scroll_docs(-4),
+        ["<C-f>"] = require("cmp").mapping.scroll_docs(4),
+        ["<C-Space>"] = require("cmp").mapping.complete(), -- show completion suggestions
+        ["<C-e>"] = require("cmp").mapping.abort(), -- close completion window
+        ["<CR>"] = require("cmp").mapping.confirm({ select = false }),
       }),
-      sources = cmp.config.sources({
+      sources = require("cmp").config.sources({
         { name = "nvim_lsp"},
         { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
@@ -53,8 +48,12 @@ return {
       }),
       --- @diagnostic disable-next-line: missing-fields 
       formatting = {
-        format = lspkind.cmp_format()
+        format = require("lspkind").cmp_format()
+      },
+      window = {
+        completion = require("cmp").config.window.bordered(),
+        documentation = require("cmp").config.window.bordered(),
       }
-    })
+    }
   end,
 }
