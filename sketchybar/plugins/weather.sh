@@ -31,7 +31,7 @@ else
     "Patchy sleet possible" | "Light sleet" | "Moderate or heavy sleet" | "Light sleet showers" | "Moderate or heavy sleet showers")
       ICON="􀇑"
       ;;
-    "Thundery outbreaks possible" | "Patchy light rain with thunder" | "Moderate or heavy rain with thunder")
+    "Thundery outbreaks possible" | "Patchy light rain with thunder" | "Moderate or heavy rain with thunder" | "Thundery outbreaks in nearby")
       ICON="􀇟"
       ;;
     "Blowing snow" | "Blizzard")
