@@ -37,7 +37,15 @@ return {
             right = 0,
           }
         },
-        "filename",
+        {
+          "filename",
+          symbols = {
+            modified = "󰧞",
+            readonly = "󰌾",
+            unnamed = "[No name]",
+            newfile = "[New]",
+          }
+        },
       },
       lualine_c = {
         {
