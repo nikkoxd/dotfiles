@@ -30,21 +30,16 @@ source "$HOME/.cache/wal/colors.sh"
 # custom functions
 fixed-wal() {
   local imagePath="$(pwd)/$@"
-  wal -n -i "$@" --cols16 lighten
+  wal -n -s -i "$@" --cols16 lighten
 
   # set wallpaper and restart dock
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
   killall WallpaperAgent
 
   # reload apps
-  kill -SIGUSR1 $(pgrep kitty)
+  # kill -SIGUSR1 $(pgrep kitty)
   sketchybar --reload
   brew services restart borders
-
-  # update spicetify colors
-  source "$HOME/.config/spicetify/Themes/Comfy/update-colors.sh"
-  spicetify watch -s &
-  sleep 1 && pkill spicetify
 }
 
 yy() {
@@ -65,3 +60,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # run fastfetch lol
 fastfetch
+
+eval $(thefuck --alias)
