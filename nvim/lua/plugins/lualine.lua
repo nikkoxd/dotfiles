@@ -21,23 +21,70 @@ return {
           "mode",
           separator = {
             left = "",
-            right = ""
           },
-          right_padding = 2
+          padding = {
+            left = 1,
+            right = 2,
+          }
         }
       },
-      lualine_b = { 'filename', 'branch' },
-      lualine_c = { '%=' },
-      lualine_x = {},
-      lualine_y = { 'filetype', 'progress' },
+      lualine_b = {
+        {
+          "filetype",
+          icon_only = true,
+          padding = {
+            left = 2,
+            right = 0,
+          }
+        },
+        "filename",
+      },
+      lualine_c = {
+        {
+          "diagnostics",
+          padding = {
+            left = 2,
+            right = 1,
+          }
+        },
+      },
+      lualine_x = {
+        {
+          'fileformat',
+          symbols = {
+            unix = 'LF',
+            dos = 'CRLF',
+            mac = 'CR',
+          },
+        },
+        {
+          "encoding"
+        },
+        {
+          "diff",
+          padding = {
+            left = 1,
+            right = 2,
+          }
+        },
+      },
+      lualine_y = {
+        {
+          "branch",
+          icon = ""
+        },
+        "progress"
+      },
       lualine_z = {
         {
-          'location',
+          "location",
           separator = {
-            left = "",
             right = ""
           },
-          left_padding = 2
+          padding = {
+            left = 2,
+            right = 1,
+          }
         }
       }
     }
