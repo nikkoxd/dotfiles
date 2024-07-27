@@ -42,8 +42,8 @@ return {
           symbols = {
             modified = "󰧞",
             readonly = "󰌾",
-            unnamed = "[No name]",
-            newfile = "[New]",
+            unnamed = "Unnamed",
+            newfile = "New file",
           }
         },
       },
