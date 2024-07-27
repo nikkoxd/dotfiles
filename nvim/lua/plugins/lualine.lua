@@ -3,7 +3,7 @@ return {
 
   opts = {
     options = {
-      theme = "pywal",
+      theme = "pywal16-nvim",
       component_separators = "",
       section_separators = {
         left = "",
