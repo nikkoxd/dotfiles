@@ -32,7 +32,7 @@ return {
       dashboard.button("SPC p r", "󱋡  Recent", ":Telescope oldfiles<CR>"),
       dashboard.button("l", "󰒲  View plugins", ":Lazy<CR>"),
       dashboard.button("u", "󰑐  Update plugins", ":Lazy update<CR>"),
-      dashboard.button("q", "󰈆  Quit NVIM", ":qa<CR>"),
+      dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
     }
 
     dashboard.section.footer.val = footer()
