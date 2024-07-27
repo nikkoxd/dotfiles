@@ -57,7 +57,7 @@ return {
           require("mini.clue").gen_clues.windows(),
           require("mini.clue").gen_clues.z()
         }
-    })
+      })
     end,
   }
 }
