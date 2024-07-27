@@ -33,22 +33,28 @@ return {
         ["<C-b>"] = require("cmp").mapping.scroll_docs(-4),
         ["<C-f>"] = require("cmp").mapping.scroll_docs(4),
         ["<C-Space>"] = require("cmp").mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = require("cmp").mapping.abort(), -- close completion window
+        ["<C-e>"] = require("cmp").mapping.abort(),        -- close completion window
         ["<CR>"] = require("cmp").mapping.confirm({ select = false }),
       }),
       sources = require("cmp").config.sources({
-        { name = "nvim_lsp"},
-        { name = "lazydev", group_index = 0 },
-        { name = "luasnip" }, -- snippets
-        { name = "buffer" }, -- text within current buffer
-        { name = "path" }, -- file system paths
-        { name = "emoji" },
         { name = "supermaven" },
+        { name = "nvim_lsp" },
+        { name = "lazydev",   group_index = 0 },
+        { name = "luasnip" }, -- snippets
+        { name = "buffer" },  -- text within current buffer
+        { name = "path" },    -- file system paths
+        { name = "emoji" },
         { name = "neorg" },
       }),
-      --- @diagnostic disable-next-line: missing-fields 
+      --- @diagnostic disable-next-line: missing-fields
       formatting = {
-        format = require("lspkind").cmp_format()
+        format = require("lspkind").cmp_format({
+          mode = "symbol",
+          max_width = 50,
+          symbol_map = {
+            Supermaven = ""
+          }
+        })
       },
       window = {
         completion = require("cmp").config.window.bordered(),
