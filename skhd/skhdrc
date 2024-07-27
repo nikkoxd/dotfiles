@@ -3,22 +3,22 @@ cmd - return : open -a Alacritty
 # changing window focus
 ctrl - h [
   *           : yabai -m window --focus west || yabai -m display --focus west
-  "kitty"     ~
+  "WezTerm"     ~
 ]
 
 ctrl - j [
   *           : yabai -m window --focus south
-  "kitty"     ~
+  "WezTerm"     ~
 ]
 
 ctrl - k [
   *           : yabai -m window --focus north
-  "kitty"     ~
+  "WezTerm"     ~
 ]
 
 ctrl - l [
   *           : yabai -m window --focus east || yabai -m display --focus east
-  "kitty"     ~
+  "WezTerm"     ~
 ]
 
 # warpping windows
