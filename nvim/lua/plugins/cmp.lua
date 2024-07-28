@@ -46,8 +46,9 @@ return {
         { name = "emoji" },
         { name = "neorg" },
       }),
-      --- @diagnostic disable-next-line: missing-fields
+
       formatting = {
+        fields = { "kind", "abbr", "menu" },
         format = require("lspkind").cmp_format({
           mode = "symbol",
           max_width = 50,
@@ -56,10 +57,6 @@ return {
           }
         })
       },
-      window = {
-        completion = require("cmp").config.window.bordered(),
-        documentation = require("cmp").config.window.bordered(),
-      }
     }
   end,
 }
