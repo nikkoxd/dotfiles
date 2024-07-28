@@ -37,9 +37,8 @@ return {
         ["<CR>"] = require("cmp").mapping.confirm({ select = false }),
       }),
       sources = require("cmp").config.sources({
-        { name = "supermaven" },
         { name = "nvim_lsp" },
-        { name = "lazydev",   group_index = 0 },
+        { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
         { name = "buffer" },  -- text within current buffer
         { name = "path" },    -- file system paths
@@ -49,13 +48,14 @@ return {
 
       formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = require("lspkind").cmp_format({
-          mode = "symbol",
-          max_width = 50,
-          symbol_map = {
-            Supermaven = ""
-          }
-        })
+        format = function(entry, vim_item)
+          local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local strings = vim.split(kind.kind, "%s", { trimempty = true })
+          kind.kind = " " .. (strings[1] or "") .. " "
+          kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+          return kind
+        end,
       },
     }
   end,
