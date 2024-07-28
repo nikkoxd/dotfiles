@@ -52,6 +52,7 @@ return {
         "tsserver",
         "tailwindcss",
         "html",
+        "emmet_ls",
         "cssls",
         "marksman",
         "pyright",
