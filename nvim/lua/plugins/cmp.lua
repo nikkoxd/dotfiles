@@ -45,7 +45,6 @@ return {
         { name = "emoji" },
         { name = "neorg" },
       }),
-
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
@@ -57,6 +56,10 @@ return {
           return kind
         end,
       },
+      window = {
+        completion = require("cmp").config.window.bordered(),
+        documentation = require("cmp").config.window.bordered(),
+      }
     }
   end,
 }
