@@ -11,9 +11,9 @@ return {
     require("nvim-treesitter.install").compilers = { "gcc-14" }
     local configs = require("nvim-treesitter.configs")
 
-    ---@diagnostic disable-next-line: missing-fields
     configs.setup({
       ensure_installed = {
+        "html",
         "gdscript",
         "godot_resource",
         "gdshader",
@@ -25,9 +25,13 @@ return {
         "astro",
         "python",
       },
+      auto_install = true,
+      ignore_install = {},
       sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
+      modules = {
+        highlight = { enable = true },
+        indent = { enable = true },
+      }
     })
   end,
 }
