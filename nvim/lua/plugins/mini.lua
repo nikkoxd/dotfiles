@@ -1,17 +1,5 @@
 return {
   {
-    "echasnovski/mini.files",
-    version = "*",
-    keys = {
-      { "<leader>pv", function() if not MiniFiles.close() then MiniFiles.open() end end, desc = "Path view" }
-    },
-    opts = {
-      options = {
-        permament_delete = false
-      }
-    },
-  },
-  {
     "echasnovski/mini.clue",
     version = "*",
     config = function()
