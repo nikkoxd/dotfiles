@@ -9,12 +9,19 @@ return {
     "3rd/image.nvim",
   },
   keys = {
-    { "<leader>pv", "<cmd>Neotree filesystem reveal<cr>", desc = "Open Neotree" },
+    { "<leader>pv", "<cmd>Neotree toggle reveal<cr>", desc = "Open Neotree" },
   },
   opts = {
-    close_if_last_window = false,
+    close_if_last_window = true,
     enable_git_status = true,
     enable_diagnostics = true,
-    sort_case_insensitive = true,
+    sort_case_insensitive = false,
+    default_component_configs = {
+      filesystem = {
+        filtered_items = {
+          hide_gitignored = true,
+        }
+      }
+    }
   },
 }

@@ -30,7 +30,7 @@ return {
       dashboard.button("e", "󰈔  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("SPC p f", "󰈞  Find file", ":Telescope find_files<CR>"),
       dashboard.button("SPC p r", "󱋡  Recent", ":Telescope oldfiles<CR>"),
-      dashboard.button("SPC p v", "󰉋  Directory", ":Neotree filesystem reveal<CR>"),
+      dashboard.button("SPC p v", "󰉋  Directory", ":Neotree toggle reveal<CR>"),
       dashboard.button("l", "󰒲  View plugins", ":Lazy<CR>"),
       dashboard.button("u", "󰑐  Update plugins", ":Lazy update<CR>"),
       dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
