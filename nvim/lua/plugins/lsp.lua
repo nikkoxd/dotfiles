@@ -30,6 +30,7 @@ return {
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
     capabilities.textDocument.foldingRange = {
       dynamicRegistration = false,
       lineFoldingOnly = true,
@@ -40,9 +41,8 @@ return {
       if client.server_capabilities.documentSymbolProvider then
         navic.attach(client, bufnr)
       end
-    end,
+    end
 
-    ---@diagnostic disable-next-line: redundant-value
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -51,20 +51,22 @@ return {
         "eslint",
         "tsserver",
         "tailwindcss",
+        "html",
+        "cssls",
         "marksman",
         "pyright",
         "jsonls",
       },
 
       handlers = {
-        function (server_name)
+        function(server_name)
           require("lspconfig")[server_name].setup {
             capabilities = capabilities,
             on_attach = on_attach
           }
         end,
 
-        ["lua_ls"] = function ()
+        ["lua_ls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.lua_ls.setup {
             settings = {
@@ -78,7 +80,7 @@ return {
           }
         end,
 
-        ["jsonls"] = function ()
+        ["jsonls"] = function()
           local lspconfig = require("lspconfig")
           lspconfig.jsonls.setup {
             settings = {
@@ -92,12 +94,5 @@ return {
         end,
       }
     })
-
-    require("lspconfig")["gdscript"].setup({
-      name = "godot",
-      cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
-    })
-
-    require("lspconfig")["gdshader_lsp"].setup({})
   end
 }
