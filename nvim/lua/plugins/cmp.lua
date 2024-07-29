@@ -18,25 +18,31 @@ return {
   },
 
   opts = function()
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    local lspkind = require("lspkind")
+
+    require("luasnip.loaders.from_vscode").lazy_load()
+
     return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
       snippet = {
         expand = function(args)
-          require("luasnip").lsp_expand(args.body)
+          luasnip.lsp_expand(args.body)
         end,
       },
-      mapping = require("cmp").mapping.preset.insert({
-        ["<C-p>"] = require("cmp").mapping.select_prev_item(), -- previous suggestion
-        ["<C-n>"] = require("cmp").mapping.select_next_item(), -- next suggestion
-        ["<C-b>"] = require("cmp").mapping.scroll_docs(-4),
-        ["<C-f>"] = require("cmp").mapping.scroll_docs(4),
-        ["<C-Space>"] = require("cmp").mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = require("cmp").mapping.abort(),        -- close completion window
-        ["<CR>"] = require("cmp").mapping.confirm({ select = false }),
+      mapping = cmp.mapping.preset.insert({
+        ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
+        ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+        ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
-      sources = require("cmp").config.sources({
+      sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
@@ -48,7 +54,7 @@ return {
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
           kind.kind = " " .. (strings[1] or "") .. " "
           kind.menu = "    (" .. (strings[2] or "") .. ")"
