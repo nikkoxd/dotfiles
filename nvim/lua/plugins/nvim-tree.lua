@@ -5,7 +5,8 @@ return {
     "b0o/nvim-tree-preview.lua",
   },
   keys = {
-    { "<leader>pv", "<cmd>NvimTreeToggle<cr>", desc = "Toggle nvim-tree" },
+    { "<leader>pv", "<cmd>NvimTreeToggle<cr>", desc = "Toggle nvim-tree (root)" },
+    { "<leader>pV", "<cmd>NvimTreeFindFile<cr>", desc = "Toggle nvim-tree (cwd)" }
   },
   opts = function()
     vim.g.loaded_netrw = 1
