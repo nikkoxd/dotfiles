@@ -12,9 +12,6 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     return {
-      filters = {
-        dotfiles = true,
-      },
       on_attach = function(bufnr)
         local api = require("nvim-tree.api")
 
@@ -40,6 +37,26 @@ return {
           end
         end, opts("Preview"))
       end,
+      view = {
+        relativenumber = true,
+      },
+      renderer = {
+        indent_markers = {
+          enable = true,
+        },
+        icons = {
+          git_placement = "signcolumn",
+        }
+      },
+      diagnostics = {
+        enable = true,
+      },
+      modified = {
+        enable = true,
+      },
+      filters = {
+        dotfiles = true,
+      },
     }
   end,
 }
