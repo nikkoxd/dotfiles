@@ -26,6 +26,7 @@ return {
         vim.keymap.set("n", "<leader>cC", vim.lsp.codelens.refresh, opts)
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, opts)
+        vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, opts)
       end,
     })
 
