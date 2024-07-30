@@ -1,18 +1,7 @@
 return {
   "nvim-neorg/neorg",
-  version = "*",
   dependencies = {
-    {
-      "vhyrro/luarocks.nvim",
-      priority=1000,
-      opts = {
-        rocks = { "magick" },
-      }
-    },
-    {
-      "3rd/image.nvim",
-      opts = {}
-    },
+    "3rd/image.nvim",
   },
   opts = {
     load = {
