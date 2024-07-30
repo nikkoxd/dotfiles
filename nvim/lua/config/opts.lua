@@ -25,8 +25,6 @@ opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
 
-vim.diagnostic.config({ virtual_text = false })
-
 vim.diagnostic.config({
   float = {
     focusable = false,
