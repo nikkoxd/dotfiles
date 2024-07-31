@@ -36,6 +36,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval $(thefuck --alias)
 
 # aliases
+alias ~="cd ~"
+alias ..="cd ../"
 alias ls="eza"
 alias cd="z"
 alias python="python3"
