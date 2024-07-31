@@ -10,9 +10,6 @@ export EDITOR="nvim"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# source pywal colors
-source "$HOME/.cache/wal/colors.sh"
-
 # load version control
 autoload -Uz vcs_info
 precmd() { 
@@ -22,11 +19,11 @@ zstyle ":vcs_info:git:*" formats "@%b"
 
 # set custom prompt
 setopt PROMPT_SUBST
-PROMPT="%(?:%F{$color3}:%F{$color4})➜  %f"
-RPROMPT='%F{$color3}%1~%f%F{$color4}${vcs_info_msg_0_}%f$(parse_git_dirty)' # for some reason double quotes are broken here
+PROMPT="%(?:%F{blue}:%F{red})➜  %f"
+RPROMPT='%F{yellow}%1~%f%F{blue}${vcs_info_msg_0_}%f$(parse_git_dirty)' # for some reason double quotes are broken here
 parse_git_dirty() {
   if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-    echo "%F{$color3}*%f"
+    echo "%F{red}*%f"
   fi
 }
 
@@ -43,6 +40,9 @@ alias cd="z"
 alias python="python3"
 alias fwal="fixed-wal"
 alias lg="lazygit"
+
+# source pywal colors
+source "$HOME/.cache/wal/colors.sh"
 
 # functions
 fixed-wal() {
