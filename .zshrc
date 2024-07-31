@@ -6,16 +6,11 @@ export EDITOR="nvim"
 # omz theme and plugins
 ZSH_THEME="nikko"
 plugins=(
-  git
-  autojump
-  urltools
-  bgnotify
   zsh-autosuggestions
   zoxide
 )
-ZLE_RPROMPT_INDENT=0
 
-# omz path
+# initialize omz
 source $ZSH/oh-my-zsh.sh
 
 # aliases
