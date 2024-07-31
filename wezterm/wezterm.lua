@@ -7,6 +7,8 @@ local config = wezterm.config_builder()
 
 wezterm.add_to_config_reload_watch_list(home .. "/.cache/wal/colors-wezterm.toml")
 
+config.audible_bell = "Disabled"
+
 config.font = wezterm.font("FantasqueSansM Nerd Font")
 config.font_size = 18
 config.line_height = 1.1
