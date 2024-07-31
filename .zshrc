@@ -56,7 +56,6 @@ fixed-wal() {
   # reload apps
   sketchybar --reload
   brew services restart borders
-  spicetify apply
 }
 
 yy() {
