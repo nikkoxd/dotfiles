@@ -25,6 +25,8 @@ opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldenable = true
 
+opt.termguicolors = true
+
 vim.diagnostic.config({
   signs = {
     text = {
