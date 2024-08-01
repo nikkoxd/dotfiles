@@ -3,12 +3,10 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-# env vars
-export PATH=$PATH:~/.spoof-dpi/bin:~/pickup/target/release:~/Library/Python/3.10/lib/python/site-packages
-export ZSH="$HOME/.oh-my-zsh"
-export EDITOR="nvim"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+source "$HOME/.cache/wal/colors.sh"
+source "$HOME/.config/zsh/aliases.zsh"
+source "$HOME/.config/zsh/exports.zsh"
+source "$HOME/.config/zsh/functions.zsh"
 
 # load version control
 autoload -Uz vcs_info
@@ -32,47 +30,7 @@ eval "$(zoxide init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval $(thefuck --alias)
 
-# aliases
-alias ~="cd ~"
-alias ..="cd ../"
-alias ls="eza"
-alias cd="z"
-alias python="python3"
-alias lg="lazygit"
-
-# source pywal colors
-source "$HOME/.cache/wal/colors.sh"
-
-# functions
-fwal() {
-  local imagePath="$(pwd)/$1"
-  if [[ $2 == "light" ]]; then
-    wal -l -n -s -i "$1" --cols16 darken
-  else
-    wal -n -s -i "$1" --cols16 lighten
-  fi
-
-  # set wallpaper and restart dock
-  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
-  killall WallpaperAgent
-
-  # reload apps
-  sketchybar --reload
-  brew services restart borders
-}
-
-yy() {
-  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
-
 # bun completions
 [ -s "/Users/nikko/.bun/_bun" ] && source "/Users/nikko/.bun/_bun"
 
-# run fastfetch lol
 fastfetch
