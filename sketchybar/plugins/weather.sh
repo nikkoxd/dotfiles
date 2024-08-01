@@ -2,8 +2,7 @@
 
 # api key from https://weatherapi.com/
 API_KEY="06008a534fe7418c84d123839240108"
-CITY="Izhevsk, Russia"
-CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
+CITY="Izhevsk"
 DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
 CONDITION=$(echo $DATA | jq -r ".current.condition.code")
 TEMP=$(echo $DATA | jq -r ".current.temp_c | floor")
