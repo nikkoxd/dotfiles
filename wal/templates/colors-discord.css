@@ -12,9 +12,9 @@
 	--warningcolor: 		250,166,26;			/*	Warning Color		-	default:	250,166,26		-	hex:	#faa61a		*/
 	--dangercolor:  		237,66,69;			/*	Danger Color		-	default:	237,66,69		-	hex:	#ed4245		*/
 	
-	--textbrightest: 		255,255,255;			/*	Text Color 1		-	default:	255,255,255		-	hex:	#ffffff		*/
-	--textbrighter: 		222,222,222;			/*	Text Color 2		-	default:	220,221,222		-	hex:	#dcddde		*/
-	--textbright: 			185,185,185;			/*	Text Color 3		-	default:	185,187,190		-	hex:	#b9bbbe		*/
+	--textbrightest: 		{foreground.rgb};			/*	Text Color 1		-	default:	255,255,255		-	hex:	#ffffff		*/
+	--textbrighter: 		{foreground.rgb};			/*	Text Color 2		-	default:	220,221,222		-	hex:	#dcddde		*/
+	--textbright: 			{foreground.rgb};			/*	Text Color 3		-	default:	185,187,190		-	hex:	#b9bbbe		*/
 	--textdark: 			{foreground.rgb};			/*	Text Color 4		-	default:	142,146,151		-	hex:	#8e9297		*/
 	--textdarker: 			{foreground.rgb};			/*	Text Color 5		-	default:	114,118,125		-	hex:	#72767d		*/
 	--textdarkest: 			{foreground.rgb};			/*	Text Color 6		-	default:	79,84,92		-	hex:	#4f545c		*/
