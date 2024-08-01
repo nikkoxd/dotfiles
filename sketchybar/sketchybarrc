@@ -49,7 +49,7 @@ sketchybar --default "${default[@]}"
 source "$ITEM_DIR/spaces.sh"
 
 sketchybar --add item weather left \
-           --set weather update_freq=60 script="$PLUGIN_DIR/weather.sh"
+           --set weather icon.padding_left=7 icon.font="$FONT:Regular:20.0" update_freq=60 script="$PLUGIN_DIR/weather.sh"
 
 ##### CENTER ITEMS #####
 sketchybar --add item clock center \
