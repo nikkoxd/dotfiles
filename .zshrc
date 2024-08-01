@@ -20,7 +20,7 @@ zstyle ":vcs_info:git:*" formats "@%b"
 # set custom prompt
 setopt PROMPT_SUBST
 PROMPT="%(?:%F{blue}:%F{red})➜  %f"
-RPROMPT='%F{yellow}%1~%f%F{blue}${vcs_info_msg_0_}%f$(parse_git_dirty)' # for some reason double quotes are broken here
+RPROMPT='%F{blue}%1~%f%F{gray}${vcs_info_msg_0_}%f$(parse_git_dirty)' # for some reason double quotes are broken here
 parse_git_dirty() {
   if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
     echo "%F{red}*%f"
@@ -38,16 +38,19 @@ alias ..="cd ../"
 alias ls="eza"
 alias cd="z"
 alias python="python3"
-alias fwal="fixed-wal"
 alias lg="lazygit"
 
 # source pywal colors
 source "$HOME/.cache/wal/colors.sh"
 
 # functions
-fixed-wal() {
-  local imagePath="$(pwd)/$@"
-  wal -n -s -i "$@" --cols16 lighten
+fwal() {
+  local imagePath="$(pwd)/$1"
+  if [[ $2 == "light" ]]; then
+    wal -l -n -s -i "$1" --cols16 darken
+  else
+    wal -n -s -i "$1" --cols16 lighten
+  fi
 
   # set wallpaper and restart dock
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist

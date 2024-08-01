@@ -5,12 +5,20 @@ local get_url = ya.sync(function()
 end)
 
 return {
-  entry = function()
+  entry = function(self, args)
     local url = get_url()
-    ya.manager_emit("shell", {
-			"zsh" .. " -ic " .. ya.quote("fwal " .. url .. "; exit", true),
-			block = true,
-			confirm = true,
-		})
+    if (args[1] == "light") then
+      ya.manager_emit("shell", {
+        "zsh" .. " -ic " .. ya.quote("fwal " .. url .. " light; exit", true),
+        block = true,
+        confirm = true,
+      })
+    else
+      ya.manager_emit("shell", {
+        "zsh" .. " -ic " .. ya.quote("fwal " .. url .. "; exit", true),
+        block = true,
+        confirm = true,
+      })
+    end
   end,
 }

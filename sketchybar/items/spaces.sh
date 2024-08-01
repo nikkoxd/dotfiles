@@ -13,7 +13,7 @@ do
     icon.padding_left=10
     icon.padding_right=10
     icon.background.color=$TRANSPARENT
-    icon.color=$WHITE
+    icon.color=$FOREGROUND
     icon.highlight_color=$BLACK
     background.color=$ACCENT
     background.corner_radius=5
