@@ -1,14 +1,27 @@
+# history
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt appendhistory
 
+# source other parts of the config
 source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/exports.zsh"
 source "$HOME/.config/zsh/functions.zsh"
 
-# load version control
+# plugins
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# clis
+eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
+
+# useful options (wip)
+setopt autocd extendedglob nomatch menucomplete
+setopt interactive_comments
+stty stop undef
+zle_highlight=("paste:none")
+
+# version control
 autoload -Uz vcs_info
 precmd() { 
   vcs_info 
@@ -25,10 +38,6 @@ parse_git_dirty() {
   fi
 }
 
-# initialize clis
-eval "$(zoxide init zsh)"
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval $(thefuck --alias)
 
 # bun completions
 [ -s "/Users/nikko/.bun/_bun" ] && source "/Users/nikko/.bun/_bun"
