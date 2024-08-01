@@ -19,3 +19,4 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Просмотр$" manage=off
 yabai -m rule --add app="^Системные настройки" manage=off
+yabai -m rule --add app="todo-app" manage=off
