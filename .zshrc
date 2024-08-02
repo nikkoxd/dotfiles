@@ -1,6 +1,11 @@
 # history
 HISTFILE=~/.zsh_history
 
+# clis
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
+
 # source other parts of the config
 source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
@@ -11,10 +16,6 @@ source "$HOME/.config/zsh/functions.zsh"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-# clis
-eval "$(zoxide init zsh)"
-eval $(thefuck --alias)
 
 # useful options (wip)
 setopt autocd extendedglob nomatch menucomplete
