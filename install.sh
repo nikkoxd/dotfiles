@@ -16,3 +16,12 @@ else
   echo "export ZDOTDIR=$HOME/.config/zsh" >> $HOME/.zprofile
   echo "\$ZDOTDIR has been set to $ZDOTDIR"
 fi
+
+# Symlink configs to ~/.config
+if [ -d $HOME/.config ]; then
+  ln -s $(pwd)/*/ $HOME/.config
+else
+  mkdir $HOME/.config
+  ln -s $(pwd)/*/ $HOME/.config
+fi
+
