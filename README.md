@@ -12,14 +12,34 @@
 Run `./install.sh`
 
 ## Generating colorschemes
-You can use my custom function:
+Run the pywal alias:
 ```bash
 fwal path/to/your/image.png
 ```
 This will:
 - generate a colorscheme using [pywal16](https://github.com/eylles/pywal16)
-- automatically reload everything except neovim and discord
+- automatically reload everything except neovim, discord and spicetify
 - automatically apply the wallpaper
+
+<details>
+<summary>Applying the Neovim theme</summary>
+<br>
+  
+Reload the theme by running `:Lazy reload pywal16`
+
+</details>
+
+<details>
+<summary>Applying the Discord theme (Example for Vencord)</summary>
+<br>
+  
+Symlink the theme file to your theme folder:
+```bash
+ln -s $HOME/.cache/wal/colors-discord.css $HOME/Library/Application\ Support/Vencord/themes
+```
+In Vencord, reload the theme by going into User Settings > Themes, then turn the theme on and off
+
+</details>
 
 ## Applying the wallpaper
 If your wallpaper doesn't apply automatically,
