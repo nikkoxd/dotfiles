@@ -3,6 +3,8 @@
 
 ![Screenshot](screenshot.png)
 
+<p align="center">feat: yabai, sketchybar, pywal</p>
+
 ## Requirements
 - gcc-14
 
