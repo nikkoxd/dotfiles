@@ -4,12 +4,7 @@
 ![Screenshot](screenshot.png)
 
 ## Requirements
-- grep
-- imagemagick
 - gcc-14
-- fantasquesansm nerd font
-- fd is optional
-- something else probably
 
 ## Installing
 Run `./install.sh`
@@ -37,5 +32,5 @@ enable System Preferences > Wallpaper > Show on all Spaces
 </details>
 
 ## TODOs
-- [ ] Add an install script
+- [x] Add an install script
 - [ ] Make some better keymaps for skhd
