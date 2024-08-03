@@ -11,6 +11,9 @@
 - fd is optional
 - something else probably
 
+## Installing
+Run `./install.sh`
+
 ## Generating colorschemes
 You can use my custom function:
 ```bash
