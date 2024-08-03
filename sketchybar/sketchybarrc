@@ -47,10 +47,7 @@ sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
 source "$ITEM_DIR/spaces.sh"
-
-sketchybar --add item weather left \
-           --set weather icon.padding_left=8 update_freq=60 script="$PLUGIN_DIR/weather.sh"
-
+source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
 
 ##### CENTER ITEMS #####
