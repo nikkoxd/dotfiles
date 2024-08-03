@@ -51,13 +51,16 @@ source "$ITEM_DIR/spaces.sh"
 sketchybar --add item weather left \
            --set weather icon.padding_left=8 update_freq=60 script="$PLUGIN_DIR/weather.sh"
 
+source "$ITEM_DIR/mic.sh"
+
 ##### CENTER ITEMS #####
 sketchybar --add item clock center \
            --set clock update_freq=2 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
 
+##### RIGHT ITEMS #####
+
 source "$ITEM_DIR/spotify.sh"
 
-##### RIGHT ITEMS #####
 sketchybar --add item layout right \
            --set layout update_freq=1 icon=􀺑  icon.padding_left=3 script="$PLUGIN_DIR/layout.sh"
 
