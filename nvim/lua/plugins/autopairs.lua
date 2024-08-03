@@ -9,5 +9,9 @@ return {
       "confirm_done",
       cmp_autopairs.on_confirm_done()
     )
+
+    return {
+      enable_check_bracket_line = false,
+    }
   end,
 }
