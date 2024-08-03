@@ -2,9 +2,9 @@
 
 # Install homebrew
 if which brew > /dev/null; then
-  echo "homebrew is already installed."
+  echo "Homebrew is already installed."
 else
-  echo "Installing homebrew."
+  echo "Installing Homebrew."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew bundle install
 fi
@@ -19,9 +19,11 @@ fi
 
 # Symlink configs to ~/.config
 if [ -d $HOME/.config ]; then
+  echo "Symlinking configs to $HOME/.config"
   ln -s $(pwd)/*/ $HOME/.config
 else
+  echo "\$HOME/.config not found. Creating..."
   mkdir $HOME/.config
+  echo "Symlinking configs to $HOME/.config"
   ln -s $(pwd)/*/ $HOME/.config
 fi
-
