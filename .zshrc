@@ -2,7 +2,6 @@
 HISTFILE=~/.zsh_history
 
 # clis
-eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval $(thefuck --alias)
 
