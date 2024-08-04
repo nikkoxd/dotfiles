@@ -1,4 +1,4 @@
-alias src="source ~/.zshrc"
+alias src="source $HOME/.config/zsh/.zshrc"
 
 alias cd="z"
 alias ~="cd ~"
