@@ -1,13 +1,21 @@
 #!/bin/bash
 
-# Install homebrew
+# Install Homebrew
 if which brew > /dev/null; then
   echo "Homebrew is already installed."
 else
   echo "Installing Homebrew."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  brew bundle install
 fi
+
+# Install Brew Bundle
+echo "Installing Brew Bundle"
+if [ -L $HOME/Brewfile ]; then
+  mv $HOME/Brewfile $HOME/Brewfile.backup
+  echo "Existing Brewfile moved to $HOME/Brewfile.backup"
+fi
+ln -s $(dirname "$0")/Brewfile $HOME
+brew bundle install
 
 # Set $ZDOTDIR
 if grep -q "export ZDOTDIR" $HOME/.zprofile; then
