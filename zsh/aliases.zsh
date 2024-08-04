@@ -7,6 +7,7 @@ alias ...="cd ../.."
 
 alias repos="cd repos"
 alias dots="cd dotfiles"
+alias walls="cd Wallpapers && yy"
 
 alias cat="bat"
 
