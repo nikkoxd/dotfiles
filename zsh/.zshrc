@@ -1,9 +1,7 @@
+source $(brew --prefix)/share/antigen/antigen.zsh
+
 # history
 HISTFILE=~/.zsh_history
-
-# clis
-eval "$(zoxide init zsh)"
-eval $(thefuck --alias)
 
 # source other parts of the config
 source "$HOME/.cache/wal/colors.sh"
@@ -12,9 +10,13 @@ source "$HOME/.config/zsh/exports.zsh"
 source "$HOME/.config/zsh/functions.zsh"
 
 # plugins
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle jeffreytse/zsh-vi-mode
+
+# clis
+eval "$(zoxide init zsh)"
+eval $(thefuck --alias)
 
 # useful options (wip)
 setopt autocd extendedglob nomatch menucomplete
@@ -43,4 +45,4 @@ parse_git_dirty() {
 # bun completions
 [ -s "/Users/nikko/.bun/_bun" ] && source "/Users/nikko/.bun/_bun"
 
-fastfetch
+antigen apply
