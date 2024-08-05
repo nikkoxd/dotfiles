@@ -21,11 +21,8 @@ return {
           "mode",
           separator = {
             left = "",
+            right = "",
           },
-          padding = {
-            left = 1,
-            right = 2,
-          }
         }
       },
       lualine_b = {
@@ -87,12 +84,9 @@ return {
         {
           "location",
           separator = {
+            left = "",
             right = ""
           },
-          padding = {
-            left = 2,
-            right = 1,
-          }
         }
       }
     }
