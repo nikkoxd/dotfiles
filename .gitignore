@@ -8,3 +8,6 @@ spicetify/Backup
 spicetify/Extracted
 spicetify/Themes/Comfy/color.ini
 zsh/.zcompdump
+zsh/.zcompcache
+zsh/.zsh_sessions
+zsh/.zsh_history
