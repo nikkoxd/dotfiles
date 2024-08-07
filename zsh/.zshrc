@@ -3,6 +3,10 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 # history
 HISTFILE=~/.zsh_history
 
+# completion
+autoload -Uz compinit
+compinit -i
+
 # source other parts of the config
 source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
