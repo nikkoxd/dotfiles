@@ -1,5 +1,8 @@
 alias src="source $HOME/.config/zsh/.zshrc"
 
+alias tm="tmux"
+alias ta="tmux attach"
+
 alias cd="z"
 alias ~="cd ~"
 alias ..="cd ../"
