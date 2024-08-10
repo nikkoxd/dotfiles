@@ -17,10 +17,10 @@ function fwal() {
 
   # reload apps
   brew services restart borders
+  sketchybar --reload
   if which walogram 2> /dev/null; then
     walogram
   fi
-  sketchybar --reload
 }
 
 function yy() {
