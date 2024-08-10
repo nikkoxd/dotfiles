@@ -14,7 +14,7 @@ Run `./install.sh`
 ## Generating colorschemes
 Run the pywal alias:
 ```bash
-fwal path/to/your/image.png
+fwal -i path/to/your/image.png
 ```
 This will:
 - generate a colorscheme using [pywal16](https://github.com/eylles/pywal16)
