@@ -15,7 +15,7 @@ function fwal() {
         exit;;
     esac
   done
-  if [ $light = true ]; then
+  if [ $light == true ]; then
     wal -l -n -s -i "$image" --cols16 darken
   else
     wal -n -s -i "$image" --cols16 lighten
