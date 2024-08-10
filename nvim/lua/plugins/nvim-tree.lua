@@ -12,24 +12,25 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    -- nvim-tree is also there in modified buffers so this function filter it out
-    local modifiedBufs = function(bufs)
-      local t = 0
-      for k,v in pairs(bufs) do
-        if v.name:match("NvimTree_") == nil then
-          t = t + 1
-        end
-      end
-      return t
-    end
-
-    vim.api.nvim_create_autocmd("BufEnter", {
-      nested = true,
+    vim.api.nvim_create_autocmd("QuitPre", {
       callback = function()
-        if #vim.api.nvim_list_wins() == 1 and
-          vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil and
-          modifiedBufs(vim.fn.getbufinfo({bufmodified = 1})) == 0 then
-          vim.cmd "quit"
+        local tree_wins = {}
+        local floating_wins = {}
+        local wins = vim.api.nvim_list_wins()
+        for _, w in ipairs(wins) do
+          local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
+          if bufname:match("NvimTree_") ~= nil then
+            table.insert(tree_wins, w)
+          end
+          if vim.api.nvim_win_get_config(w).relative ~= '' then
+            table.insert(floating_wins, w)
+          end
+        end
+        if 1 == #wins - #floating_wins - #tree_wins then
+          -- Should quit, so we close all invalid windows.
+          for _, w in ipairs(tree_wins) do
+            vim.api.nvim_win_close(w, true)
+          end
         end
       end
     })
