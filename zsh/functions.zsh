@@ -4,15 +4,25 @@ function mkcd() {
 }
 
 function fwal() {
-  local imagePath="$(pwd)/$1"
-  if [[ $2 == "light" ]]; then
-    wal -l -n -s -i "$1" --cols16 darken
+  while getopts ":li:" option; do
+    case $option in
+      l)
+        light=true;;
+      i)
+        image="$OPTARG";;
+      \?)
+        echo "Error: Invalid option"
+        exit;;
+    esac
+  done
+  if [ $light = true ]; then
+    wal -l -n -s -i "$image" --cols16 darken
   else
-    wal -n -s -i "$1" --cols16 lighten
+    wal -n -s -i "$image" --cols16 lighten
   fi
 
   # set wallpaper and restart dock
-  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$imagePath" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
+  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$(pwd)/$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
   killall WallpaperAgent
 
   # reload apps
