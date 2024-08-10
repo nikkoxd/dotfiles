@@ -39,13 +39,13 @@ Symlink the theme file to your theme folder:
 ```bash
 ln -s $HOME/.cache/wal/colors-discord.css $HOME/Library/Application\ Support/Vencord/themes
 ```
-In Vencord, reload the theme by pressing `cmd+r` or by going into User Settings > Themes, then turn the theme on and off
+In Vencord, reload the theme by pressing `cmd+r` or by going into `User Settings > Themes`, then turn the theme on and off
 
 </details>
 
 ## Applying the wallpaper
 If your wallpaper doesn't apply automatically,
-enable System Preferences > Wallpaper > Show on all Spaces
+enable `System Preferences > Wallpaper > Show on all Spaces`
 
 <details>
 <summary>Screenshot</summary>
