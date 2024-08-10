@@ -30,9 +30,9 @@ return {
       dashboard.button("e", "󰈔  New file", ":ene <BAR> startinsert <CR>"),
       dashboard.button("SPC p f", "󰈞  Find file", ":Telescope find_files<CR>"),
       dashboard.button("SPC p r", "󱋡  Recent", ":Telescope oldfiles<CR>"),
-      dashboard.button("SPC p v", "󰉋  Directory", ":NvimTreeToggle<CR>"),
+      dashboard.button("SPC p v", "󰉋  Tree view", ":NvimTreeToggle<CR>"),
+      dashboard.button("SPC q s", "󰦛  Restore session"),
       dashboard.button("l", "󰒲  View plugins", ":Lazy<CR>"),
-      dashboard.button("u", "󰑐  Update plugins", ":Lazy update<CR>"),
       dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
     }
 
