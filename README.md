@@ -38,6 +38,7 @@ Symlink the theme file to your theme folder:
 ln -s $HOME/.cache/wal/colors-discord.css $HOME/Library/Application\ Support/Vencord/themes
 ```
 In Vencord, reload the theme by going into User Settings > Themes, then turn the theme on and off
+Or press cmd+r
 
 </details>
 
