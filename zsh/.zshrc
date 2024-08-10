@@ -40,8 +40,6 @@ zstyle ":vcs_info:git:*" formats "%b"
 setopt PROMPT_SUBST
 PROMPT=' $(command_result) '
 RPROMPT='$(path)$(git_info)' # for some reason double quotes are broken here
-#  ple-left-half-circle
-#  ple-right-half-circle
 command_result() {
   if [[ $? == 0 ]]; then
     echo "%F{blue}%F{black}%K{blue}󰧞%F{blue}%k%f"

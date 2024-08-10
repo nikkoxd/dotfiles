@@ -16,11 +16,11 @@ function fwal() {
   killall WallpaperAgent
 
   # reload apps
+  brew services restart borders
   if which walogram 2> /dev/null; then
     walogram
   fi
   sketchybar --reload
-  brew services restart borders
 }
 
 function yy() {
