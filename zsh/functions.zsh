@@ -4,18 +4,29 @@ function mkcd() {
 }
 
 function fwal() {
+  if [ -z "$1" ]; then
+    echo "Empty list of options" >&2
+    exit 1
+  fi
+
+  light=false
+  image=""
+
   while getopts ":li:" option; do
     case $option in
       l)
-        light=true;;
+        light=true
+        ;;
       i)
-        image="$OPTARG";;
+        image=$OPTARG
+        ;;
       \?)
-        echo "Error: Invalid option"
-        exit;;
+        echo "Invalid option: -${OPTARG}" >&2
+        exit 1
+        ;;
     esac
   done
-  if [ $light == true ]; then
+  if [ $light = true ]; then
     wal -l -n -s -i "$image" --cols16 darken
   else
     wal -n -s -i "$image" --cols16 lighten
