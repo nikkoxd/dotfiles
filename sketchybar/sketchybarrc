@@ -41,6 +41,10 @@ default=(
   background.border_width=2
   background.border_color=$ACCENT
   background.corner_radius=5
+  popup.background.color=$BACKGROUND
+  popup.background.border_width=2
+  popup.background.border_color=$ACCENT
+  popup.background.corner_radius=5
 )
 
 sketchybar --default "${default[@]}"

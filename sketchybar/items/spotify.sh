@@ -3,10 +3,6 @@
 spotify=(
   scroll_texts=true
   label.max_chars=35
-  popup.background.color=$BACKGROUND
-  popup.background.border_width=2
-  popup.background.border_color=$ACCENT
-  popup.background.corner_radius=5
   update_freq=2
   script="$PLUGIN_DIR/spotify.sh"
 )
@@ -79,3 +75,4 @@ sketchybar --add item spotify center \
            --add item spotify.hide popup.spotify \
            --set spotify.hide "${spotify_hide[@]}" \
            --subscribe spotify.hide mouse.clicked
+  click_script="sketchybar --set $NAME popup.drawing=toggle"
