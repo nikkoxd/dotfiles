@@ -75,4 +75,3 @@ sketchybar --add item spotify center \
            --add item spotify.hide popup.spotify \
            --set spotify.hide "${spotify_hide[@]}" \
            --subscribe spotify.hide mouse.clicked
-  click_script="sketchybar --set $NAME popup.drawing=toggle"
