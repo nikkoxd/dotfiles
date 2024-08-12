@@ -19,7 +19,7 @@ weather_temp=(
 
 sketchybar --add item weather left \
            --set weather "${weather[@]}" \
-           --subscribe weather mouse.clicked wifi_change \
+           --subscribe weather mouse.clicked mouse.entered mouse.exited wifi_change \
            \
            --add item weather.condition popup.weather \
            --set weather.condition "${weather_condition[@]}" \

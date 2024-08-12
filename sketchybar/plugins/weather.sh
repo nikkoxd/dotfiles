@@ -121,12 +121,20 @@ update() {
   sketchybar --set "$NAME.temp" label="Feels like ${FEELS_LIKE}°C"
 }
 
-mouse_clicked() {
-  sketchybar --set "$NAME" popup.drawing=toggle
+open_app() {
+  open -a Weather
+}
+
+popup() {
+  sketchybar --set "$NAME" popup.drawing="$1"
 }
 
 case "$SENDER" in
-  "mouse.clicked") mouse_clicked
+  "mouse.clicked") open_app
+    ;;
+  "mouse.entered") popup on
+    ;;
+  "mouse.exited") popup off
     ;;
   *) update
     ;;
