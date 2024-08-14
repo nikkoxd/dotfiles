@@ -33,7 +33,7 @@ function fwal() {
   fi
 
   # set wallpaper and restart dock
-  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$(pwd)/$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
+  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
   killall WallpaperAgent
 
   # reload apps

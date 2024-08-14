@@ -1,6 +1,6 @@
 local get_url = ya.sync(function()
   local tab = cx.active
-  local url = tostring(tab.current.hovered.name)
+  local url = tostring(tab.current.hovered.url)
   return url
 end)
 
