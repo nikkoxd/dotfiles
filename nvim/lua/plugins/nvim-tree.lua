@@ -74,7 +74,7 @@ return {
             -- open file
             api.node.open.edit()
             -- Close the tree if file was opened
-            api.tree.close()
+            -- api.tree.close()
           end
         end
 
@@ -100,6 +100,7 @@ return {
         vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
       end,
       view = {
+        side = "right",
         relativenumber = true,
       },
       renderer = {
