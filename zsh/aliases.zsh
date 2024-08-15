@@ -14,9 +14,10 @@ alias walls="cd Wallpapers && yy"
 
 alias cat="bat"
 
-alias ls="eza"
-alias ll="eza -la"
-alias ld="eza -d */"
+alias ls="eza --icons"
+alias ll="eza --icons -la"
+alias ld="eza --icons -d */"
+alias lt="eza --icons -T"
 
 alias lg="lazygit"
 
