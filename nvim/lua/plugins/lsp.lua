@@ -72,6 +72,7 @@ return {
         "marksman",
         "pyright",
         "jsonls",
+        "intelephense",
       },
 
       handlers = {
