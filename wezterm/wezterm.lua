@@ -18,7 +18,7 @@ config.color_scheme = "colors-wezterm"
 
 config.enable_tab_bar = false
 
-config.window_background_opacity = 0.7
+config.window_background_opacity = 0.8
 
 config.window_decorations = "RESIZE"
 
