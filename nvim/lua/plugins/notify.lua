@@ -1,7 +1,7 @@
 return {
   "rcarriga/nvim-notify",
   keys = {
-    { "<leader>dn", function() require("notify").dismiss({ silent = true, pending = true }) end, desc = "Dismiss notifications" },
+    { "<leader>nd", function() require("notify").dismiss({ silent = true, pending = true }) end, desc = "Dismiss notifications" },
   },
   opts = {
     background_colour = "#000000",
