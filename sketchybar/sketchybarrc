@@ -1,5 +1,6 @@
 #!/bin/bash
 source "$HOME/.config/sketchybar/colors.sh"
+source "$HOME/.config/sketchybar/constants.sh"
 
 ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
