@@ -17,6 +17,7 @@ source "$HOME/.config/zsh/functions.zsh"
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle jeffreytse/zsh-vi-mode
+antigen bundle atuinsh/atuin@main
 
 # clis
 eval "$(zoxide init zsh)"
