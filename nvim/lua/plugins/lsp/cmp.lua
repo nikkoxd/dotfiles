@@ -46,6 +46,8 @@ return {
       })
     })
 
+    vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", {fg ="#6CC644"})
+
     return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
@@ -65,6 +67,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
       sources = cmp.config.sources({
+        { name = "supermaven" },
         { name = "nvim_lsp" },
         { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
@@ -76,7 +79,11 @@ return {
       formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-          local kind = lspkind.cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+          local kind = lspkind.cmp_format({
+            mode = "symbol_text",
+            maxwidth = 50,
+            symbol_map = { Supermaven = "", },
+          })(entry, vim_item)
           local strings = vim.split(kind.kind, "%s", { trimempty = true })
           kind.kind = " " .. (strings[1] or "") .. " "
           kind.menu = "    (" .. (strings[2] or "") .. ")"
