@@ -1,8 +1,5 @@
 return {
   "nvim-neorg/neorg",
-  dependencies = {
-    "3rd/image.nvim",
-  },
   opts = {
     load = {
       ["core.defaults"] = {},
@@ -13,7 +10,6 @@ return {
       },
       ["core.integrations.nvim-cmp"] = {},
       ["core.concealer"] = {},
-      ["core.integrations.image"] = {},
       ["core.summary"] = {},
     }
   }
