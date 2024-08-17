@@ -130,6 +130,11 @@ return {
       live_filter = {
         always_show_folders = false,
       },
+      ui = {
+        confirm = {
+          default_yes = true,
+        },
+      },
     }
   end,
 }
