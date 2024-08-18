@@ -99,6 +99,9 @@ return {
         vim.keymap.set("n", "h", api.tree.close,        opts("Close"))
         -- vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
       end,
+      view = {
+        side = "right",
+      },
       renderer = {
         indent_markers = {
           enable = true,
