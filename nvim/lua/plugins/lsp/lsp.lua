@@ -62,17 +62,13 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
-        "astro",
         "eslint",
         "tsserver",
         "tailwindcss",
         "html",
         "emmet_ls",
         "cssls",
-        "marksman",
-        "pyright",
         "jsonls",
-        "intelephense",
       },
 
       handlers = {
