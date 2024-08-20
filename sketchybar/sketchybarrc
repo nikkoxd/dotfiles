@@ -71,9 +71,6 @@ sketchybar --add bracket center_bracket spotify \
 
 ##### RIGHT ITEMS #####
 
-sketchybar --add item clock right \
-           --set clock update_freq=2 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
-
 sketchybar --add item date right \
            --set date update_freq=60 icon=􀧞  script="$PLUGIN_DIR/date.sh" click_script="open -a Calendar"
 
@@ -90,7 +87,7 @@ sketchybar --add item vpn right \
            --set vpn update_freq=5 icon=󰖂 icon.font="$FONT:Regular:17.0" icon.padding_right=3 script="$PLUGIN_DIR/vpn.sh" \
            --subscribe vpn mouse.clicked
 
-sketchybar --add bracket right_bracket clock date layout volume battery vpn \
+sketchybar --add bracket right_bracket date layout volume battery vpn \
            --set         right_bracket "${bracket[@]}"
 
 sketchybar --update
