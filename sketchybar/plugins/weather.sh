@@ -108,33 +108,30 @@ WEATHER_ICONS_NIGHT=(
 )
 
 update() {
-  CONDITION=$(echo $DATA | jq -r ".current.condition.text")
   CONDITION_CODE=$(echo $DATA | jq -r ".current.condition.code")
   TEMP=$(echo $DATA | jq -r ".current.temp_c | floor")
-  FEELS_LIKE=$(echo $DATA | jq -r ".current.feelslike_c")
   IS_DAY=$(echo $DATA | jq -r ".current.is_day")
 
   [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION_CODE]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION_CODE]}
 
-  sketchybar --set "$NAME" icon="$ICON" label="${TEMP}°C"
-  sketchybar --set "$NAME.condition" label="${CONDITION}"
-  sketchybar --set "$NAME.temp" label="Feels like ${FEELS_LIKE}°C"
+  sketchybar --animate sin 30 --set "$NAME" icon="$ICON" label="${TEMP}°C"
 }
 
 open_app() {
   open -a Weather
 }
 
-popup() {
-  sketchybar --set "$NAME" popup.drawing="$1"
+change_label() {
+  CONDITION=$(echo $DATA | jq -r ".current.condition.text")
+  FEELS_LIKE=$(echo $DATA | jq -r ".current.feelslike_c")
+
+  sketchybar --animate sin 30 --set "$NAME" label="${CONDITION}, Feels like ${FEELS_LIKE}°C"
 }
 
 case "$SENDER" in
   "mouse.clicked") open_app
     ;;
-  "mouse.entered") popup on
-    ;;
-  "mouse.exited") popup off
+  "mouse.entered") change_label
     ;;
   *) update
     ;;
