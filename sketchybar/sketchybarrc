@@ -71,8 +71,7 @@ sketchybar --add bracket center_bracket spotify \
 
 ##### RIGHT ITEMS #####
 
-sketchybar --add item date right \
-           --set date update_freq=60 icon=􀧞  script="$PLUGIN_DIR/date.sh" click_script="open -a Calendar"
+source "$ITEM_DIR/datetime.sh"
 
 sketchybar --add item layout right \
            --set layout update_freq=1 icon=􀺑  icon.padding_left=3 script="$PLUGIN_DIR/layout.sh"
