@@ -56,18 +56,19 @@ source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
 
 ##### CENTER ITEMS #####
-sketchybar --add item clock center \
-           --set clock update_freq=2 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
-
-##### RIGHT ITEMS #####
 
 source "$ITEM_DIR/spotify.sh"
 
-sketchybar --add item layout right \
-           --set layout update_freq=1 icon=􀺑  icon.padding_left=3 script="$PLUGIN_DIR/layout.sh"
+##### RIGHT ITEMS #####
+
+sketchybar --add item clock right \
+           --set clock update_freq=2 icon=􀐬 script="$PLUGIN_DIR/clock.sh"
 
 sketchybar --add item date right \
            --set date update_freq=60 icon=􀧞  script="$PLUGIN_DIR/date.sh" click_script="open -a Calendar"
+
+sketchybar --add item layout right \
+           --set layout update_freq=1 icon=􀺑  icon.padding_left=3 script="$PLUGIN_DIR/layout.sh"
 
 source "$ITEM_DIR/volume.sh"
 
