@@ -30,10 +30,10 @@ sketchybar --add bracket spaces '/space\..*/' \
            --set         spaces padding_left=15
 
 chevron=(
-  icon= 
+  icon= 
   icon.font="$FONT:Bold:16.0"
-  icon.padding_left=7
-  icon.padding_right=5
+  icon.padding_left=2
+  icon.padding_right=10
   icon.color=$ACCENT
   label.drawing=off
   background.corner_radius=5
