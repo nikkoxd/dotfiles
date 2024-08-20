@@ -55,11 +55,16 @@ bracket=(
 sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
+
+sketchybar --add item spacer left                \
+           --set spacer background.drawing=off   \
+                                   width=10      \
+
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
 
-sketchybar --add bracket left_bracket spaces weather mic \
+sketchybar --add bracket left_bracket spacer spaces weather mic \
            --set         left_bracket "${bracket[@]}"
 
 ##### CENTER ITEMS #####
@@ -83,7 +88,7 @@ sketchybar --add item battery right \
            --subscribe battery system_woke power_source_change
 
 sketchybar --add item vpn right \
-           --set vpn update_freq=5 icon=󰖂 icon.font="$FONT:Regular:17.0" icon.padding_right=3 script="$PLUGIN_DIR/vpn.sh" \
+           --set vpn update_freq=5 padding_left=10 icon=󰖂 icon.font="$FONT:Regular:17.0" icon.padding_right=3 script="$PLUGIN_DIR/vpn.sh" \
            --subscribe vpn mouse.clicked
 
 sketchybar --add bracket right_bracket date layout volume battery vpn \

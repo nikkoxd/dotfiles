@@ -1,6 +1,8 @@
 #!/bin/sh
 
 spotify=(
+  padding_left=10
+  padding_right=10
   scroll_texts=true
   label.max_chars=35
   update_freq=2

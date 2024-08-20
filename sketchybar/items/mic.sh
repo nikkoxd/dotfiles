@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mic=(
+  padding_right=10
   icon=􀊱
   icon.padding_right=8
   label.drawing=off

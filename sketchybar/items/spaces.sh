@@ -26,8 +26,6 @@ do
              --subscribe space.$sid mouse.clicked
 done
 
-sketchybar --set space.1 padding_left=5
-
 sketchybar --add bracket spaces '/space\..*/' \
            --set         spaces padding_left=15
 
