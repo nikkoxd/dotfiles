@@ -14,8 +14,9 @@ do
     icon.padding_right=10
     icon.background.color=$TRANSPARENT
     icon.color=$FOREGROUND
-    icon.highlight_color=$BLACK
-    background.color=$ACCENT
+    icon.highlight_color=$ACCENT
+    background.color=$BACKGROUND2
+    background.border_color=$ACCENT
     background.corner_radius=5
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
@@ -25,19 +26,18 @@ do
              --subscribe space.$sid mouse.clicked
 done
 
+sketchybar --set space.1 padding_left=5
+
 sketchybar --add bracket spaces '/space\..*/' \
            --set         spaces padding_left=15
 
 chevron=(
   icon= 
-  padding_left=10
   icon.font="$FONT:Bold:16.0"
   icon.padding_left=7
   icon.padding_right=5
-  icon.color=$BLACK
+  icon.color=$ACCENT
   label.drawing=off
-  background.color=$ACCENT
-  background.height=25
   background.corner_radius=5
   click_script="yabai -m space --create && sketchybar --trigger space_change"
 )
