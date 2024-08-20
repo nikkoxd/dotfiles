@@ -37,7 +37,6 @@ function fwal() {
   killall WallpaperAgent
 
   # reload apps
-  brew services restart borders
   sketchybar --reload
   if which walogram 2> /dev/null; then
     walogram
