@@ -9,7 +9,7 @@ do
     icon="${SPACE_ICONS[i]}"
     padding_left=0
     padding_right=0
-    icon.font="$FONT:Bold:16.0"
+    icon.font="$FONT:Bold:14.0"
     icon.padding_left=10
     icon.padding_right=10
     icon.background.color=$TRANSPARENT
@@ -25,20 +25,13 @@ do
              --subscribe space.$sid mouse.clicked
 done
 
-spaces=(
-  background.color=$BACKGROUND
-  background.corner_radius=5
-  background.height=28
-  background.drawing=on
-)
-
 sketchybar --add bracket spaces '/space\..*/' \
-           --set spaces "${spaces[@]}"
+           --set         spaces padding_left=15
 
 chevron=(
   icon= 
   padding_left=10
-  icon.font="$FONT:Bold:14.0"
+  icon.font="$FONT:Bold:16.0"
   icon.padding_left=7
   icon.padding_right=5
   icon.color=$BLACK
