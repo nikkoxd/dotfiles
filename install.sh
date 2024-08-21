@@ -17,6 +17,9 @@ fi
 ln -s $(dirname "$0")/Brewfile $HOME
 brew bundle install
 
+# Install spoof-dpi
+curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s darwin-arm64
+
 # Set $ZDOTDIR
 if grep -q "export ZDOTDIR" $HOME/.zprofile; then
   echo "\$ZDOTDIR is already set"
