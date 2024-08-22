@@ -1,30 +1,13 @@
 #!/bin/sh
 
+source "$HOME/.config/sketchybar/colors.sh"
+
 MIC_VOLUME=$(osascript -e 'input volume of (get volume settings)')
 
-update() {
-  if [[ $MIC_VOLUME -eq 0 ]]; then
-    sketchybar --set "$NAME" icon="􀊳"
-  elif [[ $MIC_VOLUME -eq 100 ]]; then
-    sketchybar --set "$NAME" icon="􀊱"
-  else
-    osascript -e 'set volume input volume 100'
-  fi
-}
-
-mouse_clicked() {
-  if [[ $MIC_VOLUME -eq 0 ]]; then
-    osascript -e 'set volume input volume 100'
-    sketchybar --set "$NAME" icon="􀊳"
-  elif [[ $MIC_VOLUME -gt 0 ]]; then
-    osascript -e 'set volume input volume 0'
-    sketchybar --set "$NAME" icon="􀊱"
-  fi
-}
-
-case "$SENDER" in
-  "mouse.clicked") mouse_clicked
-  ;;
-  *) update
-  ;;
-esac
+if [[ $MIC_VOLUME -eq 0 ]]; then
+  osascript -e 'set volume input volume 100'
+  sketchybar --set "$NAME" icon="􀊳" icon.color=$DISABLED
+elif [[ $MIC_VOLUME -gt 0 ]]; then
+  osascript -e 'set volume input volume 0'
+  sketchybar --set "$NAME" icon="􀊱" icon.color=$ACCENT
+fi
