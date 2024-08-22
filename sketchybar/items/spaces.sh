@@ -16,8 +16,7 @@ do
     icon.color=$FOREGROUND
     icon.highlight_color=$ACCENT
     background.color=$BACKGROUND2
-    background.border_color=$ACCENT
-    background.corner_radius=5
+    background.corner_radius=0
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )
