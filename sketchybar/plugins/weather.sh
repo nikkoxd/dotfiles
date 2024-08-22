@@ -3,7 +3,7 @@
 # api key from https://weatherapi.com/
 API_KEY="06008a534fe7418c84d123839240108"
 CITY="Izhevsk"
-DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
+DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY&lang=ru")
 
 WEATHER_ICONS_DAY=(
   [1000]=􀆮  # Sunny/113
@@ -125,7 +125,7 @@ change_label() {
   CONDITION=$(echo $DATA | jq -r ".current.condition.text")
   FEELS_LIKE=$(echo $DATA | jq -r ".current.feelslike_c")
 
-  sketchybar --animate sin 30 --set "$NAME" label="${CONDITION}, Feels like ${FEELS_LIKE}°C"
+  sketchybar --animate sin 30 --set "$NAME" label="${CONDITION}, Ощущается как ${FEELS_LIKE}°C"
 }
 
 case "$SENDER" in
