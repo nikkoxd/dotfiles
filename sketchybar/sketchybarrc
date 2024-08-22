@@ -55,15 +55,17 @@ sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
 
-sketchybar --add item spacer left                \
-           --set spacer background.drawing=off   \
+sketchybar --add item start_spacer left                \
+           --set start_spacer background.drawing=off   \
                                    width=10      \
 
 source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/menus.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
 
-sketchybar --add bracket left_bracket spacer spaces weather mic \
+sketchybar --add bracket left_bracket start_spacer spaces front_app menus weather mic \
            --set         left_bracket "${bracket[@]}"
 
 ##### CENTER ITEMS #####
