@@ -55,6 +55,9 @@ enable `System Preferences > Wallpaper > Show on all Spaces`
 
 </details>
 
+## Previous setups
+Old sketchybar config: https://github.com/nikkoxd/dotfiles/tree/fca8cb8ba6bc0322e5158700f0ae56c613e1c623
+
 ## TODOs
 - [x] Add an install script
 - [ ] Make some better keymaps for skhd
