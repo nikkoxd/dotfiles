@@ -20,19 +20,19 @@ ctrl - l [
 ]
 
 # warpping windows
-cmd + alt - h : yabai -m window --warp west --focus || yabai -m window --display west --focus
-cmd + alt - j : yabai -m window --warp south --focus || yabai -m window --display south --focus
-cmd + alt - k : yabai -m window --warp north --focus || yabai -m window --display north --focus
-cmd + alt - l : yabai -m window --warp east --focus || yabai -m window --display east --focus
+shift + alt - h : yabai -m window --warp west --focus || yabai -m window --display west --focus
+shift + alt - j : yabai -m window --warp south --focus || yabai -m window --display south --focus
+shift + alt - k : yabai -m window --warp north --focus || yabai -m window --display north --focus
+shift + alt - l : yabai -m window --warp east --focus || yabai -m window --display east --focus
 
 # balance space
-cmd + alt - b : yabai -m space --balance
+shift + alt - b : yabai -m space --balance
 
 # rotate space
-cmd + alt - r : yabai -m space --rotate 90
+shift + alt - r : yabai -m space --rotate 90
 
 # fullscreen a window
-cmd + alt - return : yabai -m window --toggle zoom-fullscreen
+shift + alt - return : yabai -m window --toggle zoom-fullscreen
 
 # resizing window
 hyper - h : yabai -m window --resize right:-20:0; \
@@ -57,16 +57,16 @@ hyper - 9 : yabai -m space --focus 9
 hyper - 0 : yabai -m space --focus 0
 
 # move window to space
-cmd + alt - 1 : yabai -m window --space 1 --focus
-cmd + alt - 2 : yabai -m window --space 2 --focus
-cmd + alt - 3 : yabai -m window --space 3 --focus
-cmd + alt - 4 : yabai -m window --space 4 --focus
-cmd + alt - 5 : yabai -m window --space 5 --focus
-cmd + alt - 6 : yabai -m window --space 6 --focus
-cmd + alt - 7 : yabai -m window --space 7 --focus
-cmd + alt - 8 : yabai -m window --space 8 --focus
-cmd + alt - 9 : yabai -m window --space 9 --focus
-cmd + alt - 0 : yabai -m window --space 0 --focus
+shift + alt - 1 : yabai -m window --space 1 --focus
+shift + alt - 2 : yabai -m window --space 2 --focus
+shift + alt - 3 : yabai -m window --space 3 --focus
+shift + alt - 4 : yabai -m window --space 4 --focus
+shift + alt - 5 : yabai -m window --space 5 --focus
+shift + alt - 6 : yabai -m window --space 6 --focus
+shift + alt - 7 : yabai -m window --space 7 --focus
+shift + alt - 8 : yabai -m window --space 8 --focus
+shift + alt - 9 : yabai -m window --space 9 --focus
+shift + alt - 0 : yabai -m window --space 0 --focus
 
 # toggle float
 hyper - f : yabai -m window --toggle float
