@@ -10,31 +10,31 @@ fi
 
 # Install Brew Bundle
 echo "Installing Brew Bundle"
-if [ -L $HOME/Brewfile ]; then
-  mv $HOME/Brewfile $HOME/Brewfile.backup
+if [ -L "$HOME/Brewfile" ]; then
+  mv "$HOME/Brewfile" "$HOME/Brewfile.backup"
   echo "Existing Brewfile moved to $HOME/Brewfile.backup"
 fi
-ln -s $(dirname "$0")/Brewfile $HOME
+ln -s "$(dirname "$0")/Brewfile" "$HOME"
 brew bundle install
 
 # Install spoof-dpi
 curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s darwin-arm64
 
 # Set $ZDOTDIR
-if grep -q "export ZDOTDIR" $HOME/.zprofile; then
+if grep -q "export ZDOTDIR" "$HOME/.zprofile"; then
   echo "\$ZDOTDIR is already set"
 else
-  echo "export ZDOTDIR=$HOME/.config/zsh" >> $HOME/.zprofile
+  echo "export ZDOTDIR=$HOME/.config/zsh" >> "$HOME/.zprofile"
   echo "\$ZDOTDIR has been set to $ZDOTDIR"
 fi
 
 # Symlink configs to ~/.config
-if [ -d $HOME/.config ]; then
+if [ -d "$HOME/.config" ]; then
   echo "Symlinking configs to $HOME/.config"
-  ln -s $(dirname "$0")/*/ $HOME/.config
+  ln -s "$(dirname "$0")/*/" "$HOME/.config"
 else
   echo "\$HOME/.config not found. Creating..."
-  mkdir $HOME/.config
+  mkdir "$HOME/.config"
   echo "Symlinking configs to $HOME/.config"
-  ln -s $(dirname "$0")/*/ $HOME/.config
+  ln -s "$(dirname "$0")/*/" "$HOME/.config"
 fi
