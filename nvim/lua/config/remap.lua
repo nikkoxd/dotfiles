@@ -1,7 +1,9 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+local g = vim.g
+local keymap = vim.keymap
 
-vim.keymap.set("n", "<leader>yf", "<cmd>%y+<CR>")
+g.mapleader = " "
+g.maplocalleader = ","
 
-vim.keymap.set("n", "<C-w>-", "<cmd>split<CR>")
-vim.keymap.set("n", "<C-w>|", "<cmd>vsplit<CR>")
+keymap.set("n", "<leader>yf", "<cmd>%y+<CR>")
+
+keymap.set("n", "<leader>w", "<C-w>", { noremap = true })
