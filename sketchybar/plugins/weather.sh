@@ -108,9 +108,9 @@ WEATHER_ICONS_NIGHT=(
 )
 
 update() {
-  CONDITION_CODE=$(echo $DATA | jq -r ".current.condition.code")
-  TEMP=$(echo $DATA | jq -r ".current.temp_c | floor")
-  IS_DAY=$(echo $DATA | jq -r ".current.is_day")
+  CONDITION_CODE=$(echo "$DATA" | jq -r ".current.condition.code")
+  TEMP=$(echo "$DATA" | jq -r ".current.temp_c | floor")
+  IS_DAY=$(echo "$DATA" | jq -r ".current.is_day")
 
   [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION_CODE]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION_CODE]}
 
@@ -122,8 +122,8 @@ open_app() {
 }
 
 change_label() {
-  CONDITION=$(echo $DATA | jq -r ".current.condition.text")
-  FEELS_LIKE=$(echo $DATA | jq -r ".current.feelslike_c")
+  CONDITION=$(echo "$DATA" | jq -r ".current.condition.text")
+  FEELS_LIKE=$(echo "$DATA" | jq -r ".current.feelslike_c")
 
   sketchybar --animate sin 30 --set "$NAME" label="${CONDITION}, Ощущается как ${FEELS_LIKE}°C"
 }

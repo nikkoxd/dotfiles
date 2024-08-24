@@ -4,27 +4,27 @@ POPUP_OFF="sketchybar --set apple.logo popup.drawing=off"
 POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 
 apple_logo=(
-  icon=$APPLE
-  icon.color=$COLOR1
+  icon="$APPLE"
+  icon.color="$COLOR1"
   padding_right=15
   label.drawing=off
   click_script="$POPUP_CLICK_SCRIPT"
 )
 
 apple_prefs=(
-  icon=$PREFERENCES
+  icon="$PREFERENCES"
   label="Preferences"
   click_script="open -a 'System Preferences'; $POPUP_OFF"
 )
 
 apple_activity=(
-  icon=$ACTIVITY
+  icon="$ACTIVITY"
   label="Activity"
   click_script="open -a 'Activity Monitor'; $POPUP_OFF"
 )
 
 apple_lock=(
-  icon=$LOCK 
+  icon="$LOCK"
   label="Lock Screen"
   click_script="pmset displaysleepnow; $POPUP_OFF"
 )

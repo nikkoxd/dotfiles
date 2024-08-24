@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 mic=(
   padding_right=10

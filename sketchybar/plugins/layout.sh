@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LAYOUT=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | egrep -w 'KeyboardLayout Name' | sed 's/.* = \(.*\);/\1/')
+LAYOUT=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | grep -Ew 'KeyboardLayout Name' | sed 's/.* = \(.*\);/\1/')
 INPUT_MODE=$(/usr/libexec/PlistBuddy -c "Print AppleSelectedInputSources:1:Input\ Mode" ~/Library/Preferences/com.apple.HIToolbox.plist 2> /dev/null)
 
 case "$LAYOUT" in

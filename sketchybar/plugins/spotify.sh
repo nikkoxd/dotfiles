@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 disable_popup() {
   sketchybar --set spotify popup.drawing=off
@@ -8,7 +8,7 @@ update() {
   if [ "$NAME" == "spotify" ]; then
     IS_RUNNING=$(osascript -e 'tell application "System Events" to (name of processes) contains "Spotify"')
 
-    if [ $IS_RUNNING == true ]; then
+    if [ "$IS_RUNNING" == true ]; then
       sketchybar --set "$NAME" drawing=on
 
       STATE=$(osascript -e 'tell application "Spotify" to player state')

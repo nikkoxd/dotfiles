@@ -6,10 +6,10 @@ update() {
 
 mouse_clicked() {
   if [ "$BUTTON" = "right" ]; then
-    yabai -m space --destroy $SID
+    yabai -m space --destroy "$SID"
     sketchybar --trigger space_change --trigger windows_on_spaces
   else
-    yabai -m space --focus $SID 2>/dev/null
+    yabai -m space --focus "$SID" 2>/dev/null
   fi
 }
 

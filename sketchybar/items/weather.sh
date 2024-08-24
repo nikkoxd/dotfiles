@@ -1,3 +1,5 @@
+#!/bin/bash
+
 weather=(
   icon=􀇗
   label="N/A"

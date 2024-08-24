@@ -10,11 +10,11 @@ slider=(
   icon.drawing=off
   background.drawing=off
   slider.width=100
-  slider.highlight_color=$ACCENT
+  slider.highlight_color="$ACCENT"
   slider.knob="􀀁"
-  slider.knob.color=$ACCENT
+  slider.knob.color="$ACCENT"
   slider.background.height=6
-  slider.background.color=$BACKGROUND2
+  slider.background.color="$BACKGROUND2"
   slider.background.corner_radius=5
   script="$PLUGIN_DIR/volume.sh"
 )
