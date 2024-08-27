@@ -1,32 +1,22 @@
 #!/bin/bash
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid="$((i+1))"
+for sid in $(aerospace list-workspaces --all); do
   space=(
-    space="$sid"
-    icon="${SPACE_ICONS[i]}"
     padding_left=0
     padding_right=0
-    icon.font="$FONT:Regular:14.0"
-    icon.padding_left=10
-    icon.padding_right=10
-    icon.background.color="$TRANSPARENT"
-    icon.color="$FOREGROUND"
-    icon.highlight_color="$ACCENT"
+    label="$sid"
     background.color="$BACKGROUND2"
     background.corner_radius=0
-    label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
+    background.drawing=off
+    icon.drawing=off
+    script="$PLUGIN_DIR/space.sh $sid"
   )
-  sketchybar --add space space.$sid left \
-             --set space.$sid "${space[@]}" \
-             --subscribe space.$sid mouse.clicked
+  sketchybar --add item "space.$sid" left \
+             --set "space.$sid" "${space[@]}" \
+             --subscribe "space.$sid" mouse.clicked aerospace_workspace_change
 done
 
 sketchybar --add bracket spaces '/space\..*/' \
-           --set         spaces padding_left=15
 
 chevron=(
   icon= 

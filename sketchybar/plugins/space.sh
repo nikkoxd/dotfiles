@@ -1,21 +1,25 @@
 #!/bin/sh
 
 update() {
-  sketchybar --set "$NAME" icon.highlight="$SELECTED" background.drawing="$SELECTED"
+  if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+    sketchybar --set "$NAME" background.drawing=on
+  else
+    sketchybar --set "$NAME" background.drawing=off
+  fi
 }
 
 mouse_clicked() {
   if [ "$BUTTON" = "right" ]; then
     yabai -m space --destroy "$SID"
-    sketchybar --trigger space_change --trigger windows_on_spaces
+    sketchybar --trigger aerospace_workspace_change
   else
-    yabai -m space --focus "$SID" 2>/dev/null
+    aerospace workspace "$1"
   fi
 }
 
 case "$SENDER" in
-  "mouse.clicked") mouse_clicked
+  "mouse.clicked") mouse_clicked "$@"
   ;;
-  *) update
+  *) update "$@"
   ;;
 esac

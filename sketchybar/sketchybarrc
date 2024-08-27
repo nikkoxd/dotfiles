@@ -9,6 +9,7 @@ FONT="JetBrainsMono NF"
 ICON_FONT="SF Pro"
 
 sketchybar --hotload true
+sketchybar --add event aerospace_workspace_change
 
 bar=(
   color="$TRANSPARENT"
