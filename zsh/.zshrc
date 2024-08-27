@@ -4,6 +4,10 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 HISTFILE=~/.zsh_history
 
 # completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 autoload -Uz compinit
 compinit -i
 
