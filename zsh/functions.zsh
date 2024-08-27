@@ -38,6 +38,7 @@ function fwal() {
 
   # reload apps
   sketchybar --reload
+  $($HOME/.config/spicetify/Themes/Comfy/update-colors.sh)
   if which walogram 2> /dev/null; then
     walogram
   fi
