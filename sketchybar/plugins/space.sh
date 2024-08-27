@@ -9,12 +9,7 @@ update() {
 }
 
 mouse_clicked() {
-  if [ "$BUTTON" = "right" ]; then
-    yabai -m space --destroy "$SID"
-    sketchybar --trigger aerospace_workspace_change
-  else
-    aerospace workspace "$1"
-  fi
+  aerospace workspace "$1"
 }
 
 case "$SENDER" in
