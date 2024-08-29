@@ -17,12 +17,8 @@ mouse_clicked() {
 
   if [[ $VPN != "" ]]; then
     scutil --nc stop "Aeza"
-    sleep 1
-    launchctl load "$HOME/.config/sketchybar/helpers/spoof-dpi.plist"
     sketchybar --set "$NAME" icon.color="$DISABLED"
   else
-    launchctl remove "dev.nikko.spoof-dpi"
-    sleep 1
     scutil --nc start "Aeza"
     sketchybar --set "$NAME" icon.color="$ACCENT"
   fi
