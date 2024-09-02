@@ -4,7 +4,7 @@ return {
   keys = {
     { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "Buffer Local Keymaps (which-key)" },
   },
-  opts = function()
+  config = function()
     local pywal16_core = require("pywal16.core")
     local colors = pywal16_core.get_colors()
 
