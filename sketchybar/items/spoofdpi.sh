@@ -10,7 +10,7 @@ spoofdpi=(
 sketchybar --add item spoofdpi right \
            --set spoofdpi "${spoofdpi[@]}"
 
-if [[ $(launchctl list | grep -i spoof-dpi) ]]; then
+if launchctl list | grep -qi spoof-dpi; then
   sketchybar --set spoofdpi icon=􀎤 icon.color="$ACCENT"
 else
   sketchybar --set spoofdpi icon=􀎠 icon.color="$DISABLED"
