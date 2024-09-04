@@ -9,7 +9,11 @@ return {
         },
       },
       ["core.integrations.nvim-cmp"] = {},
-      ["core.concealer"] = {},
+      ["core.concealer"] = {
+        config = {
+          icon_preset = "diamond",
+        },
+      },
       ["core.summary"] = {},
     }
   }
