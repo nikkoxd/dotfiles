@@ -27,6 +27,8 @@ opt.foldenable = true
 
 opt.termguicolors = true
 
+opt.scrolloff = 10
+
 vim.diagnostic.config({
   signs = {
     text = {
