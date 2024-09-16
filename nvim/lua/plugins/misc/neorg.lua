@@ -3,6 +3,14 @@ return {
   opts = {
     load = {
       ["core.defaults"] = {},
+      ["core.dirman"] = {
+        config = {
+          workspaces = {
+            notes = "~/Documents/neorg",
+            uni = "~/Documents/Уник/neorg",
+          },
+        },
+      },
       ["core.completion"] = {
         config = {
           engine = "nvim-cmp",
@@ -15,6 +23,7 @@ return {
         },
       },
       ["core.summary"] = {},
+      ["core.text-objects"] = {},
     }
   }
 }
