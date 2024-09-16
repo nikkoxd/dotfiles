@@ -100,7 +100,7 @@ return {
         -- vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
       end,
       view = {
-        side = "right",
+        -- side = "right",
       },
       renderer = {
         indent_markers = {
