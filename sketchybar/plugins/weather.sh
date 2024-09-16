@@ -3,7 +3,8 @@
 # api key from https://weatherapi.com/
 API_KEY="06008a534fe7418c84d123839240108"
 CITY="Izhevsk"
-DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY&lang=ru")
+LANG="ru"
+DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY&lang=$LANG")
 
 WEATHER_ICONS_DAY=(
   [1000]=􀆮  # Sunny/113
@@ -121,7 +122,7 @@ open_app() {
   open -a Weather
 }
 
-change_label() {
+show_details() {
   CONDITION=$(echo "$DATA" | jq -r ".current.condition.text")
   FEELS_LIKE=$(echo "$DATA" | jq -r ".current.feelslike_c")
 
@@ -131,7 +132,7 @@ change_label() {
 case "$SENDER" in
   "mouse.clicked") open_app
     ;;
-  "mouse.entered") change_label
+  "mouse.entered") show_details
     ;;
   *) update
     ;;
