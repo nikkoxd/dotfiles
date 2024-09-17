@@ -14,8 +14,8 @@ bar=(
   color="$BACKGROUND"
   position=top
   height=40
-  padding_right=10
-  padding_left=10
+  padding_right=20
+  padding_left=20
   display=all
   sticky=on
 )
