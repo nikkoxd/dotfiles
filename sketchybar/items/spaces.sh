@@ -20,7 +20,7 @@ do
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )
-  sketchybar --add space space.$sid left \
+  sketchybar --add space space.$sid center \
              --set space.$sid "${space[@]}" \
              --subscribe space.$sid mouse.clicked
 done
@@ -39,9 +39,5 @@ chevron=(
   click_script="yabai -m space --create && sketchybar --trigger space_change"
 )
 
-sketchybar --add item chevron left \
+sketchybar --add item chevron center \
            --set chevron "${chevron[@]}"
-
-sketchybar --add item front_app left \
-           --set front_app script="$PLUGIN_DIR/front_app.sh" \
-           --subscribe front_app front_app_switched

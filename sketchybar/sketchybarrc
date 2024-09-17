@@ -13,7 +13,7 @@ sketchybar --hotload true
 bar=(
   color="$BACKGROUND"
   position=top
-  height=45
+  height=40
   padding_right=10
   padding_left=10
   display=all
@@ -53,22 +53,24 @@ sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
 
+source "$ITEM_DIR/front_app.sh"
+
 sketchybar --add item spacer left                \
            --set spacer background.drawing=off   \
                                    width=10      \
 
-source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
 
-sketchybar --add bracket left_bracket spacer spaces weather mic \
+sketchybar --add bracket left_bracket front_app spacer weather mic \
            --set         left_bracket "${bracket[@]}"
 
 ##### CENTER ITEMS #####
 
 source "$ITEM_DIR/spotify.sh"
+source "$ITEM_DIR/spaces.sh"
 
-sketchybar --add bracket center_bracket spotify \
+sketchybar --add bracket center_bracket spotify spaces \
            --set         center_bracket "${bracket[@]}"
 
 ##### RIGHT ITEMS #####
