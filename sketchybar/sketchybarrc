@@ -11,11 +11,9 @@ ICON_FONT="SF Pro"
 sketchybar --hotload true
 
 bar=(
-  color="$TRANSPARENT"
+  color="$BACKGROUND"
   position=top
-  height=30
-  margin=5
-  y_offset=5
+  height=45
   padding_right=10
   padding_left=10
   display=all
@@ -45,7 +43,7 @@ default=(
 )
 
 bracket=(
-  background.color="$BACKGROUND"
+  background.color="$BACKGROUND2"
   background.corner_radius=10
   background.height=30
   background.drawing=on
