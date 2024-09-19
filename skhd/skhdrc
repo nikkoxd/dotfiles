@@ -59,8 +59,12 @@ hyper - n : yabai -m space --focus next
 hyper - p : yabai -m space --focus prev
 
 # add/remove space
-shift + alt - n : yabai -m space --create
+shift + alt - a : yabai -m space --create
 shift + alt - d : yabai -m space --destroy
+
+# move spaces
+shift + alt - n : yabai -m space --move next
+shift + alt - p : yabai -m space --move prev
 
 # move window to space
 shift + alt - 1 : yabai -m window --space 1 --focus
