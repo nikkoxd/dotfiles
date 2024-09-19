@@ -55,6 +55,12 @@ hyper - 7 : yabai -m space --focus 7
 hyper - 8 : yabai -m space --focus 8
 hyper - 9 : yabai -m space --focus 9
 hyper - 0 : yabai -m space --focus 0
+hyper - n : yabai -m space --focus next
+hyper - p : yabai -m space --focus prev
+
+# add/remove space
+shift + alt - n : yabai -m space --create
+shift + alt - d : yabai -m space --destroy
 
 # move window to space
 shift + alt - 1 : yabai -m window --space 1 --focus
