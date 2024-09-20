@@ -19,7 +19,7 @@ ctrl - l [
   "WezTerm"     ~
 ]
 
-# warpping windows
+# warping windows
 shift + alt - h : yabai -m window --warp west --focus || yabai -m window --display west --focus
 shift + alt - j : yabai -m window --warp south --focus || yabai -m window --display south --focus
 shift + alt - k : yabai -m window --warp north --focus || yabai -m window --display north --focus
@@ -55,8 +55,8 @@ hyper - 7 : yabai -m space --focus 7
 hyper - 8 : yabai -m space --focus 8
 hyper - 9 : yabai -m space --focus 9
 hyper - 0 : yabai -m space --focus 0
-hyper - n : yabai -m space --focus next
-hyper - p : yabai -m space --focus prev
+hyper - 0x21 : yabai -m space --focus next
+hyper - 0x1E : yabai -m space --focus prev
 
 # add/remove space
 shift + alt - a : yabai -m space --create
@@ -77,6 +77,10 @@ shift + alt - 7 : yabai -m window --space 7 --focus
 shift + alt - 8 : yabai -m window --space 8 --focus
 shift + alt - 9 : yabai -m window --space 9 --focus
 shift + alt - 0 : yabai -m window --space 0 --focus
+
+# navigating stacked windows
+hyper - n : yabai -m window --focus stack.next
+hyper - p : yabai -m window --focus stack.prev
 
 # toggle float
 hyper - f : yabai -m window --toggle float
