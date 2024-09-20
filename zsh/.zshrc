@@ -79,3 +79,11 @@ git_dirty() {
 [ -s "/Users/nikko/.bun/_bun" ] && source "/Users/nikko/.bun/_bun"
 
 antigen apply
+
+# pnpm
+export PNPM_HOME="/Users/nikko/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
