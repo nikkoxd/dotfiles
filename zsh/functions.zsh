@@ -37,8 +37,8 @@ function fwal() {
   killall WallpaperAgent
 
   # reload apps
-  sketchybar --reload
   brew services restart borders
+  sketchybar --reload
   $($HOME/.config/spicetify/Themes/Comfy/update-colors.sh)
   if which walogram 2> /dev/null; then
     walogram
