@@ -67,10 +67,9 @@ sketchybar --add bracket left_bracket front_app spacer weather mic \
 
 ##### CENTER ITEMS #####
 
-source "$ITEM_DIR/spotify.sh"
 source "$ITEM_DIR/spaces.sh"
 
-sketchybar --add bracket center_bracket spotify spaces \
+sketchybar --add bracket center_bracket spaces \
            --set         center_bracket "${bracket[@]}"
 
 ##### RIGHT ITEMS #####
@@ -96,5 +95,11 @@ source "$ITEM_DIR/spoofdpi.sh"
 
 sketchybar --add bracket right_bracket date layout volume battery vpn spoofdpi \
            --set         right_bracket "${bracket[@]}"
+
+source "$ITEM_DIR/spotify.sh"
+
+sketchybar --add bracket spotify_bracket spotify \
+           --set         spotify_bracket "${bracket[@]}"
+
 
 sketchybar --update

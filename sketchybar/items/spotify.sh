@@ -4,6 +4,8 @@ spotify=(
   padding_left=10
   padding_right=10
   scroll_texts=true
+  icon.font="$FONT:Regular:16.0"
+  label.width=0
   label.max_chars=35
   update_freq=2
   script="$PLUGIN_DIR/spotify.sh"
@@ -54,7 +56,7 @@ spotify_hide=(
   script="$PLUGIN_DIR/spotify.sh"
 )
 
-sketchybar --add item spotify center \
+sketchybar --add item spotify right \
            --set spotify "${spotify[@]}" \
            --subscribe spotify mouse.clicked \
            \
