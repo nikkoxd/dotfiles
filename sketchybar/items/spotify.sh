@@ -5,7 +5,6 @@ spotify=(
   padding_right=10
   scroll_texts=true
   icon.font="$FONT:Regular:16.0"
-  label.width=0
   label.max_chars=35
   update_freq=2
   script="$PLUGIN_DIR/spotify.sh"

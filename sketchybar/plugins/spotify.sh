@@ -22,11 +22,11 @@ update() {
 
       case "$STATE" in
         "playing")
-          sketchybar --set "$NAME" icon="􀊆" icon.padding_right=7
+          sketchybar --set "$NAME" icon="􀊅" icon.padding_right=7
           set_label
           ;;
         "paused")
-          sketchybar --set "$NAME" icon="􀊄" icon.padding_right=5
+          sketchybar --set "$NAME" icon="􀊃" icon.padding_right=5
           set_label
           ;;
         "stopped")
