@@ -18,6 +18,7 @@ bar=(
   padding_left=20
   display=all
   sticky=on
+  blur_radius=10
 )
 
 sketchybar --bar "${bar[@]}"
@@ -84,7 +85,7 @@ sketchybar --add item layout right \
 source "$ITEM_DIR/volume.sh"
 
 sketchybar --add item battery right \
-           --set battery update_freq=60 script="$PLUGIN_DIR/battery.sh" \
+           --set battery icon.padding_left=10 update_freq=60 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
 sketchybar --add bracket right_bracket date layout volume battery vpn \
