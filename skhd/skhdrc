@@ -71,6 +71,9 @@ shift + alt - 0 : yabai -m window --space 0 --focus
 # add new space
 shift + alt - n : yabai -m space --create
 
+# toggle padding
+hyper - p : yabai -m space --toggle padding && yabai -m space --toggle gap
+
 # toggle float
 hyper - f : yabai -m window --toggle float
 
