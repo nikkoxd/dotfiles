@@ -5,7 +5,7 @@ source "$HOME/.config/sketchybar/constants.sh"
 ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-FONT="MesloLGS Nerd Font"
+FONT="SFMono Nerd Font"
 ICON_FONT="SF Pro"
 
 sketchybar --hotload true
@@ -37,7 +37,7 @@ default=(
   background.color="$BACKGROUND2"
   background.height=30
   background.border_width=2
-  background.corner_radius=10
+  background.corner_radius=15
   popup.background.color="$BACKGROUND"
   popup.background.border_color="$ACCENT"
   popup.background.corner_radius=10
