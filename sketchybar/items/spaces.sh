@@ -27,17 +27,3 @@ done
 
 sketchybar --add bracket spaces '/space\..*/' \
            --set         spaces padding_left=15
-
-chevron=(
-  icon= 
-  icon.font="$FONT:Bold:16.0"
-  icon.padding_left=2
-  icon.padding_right=10
-  icon.color="$ACCENT"
-  label.drawing=off
-  background.corner_radius=5
-  click_script="yabai -m space --create && sketchybar --trigger space_change"
-)
-
-sketchybar --add item chevron center \
-           --set chevron "${chevron[@]}"

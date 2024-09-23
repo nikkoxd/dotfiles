@@ -93,8 +93,5 @@ sketchybar --add bracket right_bracket date layout volume battery vpn \
 
 source "$ITEM_DIR/spotify.sh"
 
-sketchybar --add bracket spotify_bracket spotify \
-           --set         spotify_bracket "${bracket[@]}"
-
 
 sketchybar --update
