@@ -4,8 +4,16 @@ spotify=(
   padding_left=10
   padding_right=10
   scroll_texts=true
+  icon.font="$FONT:Regular:16.0"
+  icon.padding_left=10
+  icon.padding_right=10
   label.max_chars=35
+  label.padding_left=10
+  label.padding_right=10
   update_freq=2
+  background.drawing=on
+  background.color="$BACKGROUND2"
+  background.corner_radius=10
   script="$PLUGIN_DIR/spotify.sh"
 )
 

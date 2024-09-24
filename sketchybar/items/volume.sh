@@ -1,5 +1,4 @@
 anchor=(
-  icon.padding_left=3
   popup.align=center
   script="$PLUGIN_DIR/volume.sh"
 )
