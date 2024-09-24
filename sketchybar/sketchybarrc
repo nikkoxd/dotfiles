@@ -5,7 +5,7 @@ source "$HOME/.config/sketchybar/constants.sh"
 ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
-FONT="SFMono Nerd Font"
+FONT="MesloLGS Nerd Font"
 ICON_FONT="SF Pro"
 
 sketchybar --hotload true
