@@ -13,9 +13,10 @@ sketchybar --hotload true
 bar=(
   color="$BACKGROUND"
   position=top
+  topmost=window
   height=40
-  padding_right=15
-  padding_left=15
+  padding_right=10
+  padding_left=10
   display=all
   sticky=on
   blur_radius=10
@@ -43,17 +44,11 @@ default=(
   popup.background.corner_radius=10
 )
 
-# bracket=(
-#   background.color="$BACKGROUND2"
-#   background.corner_radius=10
-#   background.height=30
-#   background.drawing=on
-# )
-
 sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
 
+source "$ITEM_DIR/flower.sh"
 source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
@@ -65,18 +60,9 @@ source "$ITEM_DIR/spaces.sh"
 ##### RIGHT ITEMS #####
 
 source "$ITEM_DIR/datetime.sh"
-
-sketchybar --add item layout right \
-           --set layout icon=󰗊 script="$PLUGIN_DIR/layout.sh" \
-           --add event layout_change "AppleSelectedInputSourcesChangedNotification" \
-           --subscribe layout layout_change
-
+source "$ITEM_DIR/layout.sh"
 source "$ITEM_DIR/volume.sh"
-
-sketchybar --add item battery right \
-           --set battery icon.padding_left=10 update_freq=60 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
-
+source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/spotify.sh"
 
 sketchybar --update
