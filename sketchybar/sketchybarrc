@@ -4,6 +4,7 @@ source "$HOME/.config/sketchybar/constants.sh"
 
 ITEM_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
+HELPERS_DIR="$CONFIG_DIR/helpers"
 
 FONT="MesloLGS Nerd Font"
 ICON_FONT="SF Pro"
@@ -49,6 +50,7 @@ sketchybar --default "${default[@]}"
 ##### LEFT ITEMS #####
 
 source "$ITEM_DIR/flower.sh"
+source "$ITEM_DIR/menus.sh"
 source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mic.sh"
