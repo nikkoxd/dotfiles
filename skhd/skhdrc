@@ -78,13 +78,8 @@ shift + alt - 8 : yabai -m window --space 8 --focus
 shift + alt - 9 : yabai -m window --space 9 --focus
 shift + alt - 0 : yabai -m window --space 0 --focus
 
-# add new space
-shift + alt - n : yabai -m space --create
-# delete current space
-shift + alt - x : yabai -m space --destroy
-
 # toggle padding
-hyper - p : yabai -m space --toggle padding && yabai -m space --toggle gap
+hyper - g : yabai -m space --toggle padding && yabai -m space --toggle gap
 
 # navigating stacked windows
 hyper - n : yabai -m window --focus stack.next
@@ -95,3 +90,6 @@ hyper - f : yabai -m window --toggle float
 
 cmd + alt + ctrl - return : open -a WezTerm
 cmd + alt + ctrl - f : open -a Finder
+
+yabai -m config mouse_modifier ctrl
+yabai -m config mouse_drop_action sutack
