@@ -2,9 +2,9 @@
 source "$HOME/.config/sketchybar/colors.sh"
 source "$HOME/.config/sketchybar/constants.sh"
 
-ITEM_DIR="$CONFIG_DIR/items"
-PLUGIN_DIR="$CONFIG_DIR/plugins"
-HELPERS_DIR="$CONFIG_DIR/helpers"
+export ITEM_DIR="$CONFIG_DIR/items"
+export PLUGIN_DIR="$CONFIG_DIR/plugins"
+export HELPERS_DIR="$CONFIG_DIR/helpers"
 
 FONT="MesloLGS Nerd Font"
 ICON_FONT="SF Pro"
