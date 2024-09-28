@@ -38,8 +38,8 @@ function fwal() {
 
   # reload apps
   brew services restart borders
+  spicetify apply
   sketchybar --reload
-  $($HOME/.config/spicetify/Themes/Comfy/update-colors.sh)
   if which walogram 2> /dev/null; then
     walogram
   fi
