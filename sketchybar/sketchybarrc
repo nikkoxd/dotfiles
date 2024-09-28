@@ -42,6 +42,7 @@ default=(
   background.corner_radius=15
   popup.background.color="$BACKGROUND"
   popup.background.border_color="$ACCENT"
+  popup.background.border_width=2
   popup.background.corner_radius=10
 )
 
