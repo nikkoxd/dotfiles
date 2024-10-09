@@ -59,6 +59,7 @@ source "$ITEM_DIR/mic.sh"
 ##### CENTER ITEMS #####
 
 source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/spotify.sh"
 
 ##### RIGHT ITEMS #####
 
@@ -66,6 +67,6 @@ source "$ITEM_DIR/datetime.sh"
 source "$ITEM_DIR/layout.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/spotify.sh"
+source "$ITEM_DIR/vpn.sh"
 
 sketchybar --update

@@ -6,9 +6,9 @@ update() {
   VPN=$(scutil --nc list | grep Connected | sed -E 's/.*"(.*)".*/\1/')
 
   if [[ $VPN != "" ]]; then
-    sketchybar --set "$NAME" icon.color="$ACCENT"
+    sketchybar --set "$NAME" background.color="$ACCENT" icon.color="$BACKGROUND"
   else
-    sketchybar --set "$NAME" icon.color="$DISABLED"
+    sketchybar --set "$NAME" background.color="$BACKGROUND2" icon.color="$ACCENT"
   fi
 }
 
@@ -16,11 +16,11 @@ mouse_clicked() {
   VPN=$(scutil --nc list | grep Connected | sed -E 's/.*"(.*)".*/\1/')
 
   if [[ $VPN != "" ]]; then
-    scutil --nc stop "Aeza"
-    sketchybar --set "$NAME" icon.color="$DISABLED"
+    scutil --nc stop "SFM"
+    sketchybar --set "$NAME" background.color="$BACKGROUND2" icon.color="$ACCENT"
   else
-    scutil --nc start "Aeza"
-    sketchybar --set "$NAME" icon.color="$ACCENT"
+    scutil --nc start "SFM"
+    sketchybar --set "$NAME" background.color="$ACCENT" icon.color="$BACKGROUND"
   fi
 }
 
