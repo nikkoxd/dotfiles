@@ -12,7 +12,7 @@ if [ "$DRAWING" == "on" ]; then
   sketchybar --set "$NAME" icon.color="$BACKGROUND" background.color="$ACCENT"
   sketchybar --set "/menu\..*/" drawing=on
 else
-  sketchybar --set "$NAME" icon.color="$ACCENT" background.color="$TRANSPARENT"
+  sketchybar --set "$NAME" icon.color="$ACCENT" background.color="$BACKGROUND2"
   sketchybar --set "/menu\..*/" drawing=off
   for i in "${!ITEMS_TO_HIDE[@]}"; do
     sketchybar --set "${ITEMS_TO_HIDE[i]}" drawing=on

@@ -18,7 +18,17 @@ for name in $MENU_ITEMS; do
     drawing="$DRAWING"
     click_script="$HOME/.config/sketchybar/helpers/menus/bin/menus -s $i"
   )
-  sketchybar --set menu.$i "${item[@]}"
+  if sketchybar --query menu.$i > /dev/null; then
+    sketchybar --set menu.$i "${item[@]}"
+  else
+    sketchybar --add item menu.$i left \
+               --set menu.$i "${item[@]}"
+
+    sketchybar --remove menus
+    sketchybar --add bracket menus "/menu\..*/" \
+               --set         menus script="$HOME/.config/sketchybar/plugins/menus.sh" \
+               --subscribe   menus front_app_switched
+  fi
 
   ((i+=1))
 done
