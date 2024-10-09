@@ -11,11 +11,15 @@ function fwal() {
 
   light=false
   image=""
+  backend="wal"
 
-  while getopts ":li:" option; do
+  while getopts ":lb:i:" option; do
     case $option in
       l)
         light=true
+        ;;
+      b)
+        backend=$OPTARG
         ;;
       i)
         image=$OPTARG
@@ -26,19 +30,23 @@ function fwal() {
         ;;
     esac
   done
-  if [ $light = true ]; then
-    wal -l -n -s -i "$image" --cols16 darken
-  else
-    wal -n -s -i "$image" --cols16 lighten
-  fi
 
   # set wallpaper and restart dock
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
   killall WallpaperAgent
 
+  args=()
+  args+=("-n" "-s" "-i" "$image" "--backend" "$backend")
+  if [ $light = true ]; then
+    args+=("-l" "--cols16" "darken")
+  else
+    args+=("--cols16" "lighten")
+  fi
+  echo "Running wal ${args[@]}"
+  wal "${args[@]}"
+
   # reload apps
   brew services restart borders
-  spicetify apply
   sketchybar --reload
   if which walogram 2> /dev/null; then
     walogram
