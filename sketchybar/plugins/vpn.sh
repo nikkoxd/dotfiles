@@ -16,10 +16,10 @@ mouse_clicked() {
   VPN=$(scutil --nc list | grep Connected | sed -E 's/.*"(.*)".*/\1/')
 
   if [[ $VPN != "" ]]; then
-    scutil --nc stop "SFM"
+    scutil --nc stop "FoXray"
     sketchybar --set "$NAME" background.color="$BACKGROUND2" icon.color="$ACCENT"
   else
-    scutil --nc start "SFM"
+    scutil --nc start "FoXray"
     sketchybar --set "$NAME" background.color="$ACCENT" icon.color="$BACKGROUND"
   fi
 }
