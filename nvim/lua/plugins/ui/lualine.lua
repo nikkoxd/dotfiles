@@ -60,10 +60,6 @@ return {
               right = 1,
             }
           },
-          {
-            require("noice").api.status.command.get,
-            cond = require("noice").api.status.command.has,
-          },
         },
         lualine_x = {
           {
