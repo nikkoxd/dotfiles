@@ -51,6 +51,12 @@ function fwal() {
   if which walogram 2> /dev/null; then
     walogram
   fi
+
+  # set fastfetch logo
+  magick convert "$image" \
+    -gravity Center \
+    -extent 1:1 \
+    "$HOME/.config/fastfetch/logo.png"
 }
 
 function yy() {

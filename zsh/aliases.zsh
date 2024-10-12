@@ -21,5 +21,6 @@ alias ld="eza --icons -d */"
 alias lt="eza --icons -T"
 
 alias lg="lazygit"
+alias fetch="clear && fastfetch --logo-recache --show-errors"
 
 alias python="python3"
