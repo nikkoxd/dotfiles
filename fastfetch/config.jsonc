@@ -6,7 +6,8 @@
       "width": 28,
       "height": 12,
       "padding": {
-        "top": 1
+        "top": 1,
+        "left": 2
       }
     },
     "display": {
