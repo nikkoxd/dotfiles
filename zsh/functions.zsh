@@ -42,13 +42,12 @@ function fwal() {
   else
     args+=("--cols16" "lighten")
   fi
-  echo "Running wal ${args[@]}"
   wal "${args[@]}"
 
   # reload apps
-  brew services restart borders &
   sketchybar --reload &
   walogram &
+  source "$HOME/.config/borders/bordersrc" &
   # set fastfetch logo
   magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
 

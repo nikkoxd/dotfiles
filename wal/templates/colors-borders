@@ -1,6 +1,6 @@
 #!/bin/bash
 
-options=(
+opts=(
   style=round
   width=5.0
   hidpi=off
@@ -8,4 +8,4 @@ options=(
   inactive_color=0xFF{color0.strip}
 )
 
-borders = "${{options[@]}}"
+borders "${{opts[@]}}"
