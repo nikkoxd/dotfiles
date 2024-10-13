@@ -33,7 +33,7 @@ function fwal() {
 
   # set wallpaper and restart dock
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
-  killall WallpaperAgent
+  pkill -f WallpaperAgent &
 
   args=()
   args+=("-n" "-s" "-i" "$image" "--backend" "$backend")
@@ -48,14 +48,9 @@ function fwal() {
   # reload apps
   brew services restart borders &
   sketchybar --reload &
-  if which walogram 2> /dev/null; then
-    walogram &
-  fi
+  walogram &
   # set fastfetch logo
-  magick convert "$image" \
-    -gravity Center \
-    -extent 1:1 \
-    "$HOME/.config/fastfetch/logo.png" &
+  magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
 
   wait
 }
