@@ -46,17 +46,18 @@ function fwal() {
   wal "${args[@]}"
 
   # reload apps
-  brew services restart borders
-  sketchybar --reload
+  brew services restart borders &
+  sketchybar --reload &
   if which walogram 2> /dev/null; then
-    walogram
+    walogram &
   fi
-
   # set fastfetch logo
   magick convert "$image" \
     -gravity Center \
     -extent 1:1 \
-    "$HOME/.config/fastfetch/logo.png"
+    "$HOME/.config/fastfetch/logo.png" &
+
+  wait
 }
 
 function yy() {
