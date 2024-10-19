@@ -3,6 +3,38 @@ function mkcd() {
   cd $1
 }
 
+function generate_tonal_palette() {
+  source "$HOME/.cache/wal/colors.sh"
+
+  lightness_values=(0 10 20 40 60 80 100)
+
+  local role_name=$1
+  local chroma=$2
+  local hue_rotation=$3
+
+  for lightness in "${lightness_values[@]}"; do
+    var_name="${role_name}_${lightness}"
+
+    if [ -z "$hue_rotation" ]; then
+      color=$(pastel set chroma "$chroma" "$color4" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
+    else
+      color=$(pastel set chroma "$chroma" "$color4" | pastel rotate "$hue_rotation" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
+    fi
+
+    echo "export $var_name=\"$color\"" >> "$HOME/.cache/wal/colors-materialyou.sh"
+  done
+}
+
+function wal_to_materialyou() {
+  : > "$HOME/.cache/wal/colors-materialyou.sh"
+
+  generate_tonal_palette "primary" 48
+  generate_tonal_palette "secondary" 16
+  generate_tonal_palette "tertiary" 24 60
+  generate_tonal_palette "neutral" 4
+  generate_tonal_palette "neutral_variant" 8
+}
+
 function fwal() {
   if [ -z "$1" ]; then
     echo "Empty list of options" >&2
@@ -43,6 +75,7 @@ function fwal() {
     args+=("--cols16" "lighten")
   fi
   wal "${args[@]}"
+  wal_to_materialyou()
 
   # reload apps
   sketchybar --reload &
