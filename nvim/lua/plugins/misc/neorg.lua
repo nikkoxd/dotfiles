@@ -24,6 +24,7 @@ return {
       },
       ["core.summary"] = {},
       ["core.text-objects"] = {},
+      ["core.export"] = {},
     }
   }
 }
