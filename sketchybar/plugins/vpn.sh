@@ -1,14 +1,14 @@
 #!/bin/bash
 
-source "colors.sh"
+source "$HOME/.config/sketchybar/colors-my.sh"
 
 update() {
   VPN=$(scutil --nc list | grep Connected | sed -E 's/.*"(.*)".*/\1/')
 
   if [[ $VPN != "" ]]; then
-    sketchybar --set "$NAME" background.color="$ACCENT" icon.color="$BACKGROUND"
+    sketchybar --set "$NAME" background.color="$primary" icon.color="$background"
   else
-    sketchybar --set "$NAME" background.color="$BACKGROUND2" icon.color="$ACCENT"
+    sketchybar --set "$NAME" background.color="$containerBackground" icon.color="$primary"
   fi
 }
 
@@ -17,10 +17,10 @@ mouse_clicked() {
 
   if [[ $VPN != "" ]]; then
     scutil --nc stop "FoXray"
-    sketchybar --set "$NAME" background.color="$BACKGROUND2" icon.color="$ACCENT"
+    sketchybar --set "$NAME" background.color="$containerBackground" icon.color="$primary"
   else
     scutil --nc start "FoXray"
-    sketchybar --set "$NAME" background.color="$ACCENT" icon.color="$BACKGROUND"
+    sketchybar --set "$NAME" background.color="$primary" icon.color="$background"
   fi
 }
 

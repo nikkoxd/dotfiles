@@ -75,7 +75,7 @@ function fwal() {
     args+=("--cols16" "lighten")
   fi
   wal "${args[@]}"
-  wal_to_materialyou()
+  wal_to_materialyou
 
   # reload apps
   sketchybar --reload &
