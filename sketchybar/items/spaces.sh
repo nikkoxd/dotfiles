@@ -11,10 +11,7 @@ do
     padding_left=0
     padding_right=0
     icon.font="$FONT:Regular:14.0"
-    icon.padding_left=11
-    icon.padding_right=13
-    # icon.padding_left=9
-    # icon.padding_right=10
+    width=31
     icon.background.color="$TRANSPARENT"
     icon.color="$text"
     icon.highlight_color="$background"
