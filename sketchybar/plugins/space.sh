@@ -2,6 +2,12 @@
 
 update() {
   sketchybar --set "$NAME" icon.highlight="$SELECTED" background.drawing="$SELECTED"
+
+  if "$SELECTED"; then
+    sketchybar --animate sin 15 --set "$NAME" width=40 
+  else
+    sketchybar --animate sin 15 --set "$NAME" width=30
+  fi
 }
 
 mouse_clicked() {
