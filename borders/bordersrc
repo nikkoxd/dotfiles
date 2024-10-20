@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source "/Users/nikko/.cache/wal/colors-materialyou.sh"
+
+borders blacklist="Simulator"
+
+opts=(
+  style=round
+  width=6.0
+  hidpi=off
+  active_color=0xff"$primary_80"
+  inactive_color=0xff"$secondary_40"
+)
+
+borders "${opts[@]}"
