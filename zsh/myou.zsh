@@ -118,24 +118,24 @@ generate_pywal_theme() {
     touch "$theme_path"
   fi
 
-  local background=$neutral_variant_20
-  local foreground=$neutral_100
-  local cursor=$neutral_100
+  local background=$neutral_10
+  local foreground=$neutral_95
+  local cursor=$neutral_95
   local color0=$neutral_10
-  local color1=$secondary_80
-  local color2=$secondary_40
+  local color1=$tertiary_80
+  local color2=$tertiary_60
   local color3=$primary_40
   local color4=$primary_80
-  local color5=$tertiary_80
-  local color6=$tertiary_80
+  local color5=$secondary_80
+  local color6=$secondary_70
   local color7=$neutral_80
   local color8=$neutral_variant_40
-  local color9=$secondary_80
-  local color10=$secondary_40
-  local color11=$primary_80
-  local color12=$primary_40
-  local color13=$tertiary_80
-  local color14=$tertiary_40
+  local color9=$tertiary_90
+  local color10=$tertiary_70
+  local color11=$primary_50
+  local color12=$primary_90
+  local color13=$secondary_90
+  local color14=$secondary_80
   local color15=$neutral_90
 
   # Start writing JSON structure
