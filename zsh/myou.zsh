@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-
 generate_tonal_palette() {
   lightness_values=(0 10 20 30 40 50 60 70 80 90 95 99 100)
 
@@ -15,7 +14,7 @@ generate_tonal_palette() {
     if [ -z "$hue_rotation" ]; then
       color=$(pastel set chroma "$chroma" "$color" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
     else
-      color=$(pastel set chroma "$chroma" "$color" | pastel rotate "$hue_rotation" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
+      color=$(pastel rotate "$hue_rotation" "$color" | pastel set chroma "$chroma" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
     fi
 
     echo "export $var_name=\"$color\"" >> "$HOME/.cache/wal/colors-materialyou.sh"
@@ -24,62 +23,42 @@ generate_tonal_palette() {
 }
 
 assign_color_roles() {
-  # declare -A color_roles=(
-  #   ["primary"]="primary_40"
-  #   ["on-primary"]="primary_100"
-  #   ["primary-container"]="primary_90"
-  #   ["on-primary-container"]="primary_10"
+  declare -A color_roles=(
+    ["primary"]="primary_80"
+    ["on-primary"]="primary_20"
+    ["primary-container"]="primary_30"
+    ["on-primary-container"]="primary_90"
 
-  #   ["secondary"]="secondary_40"
-  #   ["on-secondary"]="secondary_100"
-  #   ["secondary-container"]="secondary_90"
-  #   ["on-secondary-container"]="secondary_10"
+    ["secondary"]="secondary_80"
+    ["on-secondary"]="secondary_20"
+    ["secondary-container"]="secondary_30"
+    ["on-secondary-container"]="secondary_90"
 
-  #   ["tertiary"]="tertiary_40"
-  #   ["on-tertiary"]="tertiary_100"
-  #   ["tertiary-container"]="tertiary_90"
-  #   ["on-tertiary-container"]="tertiary_10"
+    ["tertiary"]="tertiary_80"
+    ["on-tertiary"]="tertiary_20"
+    ["tertiary-container"]="tertiary_30"
+    ["on-tertiary-container"]="tertiary_90"
 
-  #   ["error"]="error_40"
-  #   ["on-error"]="error_100"
-  #   ["error-container"]="error_90"
-  #   ["on-error-container"]="error_10"
+    ["error"]="error_80"
+    ["on-error"]="error_20"
+    ["error-container"]="error_30"
+    ["on-error-container"]="error_90"
 
-  #   ["primary-fixed"]="primary_90"
-  #   ["primary-fixed-dim"]="primary_80"
-  #   ["on-primary-fixed"]="primary_30"
-  #   ["on-primary-fixed-variant"]="primary_10"
+    ["surface-dim"]="neutral_10"
+    ["surface"]="neutral_10"
+    ["surface-bright"]="neutral_20"
+    ["on-surface"]="neutral_90"
+    ["on-surface-variant"]="neutral_variant_90"
+    ["outline"]="neutral_variant_60"
+    ["outline-variant"]="neutral_variant_30"
 
-  #   ["secondary-fixed"]="secondary_90"
-  #   ["secondary-fixed-dim"]="secondary_80"
-  #   ["on-secondary-fixed"]="secondary_30"
-  #   ["on-secondary-fixed-variant"]="secondary_10"
+    ["inverse-surface"]="neutral_90"
+    ["inverse-on-surface"]="neutral_20"
+    ["inverse-primary"]="primary_40"
 
-  #   ["tertiary-fixed"]="tertiary_90"
-  #   ["tertiary-fixed-dim"]="tertiary_80"
-  #   ["on-tertiary-fixed"]="tertiary_30"
-  #   ["on-tertiary-fixed-variant"]="tertiary_10"
-
-  #   ["surface-dim"]="neutral_90"
-  #   ["surface"]="neutral_95"
-  #   ["surface-bright"]="neutral_99"
-  #   ["surface-container-lowest"]="neutral_100"
-  #   ["surface-container-low"]="neutral_95"
-  #   ["surface-container"]="neutral_90"
-  #   ["surface-container-high"]="neutral_80"
-  #   ["surface-container-highest"]="neutral_70"
-  #   ["on-surface"]="neutral_10"
-  #   ["on-surface-variant"]="neutral_variant_20"
-  #   ["outline"]="neutral_50"
-  #   ["outline-variant"]="neutral_variant_50"
-
-  #   ["inverse-surface"]="neutral_20"
-  #   ["inverse-on-surface"]="neutral_95"
-  #   ["inverse-primary"]="primary_80"
-
-  #   ["scrim"]="neutral_0"
-  #   ["shadow"]="neutral_0"
-  # )
+    ["scrim"]="neutral_0"
+    ["shadow"]="neutral_0"
+  )
   for role in "${(@k)color_roles}"; do
     color_variable="${color_roles[$role]}"
 
@@ -95,9 +74,10 @@ generate_colors() {
   : > "$HOME/.cache/wal/colors-materialyou.sh"
   echo ":root {" > "$HOME/.cache/wal/colors-materialyou.css"
 
-  generate_tonal_palette $color "primary" 48
-  generate_tonal_palette $color "secondary" 16
-  generate_tonal_palette $color "tertiary" 24 60
+  generate_tonal_palette $color "primary" 90
+  generate_tonal_palette $color "secondary" 30
+  generate_tonal_palette $color "tertiary" 45 60
+  generate_tonal_palette $color "error" 80
   generate_tonal_palette $color "neutral" 4
   generate_tonal_palette $color "neutral_variant" 8
 
