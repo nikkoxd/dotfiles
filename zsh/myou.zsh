@@ -21,7 +21,7 @@ generate_tonal_palette() {
 }
 
 assign_color_roles() {
-  local color_roles=(
+  color_roles=(
     ["primary"]="primary_80"
     ["on-primary"]="primary_20"
     ["primary-container"]="primary_30"
@@ -57,42 +57,47 @@ assign_color_roles() {
     ["scrim"]="neutral_0"
     ["shadow"]="neutral_0"
   )
-  local light_color_roles=(
-    ["primary"]="primary_40"
-    ["on-primary"]="primary_100"
-    ["primary-container"]="primary_90"
-    ["on-primary-container"]="primary_10"
 
-    ["secondary"]="secondary_40"
-    ["on-secondary"]="secondary_100"
-    ["secondary-container"]="secondary_90"
-    ["on-secondary-container"]="secondary_10"
+  light_mode=$1
+  if [ $light_mode = true ]; then
+    color_roles=(
+      ["primary"]="primary_40"
+      ["on-primary"]="primary_100"
+      ["primary-container"]="primary_90"
+      ["on-primary-container"]="primary_10"
 
-    ["tertiary"]="tertiary_40"
-    ["on-tertiary"]="tertiary_100"
-    ["tertiary-container"]="tertiary_90"
-    ["on-tertiary-container"]="tertiary_10"
+      ["secondary"]="secondary_40"
+      ["on-secondary"]="secondary_100"
+      ["secondary-container"]="secondary_90"
+      ["on-secondary-container"]="secondary_10"
 
-    ["error"]="error_40"
-    ["on-error"]="error_100"
-    ["error-container"]="error_90"
-    ["on-error-container"]="error_10"
+      ["tertiary"]="tertiary_40"
+      ["on-tertiary"]="tertiary_100"
+      ["tertiary-container"]="tertiary_90"
+      ["on-tertiary-container"]="tertiary_10"
 
-    ["surface-dim"]="neutral_90"
-    ["surface"]="neutral_99"
-    ["surface-bright"]="neutral_99"
-    ["on-surface"]="neutral_10"
-    ["on-surface-variant"]="neutral_variant_30"
-    ["outline"]="neutral_variant_50"
-    ["outline-variant"]="neutral_variant_80"
+      ["error"]="error_40"
+      ["on-error"]="error_100"
+      ["error-container"]="error_90"
+      ["on-error-container"]="error_10"
 
-    ["inverse-surface"]="neutral_20"
-    ["inverse-on-surface"]="neutral_95"
-    ["inverse-primary"]="primary_80"
+      ["surface-dim"]="neutral_90"
+      ["surface"]="neutral_99"
+      ["surface-bright"]="neutral_99"
+      ["on-surface"]="neutral_10"
+      ["on-surface-variant"]="neutral_variant_30"
+      ["outline"]="neutral_variant_50"
+      ["outline-variant"]="neutral_variant_80"
 
-    ["scrim"]="neutral_0"
-    ["shadow"]="neutral_0"
-  )
+      ["inverse-surface"]="neutral_20"
+      ["inverse-on-surface"]="neutral_95"
+      ["inverse-primary"]="primary_80"
+
+      ["scrim"]="neutral_0"
+      ["shadow"]="neutral_0"
+    )
+  fi
+
   for role in "${(@k)color_roles}"; do
     color_variable="${color_roles[$role]}"
 
@@ -125,6 +130,7 @@ generate_colors() {
 
 generate_pywal_theme() {
   local image=$1
+  local light_mode=$2
   source "$HOME/.cache/wal/colors-materialyou.sh"
 
   local theme_path="$HOME/.config/wal/colorschemes/dark/myou.json"
@@ -151,6 +157,28 @@ generate_pywal_theme() {
   local color13=$secondary_90
   local color14=$secondary_80
   local color15=$neutral_90
+
+  if [ $light_mode = true ]; then
+    background=$neutral_90
+    foreground=$neutral_10
+    cursor=$neutral_10
+    color0=$neutral_90
+    color1=$tertiary_40
+    color2=$tertiary_30
+    color3=$primary_30
+    color4=$primary_40
+    color5=$secondary_40
+    color6=$secondary_30
+    color7=$neutral_40
+    color8=$neutral_variant_30
+    color9=$tertiary_60
+    color10=$tertiary_50
+    color11=$primary_50
+    color12=$primary_60
+    color13=$secondary_60
+    color14=$secondary_50
+    color15=$neutral_60
+  fi
 
   echo "{" > $theme_path
   echo "    \"wallpaper\": \"$image\"," >> $theme_path
@@ -191,7 +219,7 @@ myou() {
   light=false
   image=""
 
-  while getopts ":l:i:" option; do
+  while getopts ":li:" option; do
     case $option in
       l)
         light=true
@@ -213,13 +241,13 @@ myou() {
   # generate main color
   colors=("${(@s: :)$(colorz -n 1 --maxv 250 "$image" --no-preview)}")
   generate_colors ${colors[1]} 
-  generate_pywal_theme "$image"
+  generate_pywal_theme "$image" "$light"
 
   # run pywal
   wal -n -s --theme "$HOME/.config/wal/colorschemes/dark/myou.json"
   # reload apps
   sketchybar --reload &
-  walogram &
+  walogram -i "$image" &
   source "$HOME/.config/borders/bordersrc" &
   python3 -m pywalfox update &
   # set fastfetch logo
