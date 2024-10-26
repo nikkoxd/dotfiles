@@ -7,9 +7,10 @@
 
 ## TODO for this branch
 - [x] Integrate the colorscheme generation alorithm with pywal
-- [ ] Find a replacement for colorz (don't like what colors it picks from images)
-- [ ] Implement light theme generation
+- [x] Implement light theme generation
+- [ ] Include pywalfox config in the repo
 - [ ] Fix pastel generating different colors when changing lightness after rotating the hue
+- [ ] ~~Find a replacement for colorz (don't like what colors it picks from images)~~
 
 ## Requirements
 - gcc-14
