@@ -17,8 +17,12 @@ fi
 ln -s "$(dirname "$0")/Brewfile" "$HOME"
 brew bundle install
 
-# Install spoof-dpi
-curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s darwin-arm64
+# Install colorz
+pipx install colorz
+
+# Install Pywalfox
+pip3 install pywalfox
+python3 -m pywalfox install
 
 # Set $ZDOTDIR
 if grep -q "export ZDOTDIR" "$HOME/.zprofile"; then
