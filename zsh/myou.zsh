@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 generate_tonal_palette() {
   lightness_values=(0 10 20 30 40 50 60 70 80 90 95 99 100)
 
@@ -23,7 +21,7 @@ generate_tonal_palette() {
 }
 
 assign_color_roles() {
-  declare -A color_roles=(
+  local color_roles=(
     ["primary"]="primary_80"
     ["on-primary"]="primary_20"
     ["primary-container"]="primary_30"
@@ -74,7 +72,7 @@ generate_colors() {
   : > "$HOME/.cache/wal/colors-materialyou.sh"
   echo ":root {" > "$HOME/.cache/wal/colors-materialyou.css"
 
-  generate_tonal_palette $color "primary" 90
+  generate_tonal_palette $color "primary" 40
   generate_tonal_palette $color "secondary" 30
   generate_tonal_palette $color "tertiary" 45 60
   generate_tonal_palette $color "error" 80
@@ -118,7 +116,6 @@ generate_pywal_theme() {
   local color14=$secondary_80
   local color15=$neutral_90
 
-  # Start writing JSON structure
   echo "{" > $theme_path
   echo "    \"wallpaper\": \"$image\"," >> $theme_path
   echo "    \"alpha\": \"100\"," >> $theme_path
@@ -128,24 +125,14 @@ generate_pywal_theme() {
   echo "        \"cursor\": \"#$cursor\"" >> $theme_path
   echo "    }," >> $theme_path
   echo "    \"colors\": {" >> $theme_path
-
-  # Background colors
   echo "        \"color0\": \"#$color0\"," >> $theme_path
-
-  # Secondary colors
   echo "        \"color1\": \"#$color1\"," >> $theme_path
   echo "        \"color2\": \"#$color2\"," >> $theme_path
   echo "        \"color3\": \"#$color3\"," >> $theme_path
-
-  # Primary colors
   echo "        \"color4\": \"#$color4\"," >> $theme_path
   echo "        \"color5\": \"#$color5\"," >> $theme_path
-
-  # Tertiary colors
   echo "        \"color6\": \"#$color6\"," >> $theme_path
   echo "        \"color7\": \"#$color7\"," >> $theme_path
-
-  # Lighter variations
   echo "        \"color8\": \"#$color8\"," >> $theme_path
   echo "        \"color9\": \"#$color9\"," >> $theme_path
   echo "        \"color10\": \"#$color10\"," >> $theme_path
@@ -154,8 +141,6 @@ generate_pywal_theme() {
   echo "        \"color13\": \"#$color13\"," >> $theme_path
   echo "        \"color14\": \"#$color14\"," >> $theme_path
   echo "        \"color15\": \"#$color15\"" >> $theme_path
-
-  # Close JSON structure
   echo "    }," >> $theme_path
   echo "    \"checksum\": \"None\"" >> $theme_path
   echo "}" >> $theme_path
@@ -190,7 +175,7 @@ myou() {
   pkill -f WallpaperAgent &
 
   # generate main color
-  colors=("${(@s: :)$(colorz -n 1 "$image" --no-preview)}")
+  colors=("${(@s: :)$(colorz -n 1 --maxv 250 "$image" --no-preview)}")
   generate_colors ${colors[1]} 
   generate_pywal_theme "$image"
 
