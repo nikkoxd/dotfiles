@@ -16,6 +16,7 @@ source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/exports.zsh"
 source "$HOME/.config/zsh/functions.zsh"
+source "$HOME/.config/zsh/myou.zsh"
 
 # plugins
 antigen bundle zsh-users/zsh-autosuggestions
