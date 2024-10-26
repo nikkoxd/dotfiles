@@ -57,6 +57,42 @@ assign_color_roles() {
     ["scrim"]="neutral_0"
     ["shadow"]="neutral_0"
   )
+  local light_color_roles=(
+    ["primary"]="primary_40"
+    ["on-primary"]="primary_100"
+    ["primary-container"]="primary_90"
+    ["on-primary-container"]="primary_10"
+
+    ["secondary"]="secondary_40"
+    ["on-secondary"]="secondary_100"
+    ["secondary-container"]="secondary_90"
+    ["on-secondary-container"]="secondary_10"
+
+    ["tertiary"]="tertiary_40"
+    ["on-tertiary"]="tertiary_100"
+    ["tertiary-container"]="tertiary_90"
+    ["on-tertiary-container"]="tertiary_10"
+
+    ["error"]="error_40"
+    ["on-error"]="error_100"
+    ["error-container"]="error_90"
+    ["on-error-container"]="error_10"
+
+    ["surface-dim"]="neutral_90"
+    ["surface"]="neutral_99"
+    ["surface-bright"]="neutral_99"
+    ["on-surface"]="neutral_10"
+    ["on-surface-variant"]="neutral_variant_30"
+    ["outline"]="neutral_variant_50"
+    ["outline-variant"]="neutral_variant_80"
+
+    ["inverse-surface"]="neutral_20"
+    ["inverse-on-surface"]="neutral_95"
+    ["inverse-primary"]="primary_80"
+
+    ["scrim"]="neutral_0"
+    ["shadow"]="neutral_0"
+  )
   for role in "${(@k)color_roles}"; do
     color_variable="${color_roles[$role]}"
 
@@ -185,6 +221,7 @@ myou() {
   sketchybar --reload &
   walogram &
   source "$HOME/.config/borders/bordersrc" &
+  python3 -m pywalfox update &
   # set fastfetch logo
   magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
   wait
