@@ -5,6 +5,12 @@
 
 <p align="center">feat: yabai, sketchybar, pywal</p>
 
+## TODO for this branch
+- [x] Integrate the colorscheme generation alorithm with pywal
+- [ ] Find a replacement for colorz (don't like what colors it picks from images)
+- [ ] Implement light theme generation
+- [ ] Fix pastel generating different colors when changing lightness after rotating the hue
+
 ## Requirements
 - gcc-14
 
@@ -57,7 +63,3 @@ enable `System Preferences > Wallpaper > Show on all Spaces`
 
 ## Previous setups
 Old sketchybar config: https://github.com/nikkoxd/dotfiles/tree/fca8cb8ba6bc0322e5158700f0ae56c613e1c623
-
-## TODOs
-- [x] Add an install script
-- [ ] Make some better keymaps for skhd
