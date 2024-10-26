@@ -1,5 +1,5 @@
 generate_tonal_palette() {
-  lightness_values=(0 10 20 30 40 50 60 70 80 90 95 99 100)
+  lightness_values=(0 5 10 20 30 40 50 60 70 80 90 95 99 100)
 
   local color=$1
   local role_name=$2
@@ -21,77 +21,92 @@ generate_tonal_palette() {
 }
 
 assign_color_roles() {
-  color_roles=(
+  local light_mode=$1
+
+  declare -A color_roles=(
     ["primary"]="primary_80"
-    ["on-primary"]="primary_20"
-    ["primary-container"]="primary_30"
-    ["on-primary-container"]="primary_90"
+    ["on_primary"]="primary_20"
+    ["primary_container"]="primary_30"
+    ["on_primary_container"]="primary_90"
 
     ["secondary"]="secondary_80"
-    ["on-secondary"]="secondary_20"
-    ["secondary-container"]="secondary_30"
-    ["on-secondary-container"]="secondary_90"
+    ["on_secondary"]="secondary_20"
+    ["secondary_container"]="secondary_30"
+    ["on_secondary_container"]="secondary_90"
 
     ["tertiary"]="tertiary_80"
-    ["on-tertiary"]="tertiary_20"
-    ["tertiary-container"]="tertiary_30"
-    ["on-tertiary-container"]="tertiary_90"
+    ["on_tertiary"]="tertiary_20"
+    ["tertiary_container"]="tertiary_30"
+    ["on_tertiary_container"]="tertiary_90"
 
     ["error"]="error_80"
-    ["on-error"]="error_20"
-    ["error-container"]="error_30"
-    ["on-error-container"]="error_90"
+    ["on_error"]="error_20"
+    ["error_container"]="error_30"
+    ["on_error_container"]="error_90"
 
-    ["surface-dim"]="neutral_10"
+    ["surface_dim"]="neutral_10"
     ["surface"]="neutral_10"
-    ["surface-bright"]="neutral_20"
-    ["on-surface"]="neutral_90"
-    ["on-surface-variant"]="neutral_variant_90"
-    ["outline"]="neutral_variant_60"
-    ["outline-variant"]="neutral_variant_30"
+    ["surface_bright"]="neutral_20"
 
-    ["inverse-surface"]="neutral_90"
-    ["inverse-on-surface"]="neutral_20"
-    ["inverse-primary"]="primary_40"
+    ["surface_container_lowest"]="neutral_5"
+    ["surface_container_low"]="neutral_10"
+    ["surface_container"]="neutral_10"
+    ["surface_container_high"]="neutral_10"
+    ["surface_container_highest"]="neutral_20"
+
+    ["on_surface"]="neutral_90"
+    ["on_surface_variant"]="neutral_variant_90"
+    ["outline"]="neutral_variant_60"
+    ["outline_variant"]="neutral_variant_30"
+
+    ["inverse_surface"]="neutral_90"
+    ["inverse_on_surface"]="neutral_20"
+    ["inverse_primary"]="primary_40"
 
     ["scrim"]="neutral_0"
     ["shadow"]="neutral_0"
   )
 
-  light_mode=$1
   if [ $light_mode = true ]; then
     color_roles=(
       ["primary"]="primary_40"
-      ["on-primary"]="primary_100"
-      ["primary-container"]="primary_90"
-      ["on-primary-container"]="primary_10"
+      ["on_primary"]="primary_100"
+      ["primary_container"]="primary_90"
+      ["on_primary_container"]="primary_10"
 
       ["secondary"]="secondary_40"
-      ["on-secondary"]="secondary_100"
-      ["secondary-container"]="secondary_90"
-      ["on-secondary-container"]="secondary_10"
+      ["on_secondary"]="secondary_100"
+      ["secondary_container"]="secondary_90"
+      ["on_secondary_container"]="secondary_10"
 
       ["tertiary"]="tertiary_40"
-      ["on-tertiary"]="tertiary_100"
-      ["tertiary-container"]="tertiary_90"
-      ["on-tertiary-container"]="tertiary_10"
+      ["on_tertiary"]="tertiary_100"
+      ["tertiary_container"]="tertiary_90"
+      ["on_tertiary_container"]="tertiary_10"
 
       ["error"]="error_40"
-      ["on-error"]="error_100"
-      ["error-container"]="error_90"
-      ["on-error-container"]="error_10"
+      ["on_error"]="error_100"
+      ["error_container"]="error_90"
+      ["on_error_container"]="error_10"
 
-      ["surface-dim"]="neutral_90"
+      ["surface_dim"]="neutral_90"
       ["surface"]="neutral_99"
-      ["surface-bright"]="neutral_99"
-      ["on-surface"]="neutral_10"
-      ["on-surface-variant"]="neutral_variant_30"
-      ["outline"]="neutral_variant_50"
-      ["outline-variant"]="neutral_variant_80"
+      ["surface_bright"]="neutral_99"
 
-      ["inverse-surface"]="neutral_20"
-      ["inverse-on-surface"]="neutral_95"
-      ["inverse-primary"]="primary_80"
+      ["surface_container_lowest"]="neutral_100"
+      ["surface_container_low"]="neutral_95"
+      ["surface_container"]="neutral_95"
+      ["surface_container_high"]="neutral_95"
+      ["surface_container_highest"]="neutral_90"
+
+      ["on_surface"]="neutral_10"
+      ["on_surface_variant"]="neutral_variant_30"
+      ["outline"]="neutral_variant_50"
+      ["outline_variant"]="neutral_variant_80"
+
+      ["inverse_surface"]="neutral_20"
+      ["inverse_on_surface"]="neutral_95"
+      ["inverse_primary"]="primary_80"
 
       ["scrim"]="neutral_0"
       ["shadow"]="neutral_0"
@@ -108,7 +123,8 @@ assign_color_roles() {
 }
 
 generate_colors() {
-  color=$1
+  local color=$1
+  local light_mode=$2
 
   : > "$HOME/.cache/wal/colors-materialyou.sh"
   echo ":root {" > "$HOME/.cache/wal/colors-materialyou.css"
@@ -123,7 +139,7 @@ generate_colors() {
   echo "" >> "$HOME/.cache/wal/colors-materialyou.sh"
   echo "" >> "$HOME/.cache/wal/colors-materialyou.css"
 
-  # assign_color_roles
+  assign_color_roles "$light_mode"
 
   echo "}" >> "$HOME/.cache/wal/colors-materialyou.css"
 }
@@ -233,18 +249,27 @@ myou() {
         ;;
     esac
   done
-
   # set wallpaper and restart dock
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
   pkill -f WallpaperAgent &
 
   # generate main color
   colors=("${(@s: :)$(colorz -n 1 --maxv 250 "$image" --no-preview)}")
-  generate_colors ${colors[1]} 
+  generate_colors ${colors[1]} "$light"
   generate_pywal_theme "$image" "$light"
 
   # run pywal
   wal -n -s --theme "$HOME/.config/wal/colorschemes/dark/myou.json"
+
+  # set macos and pywalfox mode
+  if [ $light = true ]; then
+    osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
+    python3 -m pywalfox light
+  else
+    osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
+    python3 -m pywalfox dark
+  fi
+
   # reload apps
   sketchybar --reload &
   walogram -i "$image" &
