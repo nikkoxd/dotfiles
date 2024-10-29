@@ -6,14 +6,14 @@ generate_tonal_palette() {
   local chroma=$3
   local hue_rotation=$4
 
+  if [ -n "$hue_rotation" ]; then
+    color=$(pastel rotate "$hue_rotation" "$color" | pastel format hex)
+  fi
+
   for lightness in "${lightness_values[@]}"; do
     var_name="${role_name}_${lightness}"
 
-    if [ -z "$hue_rotation" ]; then
-      color=$(pastel set chroma "$chroma" "$color" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
-    else
-      color=$(pastel rotate "$hue_rotation" "$color" | pastel set chroma "$chroma" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
-    fi
+    color=$(pastel set chroma "$chroma" "$color" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
 
     echo "export $var_name=\"$color\"" >> "$HOME/.cache/wal/colors-materialyou.sh"
     echo "  --$var_name: #$color;" >> "$HOME/.cache/wal/colors-materialyou.css"
@@ -277,5 +277,7 @@ myou() {
   python3 -m pywalfox update &
   # set fastfetch logo
   magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
+  # copy wallpaper to zen profile
+  cp "$image" "$(find "$HOME/Library/Application Support/zen/Profiles" -type d -name "*alpha*" | head -n 1)/chrome/img/wallpaper.jpg"
   wait
 }
