@@ -9,7 +9,7 @@ opts=(
   width=6.0
   hidpi=off
   active_color=0xff"$primary"
-  inactive_color=0xff"$inverse_primary"
+  inactive_color=0xff"$surface"
 )
 
 borders "${opts[@]}"
