@@ -129,7 +129,7 @@ generate_colors() {
   : > "$HOME/.cache/wal/colors-materialyou.sh"
   echo ":root {" > "$HOME/.cache/wal/colors-materialyou.css"
 
-  generate_tonal_palette $color "primary" 40
+  generate_tonal_palette $color "primary" 50
   generate_tonal_palette $color "secondary" 30
   generate_tonal_palette $color "tertiary" 45 60
   generate_tonal_palette $color "error" 80
