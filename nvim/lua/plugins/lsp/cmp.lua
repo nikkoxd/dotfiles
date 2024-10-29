@@ -75,6 +75,7 @@ return {
         { name = "path" },    -- file system paths
         { name = "emoji" },
         { name = "neorg" },
+        { name = "vim-dadbod-completion" },
       }),
       formatting = {
         fields = { "kind", "abbr", "menu" },
