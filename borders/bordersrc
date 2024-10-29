@@ -8,8 +8,8 @@ opts=(
   style=round
   width=6.0
   hidpi=off
-  active_color=0xff"$primary_80"
-  inactive_color=0xff"$secondary_40"
+  active_color=0xff"$primary"
+  inactive_color=0xff"$inverse_primary"
 )
 
 borders "${opts[@]}"
