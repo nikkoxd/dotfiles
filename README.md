@@ -5,13 +5,6 @@
 
 <p align="center">feat: yabai, sketchybar, pywal</p>
 
-## TODO for this branch
-- [x] Integrate the colorscheme generation alorithm with pywal
-- [x] Implement light theme generation
-- [x] Fix pastel generating different colors when changing lightness after rotating the hue
-- [ ] Include pywalfox config in the repo
-- [ ] ~~Find a replacement for colorz (don't like what colors it picks from images)~~
-
 ## Requirements
 - gcc-14
 
