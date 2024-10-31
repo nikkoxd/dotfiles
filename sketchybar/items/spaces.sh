@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-SPACE_ICONS=("一" "二" "三" "四" "五" "六" "七" "八" "九" "十")
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+# SPACE_ICONS=("一" "二" "三" "四" "五" "六" "七" "八" "九" "十")
 for i in "${!SPACE_ICONS[@]}"
 do
   sid="$((i+1))"
@@ -11,14 +11,11 @@ do
     padding_left=0
     padding_right=0
     icon.font="$FONT:Regular:14.0"
-    # icon.padding_left=11
-    # icon.padding_right=13
-    icon.padding_left=9
-    icon.padding_right=10
+    width=30
     icon.background.color="$TRANSPARENT"
-    icon.color="$FOREGROUND"
-    icon.highlight_color="$BACKGROUND"
-    background.color="$ACCENT"
+    icon.color="$text"
+    icon.highlight_color="$background"
+    background.color="$primary"
     background.corner_radius=100
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"

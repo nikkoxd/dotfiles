@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -58,6 +59,7 @@ return {
       end
     end
 
+    local lspconfig = require("lspconfig")
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -68,14 +70,13 @@ return {
 
       handlers = {
         function(server_name)
-          require("lspconfig")[server_name].setup {
+          lspconfig[server_name].setup {
             capabilities = capabilities,
             on_attach = on_attach
           }
         end,
 
-        ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
+        lua_ls = function()
           lspconfig.lua_ls.setup {
             settings = {
               Lua = {
@@ -88,8 +89,7 @@ return {
           }
         end,
 
-        ["jsonls"] = function()
-          local lspconfig = require("lspconfig")
+        jsonls = function()
           lspconfig.jsonls.setup {
             settings = {
               json = {
@@ -100,6 +100,12 @@ return {
             on_attach = on_attach
           }
         end,
+
+        bashls = function()
+          lspconfig.bashls.setup {
+            filetypes = { "sh", "zsh" }
+          }
+        end
       }
     })
   end

@@ -17,9 +17,6 @@ fi
 ln -s "$(dirname "$0")/Brewfile" "$HOME"
 brew bundle install
 
-# Install spoof-dpi
-curl -fsSL https://raw.githubusercontent.com/xvzc/SpoofDPI/main/install.sh | bash -s darwin-arm64
-
 # Set $ZDOTDIR
 if grep -q "export ZDOTDIR" "$HOME/.zprofile"; then
   echo "\$ZDOTDIR is already set"
@@ -38,3 +35,18 @@ else
   echo "Symlinking configs to $HOME/.config"
   ln -s "$(dirname "$0")/*/" "$HOME/.config"
 fi
+
+# Install colorz
+pipx install colorz
+
+# Install Pywalfox
+pip3 install pywalfox
+python3 -m pywalfox install
+
+# Install walogram
+git clone https://github.com/nikkoxd/walogram.git
+(
+  cd walogram || return
+  sudo make install
+  rm -r walogram
+)

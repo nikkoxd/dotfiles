@@ -1,5 +1,5 @@
 [manager]
 prepend_keymap = [
-  { on = [ "w" ], run = "plugin wal" },
-  { on = [ "W" ], run = "plugin wal --args='light'"}
+  { on = [ "w" ], run = "plugin myou" },
+  { on = [ "W" ], run = "plugin myou --args='light'"}
 ]
