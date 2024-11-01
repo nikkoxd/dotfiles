@@ -2,7 +2,5 @@
 .gitignore
 .gitmodules
 .luarc.json
-applying-the-wallpaper.png
-screenshot.png
 README.md
 install.sh
