@@ -15,8 +15,8 @@
     <td>Light Mode</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
+    <td><img src="https://github.com/user-attachments/assets/7ee20294-a989-4d1b-a736-6dba3e77920c"></td>
+    <td><img src="https://github.com/user-attachments/assets/e11e2817-5336-4c4c-870d-4bf9ced0fa05"></td>
   </tr>
 </table>
 
