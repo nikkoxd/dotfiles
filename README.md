@@ -1,34 +1,25 @@
-<h1 align="center">dotfiles</h1>
-<p align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</p>
-
 ![Screenshot](https://github.com/user-attachments/assets/1e858f63-46ba-49ff-8947-4a006e7e27ee)
+
+<h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
 
 <p align="center">feat: yabai, sketchybar, pywal, stow</p>
 
-## Requirements
-- gcc-14
+> [!NOTE]
+> C++ compiler might be needed for TreeSitter to work
 
-## Installing
+### Installing
+
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/main/install.sh)>
 ```
 
-## Generating colorschemes
-Run the custom script:
+### Generating colorschemes
 ```bash
-myou -i path/to/your/image.png
+myou [-l] -i path/to/your/image.png 
 ```
-This will:
-- generate a colorscheme
-- automatically apply the wallpaper
-- apply the generated colorscheme to wal
-- reload the apps
-
-## Applying the wallpaper
+### Applying the wallpaper
 If your wallpaper doesn't apply automatically,
 enable `System Preferences > Wallpaper > Show on all Spaces`
 
-![Applying the wallpaper](applying-the-wallpaper.png)
-
-## Previous setups
+### Previous setups
 Old sketchybar config: https://github.com/nikkoxd/dotfiles/tree/fca8cb8ba6bc0322e5158700f0ae56c613e1c623
