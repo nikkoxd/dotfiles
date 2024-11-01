@@ -41,5 +41,5 @@ git clone https://github.com/nikkoxd/walogram.git
 (
   cd walogram || return
   sudo make install
-  rm -r walogram
 )
+rm -r walogram
