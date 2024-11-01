@@ -128,7 +128,7 @@ return {
         enable = true,
       },
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
       live_filter = {
         always_show_folders = false,
