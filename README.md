@@ -3,7 +3,7 @@
 
 ![Screenshot](https://github.com/user-attachments/assets/1e858f63-46ba-49ff-8947-4a006e7e27ee)
 
-<p align="center">feat: yabai, sketchybar, pywal</p>
+<p align="center">feat: yabai, sketchybar, pywal, stow</p>
 
 ## Requirements
 - gcc-14
