@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/Users/nikko/wallpapers/anime/wallhaven-1pyrm1.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#1d1b20",
+        "foreground": "#f3eff6",
+        "cursor": "#f3eff6"
+    },
+    "colors": {
+        "color0": "#1d1b20",
+        "color1": "#ffa99d",
+        "color2": "#d9736a",
+        "color3": "#744c9b",
+        "color4": "#e1b4ff",
+        "color5": "#dcbaee",
+        "color6": "#c09fd2",
+        "color7": "#c9c5cb",
+        "color8": "#645b68",
+        "color9": "#ffcaba",
+        "color10": "#f78f83",
+        "color11": "#8f64b7",
+        "color12": "#ffcfff",
+        "color13": "#f9d6ff",
+        "color14": "#dcbaee",
+        "color15": "#e5e1e8"
+    },
+    "checksum": "None"
+}
