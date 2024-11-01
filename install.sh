@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Clone the repository
+if which git > /dev/null; then
+  echo "Cloning the repository..."
+  git clone https://github.com/nikkoxd/dotfiles.git && cd dotfiles || exit
+else
+  echo "Git is not installed. Please install it first."
+  exit 1
+fi
+
 # Install Homebrew
 if which brew > /dev/null; then
   echo "Homebrew is already installed."
