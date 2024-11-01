@@ -5,14 +5,13 @@
 
 <p align="center">feat: yabai, sketchybar, pywal</p>
 
-## TODO for this branch
-- [ ] migrate the configs to gnu stow
-
 ## Requirements
 - gcc-14
 
 ## Installing
-Run `./install.sh`
+```sh
+bash <(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/main/install.sh)>
+```
 
 ## Generating colorschemes
 Run the custom script:
