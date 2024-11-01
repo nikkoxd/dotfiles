@@ -1,7 +1,7 @@
 <h1 align="center">dotfiles</h1>
 <p align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</p>
 
-![Screenshot](screenshot.png)
+![Screenshot](https://github.com/user-attachments/assets/1e858f63-46ba-49ff-8947-4a006e7e27ee)
 
 <p align="center">feat: yabai, sketchybar, pywal</p>
 
