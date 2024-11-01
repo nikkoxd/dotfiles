@@ -26,15 +26,8 @@ else
 fi
 
 # Symlink configs to ~/.config
-if [ -d "$HOME/.config" ]; then
-  echo "Symlinking configs to $HOME/.config"
-  ln -s "$(dirname "$0")/*/" "$HOME/.config"
-else
-  echo "\$HOME/.config not found. Creating..."
-  mkdir "$HOME/.config"
-  echo "Symlinking configs to $HOME/.config"
-  ln -s "$(dirname "$0")/*/" "$HOME/.config"
-fi
+mv "$(dirname "$0")" "$HOME/.dotfiles"
+stow "$HOME/.dotfiles"
 
 # Install colorz
 pipx install colorz
@@ -48,5 +41,5 @@ git clone https://github.com/nikkoxd/walogram.git
 (
   cd walogram || return
   sudo make install
-  rm -r walogram
 )
+rm -r walogram

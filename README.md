@@ -5,6 +5,9 @@
 
 <p align="center">feat: yabai, sketchybar, pywal</p>
 
+## TODO for this branch
+- [ ] migrate the configs to gnu stow
+
 ## Requirements
 - gcc-14
 
