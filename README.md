@@ -4,14 +4,30 @@
 
 <p align="center">feat: yabai, sketchybar, pywal, stow</p>
 
-> [!NOTE]
-> C++ compiler might be needed for TreeSitter to work
+### Features
+- Custom menu bar featuring sketchybar
+- Window management featuring yabai & skhd
+- Material You(-like) colorscheme generation with pywal integration
+
+<table>
+  <tr>
+    <td>Dark Mode</td>
+    <td>Light Mode</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
 ### Installing
 
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/main/install.sh)>
 ```
+
+> [!NOTE]
+> C++ compiler might be needed for TreeSitter to work
 
 ### Generating colorschemes
 ```bash
