@@ -9,7 +9,7 @@ alias ..="cd ../"
 alias ...="cd ../.."
 
 alias repos="cd repos"
-alias dots="cd dotfiles"
+alias dots="cd .dotfiles"
 alias walls="cd Wallpapers && yy"
 alias uni="cd Уник"
 
