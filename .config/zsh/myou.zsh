@@ -175,7 +175,7 @@ generate_pywal_theme() {
   local color15=$neutral_90
 
   if [ $light_mode = true ]; then
-    background=$neutral_90
+    background=$neutral_100
     foreground=$neutral_10
     cursor=$neutral_10
     color0=$neutral_90
