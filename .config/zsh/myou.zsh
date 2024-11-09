@@ -1,5 +1,5 @@
 generate_tonal_palette() {
-  lightness_values=(0 5 10 20 30 40 50 60 70 80 90 95 99 100)
+  lightness_values=(0 4 5 6 10 12 17 20 24 30 40 50 60 70 80 87 90 92 94 95 96 98 99 100)
 
   local color=$1
   local role_name=$2
@@ -7,13 +7,15 @@ generate_tonal_palette() {
   local hue_rotation=$4
 
   if [ -n "$hue_rotation" ]; then
-    color=$(pastel rotate "$hue_rotation" "$color" | pastel format hex)
+    color=$(pastel rotate "$hue_rotation" "$color")
   fi
+
+  color=$(pastel set chroma "$chroma" "$color")
 
   for lightness in "${lightness_values[@]}"; do
     var_name="${role_name}_${lightness}"
 
-    color=$(pastel set chroma "$chroma" "$color" | pastel set lightness "$lightness" | pastel format hex | sed 's/#//')
+    color=$(pastel set lightness "$lightness" "$color" | pastel format hex | sed 's/#//')
 
     echo "export $var_name=\"$color\"" >> "$HOME/.cache/wal/colors-materialyou.sh"
     echo "  --$var_name: #$color;" >> "$HOME/.cache/wal/colors-materialyou.css"
@@ -44,15 +46,15 @@ assign_color_roles() {
     ["error_container"]="error_30"
     ["on_error_container"]="error_90"
 
-    ["surface_dim"]="neutral_10"
-    ["surface"]="neutral_10"
-    ["surface_bright"]="neutral_20"
+    ["surface_dim"]="neutral_4"
+    ["surface"]="neutral_6"
+    ["surface_bright"]="neutral_24"
 
-    ["surface_container_lowest"]="neutral_5"
+    ["surface_container_lowest"]="neutral_4"
     ["surface_container_low"]="neutral_10"
-    ["surface_container"]="neutral_10"
-    ["surface_container_high"]="neutral_10"
-    ["surface_container_highest"]="neutral_20"
+    ["surface_container"]="neutral_12"
+    ["surface_container_high"]="neutral_17"
+    ["surface_container_highest"]="neutral_24"
 
     ["on_surface"]="neutral_90"
     ["on_surface_variant"]="neutral_variant_90"
@@ -89,14 +91,14 @@ assign_color_roles() {
       ["error_container"]="error_90"
       ["on_error_container"]="error_10"
 
-      ["surface_dim"]="neutral_90"
-      ["surface"]="neutral_99"
-      ["surface_bright"]="neutral_99"
+      ["surface_dim"]="neutral_87"
+      ["surface"]="neutral_98"
+      ["surface_bright"]="neutral_98"
 
       ["surface_container_lowest"]="neutral_100"
-      ["surface_container_low"]="neutral_95"
-      ["surface_container"]="neutral_95"
-      ["surface_container_high"]="neutral_95"
+      ["surface_container_low"]="neutral_96"
+      ["surface_container"]="neutral_94"
+      ["surface_container_high"]="neutral_92"
       ["surface_container_highest"]="neutral_90"
 
       ["on_surface"]="neutral_10"
@@ -154,31 +156,31 @@ generate_pywal_theme() {
     touch "$theme_path"
   fi
 
-  local background=$neutral_10
-  local foreground=$neutral_95
-  local cursor=$neutral_95
-  local color0=$neutral_10
+  local background=$neutral_6
+  local foreground=$neutral_90
+  local cursor=$neutral_90
+  local color0=$neutral_12
   local color1=$tertiary_80
   local color2=$tertiary_60
-  local color3=$primary_40
+  local color3=$primary_60
   local color4=$primary_80
   local color5=$secondary_80
-  local color6=$secondary_70
+  local color6=$secondary_60
   local color7=$neutral_80
-  local color8=$neutral_variant_40
+  local color8=$neutral_variant_60
   local color9=$tertiary_90
   local color10=$tertiary_70
-  local color11=$primary_50
+  local color11=$primary_70
   local color12=$primary_90
   local color13=$secondary_90
   local color14=$secondary_80
   local color15=$neutral_90
 
   if [ $light_mode = true ]; then
-    background=$neutral_100
+    background=$neutral_98
     foreground=$neutral_10
     cursor=$neutral_10
-    color0=$neutral_90
+    color0=$neutral_94
     color1=$tertiary_40
     color2=$tertiary_30
     color3=$primary_30
