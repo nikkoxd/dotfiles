@@ -1,6 +1,5 @@
 return {
   "nvim-lualine/lualine.nvim",
-
   opts = function()
     local has_neopywal, neopywal_lualine = pcall(require, "neopywal.theme.plugins.lualine")
     if not has_neopywal then
@@ -17,6 +16,7 @@ return {
           left = "",
           right = ""
         },
+        globalstatus = true,
       },
       winbar = {
         lualine_c = {
@@ -31,7 +31,7 @@ return {
               left = "",
               right = "",
             },
-          }
+          },
         },
         lualine_b = {
           {
@@ -63,15 +63,16 @@ return {
         },
         lualine_x = {
           {
-            'fileformat',
-            symbols = {
-              unix = 'LF',
-              dos = 'CRLF',
-              mac = 'CR',
-            },
+            function()
+              local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
+              return ret
+            end,
           },
           {
-            "encoding"
+            function()
+              local ret, _ = (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
+              return ret
+            end,
           },
           {
             "diff",
