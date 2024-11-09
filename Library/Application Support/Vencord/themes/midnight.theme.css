@@ -27,13 +27,13 @@
   /* change to #23a55a for default green */
   --dnd-indicator: var(--error);
   /* change to #f13f43 for default red */
-  --idle-indicator: var(--tertiary-container);
+  --idle-indicator: var(--tertiary_container);
   /* change to #f0b232 for default yellow */
-  --streaming-indicator: var(--on-primary);
+  --streaming-indicator: var(--on_primary);
   /* change to #593695 for default purple */
 
   /* accent colors */
-  --accent-1: var(--tertiary);
+  --accent-1: var(--primary);
   /* links */
   --accent-2: var(--primary);
   /* general unread/mention elements */
@@ -43,9 +43,9 @@
   /* accent buttons when hovered */
   --accent-5: var(--primary);
   /* accent buttons when clicked */
-  --mention: var(--surface);
+  --mention: color-mix(in srgb, var(--primary) 10%, var(--surface));
   /* mentions & mention messages */
-  --mention-hover: var(--surface_bright);
+  --mention-hover: color-mix(in srgb, var(--primary) 5%, var(--surface));
   /* mentions & mention messages when hovered */
 
   /* text colors */
