@@ -277,6 +277,7 @@ myou() {
   walogram -i "$image" &
   source "$HOME/.config/borders/bordersrc" &
   python3 -m pywalfox update &
+  spicetify apply &
   # set fastfetch logo
   magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
   # copy wallpaper to zen profile
