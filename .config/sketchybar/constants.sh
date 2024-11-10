@@ -1,1 +1,1 @@
-export VPN_NAME="Aeza"
+export vpn_name="FoXray"
