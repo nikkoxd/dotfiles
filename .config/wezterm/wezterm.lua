@@ -14,8 +14,8 @@ config.font = wezterm.font_with_fallback({
   "Symbols Nerd Font",
   "SF Pro"
 })
-config.font_size = 16
-config.line_height = 1.1
+config.font_size = 14
+config.line_height = 1.2
 
 config.color_scheme_dirs = { home .. "/.cache/wal" }
 config.color_scheme = "colors-wezterm"
