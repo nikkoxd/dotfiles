@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
+    { import = "plugins.ai" },
     { import = "plugins.colorschemes" },
     { import = "plugins.editor" },
     { import = "plugins.git" },
