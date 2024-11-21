@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
     "meuter/lualine-so-fancy.nvim",
+    "letieu/harpoon-lualine",
   },
   opts = function()
     local has_neopywal, neopywal_lualine = pcall(require, "neopywal.theme.plugins.lualine")
@@ -21,11 +22,6 @@ return {
           right = ""
         },
         globalstatus = true,
-      },
-      winbar = {
-        lualine_c = {
-          { "navic" }
-        }
       },
       sections = {
         lualine_a = {
