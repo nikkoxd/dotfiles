@@ -1,5 +1,9 @@
 return {
   "nvim-lualine/lualine.nvim",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "meuter/lualine-so-fancy.nvim",
+  },
   opts = function()
     local has_neopywal, neopywal_lualine = pcall(require, "neopywal.theme.plugins.lualine")
     if not has_neopywal then
@@ -26,7 +30,7 @@ return {
       sections = {
         lualine_a = {
           {
-            "mode",
+            "fancy_mode",
             separator = {
               left = "",
               right = "",
@@ -35,24 +39,21 @@ return {
         },
         lualine_b = {
           {
-            "filetype",
-            icon_only = true,
+            "fancy_branch",
             padding = {
               left = 2,
-              right = 0,
-            }
-          },
-          {
-            "filename",
-            symbols = {
-              modified = "󰧞",
-              readonly = "󰌾",
-              unnamed = "Unnamed",
-              newfile = "New file",
-            }
+              right = 2,
+            },
           },
         },
         lualine_c = {
+          {
+            "fancy_cwd",
+            substitute_home = true,
+            padding = {
+              left = 2,
+            }
+          },
           {
             "diagnostics",
             padding = {
@@ -62,6 +63,14 @@ return {
           },
         },
         lualine_x = {
+          "fancy_lsp_servers",
+          {
+            "diff",
+            padding = {
+              left = 1,
+              right = 2,
+            }
+          },
           {
             function()
               local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
@@ -74,35 +83,27 @@ return {
               return ret
             end,
           },
-          {
-            "diff",
-            padding = {
-              left = 1,
-              right = 2,
-            }
-          },
         },
         lualine_y = {
           {
-            "branch",
-            icon = ""
-          },
-          {
-            "progress",
+            "filetype",
+            separator = {
+              left = "",
+            },
             padding = {
               left = 2,
               right = 2,
             }
-          },
+          }
         },
         lualine_z = {
           {
-            "location",
+            "progress",
             separator = {
               left = "",
               right = ""
             },
-          }
+          },
         }
       }
     }
