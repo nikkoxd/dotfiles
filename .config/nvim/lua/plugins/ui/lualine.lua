@@ -59,6 +59,7 @@ return {
           },
         },
         lualine_x = {
+          "harpoon2",
           "fancy_lsp_servers",
           {
             "diff",
