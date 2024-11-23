@@ -12,12 +12,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = nikko_autocmds,
   pattern = "*.norg",
   callback = function()
-    local cmd = "git add * && (git diff-index --quiet HEAD || git commit -am \"" .. os.date("%c") .. "\") && git pull && git push"
+    local cmd = "git add * && (git diff-index --quiet HEAD || git commit -am \"" ..
+        os.date("%c") .. "\") && git pull && git push"
 
     local function on_exit(_, exit_code, _)
-      if exit_code == 0 then
-        vim.notify("Synced notes with git")
-      else
+      if exit_code ~= 0 then
         vim.notify("Failed to sync notes with git")
       end
     end
@@ -39,11 +38,10 @@ vim.api.nvim_create_autocmd('BufRead', {
       local cmd = "git pull"
 
       local function on_exit(_, exit_code, _)
-        if exit_code == 0 then
-          vim.notify("Pulled notes from git")
-          vim.g.has_pulled_notes = true
-        else
+        if exit_code ~= 0 then
           vim.notify("Failed to pull notes with git")
+        else
+          vim.g.has_pulled_notes = true
         end
       end
 
