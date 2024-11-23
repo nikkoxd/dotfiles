@@ -11,6 +11,7 @@ config.audible_bell = "Disabled"
 
 config.font = wezterm.font_with_fallback({
   { family = "JetBrainsMono Nerd Font", weight = "Medium" },
+  "Apple Color Emoji",
   "Symbols Nerd Font",
   "SF Pro"
 })
@@ -26,5 +27,7 @@ config.window_background_opacity = 0.9
 config.macos_window_background_blur = 10
 
 config.window_decorations = "RESIZE"
+
+config.default_prog = { "/opt/homebrew/bin/tmux", "a" }
 
 return config
