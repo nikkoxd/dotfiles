@@ -9,6 +9,8 @@ return {
       gitsigns = true,
       harpoon = true,
       which_key = true,
+      barbecue = true,
+      dadbod_ui = true
     }
   }
 }
