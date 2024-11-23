@@ -30,8 +30,10 @@ main() {
 
   # Generate colorscheme
   if [ $light = true ]; then
+    osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
     matugen image "$image" --mode light
   else
+    osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
     matugen image "$image" --mode dark
   fi
 
