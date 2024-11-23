@@ -46,7 +46,7 @@ return {
       })
     })
 
-    vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", {fg ="#6CC644"})
+    vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", { fg = "#6CC644" })
 
     return {
       completion = {
@@ -69,7 +69,7 @@ return {
       sources = cmp.config.sources({
         -- { name = "supermaven" },
         { name = "nvim_lsp" },
-        { name = "lazydev", group_index = 0 },
+        { name = "lazydev",              group_index = 0 },
         { name = "luasnip" }, -- snippets
         { name = "buffer" },  -- text within current buffer
         { name = "path" },    -- file system paths
@@ -79,17 +79,23 @@ return {
       }),
       formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = function(entry, vim_item)
-          local kind = lspkind.cmp_format({
+        format = function(entry, item)
+          local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
+          item = lspkind.cmp_format({
             mode = "symbol_text",
             maxwidth = 50,
             symbol_map = { Supermaven = "", },
-          })(entry, vim_item)
-          local strings = vim.split(kind.kind, "%s", { trimempty = true })
-          kind.kind = " " .. (strings[1] or "") .. " "
-          kind.menu = "    (" .. (strings[2] or "") .. ")"
+          })(entry, item)
+          local strings = vim.split(item.kind, "%s", { trimempty = true })
+          item.kind = " " .. (strings[1] or "") .. " "
+          item.menu = "    (" .. (strings[2] or "") .. ")"
 
-          return kind
+          if color_item.abbr_hl_group then
+            item.kind_hl_group = color_item.abbr_hl_group
+            item.kind = color_item.abbr
+          end
+
+          return item
         end,
       },
       window = {
