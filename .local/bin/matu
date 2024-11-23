@@ -1,0 +1,52 @@
+#!/bin/bash
+
+main() {
+  if [ -z "$1" ]; then
+    echo "Empty list of options" >&2
+    exit 1
+  fi
+
+  light=false
+  image=""
+
+  while getopts ":li:" option; do
+    case $option in
+      l)
+        light=true
+        ;;
+      i)
+        image=$OPTARG
+        ;;
+      \?)
+        echo "Invalid option: -${OPTARG}" >&2
+        exit 1
+        ;;
+    esac
+  done
+
+  # Set wallpaper and restart WallpaperAgent
+  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
+  pkill -f WallpaperAgent &
+
+  # Generate colorscheme
+  if [ $light = true ]; then
+    matugen image "$image" --mode light
+  else
+    matugen image "$image" --mode dark
+  fi
+
+  wal -n -s --theme "$HOME/.config/wal/colorschemes/dark/matugen.json"
+
+  # reload apps
+  sketchybar --reload &
+  walogram -i "$image" &
+  source "$HOME/.config/borders/bordersrc" &
+  python3 -m pywalfox update &
+  spicetify apply &
+  # set fastfetch logo
+  magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
+
+  wait
+}
+
+main "$@"
