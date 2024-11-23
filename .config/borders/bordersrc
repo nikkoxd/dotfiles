@@ -1,15 +1,14 @@
 #!/bin/bash
 
-source "/Users/nikko/.cache/wal/colors-materialyou.sh"
-
 borders blacklist="Simulator"
 
 opts=(
   style=round
   width=6.0
   hidpi=off
-  active_color=0xff"$primary"
-  inactive_color=0xff"$surface"
+  active_color=0xffbdc2ff
+  inactive_color=0xff131318
 )
 
 borders "${opts[@]}"
+
