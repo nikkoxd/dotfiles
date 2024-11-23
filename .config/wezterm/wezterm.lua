@@ -10,12 +10,12 @@ wezterm.add_to_config_reload_watch_list(home .. "/.cache/wal/colors-wezterm.toml
 config.audible_bell = "Disabled"
 
 config.font = wezterm.font_with_fallback({
-  { family = "GeistMono Nerd Font", weight = "Medium" },
+  { family = "JetBrainsMono Nerd Font", weight = "Medium" },
   "Symbols Nerd Font",
   "SF Pro"
 })
 config.font_size = 14
-config.line_height = 1.2
+config.line_height = 1.1
 
 config.color_scheme_dirs = { home .. "/.cache/wal" }
 config.color_scheme = "colors-wezterm"
