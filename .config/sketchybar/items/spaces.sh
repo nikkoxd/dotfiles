@@ -13,8 +13,8 @@ do
     icon.font="$FONT:Regular:14.0"
     width=30
     icon.background.color="$TRANSPARENT"
-    icon.color="$text"
-    icon.highlight_color="$background"
+    icon.color="$on_surface"
+    icon.highlight_color="$on_primary"
     background.color="$primary"
     background.corner_radius=100
     label.drawing=off
