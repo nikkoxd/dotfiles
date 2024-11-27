@@ -1,6 +1,5 @@
 ![Screenshot](https://github.com/user-attachments/assets/51e3e4e2-c93d-4c90-9c84-dfb1ac8677d9)
 
-
 <h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
 
 <p align="center">feat: yabai, sketchybar, pywal, stow</p>
@@ -8,7 +7,7 @@
 ### Features
 - Custom menu bar featuring sketchybar
 - Window management featuring yabai & skhd
-- Material You(-like) colorscheme generation with pywal integration
+- Material You colorscheme generation with pywal integration
 
 <table>
   <tr>
@@ -32,11 +31,11 @@ bash <(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/mai
 
 ### Generating colorschemes
 ```bash
-myou [-l] -i path/to/your/image.png 
+matu [-l] -i path/to/your/image.png 
 ```
 ### Applying the wallpaper
 If your wallpaper doesn't apply automatically,
 enable `System Preferences > Wallpaper > Show on all Spaces`
 
 ### Previous setups
-Old sketchybar config: https://github.com/nikkoxd/dotfiles/tree/fca8cb8ba6bc0322e5158700f0ae56c613e1c623
+https://github.com/nikkoxd/dotfiles/tree/fca8cb8ba6bc0322e5158700f0ae56c613e1c623
