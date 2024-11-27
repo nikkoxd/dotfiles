@@ -3,6 +3,9 @@ return {
   name = "neopywal",
   lazy = false,
   priority = 1000,
+  keys = {
+    { "<leader>nc", "<cmd>NeopywalCompile<cr>", desc = "Recompile neopywal" },
+  },
   opts = {
     show_split_lines = false,
     dim_inactive = true,
