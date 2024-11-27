@@ -11,7 +11,3 @@ output_path = "~/.config/sketchybar/colors.sh"
 [templates.discord]
 input_path = "~/Library/Application Support/com.InioX.matugen/discord/template.css"
 output_path = "~/Library/Application Support/Vencord/settings/quickCss.css"
-
-[templates.borders]
-input_path = "~/Library/Application Support/com.InioX.matugen/borders/template.sh"
-output_path = "~/.config/borders/bordersrc"
