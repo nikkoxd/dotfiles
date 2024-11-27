@@ -1,13 +1,10 @@
 #!/bin/bash
 
-main() {
+get_opts() {
   if [ -z "$1" ]; then
     echo "Empty list of options" >&2
     exit 1
   fi
-
-  light=false
-  image=""
 
   while getopts ":li:" option; do
     case $option in
@@ -23,12 +20,14 @@ main() {
         ;;
     esac
   done
+}
 
-  # Set wallpaper and restart WallpaperAgent
+set_wallpaper() {
   /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
   pkill -f WallpaperAgent &
+}
 
-  # Generate colorscheme
+generate_colorscheme() {
   if [ $light = true ]; then
     osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
     matugen image "$image" --mode light
@@ -38,14 +37,24 @@ main() {
   fi
 
   wal -n -s --theme "$HOME/.config/wal/colorschemes/dark/matugen.json"
+}
 
-  # reload apps
-  sketchybar --reload &
+reload_apps() {
   walogram -i "$image" &
   source "$HOME/.config/borders/bordersrc" &
   python3 -m pywalfox update &
-  spicetify apply &
-  # set fastfetch logo
+  spicetify apply -n &
+}
+
+main() {
+  light=false
+  image=""
+
+  get_opts "$@"
+  set_wallpaper
+  generate_colorscheme
+  reload_apps
+
   magick "$image" -gravity Center -extent 1:1 "$HOME/.config/fastfetch/logo.png" &
 
   wait
