@@ -1,4 +1,5 @@
-![Screenshot](https://github.com/user-attachments/assets/1e858f63-46ba-49ff-8947-4a006e7e27ee)
+![Screenshot](https://github.com/user-attachments/assets/51e3e4e2-c93d-4c90-9c84-dfb1ac8677d9)
+
 
 <h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
 
