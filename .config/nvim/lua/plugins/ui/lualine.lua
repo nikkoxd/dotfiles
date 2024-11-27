@@ -5,11 +5,10 @@ return {
     "meuter/lualine-so-fancy.nvim",
     "letieu/harpoon-lualine",
   },
-
   opts = function()
     return {
       options = {
-        theme = "neopywal",
+        theme = "custom_neopywal",
         component_separators = "",
         section_separators = {
           left = "",
