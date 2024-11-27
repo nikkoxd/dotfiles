@@ -1,6 +1,5 @@
 #!/bin/bash
 source "$HOME/.config/sketchybar/colors.sh"
-source "$HOME/.config/sketchybar/colors-my.sh"
 source "$HOME/.config/sketchybar/constants.sh"
 
 export ITEM_DIR="$CONFIG_DIR/items"
@@ -34,14 +33,14 @@ default=(
   icon.padding_left=10
   icon.padding_right=10
   label.font="$FONT:Regular:15.0"
-  label.color="$text"
+  label.color="$on_surface"
   label.padding_left=2
   label.padding_right=10
-  background.color="$containerBackground"
+  background.color="$surface_container"
   background.height=30
   background.border_width=2
   background.corner_radius=15
-  popup.background.color="$background"
+  popup.background.color="$surface"
   popup.background.border_color="$primary"
   popup.background.border_width=2
   popup.background.corner_radius=10

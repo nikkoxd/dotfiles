@@ -27,10 +27,15 @@ return {
       layout_config = {
         horizontal = { preview_cutoff = 80, preview_width = 0.55 },
         vertical = { mirror = true, preview_cutoff = 25 },
-        prompt_position = "top",
+        prompt_position = "bottom",
         width = 0.87,
         height = 0.80,
       },
     },
+    pickers = {
+      oldfiles = {
+        cwd_only = true,
+      }
+    }
   }
 }

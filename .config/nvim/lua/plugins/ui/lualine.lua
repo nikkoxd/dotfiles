@@ -5,14 +5,8 @@ return {
     "meuter/lualine-so-fancy.nvim",
     "letieu/harpoon-lualine",
   },
+
   opts = function()
-    local has_neopywal, neopywal_lualine = pcall(require, "neopywal.theme.plugins.lualine")
-    if not has_neopywal then
-      return
-    end
-
-    neopywal_lualine.setup()
-
     return {
       options = {
         theme = "neopywal",
