@@ -1,6 +1,6 @@
 flower=(
-  icon="󰧲"
-  icon.padding_right=10
+  icon="􀇁"
+  icon.padding_right=12
   label.drawing=off
   click_script="$PLUGIN_DIR/flower.sh"
 )
