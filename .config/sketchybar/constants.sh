@@ -1,1 +1,2 @@
-export vpn_name="FoXray"
+export VPN_NAME="FoXray"
+
