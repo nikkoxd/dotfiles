@@ -42,7 +42,7 @@ default=(
   background.corner_radius=15
   popup.background.color="$surface"
   popup.background.border_color="$primary"
-  popup.background.border_width=2
+  popup.background.border_width=1
   popup.background.corner_radius=10
 )
 

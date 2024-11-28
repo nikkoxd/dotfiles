@@ -7,8 +7,21 @@ disable_popup() {
 set_label() {
   ARTIST=$(osascript -e 'tell application "Spotify" to artist of current track')
   TRACK_NAME=$(osascript -e 'tell application "Spotify" to name of current track')
+  ALBUM=$(osascript -e 'tell application "Spotify" to album of current track')
 
   sketchybar --animate sin 30 --set "$NAME" label="$ARTIST - $TRACK_NAME"
+
+  sketchybar --set spotify.label label="$TRACK_NAME"
+  sketchybar --set spotify.artist label="$ARTIST"
+  sketchybar --set spotify.album label="$ALBUM"
+}
+
+set_cover() {
+  COVER=$(osascript -e 'tell application "Spotify" to get artwork url of current track')
+
+  curl -s --max-time 20 "$COVER" -o /tmp/cover.jpg
+
+  sketchybar --set spotify.cover background.image="/tmp/cover.jpg"
 }
 
 update() {
@@ -23,11 +36,15 @@ update() {
       case "$STATE" in
         "playing")
           sketchybar --set "$NAME" icon="􀊅"
+          sketchybar --set spotify.play_pause icon="􀊘"
           set_label
+          set_cover
           ;;
         "paused")
           sketchybar --set "$NAME" icon="􀊃"
+          sketchybar --set spotify.play_pause icon="􀊖"
           set_label
+          set_cover
           ;;
         "stopped")
           sketchybar --set "$NAME" label="Nothing is playing"
@@ -41,22 +58,24 @@ update() {
 
 spotify() {
   if [ "$BUTTON" = "left" ]; then
-    osascript -e 'tell application "Spotify" to playpause'
-    update
+    play_pause
   else
     sketchybar --set "$NAME" popup.drawing=toggle
   fi
 }
 
+play_pause() {
+  osascript -e 'tell application "Spotify" to playpause'
+  update
+}
+
 next() {
   osascript -e 'tell application "Spotify" to next track'
-  disable_popup
   update
 }
 
 prev() {
   osascript -e 'tell application "Spotify" to previous track'
-  disable_popup
   update
 }
 
@@ -64,13 +83,11 @@ shuffle() {
   SHUFFLE=$(osascript -e 'tell application "Spotify" to shuffling')
   if [ "$SHUFFLE" == "false" ]; then
     osascript -e 'tell application "Spotify" to set shuffling to true'
-    disable_popup
     sketchybar --animate sin 30 --set spotify label="Shuffling is on"
     sleep 2
     update
   else
     osascript -e 'tell application "Spotify" to set shuffling to false'
-    disable_popup
     sketchybar --animate sin 30 --set spotify label="Shuffling is off"
     sleep 2
     update
@@ -81,13 +98,11 @@ repeat() {
   REPEAT=$(osascript -e 'tell application "Spotify" to repeating')
   if [ "$REPEAT" == "false" ]; then
     osascript -e 'tell application "Spotify" to set repeating to true'
-    disable_popup
     sketchybar --animate sin 30 --set spotify label="Repeat is on"
     sleep 2
     update
   else
     osascript -e 'tell application "Spotify" to set repeating to false'
-    disable_popup
     sketchybar --animate sin 30 --set spotify label="Repeat is off"
     sleep 2
     update
@@ -107,6 +122,8 @@ hide() {
 mouse_clicked() {
   case "$NAME" in
     "spotify") spotify
+    ;;
+    "spotify.play_pause") play_pause
     ;;
     "spotify.next") next
     ;;
