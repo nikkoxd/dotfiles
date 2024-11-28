@@ -5,13 +5,5 @@ return {
     { "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview hunk" },
     { "<leader>gt", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "Toggle Git blame" },
   },
-  opts = {
-    signs = {
-      add = { text = "+" },
-      change = { text = "~" },
-      delete = { text = "_" },
-      topdelete = { text = "‾" },
-      changedelete = { text = "~" },
-    },
-  }
+  opts = {}
 }
