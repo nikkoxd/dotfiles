@@ -41,7 +41,6 @@ generate_colorscheme() {
 
 reload_apps() {
   walogram -i "$image" &
-  source "$HOME/.config/borders/bordersrc" &
   python3 -m pywalfox update &
   spicetify apply -n &
 }
