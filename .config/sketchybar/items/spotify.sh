@@ -16,7 +16,7 @@ spotify=(
 
 spotify_next=(
   icon=􁋱
-  icon.color="$ACCENT"
+  icon.color="$primary"
   background.drawing=off
   label="Next Track"
   background.border_width=0
@@ -25,7 +25,7 @@ spotify_next=(
 
 spotify_prev=(
   icon=􁋯
-  icon.color="$ACCENT"
+  icon.color="$primary"
   background.drawing=off
   label="Previous Track"
   background.border_width=0
@@ -34,7 +34,7 @@ spotify_prev=(
 
 spotify_shuffle=(
   icon=􀵊
-  icon.color="$ACCENT"
+  icon.color="$primary"
   background.drawing=off
   label="Toggle Shuffle"
   background.border_width=0
@@ -43,7 +43,7 @@ spotify_shuffle=(
 
 spotify_repeat=(
   icon=􀵌
-  icon.color="$ACCENT"
+  icon.color="$primary"
   background.drawing=off
   label="Toggle Repeat"
   background.border_width=0
@@ -52,7 +52,7 @@ spotify_repeat=(
 
 spotify_hide=(
   icon=􀜂
-  icon.color="$ACCENT"
+  icon.color="$primary"
   background.drawing=off
   label="Toggle Hide Track"
   background.border_width=0
