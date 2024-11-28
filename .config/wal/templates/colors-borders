@@ -4,7 +4,7 @@ borders blacklist="Sumulator"
 
 opts=(
   style=round
-  width=6.0
+  width=3.0
   hidpi=off
   active_color=0xff{color4.strip}
   inactive_color=0xff{color0.strip}
