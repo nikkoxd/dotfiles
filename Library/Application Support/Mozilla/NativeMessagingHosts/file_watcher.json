@@ -1,0 +1,8 @@
+{
+  "name": "file_watcher",
+  "description": "Watches a file for changes and communicates with the Firefox extension.",
+  "path": "~/theme-messaging-host/main.sh",
+  "type": "stdio",
+  "allowed_extensions": [ "theme@materialyou" ]
+}
+
