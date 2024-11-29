@@ -8,7 +8,13 @@
 - Custom menu bar featuring sketchybar
 - Window management featuring yabai & skhd
 - Material You colorscheme generation with pywal integration
+- Cool Spotify popup
 
+<p align="center">
+  <img width="509" alt="SCR-20241129-lykt" src="https://github.com/user-attachments/assets/c802f341-28f8-4269-96e3-3eedd087c0e1">
+</p>
+
+- Dark and light theme genration
 <table>
   <tr>
     <td>Dark Mode</td>
@@ -19,6 +25,8 @@
     <td><img src="https://github.com/user-attachments/assets/e11e2817-5336-4c4c-870d-4bf9ced0fa05"></td>
   </tr>
 </table>
+
+
 
 ### Installing
 
