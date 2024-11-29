@@ -38,12 +38,12 @@ default=(
   label.padding_right=10
   background.color="$surface_container"
   background.height=30
-  background.border_width=2
   background.corner_radius=15
   popup.background.color="$surface"
   popup.background.border_color="$primary"
-  popup.background.border_width=1
   popup.background.corner_radius=10
+  popup.background.shadow.drawing=on
+  popup.y_offset=5
 )
 
 sketchybar --default "${default[@]}"
