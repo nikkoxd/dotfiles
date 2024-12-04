@@ -2,7 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "meuter/lualine-so-fancy.nvim",
     "letieu/harpoon-lualine",
   },
   opts = function()
@@ -15,45 +14,23 @@ return {
       },
       sections = {
         lualine_a = {
-          {
-            "fancy_mode",
-          },
+          function()
+            local mode = require("lualine.utils.mode").get_mode()
+            return string.lower(mode);
+          end,
         },
         lualine_b = {
           {
-            "fancy_branch",
-            padding = {
-              left = 2,
-              right = 2,
-            },
-          },
+            "branch",
+            icon="branch:"
+          }
         },
         lualine_c = {
-          {
-            "fancy_cwd",
-            substitute_home = true,
-            padding = {
-              left = 2,
-            }
-          },
-          {
-            "diagnostics",
-            padding = {
-              left = 2,
-              right = 1,
-            }
-          },
+          "diagnostics",
         },
         lualine_x = {
           "harpoon2",
-          "fancy_lsp_servers",
-          {
-            "diff",
-            padding = {
-              left = 1,
-              right = 2,
-            }
-          },
+          "diff",
           {
             function()
               local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
@@ -68,18 +45,10 @@ return {
           },
         },
         lualine_y = {
-          {
-            "filetype",
-            padding = {
-              left = 2,
-              right = 2,
-            }
-          }
+          "filetype",
         },
         lualine_z = {
-          {
-            "progress",
-          },
+          "progress",
         }
       }
     }
