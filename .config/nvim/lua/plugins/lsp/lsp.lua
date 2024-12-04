@@ -51,23 +51,6 @@ return {
       lineFoldingOnly = true,
     }
 
-    local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false })
-    local event = "BufWritePre" -- or "BufWritePost"
-    local async = event == "BufWritePost"
-    local on_attach = function(client, bufnr)
-      if client.supports_method("textDocument/formatting") then
-        vim.keymap.set("n", "<Leader>f", function()
-          vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-        end, { buffer = bufnr, desc = "[lsp] format" })
-      end
-
-      if client.supports_method("textDocument/rangeFormatting") then
-        vim.keymap.set("x", "<Leader>f", function()
-          vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-        end, { buffer = bufnr, desc = "[lsp] format" })
-      end
-    end
-
     local lspconfig = require("lspconfig")
 
     lspconfig.nushell.setup {}
@@ -84,7 +67,6 @@ return {
         function(server_name)
           lspconfig[server_name].setup {
             capabilities = capabilities,
-            on_attach = on_attach
           }
         end,
 
@@ -97,7 +79,6 @@ return {
                 }
               }
             },
-            on_attach = on_attach
           }
         end,
 
@@ -109,7 +90,6 @@ return {
                 validate = { enable = true },
               }
             },
-            on_attach = on_attach
           }
         end,
 
