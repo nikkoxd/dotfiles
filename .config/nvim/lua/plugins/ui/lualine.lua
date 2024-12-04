@@ -10,20 +10,13 @@ return {
       options = {
         theme = "custom_neopywal",
         component_separators = "",
-        section_separators = {
-          left = "",
-          right = ""
-        },
+        section_separators = "",
         globalstatus = true,
       },
       sections = {
         lualine_a = {
           {
             "fancy_mode",
-            separator = {
-              left = "",
-              right = "",
-            },
           },
         },
         lualine_b = {
@@ -77,9 +70,6 @@ return {
         lualine_y = {
           {
             "filetype",
-            separator = {
-              left = "",
-            },
             padding = {
               left = 2,
               right = 2,
@@ -89,10 +79,6 @@ return {
         lualine_z = {
           {
             "progress",
-            separator = {
-              left = "",
-              right = ""
-            },
           },
         }
       }
