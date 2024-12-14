@@ -20,6 +20,8 @@ alias ll="eza --icons -la"
 alias ld="eza --icons -d */"
 alias lt="eza --icons -T"
 
+alias notes="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Obsidian\ Vault/"
+
 alias lg="lazygit"
 alias fetch="clear && fastfetch --logo-recache --show-errors"
 
