@@ -38,7 +38,6 @@ zle_highlight=("paste:none")
 autoload -Uz vcs_info
 precmd() { 
   vcs_info 
-  echo
 }
 zstyle ":vcs_info:git:*" formats "%b"
 
@@ -47,14 +46,10 @@ setopt PROMPT_SUBST
 PROMPT=' $(path) $(command_result) '
 RPROMPT='$(git_info)' # for some reason double quotes are broken here
 command_result() {
-  if [[ $? == 0 ]]; then
-    echo "%F{blue}>%f"
-  else
-    echo "%F{red}>%f"
-  fi
+  echo "%(?.%f.%F{blue})>%f"
 }
 path() {
-  echo "%1~%f"
+  echo "%F{blue}%1~%f"
 }
 git_info() {
   if [[ ${vcs_info_msg_0_} != "" ]]; then
@@ -84,5 +79,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-fetch
