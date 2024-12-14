@@ -2,7 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "letieu/harpoon-lualine",
   },
   opts = function()
     return {
@@ -22,15 +21,13 @@ return {
         lualine_b = {
           {
             "branch",
-            icon="branch:"
-          }
+            icon = "branch:",
+          },
         },
         lualine_c = {
-          "diagnostics",
+          "diff",
         },
         lualine_x = {
-          "harpoon2",
-          "diff",
           {
             function()
               local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
@@ -45,10 +42,20 @@ return {
           },
         },
         lualine_y = {
-          "filetype",
+          "diagnostics",
+          {
+            "filename",
+            path = 1,
+            symbols = {
+              modified = "(modified)",
+              readonly = "(readonly)",
+              unnamed = "unnamed",
+              newfile = "new",
+            }
+          },
         },
         lualine_z = {
-          "progress",
+          "progress"
         }
       }
     }
