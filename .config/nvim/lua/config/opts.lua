@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-opt.conceallevel = 3
+opt.conceallevel = 2
 
 opt.tabstop = 2
 opt.shiftwidth = 2
