@@ -16,7 +16,7 @@ yabai -m config layout bsp
 
 # window opacity
 yabai -m config window_opacity on
-yabai -m config active_window_opacity 1.0
+yabai -m config active_window_opacity 0.97
 yabai -m config normal_window_opacity 0.9
 
 # padding
@@ -33,3 +33,5 @@ yabai -m rule --add app="^Просмотр$" manage=off
 yabai -m rule --add app="^Системные настройки" manage=off
 yabai -m rule --add app="^Погода$" manage=off
 yabai -m rule --add app="todo-app" manage=off
+yabai -m rule --add app="^lab2$" manage=off
+yabai -m rule --add app="^Python$" manage=off
