@@ -1,22 +1,22 @@
 # changing window focus
 ctrl - h [
   *           : yabai -m window --focus west || yabai -m display --focus west
-  "WezTerm"     ~
+  "Ghostty"     ~
 ]
 
 ctrl - j [
   *           : yabai -m window --focus south
-  "WezTerm"     ~
+  "Ghostty"     ~
 ]
 
 ctrl - k [
   *           : yabai -m window --focus north
-  "WezTerm"     ~
+  "Ghostty"     ~
 ]
 
 ctrl - l [
   *           : yabai -m window --focus east || yabai -m display --focus east
-  "WezTerm"     ~
+  "Ghostty"     ~
 ]
 
 # warping windows
