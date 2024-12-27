@@ -115,7 +115,11 @@ update() {
 
   [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION_CODE]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION_CODE]}
 
-  sketchybar --animate sin 30 --set "$NAME" icon="$ICON" label="${TEMP}°C"
+  if [ -z "$TEMP" ]; then
+    sketchybar --set "$NAME" drawing=off
+  else
+    sketchybar --animate sin 30 --set "$NAME" icon="$ICON" label="${TEMP}°C" drawing=on
+  fi
 }
 
 open_app() {
