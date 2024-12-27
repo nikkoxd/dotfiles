@@ -2,65 +2,32 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "meuter/lualine-so-fancy.nvim",
-    "letieu/harpoon-lualine",
   },
   opts = function()
     return {
       options = {
         theme = "custom_neopywal",
         component_separators = "",
-        section_separators = {
-          left = "",
-          right = ""
-        },
+        section_separators = "",
         globalstatus = true,
       },
       sections = {
         lualine_a = {
-          {
-            "fancy_mode",
-            separator = {
-              left = "",
-              right = "",
-            },
-          },
+          function()
+            local mode = require("lualine.utils.mode").get_mode()
+            return string.lower(mode);
+          end,
         },
         lualine_b = {
           {
-            "fancy_branch",
-            padding = {
-              left = 2,
-              right = 2,
-            },
+            "branch",
+            icon = "branch:",
           },
         },
         lualine_c = {
-          {
-            "fancy_cwd",
-            substitute_home = true,
-            padding = {
-              left = 2,
-            }
-          },
-          {
-            "diagnostics",
-            padding = {
-              left = 2,
-              right = 1,
-            }
-          },
+          "diff",
         },
         lualine_x = {
-          "harpoon2",
-          "fancy_lsp_servers",
-          {
-            "diff",
-            padding = {
-              left = 1,
-              right = 2,
-            }
-          },
           {
             function()
               local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
@@ -75,25 +42,20 @@ return {
           },
         },
         lualine_y = {
+          "diagnostics",
           {
-            "filetype",
-            separator = {
-              left = "",
-            },
-            padding = {
-              left = 2,
-              right = 2,
+            "filename",
+            path = 1,
+            symbols = {
+              modified = "(modified)",
+              readonly = "(readonly)",
+              unnamed = "unnamed",
+              newfile = "new",
             }
-          }
+          },
         },
         lualine_z = {
-          {
-            "progress",
-            separator = {
-              left = "",
-              right = ""
-            },
-          },
+          "progress"
         }
       }
     }

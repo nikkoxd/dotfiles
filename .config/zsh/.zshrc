@@ -38,34 +38,25 @@ zle_highlight=("paste:none")
 autoload -Uz vcs_info
 precmd() { 
   vcs_info 
-  echo
 }
 zstyle ":vcs_info:git:*" formats "%b"
 
 # set custom prompt
 setopt PROMPT_SUBST
-PROMPT=' $(command_result) '
-RPROMPT='$(path)$(git_info)' # for some reason double quotes are broken here
+PROMPT=' $(path) $(command_result) '
+RPROMPT='$(git_info)' # for some reason double quotes are broken here
 command_result() {
-  if [[ $? == 0 ]]; then
-    echo "%F{blue}%F{black}%K{blue}󰧞%F{blue}%k%f"
-  else
-    echo "%F{red}%F{black}%K{red}✖%F{red}%k%f"
-  fi
+  echo "%(?.%f.%F{blue})>%f"
 }
 path() {
-  if [[ ${vcs_info_msg_0_} == "" ]]; then
-    echo "%F{black}%F{blue}%K{black}%1~%F{black}%k"
-  else
-    echo "%F{black}%F{blue}%K{black}%1~%F{black}"
-  fi
+  echo "%F{blue}%1~%f"
 }
 git_info() {
   if [[ ${vcs_info_msg_0_} != "" ]]; then
     if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-      echo "%F{red}%F{black}%K{red}${vcs_info_msg_0_}*%F{red}%k"
+      echo "%F{blue}branch: %f${vcs_info_msg_0_}*"
     else
-      echo "%F{blue}%F{black}%K{blue}${vcs_info_msg_0_}%F{blue}%k"
+      echo "%F{blue}branch: %f${vcs_info_msg_0_}"
     fi
   fi
 }
@@ -88,5 +79,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-fetch
