@@ -21,6 +21,9 @@ return {
       list = {
         selection = "manual",
       },
+      documentation = {
+        auto_show = true,
+      },
     },
 
     sources = {
