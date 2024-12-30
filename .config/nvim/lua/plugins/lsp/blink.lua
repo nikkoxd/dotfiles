@@ -9,7 +9,13 @@ return {
     keymap = {
       preset = "default",
 
-      ["<CR>"] = { "accept", "fallback" },
+      ["<CR>"] = { "accept" },
+
+      cmdline = {
+        preset = "enter",
+
+        ["<CR>"] = { "accept", "fallback" },
+      }
     },
 
     appearance = {
@@ -20,7 +26,7 @@ return {
     completion = {
       list = {
         selection = "manual",
-      },
+      }
     },
 
     sources = {
