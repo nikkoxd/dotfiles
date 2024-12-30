@@ -1,6 +1,7 @@
-font-family = "BerkeleyMono Nerd Font"
+font-family = "MesloLGS Nerd Font"
 font-size = 14
 adjust-cell-height = 10%
 theme = wal
+window-padding-x = 5
 window-padding-y = 20
 macos-titlebar-style = "hidden"
