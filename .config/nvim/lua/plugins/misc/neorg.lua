@@ -11,11 +11,11 @@ return {
           },
         },
       },
-      -- ["core.completion"] = {
-      --   config = {
-      --     engine = "nvim-cmp",
-      --   },
-      -- },
+      ["core.completion"] = {
+        config = {
+          engine = "nvim-cmp",
+        },
+      },
       ["core.integrations.nvim-cmp"] = {},
       ["core.concealer"] = {
         config = {
