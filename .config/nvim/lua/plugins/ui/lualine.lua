@@ -7,7 +7,6 @@ return {
     return {
       options = {
         theme = "custom_neopywal",
-        icons_enabled = false,
         component_separators = "",
         section_separators = "",
         globalstatus = true,
@@ -31,23 +30,18 @@ return {
           },
         },
         lualine_c = {
-          "diff",
+          "diagnostics",
         },
         lualine_x = {
-          "diagnostics",
           {
-            function()
-              local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
-              return ret
-            end,
+            "branch",
+            icons_enabled = false,
           },
+          "encoding",
           {
-            function()
-              local ret, _ = (vim.bo.fenc or vim.go.enc):gsub("^utf%-8$", "")
-              return ret
-            end,
-          },
-          "branch",
+            "fileformat",
+            icons_enabled = false,
+          }
         },
         lualine_y = {
           function()
@@ -56,7 +50,9 @@ return {
           end,
         },
         lualine_z = {
-          "location",
+          {
+            "location",
+          }
         }
       }
     }
