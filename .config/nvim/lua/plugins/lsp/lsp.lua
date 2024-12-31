@@ -54,6 +54,7 @@ return {
     local lspconfig = require("lspconfig")
 
     lspconfig.nushell.setup {}
+    lspconfig.qmlls.setup {}
 
     require("mason").setup()
     require("mason-lspconfig").setup({
