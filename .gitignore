@@ -23,3 +23,6 @@
 .config/wal/colorschemes/dark/matugen.json
 .config/sketchybar/colors.sh
 .config/nvim/lua/current-theme.lua
+.config/zsh
+.config/zsh/.zcompdump
+.config/zsh/.zsh_history
