@@ -55,7 +55,10 @@ return {
           },
         },
         lualine_z = {
-          "progress"
+          function()
+            local progress = require("lualine.components.progress")
+            return string.lower(progress())
+          end,
         }
       }
     }
