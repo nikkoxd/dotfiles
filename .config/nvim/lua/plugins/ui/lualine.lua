@@ -7,6 +7,7 @@ return {
     return {
       options = {
         theme = "custom_neopywal",
+        icons_enabled = false,
         component_separators = "",
         section_separators = "",
         globalstatus = true,
@@ -46,10 +47,7 @@ return {
               return ret
             end,
           },
-          {
-            "branch",
-            icon = "",
-          }
+          "branch",
         },
         lualine_y = {
           function()
