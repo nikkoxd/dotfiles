@@ -1,4 +1,4 @@
-<img width="1680" alt="SCR-20241231-pbru" src="https://github.com/user-attachments/assets/7ce2d5a5-522e-438a-a80f-d680edb2f877" />
+<img width="1680" alt="SCR-20241231-pcsg" src="https://github.com/user-attachments/assets/e6a7d955-8c9d-4ef3-b81e-4d6092c1fe12" />
 
 <h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
 
