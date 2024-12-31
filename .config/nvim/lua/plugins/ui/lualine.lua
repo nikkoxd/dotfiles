@@ -20,14 +20,20 @@ return {
         },
         lualine_b = {
           {
-            "branch",
-            icon = "branch:",
+            "filename",
+            symbols = {
+              modified = "(modified)",
+              readonly = "(readonly)",
+              unnamed = "unnamed",
+              newfile = "new",
+            }
           },
         },
         lualine_c = {
           "diff",
         },
         lualine_x = {
+          "diagnostics",
           {
             function()
               local ret, _ = vim.bo.fileformat:gsub("^unix$", "")
@@ -40,25 +46,19 @@ return {
               return ret
             end,
           },
+          {
+            "branch",
+            icon = "",
+          }
         },
         lualine_y = {
-          "diagnostics",
-          {
-            "filename",
-            path = 1,
-            symbols = {
-              modified = "(modified)",
-              readonly = "(readonly)",
-              unnamed = "unnamed",
-              newfile = "new",
-            }
-          },
-        },
-        lualine_z = {
           function()
             local progress = require("lualine.components.progress")
             return string.lower(progress())
           end,
+        },
+        lualine_z = {
+          "location",
         }
       }
     }
