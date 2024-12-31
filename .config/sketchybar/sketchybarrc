@@ -2,13 +2,6 @@
 source "$HOME/.config/sketchybar/colors.sh"
 source "$HOME/.config/sketchybar/constants.sh"
 
-export ITEM_DIR="$CONFIG_DIR/items"
-export PLUGIN_DIR="$CONFIG_DIR/plugins"
-export HELPERS_DIR="$CONFIG_DIR/helpers"
-
-FONT="Google Sans"
-ICON_FONT="SF Pro"
-
 sketchybar --hotload true
 
 bar=(
