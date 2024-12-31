@@ -7,6 +7,7 @@ return {
     { "<leader>nc", "<cmd>NeopywalCompile<cr>", desc = "Recompile neopywal" },
   },
   opts = {
+    transparent_background = true,
     show_split_lines = false,
     dim_inactive = true,
     plugins = {
