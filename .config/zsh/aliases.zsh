@@ -13,6 +13,8 @@ alias dots="cd .dotfiles"
 alias walls="cd Wallpapers && yy"
 alias uni="cd Уник"
 
+alias love="/Applications/love.app/Contents/MacOS/love"
+
 alias cat="bat"
 
 alias ls="eza --icons"
