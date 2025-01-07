@@ -31,8 +31,12 @@
 ### Installing
 
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/main/install.sh)>
+bash -c "$(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/main/install.sh)"
 ```
+
+> [!IMPORTANT]
+> Yabai requires System Integrity Protection to be partially disabled to be able to switch spaces  
+> Information on how to disable SIP can be found on the [yabai wiki](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
 > [!NOTE]
 > C++ compiler might be needed for TreeSitter to work
