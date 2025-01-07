@@ -88,5 +88,5 @@ hyper - p : yabai -m window --focus stack.prev
 # toggle float
 hyper - f : yabai -m window --toggle float
 
-cmd + alt + ctrl - return : open -a WezTerm
+cmd + alt + ctrl - return : open -a Ghostty
 cmd + alt + ctrl - f : open -a Finder
