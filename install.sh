@@ -1,9 +1,15 @@
 #!/bin/bash
 
+export PATH=$PATH:/opt/homebrew/bin
+
 # Clone the repository
 if which git > /dev/null; then
-  echo "Cloning the repository..."
-  git clone https://github.com/nikkoxd/dotfiles.git && cd dotfiles || exit
+  if [ -d "$(pwd)/dotfiles" ]; then
+    echo "Repository has already been cloned."
+  else
+    echo "Cloning the repository..."
+    git clone https://github.com/nikkoxd/dotfiles.git && cd dotfiles || exit
+  fi
 else
   echo "Git is not installed. Please install it first."
   exit 1
@@ -23,7 +29,7 @@ if [ -L "$HOME/Brewfile" ]; then
   mv "$HOME/Brewfile" "$HOME/Brewfile.backup"
   echo "Existing Brewfile moved to $HOME/Brewfile.backup"
 fi
-ln -s "$(dirname "$0")/Brewfile" "$HOME"
+ln -s "$(pwd)/dotfiles/Brewfile" "$HOME"
 brew bundle install
 
 # Set $ZDOTDIR
@@ -35,8 +41,14 @@ else
 fi
 
 # Symlink configs to ~/.config
-mv "$(dirname "$0")" "$HOME/.dotfiles"
-stow "$HOME/.dotfiles"
+if [ -L "$HOME/Brewfile" ]; then
+  rm "$HOME/Brewfile"
+fi
+if [ -L "$HOME/.dotfiles" ]; then
+  mv "$(pwd)/dotfiles" "$HOME/.dotfiles"
+fi
+cd "$HOME/.dotfiles" || exit
+stow --adopt .
 
 # Install colorz
 pipx install colorz
@@ -46,9 +58,11 @@ pip3 install pywalfox
 python3 -m pywalfox install
 
 # Install walogram
+cd "$HOME" || exit
 git clone https://github.com/nikkoxd/walogram.git
 (
   cd walogram || return
   sudo make install
 )
 rm -r walogram
+
