@@ -16,7 +16,6 @@ source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/exports.zsh"
 source "$HOME/.config/zsh/functions.zsh"
-source "$HOME/.config/zsh/myou.zsh"
 
 # plugins
 antigen bundle zsh-users/zsh-autosuggestions
@@ -26,7 +25,7 @@ antigen bundle atuinsh/atuin@main
 
 # clis
 eval "$(zoxide init zsh)"
-eval $(thefuck --alias)
+eval "$(thefuck --alias)"
 
 # useful options (wip)
 setopt autocd extendedglob nomatch menucomplete
@@ -44,7 +43,7 @@ zstyle ":vcs_info:git:*" formats "%b"
 # set custom prompt
 setopt PROMPT_SUBST
 PROMPT=' $(path) $(command_result) '
-RPROMPT='$(git_info)' # for some reason double quotes are broken here
+RPROMPT='$(vi_mode) $(git_info)' # for some reason double quotes are broken here
 command_result() {
   echo "%(?.%f.%F{blue})>%f"
 }
@@ -64,6 +63,22 @@ git_dirty() {
   if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
     echo "%F{red}*%f"
   fi
+}
+vi_mode() {
+  case $ZVM_MODE in
+    "$ZVM_MODE_NORMAL")
+      echo "[n]"
+      ;;
+    "$ZVM_MODE_VISUAL")
+      echo "[v]"
+      ;;
+    "$ZVM_MODE_VISUAL_LINE")
+      echo "[l]"
+      ;;
+    "$ZVM_MODE_REPLACE")
+      echo "[r]"
+      ;;
+  esac
 }
 
 
