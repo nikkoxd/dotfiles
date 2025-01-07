@@ -1,3 +1,5 @@
+local vars = require("config.vars")
+
 return {
   "RedsXDD/neopywal.nvim",
   name = "neopywal",
@@ -7,7 +9,7 @@ return {
     { "<leader>nc", "<cmd>NeopywalCompile<cr>", desc = "Recompile neopywal" },
   },
   opts = {
-    transparent_background = true,
+    transparent_background = vars.transparency,
     show_split_lines = false,
     dim_inactive = true,
     plugins = {
