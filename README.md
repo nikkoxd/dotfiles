@@ -21,8 +21,8 @@
     <td>Light Mode</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/7ee20294-a989-4d1b-a736-6dba3e77920c"></td>
-    <td><img src="https://github.com/user-attachments/assets/e11e2817-5336-4c4c-870d-4bf9ced0fa05"></td>
+    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/62082f42-9574-444d-ab88-78cf0b742c0e" /></td>
+    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/29d36265-bf9f-47ad-8e51-b1af613d8e44" /></td>
   </tr>
 </table>
 
