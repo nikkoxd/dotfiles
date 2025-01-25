@@ -36,6 +36,7 @@ zle_highlight=("paste:none")
 # version control
 autoload -Uz vcs_info
 precmd() { 
+  echo ''
   vcs_info 
 }
 zstyle ":vcs_info:git:*" formats "%b"
