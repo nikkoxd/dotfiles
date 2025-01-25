@@ -1,5 +1,5 @@
 local M = require("neopywal.theme.plugins.lualine").get()
-local C = require("neopywal.lib.palette").get()
+local C = require("neopywal").get_colors()
 
 M.normal = {
   a = { bg = C.none, fg = C.color4 },
