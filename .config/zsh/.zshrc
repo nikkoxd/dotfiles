@@ -36,32 +36,27 @@ zle_highlight=("paste:none")
 # version control
 autoload -Uz vcs_info
 precmd() { 
-  precmd() {
-    vcs_info 
-    echo
-    print -P ' %F{red}%n in $(path) $(git_info)'
-  }
   vcs_info 
-  print -P ' %F{red}%n in $(path) $(git_info)'
+  echo
 }
 zstyle ":vcs_info:git:*" formats "%b"
 
 # set custom prompt
 setopt PROMPT_SUBST
-PROMPT=' $(command_result) '
-RPROMPT='$(vi_mode)' # for some reason double quotes are broken here
+PROMPT='  $(command_result) '
+RPROMPT='$(path)$(git_info)  ' # for some reason double quotes are broken here
 command_result() {
-  echo "%(?.%f.%F{blue})>%f"
+  echo "%(?.%K{blue}.%K{red})%F{black} > %k%f"
 }
 path() {
-  echo "%F{blue}%1~%f"
+  echo "%K{blue}%F{black}  %1~ %k%f"
 }
 git_info() {
   if [[ ${vcs_info_msg_0_} != "" ]]; then
     if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-      echo "(${vcs_info_msg_0_}*)"
+      echo "%K{black}%F{gray} ${vcs_info_msg_0_}* %k%f"
     else
-      echo "(${vcs_info_msg_0_})"
+      echo "%K{black}%F{gray} ${vcs_info_msg_0_} %k%f"
     fi
   fi
 }

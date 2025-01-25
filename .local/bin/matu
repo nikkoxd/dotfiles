@@ -56,11 +56,11 @@ main() {
   generate_colorscheme
   reload_apps
 
-  magick "$image" -gravity Center -extent 8:10 "$HOME/.config/fastfetch/logo.png" &
-  # magick -size 800x1000 xc:none -draw "roundrectangle 0,0,800,1000,100,100" mask.png
-  # magick "$image" -gravity Center -extent 8:10 -resize 800x1000 -alpha set mask.png \
-  #   -compose DstIn -composite "$HOME/.config/fastfetch/logo.png"
-  # rm mask.png
+  # magick "$image" -gravity Center -extent 8:10 "$HOME/.config/fastfetch/logo.png" &
+  magick -size 800x1000 xc:none -draw "roundrectangle 0,0,800,1000,100,100" mask.png
+  magick "$image" -gravity Center -extent 8:10 -resize 800x1000 -alpha set mask.png \
+    -compose DstIn -composite "$HOME/.config/fastfetch/logo.png"
+  rm mask.png
 
   wait
 }
