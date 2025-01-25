@@ -36,15 +36,20 @@ zle_highlight=("paste:none")
 # version control
 autoload -Uz vcs_info
 precmd() { 
-  echo ''
+  precmd() {
+    vcs_info 
+    echo
+    print -P ' %F{red}%n in $(path) $(git_info)'
+  }
   vcs_info 
+  print -P ' %F{red}%n in $(path) $(git_info)'
 }
 zstyle ":vcs_info:git:*" formats "%b"
 
 # set custom prompt
 setopt PROMPT_SUBST
-PROMPT=' $(path) $(command_result) '
-RPROMPT='$(vi_mode) $(git_info)' # for some reason double quotes are broken here
+PROMPT=' $(command_result) '
+RPROMPT='$(vi_mode)' # for some reason double quotes are broken here
 command_result() {
   echo "%(?.%f.%F{blue})>%f"
 }
@@ -54,9 +59,9 @@ path() {
 git_info() {
   if [[ ${vcs_info_msg_0_} != "" ]]; then
     if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-      echo "%F{blue}branch: %f${vcs_info_msg_0_}*"
+      echo "(${vcs_info_msg_0_}*)"
     else
-      echo "%F{blue}branch: %f${vcs_info_msg_0_}"
+      echo "(${vcs_info_msg_0_})"
     fi
   fi
 }
@@ -95,3 +100,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+fetch
