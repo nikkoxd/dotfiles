@@ -8,7 +8,6 @@ return {
   },
 
   config = function()
-    require("nvim-treesitter.install").compilers = { "gcc-14" }
     local configs = require("nvim-treesitter.configs")
 
     configs.setup({
