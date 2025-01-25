@@ -54,8 +54,8 @@ stow --adopt .
 pipx install colorz
 
 # Install Pywalfox
-pip3 install pywalfox
-python3 -m pywalfox install
+pipx install pywalfox
+sudo pywalfox install --global
 
 # Install walogram
 cd "$HOME" || exit
