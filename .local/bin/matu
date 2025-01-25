@@ -43,7 +43,7 @@ generate_colorscheme() {
 
 reload_apps() {
   walogram -i "$image" &
-  python3 -m pywalfox update &
+  pywalfox update &
   spicetify apply -n &
 }
 
