@@ -16,9 +16,7 @@ return {
       gitsigns = true,
       harpoon = true,
       which_key = true,
-      barbecue = true,
-      dadbod_ui = true,
-      noice = true,
+      neogit = true,
       telescope = {
         enabled = true,
         style = "nvchad",
