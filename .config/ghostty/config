@@ -8,8 +8,8 @@ cursor-style = "block"
 macos-option-as-alt = true
 
 macos-titlebar-style = "hidden"
-window-padding-x = 5
-window-padding-y = 20
+window-padding-x = 15
+window-padding-y = 15
 
 background-opacity = 0.95
 background-blur-radius = 50
