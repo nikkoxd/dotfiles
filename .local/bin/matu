@@ -31,11 +31,11 @@ generate_colorscheme() {
   if [ $light = true ]; then
     osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to false'
     matugen image "$image" --mode light
-    python3 -m pywalfox light
+    pywalfox light
   else
     osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to true'
     matugen image "$image" --mode dark
-    python3 -m pywalfox dark
+    pywalfox dark
   fi
 
   wal -n -s --theme "$HOME/.config/wal/colorschemes/dark/matugen.json"
