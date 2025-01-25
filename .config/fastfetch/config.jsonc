@@ -3,60 +3,61 @@
     "logo": {
       "type": "kitty-icat",
       "source": "~/.config/fastfetch/logo.png",
-      "width": 28,
-      "height": 12,
-      "padding": {
-        "left": 2
-      }
+      "width": 22,
+      "height": 14
     },
     "display": {
-      "separator": "  "
+      "separator": "  ",
+      "key": {
+        "paddingLeft": 1
+      },
+      "constants": [
+        "\u001b[44;30m",
+        "\u001b[40;37;22m",
+        "\u001b[0m"
+      ]
     },
     "modules": [
         "break",
         {
           "type": "title",
-          "color": {
-            "user": "blue",
-            "at": "white",
-            "host": "green"
-          }
+          "format": " {$1} {user-name}@{host-name} "
         },
         "break",
         {
           "type": "os",
-          "key": " ",
-          "keyColor": "blue"
+          "key": "{$2} os   "
         },
         {
           "type": "host",
-          "key": "󰒓 ",
-          "keyColor": "blue"
+          "key": "{$2} host "
         },
         {
           "type": "packages",
-          "key": "󱄖 ",
-          "keyColor": "blue"
+          "key": "{$2} pkgs "
         },
         {
           "type": "uptime",
-          "key": "󰥔 ",
-          "keyColor": "blue"
+          "key": "{$2} up   "
         },
         {
           "type": "memory",
-          "key": "󰍛 ",
-          "keyColor": "blue"
+          "key": "{$2} ram  "
         },
         {
           "type": "datetime",
-          "key": " ",
-          "keyColor": "blue"
+          "key": "{$2} date "
         },
         "break",
         {
           "type": "colors",
-          "symbol": "circle"
+          "paddingLeft": 1,
+          "block": {
+            "range": [
+              0,
+              7
+            ]
+          }
         }
     ]
 }
