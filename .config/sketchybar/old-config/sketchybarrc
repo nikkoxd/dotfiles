@@ -1,0 +1,65 @@
+#!/bin/bash
+source "$HOME/.config/sketchybar/colors.sh"
+source "$HOME/.config/sketchybar/constants.sh"
+
+sketchybar --hotload true
+
+bar=(
+  color="$background"
+  position=top
+  height=40
+  padding_right=10
+  padding_left=10
+  display=all
+  sticky=on
+  blur_radius=10
+  shadow=on
+)
+
+sketchybar --bar "${bar[@]}"
+
+default=(
+  padding_left=2
+  padding_right=2
+  icon.font="$ICON_FONT:Regular:16.0"
+  icon.color="$primary"
+  icon.padding_left=10
+  icon.padding_right=10
+  label.font="$FONT:Regular:15.0"
+  label.color="$on_surface"
+  label.padding_left=2
+  label.padding_right=10
+  background.color="$surface_container"
+  background.height=30
+  background.corner_radius=15
+  popup.background.color="$surface"
+  popup.background.border_color="$primary"
+  popup.background.corner_radius=10
+  popup.background.shadow.drawing=on
+  popup.y_offset=5
+)
+
+sketchybar --default "${default[@]}"
+
+##### LEFT ITEMS #####
+
+source "$ITEM_DIR/flower.sh"
+source "$ITEM_DIR/menus.sh"
+source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/weather.sh"
+
+##### CENTER ITEMS #####
+
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/spotify.sh"
+
+##### RIGHT ITEMS #####
+
+source "$ITEM_DIR/datetime.sh"
+source "$ITEM_DIR/layout.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/vpn.sh"
+source "$ITEM_DIR/wifi.sh"
+
+sketchybar --update

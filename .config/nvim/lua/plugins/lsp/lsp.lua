@@ -76,11 +76,7 @@ return {
             settings = {
               Lua = {
                 workspace = {
-                  checkThirdParty = false,
-                  telemetry = { enable = false },
-                  library = {
-                    [ vim.fn.expand "${3rd}/live2d/library" ] = true,
-                  },
+                  checkThirdParty = true,
                 },
                 diagnostics = {
                   globals = { "vim" }
