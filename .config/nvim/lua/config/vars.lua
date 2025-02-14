@@ -1,5 +1,5 @@
 local M = {}
 
-M.transparency = true
+M.transparency = false
 
 return M
