@@ -1,27 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-update() {
-  sketchybar --set "$NAME" icon.highlight="$SELECTED" background.drawing="$SELECTED"
-
-  if "$SELECTED"; then
+if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
+    sketchybar --set "$NAME" icon.highlight=on background.drawing=on
     sketchybar --animate sin 15 --set "$NAME" width=40 
-  else
+else
+    sketchybar --set "$NAME" icon.highlight=off background.drawing=off
     sketchybar --animate sin 15 --set "$NAME" width=30
-  fi
-}
-
-mouse_clicked() {
-  if [ "$BUTTON" = "right" ]; then
-    yabai -m space --destroy "$SID"
-    sketchybar --trigger space_change --trigger windows_on_spaces
-  else
-    yabai -m space --focus "$SID" 2>/dev/null
-  fi
-}
-
-case "$SENDER" in
-  "mouse.clicked") mouse_clicked
-  ;;
-  *) update
-  ;;
-esac
+fi
