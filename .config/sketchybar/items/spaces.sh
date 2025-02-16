@@ -4,7 +4,7 @@ sketchybar --add event aerospace_workspace_change
 
 for sid in $(aerospace list-workspaces --all); do
   space=(
-    icon="$(echo "$sid" | tr '[:lower:]' '[:upper:]')"
+    icon="$sid"
     padding_left=0
     padding_right=0
     icon.font="$FONT:Regular:14.0"
