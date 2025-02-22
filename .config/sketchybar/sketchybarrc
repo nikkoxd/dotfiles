@@ -45,6 +45,7 @@ sketchybar --default "${default[@]}"
 
 source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/weather.sh"
+source "$ITEM_DIR/airpods.sh"
 
 ##### CENTER ITEMS #####
 
