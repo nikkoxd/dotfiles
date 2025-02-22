@@ -50,4 +50,11 @@ If your wallpaper doesn't apply automatically,
 enable `System Preferences > Wallpaper > Show on all Spaces`
 
 ### Previous setups
-https://github.com/nikkoxd/dotfiles/tree/fca8cb8ba6bc0322e5158700f0ae56c613e1c623
+[Version 2:](https://github.com/nikkoxd/dotfiles/tree/sketchybar-redesign-v2?tab=readme-ov-file)
+![Version 2 Screenshot](https://github.com/nikkoxd/dotfiles/raw/sketchybar-redesign-v2/screenshot.png)
+
+[Version 3:](https://github.com/nikkoxd/dotfiles/tree/sketchybar-redesign-v3?tab=readme-ov-file)
+![Version 3 Screenshot](https://github.com/nikkoxd/dotfiles/raw/sketchybar-redesign-v3/screenshot.png)
+
+[Version 4:](https://github.com/nikkoxd/dotfiles/tree/sketchybar-redesign-v4?tab=readme-ov-file)
+![Version 4 Screenshot](https://github.com/user-attachments/assets/3f3eb526-93a8-4214-8662-c6ee3317456e)
