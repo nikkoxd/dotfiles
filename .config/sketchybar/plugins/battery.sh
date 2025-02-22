@@ -27,7 +27,7 @@ if [[ "$CHARGING" != "" ]]; then
   ICON_COLOR="$on_primary"
   COLOR="$on_primary"
 else
-  BACKGROUND="$surface_container"
+  BACKGROUND="$background"
   ICON_COLOR="$primary"
   COLOR="$on_surface"
 fi
