@@ -59,17 +59,22 @@ spotify_album=(
 )
 
 spotify_shuffle=(
-  icon=􀵊
+  icon=􀊝
   icon.color="$primary"
+  icon.padding_left=10
+  width=40
   label.drawing=off
   background.border_width=0
+  padding_left=15
   script="$PLUGIN_DIR/spotify.sh"
   y_offset=-35
 )
 
 spotify_prev=(
-  icon=􁋯
+  icon=􀊍
   icon.color="$primary"
+  icon.padding_left=12
+  width=40
   label.drawing=off
   background.border_width=0
   script="$PLUGIN_DIR/spotify.sh"
@@ -77,16 +82,20 @@ spotify_prev=(
 )
 
 spotify_play_pause=(
-  icon.color="$primary"
+  icon.color="$on_primary"
+  width=40
   label.drawing=off
+  background.color="$primary"
   background.border_width=0
   script="$PLUGIN_DIR/spotify.sh"
   y_offset=-35
 )
 
 spotify_next=(
-  icon=􁋱
+  icon=􀊏
   icon.color="$primary"
+  icon.padding_left=12
+  width=40
   label.drawing=off
   background.border_width=0
   script="$PLUGIN_DIR/spotify.sh"
@@ -94,19 +103,12 @@ spotify_next=(
 )
 
 spotify_repeat=(
-  icon=􀵌
+  icon=􀊞
   icon.color="$primary"
+  icon.padding_left=10
+  width=40
   label.drawing=off
-  background.border_width=0
-  script="$PLUGIN_DIR/spotify.sh"
-  y_offset=-35
-)
-
-spotify_hide=(
-  icon=􀜂
-  icon.color="$primary"
-  label.drawing=off
-  padding_right=10
+  padding_right=50
   background.border_width=0
   script="$PLUGIN_DIR/spotify.sh"
   y_offset=-35
@@ -150,8 +152,4 @@ sketchybar --add item spotify center \
            \
            --add item spotify.repeat popup.spotify \
            --set spotify.repeat "${spotify_repeat[@]}" \
-           --subscribe spotify.repeat mouse.clicked \
-           \
-           --add item spotify.hide popup.spotify \
-           --set spotify.hide "${spotify_hide[@]}" \
-           --subscribe spotify.hide mouse.clicked
+           --subscribe spotify.repeat mouse.clicked
