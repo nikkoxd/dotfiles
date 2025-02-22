@@ -1,4 +1,4 @@
-<img width="1680" alt="image" src="https://github.com/user-attachments/assets/3f3eb526-93a8-4214-8662-c6ee3317456e" />
+<img width="1680" alt="image" src="https://github.com/user-attachments/assets/419f564e-d038-4367-8a6f-16f1c2b87154" />
 
 <h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
 
@@ -11,7 +11,7 @@
 - Cool Spotify popup
 
 <p align="center">
-  <img width="509" alt="SCR-20241129-lykt" src="https://github.com/user-attachments/assets/c802f341-28f8-4269-96e3-3eedd087c0e1">
+  <img width="598" alt="image" src="https://github.com/user-attachments/assets/300064f4-3565-44d3-815c-2adbca753648" />
 </p>
 
 - Dark and light theme genration
@@ -21,8 +21,8 @@
     <td>Light Mode</td>
   </tr>
   <tr>
-    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/62082f42-9574-444d-ab88-78cf0b742c0e" /></td>
-    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/29d36265-bf9f-47ad-8e51-b1af613d8e44" /></td>
+    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/419f564e-d038-4367-8a6f-16f1c2b87154" /></td>
+    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/5037fec5-32a6-42af-9a4a-cc03049c47bd" /></td>
   </tr>
 </table>
 
