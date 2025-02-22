@@ -5,7 +5,7 @@ source "$HOME/.config/sketchybar/constants.sh"
 sketchybar --hotload true
 
 bar=(
-  color="$background"
+  color="$0x00000000"
   position=top
   height=40
   padding_right=10
@@ -37,6 +37,7 @@ default=(
   popup.background.corner_radius=10
   popup.background.shadow.drawing=on
   popup.y_offset=5
+  shadow=on
 )
 
 sketchybar --default "${default[@]}"
