@@ -1,19 +1,15 @@
 #!/bin/bash
 
 spotify=(
-  padding_left=10
-  padding_right=10
+  padding_left=15
+  padding_right=15
   scroll_texts=true
   icon.font="$FONT:Regular:16.0"
-  icon.padding_left=10
-  icon.padding_right=14
   label.max_chars=35
-  label.padding_left=0
-  label.padding_right=10
   popup.horizontal=on
   popup.align=center
   popup.height=150
-  popup.scroll_texts=on
+  # popup.scroll_texts=on
   update_freq=2
   script="$PLUGIN_DIR/spotify.sh"
 )
