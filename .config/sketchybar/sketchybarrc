@@ -44,8 +44,6 @@ sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
 
-source "$ITEM_DIR/flower.sh"
-source "$ITEM_DIR/menus.sh"
 source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/weather.sh"
 
