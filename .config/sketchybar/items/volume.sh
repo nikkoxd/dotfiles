@@ -4,16 +4,19 @@ anchor=(
 )
 
 slider=(
-  padding_left=20
-  padding_right=0
+  padding_left=15
+  padding_right=15
   icon.drawing=off
+  label.drawing=off
   background.drawing=off
   slider.width=100
-  slider.highlight_color="$ACCENT"
-  slider.knob="􀀁"
-  slider.knob.color="$FOREGROUND"
+  slider.highlight_color="$primary"
+  slider.knob="|"
+  slider.knob.y_offset=1
+  slider.knob.width=10
+  slider.knob.color="$primary"
   slider.background.height=4
-  slider.background.color="$BACKGROUND2"
+  slider.background.color="$surface_container"
   slider.background.corner_radius=5
   script="$PLUGIN_DIR/volume.sh"
 )

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$HOME/.config/sketchybar/colors.sh"
+
 disable_popup() {
   sketchybar --set spotify popup.drawing=off
 }
@@ -36,13 +38,13 @@ update() {
       case "$STATE" in
         "playing")
           sketchybar --set "$NAME" icon="􀊅"
-          sketchybar --set spotify.play_pause icon="􀊘"
+          sketchybar --set spotify.play_pause icon="􀊅"
           set_label
           set_cover
           ;;
         "paused")
           sketchybar --set "$NAME" icon="􀊃"
-          sketchybar --set spotify.play_pause icon="􀊖"
+          sketchybar --set spotify.play_pause icon="􀊄"
           set_label
           set_cover
           ;;

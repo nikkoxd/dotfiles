@@ -2,7 +2,8 @@
 
 vpn=(
   icon="󰖂"
-  icon.padding_right=9
+  icon.padding_left=12
+  icon.padding_right=10
   label.drawing=off
   script="$PLUGIN_DIR/vpn.sh"
 )
