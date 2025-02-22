@@ -8,7 +8,7 @@ update() {
   if "$SELECTED"; then
     sketchybar --animate sin 15 --set "$NAME" icon.width=40 icon.padding_left=16 icon.padding_right=16 background.color="$primary"
   else
-    sketchybar --animate sin 15 --set "$NAME" icon.width=30 icon.padding_left=11 icon.padding_right=11 background.color="$surface_container"
+    sketchybar --animate sin 15 --set "$NAME" icon.width=30 icon.padding_left=11 icon.padding_right=11 background.color="$background"
   fi
 }
 
