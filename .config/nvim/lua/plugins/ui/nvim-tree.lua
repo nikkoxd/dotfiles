@@ -103,20 +103,21 @@ return {
         -- side = "right",
       },
       renderer = {
-        indent_markers = {
-          enable = true,
-        },
+        -- indent_markers = {
+        --   enable = true,
+        -- },
         icons = {
           git_placement = "signcolumn",
           glyphs = {
+            modified = "!",
             git = {
               unstaged  = "U",
-              staged    = "A",
+              staged    = "S",
               unmerged  = "M",
               renamed   = "R",
               untracked = "?",
               deleted   = "D",
-              ignored   = "!"
+              ignored   = "I"
             },
           },
         }
