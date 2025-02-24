@@ -3,7 +3,7 @@
 show_both_earbuds() {
   update
 
-  sketchybar --animate sin 15 --set "$NAME" label="Left: $left%, Right: $right%"
+  sketchybar --animate sin 15 --set "$NAME" label="Left: $left%, Right: $right%, Case: $case%"
 }
 
 update() {
@@ -14,6 +14,7 @@ update() {
     sketchybar -m --set "$NAME" drawing=on
     left="$(echo "$DEVICES" | jq -r .device_batteryLevelLeft | tr -d '[:space:]%')"
     right="$(echo "$DEVICES" | jq -r .device_batteryLevelRight | tr -d '[:space:]%')"
+    case="$(echo "$DEVICES" | jq -r .device_batteryLevelCase | tr -d '[:space:]%')"
 
     if [[ "$left" -gt "$right" ]]; then
       percentage="$right"
@@ -29,6 +30,10 @@ update() {
     if [[ "$right" == "null" ]]; then
       right='Nf'
       percentage="$left"
+    fi
+
+    if [[ "$case" == "null" ]]; then
+      case='Nf'
     fi
 
     sketchybar --animate sin 15 --set "$NAME" label="$percentage%"
