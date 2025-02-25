@@ -9,7 +9,7 @@ update() {
   if [[ $VPN != "" ]]; then
     sketchybar --set "$NAME" background.color="$primary" icon.color="$on_primary"
   else
-    sketchybar --set "$NAME" background.color="$surface_container" icon.color="$primary"
+    sketchybar --set "$NAME" background.color="$background" icon.color="$primary"
   fi
 }
 
@@ -18,7 +18,7 @@ mouse_clicked() {
 
   if [[ $VPN != "" ]]; then
     scutil --nc stop "$VPN_NAME"
-    sketchybar --set "$NAME" background.color="$surface_container" icon.color="$primary"
+    sketchybar --set "$NAME" background.color="$background" icon.color="$primary"
   else
     scutil --nc start "$VPN_NAME"
     sketchybar --set "$NAME" background.color="$primary" icon.color="$on_primary"
