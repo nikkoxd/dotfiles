@@ -47,7 +47,7 @@ case "$SENDER" in
   mouse.exited)
     update
     ;;
-  bluetooth_change)
+  *)
     update
     ;;
 esac
