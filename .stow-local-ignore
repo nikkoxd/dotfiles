@@ -2,5 +2,6 @@
 .gitignore
 .gitmodules
 .luarc.json
+.DS_Store
 README.md
 install.sh
