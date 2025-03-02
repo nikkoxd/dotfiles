@@ -6,3 +6,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export BAT_THEME="base16"
 export ATAC_KEY_BINDINGS=~/.config/atac/key_bindings.toml
+export FZF_DEFAULT_OPTS="--color fg:8"
