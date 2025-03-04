@@ -21,6 +21,9 @@ return {
     { "<leader>oe", "<cmd>ObsidianExtractNote<cr>", mode = "v", desc = "Extract note" },
   },
   opts = {
+    ui = {
+      enable = false,
+    },
     workspaces = {
       {
         name = "vault",

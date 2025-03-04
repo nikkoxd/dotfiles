@@ -1,4 +1,9 @@
 return {
   "tzachar/highlight-undo.nvim",
-  opts = {},
+  enabled = false,
+  opts = {
+    ignored_filetypes = {
+      "markdown",
+    }
+  },
 }
