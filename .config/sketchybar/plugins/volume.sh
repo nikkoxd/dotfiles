@@ -8,19 +8,18 @@ update() {
 
   case "$VOLUME" in
     100) 
-      ICON="􀊩"
+      ICON="volume_up"
     ;;
     [6-9][0-9]) 
-      ICON="􀊧"
+      ICON="volume_up"
     ;;
     [3-5][0-9]) 
-      ICON="􀊥"
+      ICON="volume_down"
     ;;
     [1-9]|[1-2][0-9]) 
-      ICON="􀊡"
-      sketchybar --set "$NAME" icon.padding_right=8
+      ICON="volume_mute"
     ;;
-    *) ICON="􀊣"
+    *) ICON="volume_off"
   esac
 
   sketchybar --set "$NAME" icon="$ICON" label="$VOLUME%"

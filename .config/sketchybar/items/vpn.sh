@@ -1,9 +1,9 @@
 #!/bin/bash
 
 vpn=(
-  icon="󰖂"
-  icon.padding_left=12
-  icon.padding_right=10
+  icon="vpn_key_off"
+  icon.padding_left=11
+  icon.padding_right=12
   label.drawing=off
   script="$PLUGIN_DIR/vpn.sh"
 )

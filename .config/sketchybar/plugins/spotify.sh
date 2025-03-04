@@ -22,6 +22,8 @@ set_cover() {
   COVER=$(osascript -e 'tell application "Spotify" to get artwork url of current track')
 
   curl -s --max-time 20 "$COVER" -o /tmp/cover.jpg
+  magick -size 640x640 xc:none -draw "roundrectangle 0,0,640,640,100,100" /tmp/mask.png
+  magick /tmp/cover.jpg -gravity Center -extend 1:1 -resize 640x640 -alpha set /tmp/cover.jpg
 
   sketchybar --set spotify.cover background.image="/tmp/cover.jpg"
 }
@@ -34,17 +36,29 @@ update() {
       sketchybar --set "$NAME" drawing=on
 
       STATE=$(osascript -e 'tell application "Spotify" to player state')
+      SHUFFLE=$(osascript -e 'tell application "Spotify" to shuffling')
+      REPEAT=$(osascript -e 'tell application "Spotify" to repeating')
+
+      if [ "$SHUFFLE" == "true" ]; then
+        sketchybar --animate sin 15 --set spotify.shuffle background.color="$primary" icon.color="$on_primary"
+      else
+        sketchybar --animate sin 15 --set spotify.shuffle background.color="$surface" icon.color="$primary"
+      fi
+
+      if [ "$REPEAT" == "true" ]; then
+        sketchybar --animate sin 15 --set spotify.repeat background.color="$primary" icon.color="$on_primary"
+      else
+        sketchybar --animate sin 15 --set spotify.repeat background.color="$surface" icon.color="$primary"
+      fi
 
       case "$STATE" in
         "playing")
-          sketchybar --set "$NAME" icon="􀊅"
-          sketchybar --set spotify.play_pause icon="􀊅"
+          sketchybar --set spotify.play_pause icon="pause"
           set_label
           set_cover
           ;;
         "paused")
-          sketchybar --set "$NAME" icon="􀊃"
-          sketchybar --set spotify.play_pause icon="􀊄"
+          sketchybar --set spotify.play_pause icon="play_arrow"
           set_label
           set_cover
           ;;
@@ -59,11 +73,7 @@ update() {
 }
 
 spotify() {
-  if [ "$BUTTON" = "left" ]; then
-    play_pause
-  else
-    sketchybar --set "$NAME" popup.drawing=toggle
-  fi
+  sketchybar --set "$NAME" popup.drawing=toggle
 }
 
 play_pause() {
@@ -85,12 +95,12 @@ shuffle() {
   SHUFFLE=$(osascript -e 'tell application "Spotify" to shuffling')
   if [ "$SHUFFLE" == "false" ]; then
     osascript -e 'tell application "Spotify" to set shuffling to true'
-    sketchybar --animate sin 30 --set spotify label="Shuffling is on"
+    sketchybar --animate sin 15 --set spotify.shuffle background.color="$primary" icon.color="$on_primary"
     sleep 2
     update
   else
     osascript -e 'tell application "Spotify" to set shuffling to false'
-    sketchybar --animate sin 30 --set spotify label="Shuffling is off"
+    sketchybar --animate sin 15 --set spotify.shuffle background.color="$surface_container" icon.color="$primary"
     sleep 2
     update
   fi
@@ -100,12 +110,12 @@ repeat() {
   REPEAT=$(osascript -e 'tell application "Spotify" to repeating')
   if [ "$REPEAT" == "false" ]; then
     osascript -e 'tell application "Spotify" to set repeating to true'
-    sketchybar --animate sin 30 --set spotify label="Repeat is on"
+    sketchybar --animate sin 15 --set spotify.repeat background.color="$primary" icon.color="$on_primary"
     sleep 2
     update
   else
     osascript -e 'tell application "Spotify" to set repeating to false'
-    sketchybar --animate sin 30 --set spotify label="Repeat is off"
+    sketchybar --animate sin 15 --set spotify.repeat background.color="$surface_container" icon.color="$primary"
     sleep 2
     update
   fi

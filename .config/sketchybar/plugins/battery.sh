@@ -10,19 +10,29 @@ if [ "$PERCENTAGE" = "" ]; then
 fi
 
 case "${PERCENTAGE}" in
-  9[0-9]|100) ICON="􀛨"
+  9[0-9]|100) ICON="battery_full"
   ;;
-  [6-8][0-9]) ICON="􀺸"
+  [6-8][0-9]) ICON="battery_5_bar"
   ;;
-  [3-5][0-9]) ICON="􀺶"
+  [3-5][0-9]) ICON="battery_4_bar"
   ;;
-  [1-2][0-9]) ICON="􀛩"
+  [1-2][0-9]) ICON="battery_2_bar"
   ;;
-  *) ICON="􀛪"
+  *) ICON="battery_1_bar"
 esac
 
 if [[ "$CHARGING" != "" ]]; then
-  ICON="􀢋"
+  case "${PERCENTAGE}" in
+    9[0-9]|100) ICON="battery_charging_full"
+      ;;
+    [6-8][0-9]) ICON="battery_charging_80"
+      ;;
+    [3-5][0-9]) ICON="battery_charging_50"
+      ;;
+    [1-2][0-9]) ICON="battery_charging_30"
+      ;;
+    *) ICON="battery_charging_20"
+  esac
   BACKGROUND="$primary"
   ICON_COLOR="$on_primary"
   COLOR="$on_primary"
