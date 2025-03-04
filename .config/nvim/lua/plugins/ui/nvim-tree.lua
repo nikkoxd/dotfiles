@@ -99,15 +99,9 @@ return {
         vim.keymap.set("n", "h", api.tree.close,        opts("Close"))
         -- vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
       end,
-      view = {
-        -- side = "right",
-      },
       renderer = {
-        -- indent_markers = {
-        --   enable = true,
-        -- },
         icons = {
-          git_placement = "signcolumn",
+          git_placement = "after",
           glyphs = {
             modified = "!",
             git = {
@@ -119,6 +113,10 @@ return {
               deleted   = "D",
               ignored   = "I"
             },
+          },
+          show = {
+            file = false,
+            folder = false,
           },
         }
       },
