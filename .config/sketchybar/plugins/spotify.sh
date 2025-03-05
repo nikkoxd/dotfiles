@@ -21,11 +21,11 @@ set_label() {
 set_cover() {
   COVER=$(osascript -e 'tell application "Spotify" to get artwork url of current track')
 
-  curl -s --max-time 20 "$COVER" -o /tmp/cover.jpg
+  curl -s --max-time 20 "$COVER" -o /tmp/cover.png
   magick -size 640x640 xc:none -draw "roundrectangle 0,0,640,640,100,100" /tmp/mask.png
-  magick /tmp/cover.jpg -gravity Center -extend 1:1 -resize 640x640 -alpha set /tmp/cover.jpg
+  magick /tmp/cover.jpg -gravity Center -extend 1:1 -resize 640x640 -alpha set /tmp/cover.png -compose DstIn -composite /tmp/cover.png
 
-  sketchybar --set spotify.cover background.image="/tmp/cover.jpg"
+  sketchybar --set spotify.cover background.image="/tmp/cover.png"
 }
 
 update() {
