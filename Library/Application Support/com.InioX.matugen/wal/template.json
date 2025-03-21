@@ -14,14 +14,14 @@
     "color4": "{{colors.primary.default.hex}}",
     "color5": "{{colors.secondary.default.hex | set_lightness: 5.0}}",
     "color6": "{{colors.secondary.default.hex}}",
-    "color7": "{{colors.surface_container.default.hex}}",
-    "color8": "{{colors.outline.default.hex}}",
+    "color7": "{{colors.outline.default.hex}}",
+    "color8": "{{colors.surface_container_highest.default.hex | set_lightness: 15.0}}",
     "color9": "{{colors.tertiary.default.hex | set_lightness: 15.0}}",
     "color10": "{{colors.tertiary.default.hex | set_lightness: 10.0}}",
     "color11": "{{colors.primary.default.hex | set_lightness: 10.0}}",
     "color12": "{{colors.primary.default.hex | set_lightness: 15.0}}",
     "color13": "{{colors.secondary.default.hex | set_lightness: 15.0}}",
     "color14": "{{colors.secondary.default.hex | set_lightness: 10.0}}",
-    "color15": "{{colors.outline.default.hex}}"
+    "color15": "{{colors.outline.default.hex | set_lightness: 10.0}}"
   }
 }
