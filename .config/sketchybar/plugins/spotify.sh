@@ -23,7 +23,7 @@ set_cover() {
 
   curl -s --max-time 20 "$COVER" -o /tmp/cover.png
   magick -size 640x640 xc:none -draw "roundrectangle 0,0,640,640,100,100" /tmp/mask.png
-  magick /tmp/cover.jpg -gravity Center -extend 1:1 -resize 640x640 -alpha set /tmp/cover.png -compose DstIn -composite /tmp/cover.png
+  magick /tmp/cover.png -gravity Center -resize 640x640 -alpha set /tmp/cover.png -compose DstIn -composite /tmp/cover.png
 
   sketchybar --set spotify.cover background.image="/tmp/cover.png"
 }
@@ -53,12 +53,12 @@ update() {
 
       case "$STATE" in
         "playing")
-          sketchybar --set spotify.play_pause icon="pause"
+          sketchybar --set spotify.play_pause icon="􀊆"
           set_label
           set_cover
           ;;
         "paused")
-          sketchybar --set spotify.play_pause icon="play_arrow"
+          sketchybar --set spotify.play_pause icon="􀊄"
           set_label
           set_cover
           ;;
