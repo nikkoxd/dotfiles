@@ -45,6 +45,7 @@ reload_apps() {
   walogram -i "$image" &
   pywalfox update &
   spicetify apply -n &
+  osascript ~/.config/ghostty/reload.scpt &
 }
 
 main() {
