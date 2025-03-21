@@ -31,9 +31,6 @@ shift + alt - b : yabai -m space --balance
 # rotate space
 shift + alt - r : yabai -m space --rotate 90
 
-# fullscreen a window
-shift + alt - return : yabai -m window --toggle zoom-fullscreen
-
 # resizing window
 hyper - h : yabai -m window --resize right:-20:0; \
             yabai -m window --resize left:-20:0
@@ -45,18 +42,18 @@ hyper - l : yabai -m window --resize right:20:0; \
             yabai -m window --resize left:20:0
 
 # switch spaces
-hyper - 1 : yabai -m space --focus 1
-hyper - 2 : yabai -m space --focus 2
-hyper - 3 : yabai -m space --focus 3
-hyper - 4 : yabai -m space --focus 4
-hyper - 5 : yabai -m space --focus 5
-hyper - 6 : yabai -m space --focus 6
-hyper - 7 : yabai -m space --focus 7
-hyper - 8 : yabai -m space --focus 8
-hyper - 9 : yabai -m space --focus 9
-hyper - 0 : yabai -m space --focus 10
-hyper - 0x1E : yabai -m space --focus next
-hyper - 0x21 : yabai -m space --focus prev
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0 : yabai -m space --focus 10
+alt - 0x1E : yabai -m space --focus next
+alt - 0x21 : yabai -m space --focus prev
 
 # add/remove space
 shift + alt - a : yabai -m space --create
@@ -86,7 +83,10 @@ hyper - n : yabai -m window --focus stack.next
 hyper - p : yabai -m window --focus stack.prev
 
 # toggle float
-hyper - f : yabai -m window --toggle float
+alt - f : yabai -m window --toggle float
+
+# fullscreen a window
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
 
 cmd + alt + ctrl - return : open -a Ghostty
 cmd + alt + ctrl - f : open -a Finder
