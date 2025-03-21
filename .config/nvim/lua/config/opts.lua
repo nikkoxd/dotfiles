@@ -13,7 +13,7 @@ opt.relativenumber = true
 
 opt.cursorline = true
 
-opt.cmdheight = 0
+-- opt.cmdheight = 0
 
 opt.ignorecase = true
 opt.smartcase = true

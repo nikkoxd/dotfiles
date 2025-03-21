@@ -8,8 +8,8 @@ M.normal = {
   b = { bg = C.color0 },
   y = { bg = C.color0 },
 
-  c = { bg = C.none },
-  x = { bg = C.none },
+  c = { bg = C.color0 },
+  x = { bg = C.color0 },
 }
 
 M.visual = {

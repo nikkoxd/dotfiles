@@ -16,6 +16,7 @@ source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/exports.zsh"
 source "$HOME/.config/zsh/functions.zsh"
+source "$HOME/.config/zsh/prompt.zsh"
 
 # plugins
 antigen bundle zsh-users/zsh-autosuggestions
@@ -32,56 +33,6 @@ setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 stty stop undef
 zle_highlight=("paste:none")
-
-# version control
-autoload -Uz vcs_info
-precmd() { 
-  vcs_info 
-  echo
-}
-zstyle ":vcs_info:git:*" formats "%b"
-
-# set custom prompt
-setopt PROMPT_SUBST
-PROMPT='  $(command_result) '
-RPROMPT='$(path)$(git_info)  ' # for some reason double quotes are broken here
-command_result() {
-  echo "%(?.%K{blue}.%K{red})%F{black} > %k%f"
-}
-path() {
-  echo "%K{blue}%F{black}  %1~ %k%f"
-}
-git_info() {
-  if [[ ${vcs_info_msg_0_} != "" ]]; then
-    if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-      echo "%K{black}%F{gray} ${vcs_info_msg_0_}* %k%f"
-    else
-      echo "%K{black}%F{gray} ${vcs_info_msg_0_} %k%f"
-    fi
-  fi
-}
-git_dirty() {
-  if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-    echo "%F{red}*%f"
-  fi
-}
-vi_mode() {
-  case $ZVM_MODE in
-    "$ZVM_MODE_NORMAL")
-      echo "[n]"
-      ;;
-    "$ZVM_MODE_VISUAL")
-      echo "[v]"
-      ;;
-    "$ZVM_MODE_VISUAL_LINE")
-      echo "[l]"
-      ;;
-    "$ZVM_MODE_REPLACE")
-      echo "[r]"
-      ;;
-  esac
-}
-
 
 # bun completions
 [ -s "/Users/nikko/.bun/_bun" ] && source "/Users/nikko/.bun/_bun"

@@ -13,12 +13,16 @@ return {
       },
       sections = {
         lualine_a = {
-          function()
-            local mode = require("lualine.utils.mode").get_mode()
-            return string.lower(mode);
-          end,
         },
         lualine_b = {
+          {
+            "filetype",
+            icon_only = true,
+            padding = {
+              left = 2,
+              right = 0,
+            },
+          },
           {
             "filename",
             symbols = {
@@ -33,26 +37,25 @@ return {
           "diagnostics",
         },
         lualine_x = {
+        },
+        lualine_y = {
           {
             "branch",
             icons_enabled = false,
           },
-          "encoding",
           {
-            "fileformat",
-            icons_enabled = false,
-          }
-        },
-        lualine_y = {
-          function()
-            local progress = require("lualine.components.progress")
-            return string.lower(progress())
-          end,
-        },
-        lualine_z = {
+            "progress",
+            fmt = function(s) return string.lower(s) end,
+          },
           {
             "location",
+            padding = {
+              left = 0,
+              right = 2,
+            },
           }
+        },
+        lualine_z = {
         }
       }
     }
