@@ -83,7 +83,7 @@ hyper - n : yabai -m window --focus stack.next
 hyper - p : yabai -m window --focus stack.prev
 
 # toggle float
-alt - f : yabai -m window --toggle float
+alt - f : yabai -m window --toggle float; sketchybar --trigger notification_triggered NOTIFICATION_TYPE=YabaiWindowTypeChanged
 
 # fullscreen a window
 shift + alt - f : yabai -m window --toggle zoom-fullscreen
