@@ -7,6 +7,7 @@ sketchybar --hotload true
 bar=(
   color="$0x00000000"
   position=top
+  y_offset=-60
   height=40
   padding_right=10
   padding_left=10
@@ -17,6 +18,7 @@ bar=(
 )
 
 sketchybar --bar "${bar[@]}"
+sketchybar --animate sin 20 --bar y_offset=5 y_offset=0
 
 default=(
   padding_left=2

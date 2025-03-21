@@ -128,9 +128,8 @@ open_app() {
 
 show_details() {
   CONDITION=$(echo "$DATA" | jq -r ".current.condition.text")
-  FEELS_LIKE=$(echo "$DATA" | jq -r ".current.feelslike_c")
 
-  sketchybar --animate sin 30 --set "$NAME" label="${CONDITION}, Ощущается как ${FEELS_LIKE}°C"
+  sketchybar --animate sin 30 --set "$NAME" label="${CONDITION}"
 }
 
 case "$SENDER" in
