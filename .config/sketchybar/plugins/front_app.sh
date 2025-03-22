@@ -9,5 +9,5 @@ source "$CONFIG_DIR/plugins/icon_map.sh"
 
 if [ "$SENDER" = "front_app_switched" ]; then
   __icon_map "${INFO}"
-  sketchybar --set "$NAME" icon="${icon_result}" label="$INFO" icon.font="sketchybar-app-font:Regular:17.0"
+  sketchybar --animate sin 15 --set "$NAME" icon="${icon_result}" label="$INFO" icon.font="sketchybar-app-font:Regular:17.0"
 fi
