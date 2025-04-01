@@ -12,8 +12,9 @@ do
     icon.background.color="$TRANSPARENT"
     icon.color="$on_surface"
     icon.highlight_color="$on_primary"
-    icon.padding_left=11
-    icon.padding_right=11
+    icon.align=center
+    icon.padding_left=0
+    icon.padding_right=0
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )
