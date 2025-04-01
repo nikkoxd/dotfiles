@@ -16,7 +16,6 @@ spotify=(
   popup.align=center
   popup.height=185
   # popup.scroll_texts=on
-  update_freq=2
   script="$PLUGIN_DIR/spotify.sh"
 )
 
@@ -140,9 +139,11 @@ spotify_repeat=(
   shadow=off
 )
 
+sketchybar --add event spotify_playback_state_changed com.spotify.client.PlaybackStateChanged
+
 sketchybar --add item spotify center \
            --set spotify "${spotify[@]}" \
-           --subscribe spotify mouse.clicked \
+           --subscribe spotify spotify_playback_state_changed mouse.clicked \
            \
            --add item spotify.cover popup.spotify \
            --set spotify.cover "${spotify_cover[@]}" \

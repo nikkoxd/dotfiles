@@ -31,12 +31,16 @@ set_cover() {
 
 update() {
   if [ "$NAME" == "spotify" ]; then
-    IS_RUNNING=$(osascript -e 'tell application "System Events" to (name of processes) contains "Spotify"')
+    STATE=$(echo "$INFO" | jq -r '.["Player State"]')
 
-    if [ "$IS_RUNNING" == true ]; then
+    if [ "$IS_RUNNING" == true ] || [ "$SENDER" != "spotify_playback_state_changed" ]; then
+      STATE=$(osascript -e 'tell application "Spotify" to player state' | perl -ne 'print ucfirst')
+    fi
+
+    if [ "$STATE" == "Playing" ] || [ "$STATE" == "Paused" ]; then
       sketchybar --set "$NAME" drawing=on
 
-      STATE=$(osascript -e 'tell application "Spotify" to player state')
+      # STATE=$(osascript -e 'tell application "Spotify" to player state')
       SHUFFLE=$(osascript -e 'tell application "Spotify" to shuffling')
       REPEAT=$(osascript -e 'tell application "Spotify" to repeating')
 
@@ -53,19 +57,19 @@ update() {
       fi
 
       case "$STATE" in
-        "playing")
+        "Playing")
           sketchybar --set spotify.play_pause icon="􀊆"
           set_cover &
           set_label &
           wait $!
           ;;
-        "paused")
+        "Paused")
           sketchybar --set spotify.play_pause icon="􀊄"
           set_cover & 
           set_label &
           wait $!
           ;;
-        "stopped")
+        "Stopped")
           sketchybar --set "$NAME" label="Nothing is playing"
           ;;
       esac
