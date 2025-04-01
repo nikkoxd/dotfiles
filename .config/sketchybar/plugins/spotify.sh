@@ -26,6 +26,7 @@ set_cover() {
   magick /tmp/cover.png -gravity Center -extent 1:1 -resize 640x640 -alpha set /tmp/mask.png -compose DstIn -composite /tmp/cover.png
 
   sketchybar --set spotify.cover background.image="/tmp/cover.png"
+  sketchybar --set spotify icon.background.image="/tmp/cover.png"
 }
 
 update() {
@@ -54,13 +55,15 @@ update() {
       case "$STATE" in
         "playing")
           sketchybar --set spotify.play_pause icon="􀊆"
-          set_label
-          set_cover
+          set_cover &
+          set_label &
+          wait $!
           ;;
         "paused")
           sketchybar --set spotify.play_pause icon="􀊄"
-          set_label
-          set_cover
+          set_cover & 
+          set_label &
+          wait $!
           ;;
         "stopped")
           sketchybar --set "$NAME" label="Nothing is playing"
