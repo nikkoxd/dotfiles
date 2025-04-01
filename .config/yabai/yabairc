@@ -4,6 +4,9 @@ sudo yabai --load-sa
 # mouse actions
 yabai -m config mouse_modifier ctrl
 yabai -m config mouse_drop_action stack
+yabai -m config focus_follows_mouse autofocus
+
+yabai -m config window_origin_display focused
 
 # add padding for external bar
 yabai -m config external_bar all:30:0
@@ -17,7 +20,8 @@ yabai -m config layout bsp
 # window opacity
 yabai -m config window_opacity on
 yabai -m config active_window_opacity 1
-yabai -m config normal_window_opacity 0.95
+yabai -m config normal_window_opacity 0.9
+yabai -m config window_opacity_duration 0.2
 
 # padding
 yabai -m config top_padding 15
@@ -27,8 +31,8 @@ yabai -m config right_padding 15
 yabai -m config window_gap 15
 
 # animations
-yabai -m config window_animation_duration 0.14
-yabai -m config window_animation_easing ease_out_sine
+# yabai -m config window_animation_duration 0.1
+# yabai -m config window_animation_easing ease_out_elastic
 
 # disable specific apps
 yabai -m rule --add app="^Calculator$" manage=off
