@@ -32,8 +32,9 @@ set_cover() {
 update() {
   if [ "$NAME" == "spotify" ]; then
     STATE=$(echo "$INFO" | jq -r '.["Player State"]')
+    IS_RUNNING=$(osascript -e 'tell application "System Events" to (name of processes) contains "Spotify"')
 
-    if [ "$IS_RUNNING" == true ] || [ "$SENDER" != "spotify_playback_state_changed" ]; then
+    if [ "$IS_RUNNING" == true ] && [ "$SENDER" != "spotify_playback_state_changed" ]; then
       STATE=$(osascript -e 'tell application "Spotify" to player state' | perl -ne 'print ucfirst')
     fi
 
