@@ -53,7 +53,6 @@ return {
 
     local lspconfig = require("lspconfig")
 
-    lspconfig.nushell.setup {}
     lspconfig.qmlls.setup {}
 
     require("mason").setup()
@@ -85,29 +84,31 @@ return {
             filetypes = {
               "javascript",
               "typescript",
+              "javascriptreact",
+              "typescriptreact",
               "vue",
             },
           }
         end,
 
-        lua_ls = function()
-          lspconfig.lua_ls.setup {
-            settings = {
-              Lua = {
-                workspace = {
-                  checkThirdParty = false,
-                  telemetry = { enable = false },
-                  library = {
-                    [ vim.fn.expand "${3rd}/live2d/library" ] = true,
-                  },
-                },
-                diagnostics = {
-                  globals = { "vim" }
-                },
-              }
-            },
-          }
-        end,
+        -- lua_ls = function()
+        --   lspconfig.lua_ls.setup {
+        --     settings = {
+        --       Lua = {
+        --         workspace = {
+        --           checkThirdParty = false,
+        --           telemetry = { enable = false },
+        --           library = {
+        --             [ vim.fn.expand "${3rd}/live2d/library" ] = true,
+        --           },
+        --         },
+        --         diagnostics = {
+        --           globals = { "vim" }
+        --         },
+        --       }
+        --     },
+        --   }
+        -- end,
 
         jsonls = function()
           lspconfig.jsonls.setup {
