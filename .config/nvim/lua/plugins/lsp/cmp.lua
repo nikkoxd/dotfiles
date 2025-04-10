@@ -67,9 +67,9 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
       sources = cmp.config.sources({
-        -- { name = "supermaven" },
+        { name = "supermaven" },
         { name = "nvim_lsp" },
-        { name = "lazydev",              group_index = 0 },
+        { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
         { name = "buffer" },  -- text within current buffer
         { name = "path" },    -- file system paths
@@ -78,22 +78,13 @@ return {
         { name = "vim-dadbod-completion" },
       }),
       formatting = {
-        fields = { "kind", "abbr", "menu" },
+        fields = { "abbr", "kind", "menu", },
         format = function(entry, item)
-          local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
           item = lspkind.cmp_format({
             mode = "symbol_text",
             maxwidth = 50,
             symbol_map = { Supermaven = "", },
           })(entry, item)
-          local strings = vim.split(item.kind, "%s", { trimempty = true })
-          item.kind = " " .. (strings[1] or "") .. " "
-          item.menu = "    (" .. (strings[2] or "") .. ")"
-
-          if color_item.abbr_hl_group then
-            item.kind_hl_group = color_item.abbr_hl_group
-            item.kind = color_item.abbr
-          end
 
           return item
         end,
