@@ -1,7 +1,9 @@
 return {
   "supermaven-inc/supermaven-nvim",
-  opts = {
-    log_level = "off",
-    disable_inline_completion = true,
-  }
+  config = function()
+    require("supermaven-nvim").setup {
+      disable_keymaps = true,
+      disable_inline_completion = true,
+    }
+  end,
 }
