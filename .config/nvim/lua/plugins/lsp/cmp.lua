@@ -16,6 +16,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    "chrisgrieser/cmp-nerdfont",
   },
 
   opts = function()
@@ -48,6 +49,7 @@ return {
 
     vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", { fg = "#6CC644" })
 
+    ---@type cmp.ConfigSchema
     return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
@@ -67,13 +69,14 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
       sources = cmp.config.sources({
+        { name = "lazydev", group_index = 0 },
         { name = "supermaven" },
         { name = "nvim_lsp" },
-        { name = "lazydev", group_index = 0 },
         { name = "luasnip" }, -- snippets
         { name = "buffer" },  -- text within current buffer
         { name = "path" },    -- file system paths
         { name = "emoji" },
+        { name = "nerdfont" },
         { name = "neorg" },
         { name = "vim-dadbod-completion" },
       }),
@@ -88,6 +91,11 @@ return {
 
           return item
         end,
+      },
+      view = {
+        docs = {
+          auto_open = true,
+        },
       },
     }
   end,
