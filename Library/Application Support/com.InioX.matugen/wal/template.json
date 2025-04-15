@@ -15,7 +15,7 @@
     "color5": "{{colors.secondary.default.hex | set_lightness: 5.0}}",
     "color6": "{{colors.secondary.default.hex}}",
     "color7": "{{colors.outline.default.hex}}",
-    "color8": "{{colors.surface_container_highest.default.hex | set_lightness: 15.0}}",
+    "color8": "{{colors.surface_container_highest.dark.hex | set_lightness: 15.0}}",
     "color9": "{{colors.tertiary.default.hex | set_lightness: 15.0}}",
     "color10": "{{colors.tertiary.default.hex | set_lightness: 10.0}}",
     "color11": "{{colors.primary.default.hex | set_lightness: 10.0}}",
