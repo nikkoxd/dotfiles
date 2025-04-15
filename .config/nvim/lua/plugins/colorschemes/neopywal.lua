@@ -17,6 +17,10 @@ return {
       return {
         all = {
           NormalFloat = { bg = C.background },
+          FloatBorder = { bg = C.background, fg = C.background },
+          FloatTitle = { bg = C.color4, fg = C.color0 },
+
+          EndOfBuffer = { fg = C.background },
           ColorColumn = { bg = C.background },
 
           Pmenu = { bg = C.background },

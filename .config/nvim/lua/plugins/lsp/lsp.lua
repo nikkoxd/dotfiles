@@ -16,13 +16,13 @@ return {
         opts.desc = "LSP Info"
         vim.keymap.set("n", "<leader>cl", "<cmd>LspInfo<cr>", opts)
         opts.desc = "Show Definitions"
-        vim.keymap.set("n", "gd", require("telescope.builtin").lsp_definitions, opts)
+        vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
         opts.desc = "Show References"
-        vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+        vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, opts)
         opts.desc = "Show Implementations"
-        vim.keymap.set("n", "gI", require("telescope.builtin").lsp_implementations, opts)
+        vim.keymap.set("n", "gI", function() Snacks.picker.lsp_implementations() end, opts)
         opts.desc = "Show Type Definitions"
-        vim.keymap.set("n", "gy", require("telescope.builtin").lsp_type_definitions, opts)
+        vim.keymap.set("n", "gy", function() Snacks.picker.lsp_type_definitions() end, opts)
         opts.desc = "Jump to declaration"
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         opts.desc = "Display hover information"
@@ -55,7 +55,10 @@ return {
 
     lspconfig.qmlls.setup {}
 
+    ---@type MasonSettings
     require("mason").setup()
+
+    ---@type MasonLspconfigSettings
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
