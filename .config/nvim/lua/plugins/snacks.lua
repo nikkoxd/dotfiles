@@ -58,6 +58,9 @@ return {
         notify = false,
       },
     },
+    notifier = {
+      style = "minimal",
+    },
     picker = {
       ui_select = true,
     },
