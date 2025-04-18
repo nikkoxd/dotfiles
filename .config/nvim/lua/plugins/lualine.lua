@@ -16,33 +16,28 @@ return {
         },
         lualine_b = {
           {
-            "filetype",
-            icon_only = true,
-            padding = {
-              left = 2,
-              right = 0,
-            },
-          },
-          {
             "filename",
             symbols = {
               modified = "(modified)",
               readonly = "(readonly)",
               unnamed = "unnamed",
               newfile = "new",
-            }
+            },
+            padding = {
+              left = 2,
+            },
           },
         },
         lualine_c = {
           "diagnostics",
         },
         lualine_x = {
-        },
-        lualine_y = {
           {
             "branch",
             icons_enabled = false,
           },
+        },
+        lualine_y = {
           {
             "progress",
             fmt = function(s) return string.lower(s) end,

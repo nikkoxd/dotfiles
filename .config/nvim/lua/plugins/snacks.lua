@@ -1,19 +1,29 @@
+---@diagnostic disable: undefined-global
 return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
   keys = {
     { "<leader>z", function() Snacks.zen() end, desc = "Toggle zen" },
+
+    -- NOTE: Picker keymaps
     { "<leader>pf", function() Snacks.picker.files() end, desc = "Find files" },
     { "<leader>ph", function() Snacks.picker.smart() end, desc = "Smart find files" },
-    { "<leader>pg", function() Snacks.picker.git_files() end, desc = "Git files" },
     { "<leader>ps", function() Snacks.picker.grep() end, desc = "Grep string" },
+    { "<leader>pr", function() Snacks.picker.recent() end, desc = "Recent files" },
+
+    { "<leader>pg", function() Snacks.picker.git_files() end, desc = "Git files" },
+    { "<leader>gp", function() Snacks.picker.projects() end, desc = "Projects" },
+    { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git log" },
+
+    { "<leader>pb", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "q:", function() Snacks.picker.command_history() end, desc = "Command history" },
+
     { "<leader>vh", function() Snacks.picker.help() end, desc = "Help tags" },
     { "<leader>vc", function() Snacks.picker.files({ cwd = vim.fn.stdpath('config') }) end, desc = "Config" },
-    { "<leader>pr", function() Snacks.picker.recent() end, desc = "Recent files" },
-    { "<leader>pb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-    { "<leader>th", function() Snacks.picker.colorschemes() end, desc = "Themes" },
+
     { "<leader>hl", function() Snacks.picker.highlights() end, desc = "Highlight groups" },
+    { "<leader>th", function() Snacks.picker.colorschemes() end, desc = "Themes" },
   },
   opts = {
     bigfile = {},
@@ -39,6 +49,7 @@ return {
         { section = "startup" },
       }
     },
+    input = {},
     image = {
       doc = {
         max_width = 40,
@@ -46,6 +57,9 @@ return {
       convert = {
         notify = false,
       },
+    },
+    picker = {
+      ui_select = true,
     },
     zen = {
       dim = false,

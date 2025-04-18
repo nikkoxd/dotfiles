@@ -1,5 +1,6 @@
 return {
   "Wansmer/langmapper.nvim",
+  lazy = false,
   priority = 1,
   config = function()
     local langmapper = require("langmapper")

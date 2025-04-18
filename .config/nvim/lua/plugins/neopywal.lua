@@ -18,7 +18,29 @@ return {
         all = {
           NormalFloat = { bg = C.background },
           FloatBorder = { bg = C.background, fg = C.background },
-          FloatTitle = { bg = C.color4, fg = C.color0 },
+          FloatTitle = { bg = C.background, fg = C.color4 },
+
+          NotifyERRORBody = { bg = C.background },
+          NotifyWARNBody = { bg = C.background },
+          NotifyINFOBody = { bg = C.background },
+          NotifyDEBUGBody = { bg = C.background },
+          NotifyTRACEBody = { bg = C.background },
+
+          NotifyERRORIcon = { bg = C.background, fg = C.color4 },
+          NotifyWARNIcon = { bg = C.background, fg = C.color3 },
+          NotifyINFOIcon = { bg = C.background, fg = C.color2 },
+          NotifyDEBUGIcon = { bg = C.background, fg = C.color7 },
+          NotifyTRACEIcon = { bg = C.background, fg = C.color6 },
+
+          NotifyERRORBorder = { bg = C.background, fg = C.background },
+          NotifyWARNBorder = { bg = C.background, fg = C.background },
+          NotifyINFOBorder = { bg = C.background, fg = C.background },
+          NotifyDEBUGBorder = { bg = C.background, fg = C.background },
+          NotifyTRACEBorder = { bg = C.background, fg = C.background },
+
+          MiniFilesTitle = { bg = C.background, fg = C.color8 },
+
+          WhichKey = { bg = C.background },
 
           EndOfBuffer = { fg = C.background },
           ColorColumn = { bg = C.background },
@@ -67,12 +89,7 @@ return {
     plugins = {
       gitsigns = true,
       harpoon = true,
-      which_key = true,
       neogit = true,
-      telescope = {
-        enabled = true,
-        style = "nvchad",
-      },
       trouble = true,
     }
   }

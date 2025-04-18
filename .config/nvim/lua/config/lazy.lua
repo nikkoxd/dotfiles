@@ -17,15 +17,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { import = "plugins.ai" },
-    { import = "plugins.colorschemes" },
-    { import = "plugins.editor" },
-    { import = "plugins.git" },
-    { import = "plugins.lsp" },
-    { import = "plugins.misc" },
-    { import = "plugins.treesitter" },
-    { import = "plugins.ui" },
+    { import = "plugins" },
   },
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "neopywal" } },
   checker = { enabled = true, notify = false },
 })

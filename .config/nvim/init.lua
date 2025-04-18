@@ -5,4 +5,4 @@ require("config.lazy")
 require("config.colorscheme")
 
 local langmapper = require("langmapper")
-langmapper.automapping({ buffer = false })
+langmapper.automapping({ global = true, buffer = false })
