@@ -47,10 +47,10 @@ vi_mode() {
 main() {
   load_version_control
   setopt PROMPT_SUBST
-  PROMPT='  $(command_result) '
-  RPROMPT='%K{black} $(path)  $(git_info)%K{black} %k  ' 
+  PROMPT=' $(command_result) '
+  RPROMPT='%K{black} $(path)  $(git_info)%K{black} %k' 
   command_result() {
-    echo "%(?.%F{blue}.%F{red})%K{black}  %k%f"
+    echo "%(?.%F{blue}.%F{red})%K{black} 󰅂 %k%f"
   }
 }
 
