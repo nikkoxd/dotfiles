@@ -13,8 +13,21 @@ return {
       },
       sections = {
         lualine_a = {
+          {
+            "mode",
+            fmt = function(str)
+              return string.sub(str, 1, 1):upper()
+            end,
+          }
         },
         lualine_b = {
+          {
+            "filetype",
+            icon_only = true,
+            padding = {
+              left = 2,
+            },
+          },
           {
             "filename",
             symbols = {
@@ -23,9 +36,14 @@ return {
               unnamed = "unnamed",
               newfile = "new",
             },
+          },
+          {
+            "lsp_status",
+            icon = "",
+            color = "lualine_lsp",
             padding = {
-              left = 2,
-            },
+              left = 0,
+            }
           },
         },
         lualine_c = {
@@ -34,23 +52,14 @@ return {
         lualine_x = {
           {
             "branch",
-            icons_enabled = false,
+            icon = { "", color = "lualine_icon_branch" }
           },
         },
         lualine_y = {
-          {
-            "progress",
-            fmt = function(s) return string.lower(s) end,
-          },
-          {
-            "location",
-            padding = {
-              left = 0,
-              right = 2,
-            },
-          }
+          "progress",
         },
         lualine_z = {
+          "location",
         }
       }
     }
