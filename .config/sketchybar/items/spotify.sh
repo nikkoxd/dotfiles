@@ -24,6 +24,7 @@ spotify_cover=(
   icon.drawing=off
   padding_left=25
   padding_right=10
+  background.image.corner_radius=10
   background.image.scale=0.2
   background.image.drawing=on
   background.drawing=on
