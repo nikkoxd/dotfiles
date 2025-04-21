@@ -24,6 +24,7 @@ return {
           FloatTitle = { bg = C.background, fg = C.color4 },
 
           MiniFilesTitle = { bg = C.background, fg = C.color8 },
+          MiniFilesBorderModified = { bg = C.background, fg = C.color0 },
 
           WhichKey = { bg = C.background },
 
