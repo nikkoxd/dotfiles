@@ -1,9 +1,11 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.icons",
   },
   opts = function()
+    require("mini.icons").mock_nvim_web_devicons()
+
     return {
       options = {
         theme = "custom_neopywal",
