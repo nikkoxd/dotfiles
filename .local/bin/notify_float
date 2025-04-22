@@ -1,0 +1,11 @@
+#!/bin/bash
+
+isFloating=$(yabai -m query --windows --window | jq -r '."is-floating"')
+
+if [ "$isFloating" == "true" ]; then
+  mode="Floating"
+else
+  mode="Tiling"
+fi
+
+osascript -e "display notification \"$mode\" with title \"Yabai display mode changed\""
