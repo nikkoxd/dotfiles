@@ -26,7 +26,7 @@ shift + alt - k : yabai -m window --warp north --focus || yabai -m window --disp
 shift + alt - l : yabai -m window --warp east --focus || yabai -m window --display east --focus
 
 # balance space
-shift + alt - b : yabai -m space --balance
+hyper - b : yabai -m space --balance
 
 # rotate space
 shift + alt - r : yabai -m space --rotate 90
@@ -83,7 +83,7 @@ alt - n : yabai -m window --focus stack.next
 alt - p : yabai -m window --focus stack.prev
 
 # toggle float
-alt - f : yabai -m window --toggle float; sketchybar --trigger notification_triggered NOTIFICATION_TYPE=YabaiWindowTypeChanged
+alt - f : yabai -m window --toggle float; $HOME/.local/bin/notify_float
 
 # fullscreen a window
 shift + alt - f : yabai -m window --toggle zoom-fullscreen
