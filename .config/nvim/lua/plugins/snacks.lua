@@ -4,29 +4,31 @@ return {
   priority = 1000,
   lazy = false,
   keys = {
-    { "<leader>z", function() Snacks.zen() end, desc = "Toggle zen" },
+    { "<leader>z",  function() Snacks.zen() end,                                            desc = "Toggle zen" },
 
     -- NOTE: Picker keymaps
-    { "<leader>pf", function() Snacks.picker.files() end, desc = "Find files" },
-    { "<leader>ph", function() Snacks.picker.smart() end, desc = "Smart find files" },
-    { "<leader>ps", function() Snacks.picker.grep() end, desc = "Grep string" },
-    { "<leader>pr", function() Snacks.picker.recent() end, desc = "Recent files" },
+    { "<leader>pf", function() Snacks.picker.files() end,                                   desc = "Find files" },
+    { "<leader>ph", function() Snacks.picker.smart() end,                                   desc = "Smart find files" },
+    { "<leader>ps", function() Snacks.picker.grep() end,                                    desc = "Grep string" },
+    { "<leader>pr", function() Snacks.picker.recent() end,                                  desc = "Recent files" },
 
-    { "<leader>pg", function() Snacks.picker.git_files() end, desc = "Git files" },
-    { "<leader>gp", function() Snacks.picker.projects() end, desc = "Projects" },
-    { "<leader>gl", function() Snacks.picker.git_log() end, desc = "Git log" },
+    { "<leader>pg", function() Snacks.picker.git_files() end,                               desc = "Git files" },
+    { "<leader>gp", function() Snacks.picker.projects() end,                                desc = "Projects" },
+    { "<leader>gl", function() Snacks.picker.git_log() end,                                 desc = "Git log" },
 
-    { "<leader>pb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-    { "q:", function() Snacks.picker.command_history() end, desc = "Command history" },
+    { "<leader>pb", function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+    { "q:",         function() Snacks.picker.command_history() end,                         desc = "Command history" },
 
-    { "<leader>vh", function() Snacks.picker.help() end, desc = "Help tags" },
+    { "<leader>vh", function() Snacks.picker.help() end,                                    desc = "Help tags" },
     { "<leader>vc", function() Snacks.picker.files({ cwd = vim.fn.stdpath('config') }) end, desc = "Config" },
 
-    { "<leader>hl", function() Snacks.picker.highlights() end, desc = "Highlight groups" },
-    { "<leader>th", function() Snacks.picker.colorschemes() end, desc = "Themes" },
+    { "<leader>hl", function() Snacks.picker.highlights() end,                              desc = "Highlight groups" },
+    { "<leader>th", function() Snacks.picker.colorschemes() end,                            desc = "Themes" },
   },
   opts = {
+    --  NOTE: Work with big files
     bigfile = {},
+    --  NOTE: Alpha-like dashboard
     dashboard = {
       preset = {
         keys = {
@@ -49,23 +51,30 @@ return {
         { section = "startup" },
       }
     },
+    --  NOTE: Fancy input buffer
     input = {},
-    image = {
-      doc = {
-        max_width = 40,
-      },
-      convert = {
-        notify = false,
-      },
-    },
+    --  NOTE: Nvim-notify replacement
     notifier = {
       style = "minimal",
     },
+    --  NOTE: Telescope replacement
     picker = {
       ui_select = true,
     },
+    --  NOTE: Smooth scrolling
+    scroll = {
+      animate = {
+        duration = { step = 5, total = 100 },
+      }
+    },
+    --  NOTE: Zen mode
     zen = {
-      dim = false,
+      toggles = {
+        dim = false,
+      },
+      show = {
+        statusline = true,
+      },
     },
   },
 }
