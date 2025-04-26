@@ -15,6 +15,7 @@ do
     icon.align=center
     icon.padding_left=0
     icon.padding_right=0
+    icon.y_offset=1
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
   )

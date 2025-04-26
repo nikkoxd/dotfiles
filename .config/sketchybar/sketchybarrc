@@ -29,6 +29,7 @@ default=(
   label.color="$on_surface"
   label.padding_left=15
   label.padding_right=15
+  label.y_offset=1
   background.color="$background"
   background.height=30
   background.corner_radius=15
