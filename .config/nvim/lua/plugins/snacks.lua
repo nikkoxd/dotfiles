@@ -4,9 +4,15 @@ return {
   priority = 1000,
   lazy = false,
   keys = {
+    --  NOTE: Zen keymaps
     { "<leader>z",  function() Snacks.zen() end,                                            desc = "Toggle zen" },
+    { "<leader>Z",  function() Snacks.zen.zoom() end,                                       desc = "Toggle zen zoom" },
 
-    -- NOTE: Picker keymaps
+    --  NOTE: Notifier keymaps
+    { "<leader>nd", function() Snacks.notifier.hide() end,                                  desc = "Hide notifications" },
+    { "<leader>nn", function() Snacks.picker.notifications() end,                           desc = "Notifications history" },
+
+    --  NOTE: Picker keymaps
     { "<leader>pf", function() Snacks.picker.files() end,                                   desc = "Find files" },
     { "<leader>ph", function() Snacks.picker.smart() end,                                   desc = "Smart find files" },
     { "<leader>ps", function() Snacks.picker.grep() end,                                    desc = "Grep string" },
