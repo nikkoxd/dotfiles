@@ -25,6 +25,6 @@ alias lt="eza --icons -T"
 alias notes="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/Obsidian\ Vault/"
 
 alias lg="lazygit"
-alias fetch="clear && fastfetch --logo-recache --show-errors"
+alias fetch="fastfetch --logo-recache --show-errors"
 
 alias python="python3"
