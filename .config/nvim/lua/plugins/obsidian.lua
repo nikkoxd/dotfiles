@@ -16,8 +16,8 @@ return {
     { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Show backlinks" },
     { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename note" },
     { "<leader>ot", "<cmd>ObsidianTags<cr>", desc = "Show tags" },
-    { "<leader>op", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image from clipboard" },
     { "<leader>oe", "<cmd>ObsidianExtractNote<cr>", mode = "v", desc = "Extract note" },
+    { "<leader>ip", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image from clipboard" },
   },
   opts = {
     ui = {
@@ -38,7 +38,7 @@ return {
       local suffix = ""
       if title ~= nil then
         -- If title is given, transform it into valid file name.
-        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        suffix = title:gsub(" ", "-"):gsub("[^[\xd0-\xd1][\xb0-\x8f]A-Za-z0-9-]", ""):lower()
       else
         -- If title is nil, just add 4 random uppercase letters to the suffix.
         for _ = 1, 4 do
