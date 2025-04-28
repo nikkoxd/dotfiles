@@ -1,8 +1,8 @@
 theme = wal
 
-font-family = "NovaMono"
+font-family = "Iosevka"
 font-size = 17
-adjust-cell-height = 20%
+adjust-cell-height = 10%
 cursor-style = "block"
 font-feature = -calt, -liga, -dlig
 
