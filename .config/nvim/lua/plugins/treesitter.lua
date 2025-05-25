@@ -3,10 +3,6 @@ return {
 
   build = ":TSUpdate",
 
-  keys = {
-    { "<leader>tr", function() require("telescope.builtin").treesitter() end, desc = "Treesitter" },
-  },
-
   config = function()
     local configs = require("nvim-treesitter.configs")
 
