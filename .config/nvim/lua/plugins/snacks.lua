@@ -24,6 +24,8 @@ return {
 
     { "<leader>pb", function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
     { "q:",         function() Snacks.picker.command_history() end,                         desc = "Command history" },
+    { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
+    { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                   desc = "LSP Workspace Symbols" },
 
     { "<leader>vh", function() Snacks.picker.help() end,                                    desc = "Help tags" },
     { "<leader>vc", function() Snacks.picker.files({ cwd = vim.fn.stdpath('config') }) end, desc = "Config" },
