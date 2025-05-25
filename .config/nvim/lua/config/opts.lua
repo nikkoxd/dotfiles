@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.conceallevel = 2
+opt.autoread = true
 
 opt.tabstop = 2
 opt.shiftwidth = 2
