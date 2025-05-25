@@ -1,5 +1,7 @@
 theme = wal
 
+macos-icon=blueprint
+
 font-family = "Iosevka"
 font-size = 17
 adjust-cell-height = 10%
@@ -15,6 +17,8 @@ window-padding-y = 15
 background-opacity = 0.8
 background-blur-radius = 20
 
-quick-terminal-autohide = false
+quick-terminal-position = center
+quick-terminal-autohide = true
 
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
+keybind = ctrl+s>p=toggle_quick_terminal
