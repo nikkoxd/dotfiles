@@ -20,11 +20,11 @@ return {
           lualine_icon_branch = { bg = C.background, fg = C.color3 },
 
           NormalFloat = { bg = C.background },
-          FloatBorder = { bg = C.background, fg = C.background },
+          FloatBorder = { bg = C.background, fg = C.foreground },
           FloatTitle = { bg = C.background, fg = C.color4 },
 
           MiniFilesTitle = { bg = C.background, fg = C.color8 },
-          MiniFilesBorderModified = { bg = C.background, fg = C.color0 },
+          MiniFilesBorderModified = { bg = C.background, fg = C.color3 },
 
           WhichKey = { bg = C.background },
 
