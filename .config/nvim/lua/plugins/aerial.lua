@@ -5,7 +5,7 @@ return {
      "echasnovski/mini.icons"
   },
   keys = {
-    { "<leader>a", "<cmd>AerialToggle!<CR>", desc = "Toggle Aerial" },
+    { "<leader>a", "<cmd>AerialToggle<CR>", desc = "Toggle Aerial" },
   },
   opts = {},
 }
