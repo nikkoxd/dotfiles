@@ -1,11 +1,11 @@
 return {
   'stevearc/overseer.nvim',
   keys = {
-    { "<leader>tt", "<cmd>OverseerToggle<cr>", desc = "Overseer" },
-    { "<leader>tr", "<cmd>OverseerRun<cr>", desc = "Overseer Run" },
+    { "<leader>tl", "<cmd>OverseerToggle<cr>", desc = "Task List" },
+    { "<leader>tr", "<cmd>OverseerRun<cr>", desc = "Run Task" },
   },
   opts = {
-    templates = { "builtin", "cmake" },
+    templates = { "builtin", "cmake", "gpp" },
     task_list = {
       direction = "left"
     },
