@@ -6,7 +6,6 @@ end)
 
 return {
   entry = function(self, job)
-    ya.dbg(job.args)
     local url = get_url()
     if (job.args.light == true) then
       Command("matu"):arg("-i"):arg(url):arg("-l"):output()
