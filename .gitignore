@@ -1,6 +1,12 @@
 .DS_Store
 *.log
 
+.mpd/playlists
+.mpd/mpd.db
+.mpd/mpd.log
+.mpd/mpd.pid
+.mpd/mpdstate
+
 .config/tmux/plugins
 
 .config/nvim/lazy-lock.json
