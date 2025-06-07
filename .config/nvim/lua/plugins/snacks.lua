@@ -68,12 +68,6 @@ return {
     picker = {
       ui_select = true,
     },
-    --  NOTE: Smooth scrolling
-    scroll = {
-      animate = {
-        duration = { step = 5, total = 100 },
-      }
-    },
     --  NOTE: Zen mode
     zen = {
       toggles = {
