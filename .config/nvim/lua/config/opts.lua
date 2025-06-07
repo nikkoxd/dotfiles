@@ -21,6 +21,8 @@ opt.smartcase = true
 
 opt.splitright = true
 
+opt.scrolloff = 8
+
 opt.foldcolumn = "0"
 opt.foldlevel = 99
 opt.foldlevelstart = 99
@@ -29,9 +31,7 @@ opt.foldenable = true
 opt.termguicolors = true
 
 vim.diagnostic.config({
-  virtual_lines = {
-    current_line = true,
-  },
+  virtual_text = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = "󰅙",
