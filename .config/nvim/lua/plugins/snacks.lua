@@ -23,7 +23,6 @@ return {
     { "<leader>gl", function() Snacks.picker.git_log() end,                                 desc = "Git log" },
 
     { "<leader>pb", function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
-    { "q:",         function() Snacks.picker.command_history() end,                         desc = "Command history" },
     { "<leader>ss", function() Snacks.picker.lsp_symbols() end,                             desc = "LSP Symbols" },
     { "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end,                   desc = "LSP Workspace Symbols" },
 
