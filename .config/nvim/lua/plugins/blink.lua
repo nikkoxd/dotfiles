@@ -1,6 +1,9 @@
 return {
   'saghen/blink.cmp',
-  dependencies = { 'rafamadriz/friendly-snippets' },
+  dependencies = {
+    'rafamadriz/friendly-snippets',
+    'folke/lazydev.nvim'
+  },
   version = '1.*',
 
   ---@module 'blink.cmp'
@@ -15,7 +18,7 @@ return {
     completion = { documentation = { auto_show = true } },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
     },
 
     fuzzy = { implementation = "prefer_rust_with_warning" },
