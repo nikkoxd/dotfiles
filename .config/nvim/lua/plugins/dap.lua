@@ -12,11 +12,10 @@ return {
       }
     },
     {
-      "rcarriga/nvim-dap-ui",
-      dependencies = {
-        "nvim-neotest/nvim-nio",
-      },
-      opts = {}
+        "igorlfs/nvim-dap-view",
+        ---@module 'dap-view'
+        ---@type dapview.Config
+        opts = {},
     },
     {
       "theHamsta/nvim-dap-virtual-text",
@@ -37,6 +36,6 @@ return {
     { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>du", function() require("dapui").toggle() end, desc = "Toggle dap-ui"}
+    { "<leader>du", function() require("dap-view").toggle() end, desc = "Toggle dap-ui"}
   },
 }
