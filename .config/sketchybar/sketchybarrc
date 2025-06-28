@@ -7,12 +7,14 @@ sketchybar --hotload true
 bar=(
     color="0xcc101010"
     position=top
-    y_offset=7
+    y_offset=6
     height=30
     margin=15
     padding_right=5
     padding_left=5
     display=all
+    corner_radius=10
+    shadow=on
     sticky=on
 )
 
@@ -27,7 +29,7 @@ default=(
     label.padding_left=15
     label.padding_right=15
     label.y_offset=1
-    background.height=5
+    background.height=3
     background.y_offset=-15
     popup.background.color="$surface"
     popup.background.border_color="$primary"

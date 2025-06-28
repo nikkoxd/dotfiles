@@ -6,9 +6,9 @@ update() {
   sketchybar --set "$NAME" icon.highlight="$SELECTED"
 
   if "$SELECTED"; then
-    sketchybar --animate sin 15 --set "$NAME" icon.width=50 icon.width=40 background.color="0xffcccccc"
+    sketchybar --animate cos 15 --set "$NAME" icon.width=40 background.color="0xffcccccc"
   else
-    sketchybar --animate sin 15 --set "$NAME" icon.width=31 background.color="0x00000000"
+    sketchybar --animate cos 15 --set "$NAME" icon.width=30 background.color="0x00000000"
   fi
 }
 
