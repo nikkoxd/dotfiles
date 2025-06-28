@@ -1,43 +1,39 @@
-local opt = vim.opt
+vim.opt.conceallevel = 2
+vim.opt.autoread = true
 
-opt.conceallevel = 2
-opt.autoread = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.expandtab = true
-opt.autoindent = true
-opt.smartindent = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-opt.number = true
-opt.relativenumber = true
+vim.opt.cursorline = true
 
-opt.cursorline = true
+vim.opt.cmdheight = 0
 
-opt.cmdheight = 0
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-opt.ignorecase = true
-opt.smartcase = true
+vim.opt.splitright = true
 
-opt.splitright = true
+vim.opt.foldcolumn = "0"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
-opt.scrolloff = 8
-
-opt.foldcolumn = "0"
-opt.foldlevel = 99
-opt.foldlevelstart = 99
-opt.foldenable = true
-
-opt.termguicolors = true
+vim.opt.termguicolors = true
 
 vim.diagnostic.config({
-  virtual_text = true,
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "󰅙",
-      [vim.diagnostic.severity.HINT] = "󰌵",
-      [vim.diagnostic.severity.INFO] = "󰋼",
-      [vim.diagnostic.severity.WARN] = "󰀦",
+    virtual_text = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "󰅙",
+            [vim.diagnostic.severity.HINT] = "󰌵",
+            [vim.diagnostic.severity.INFO] = "󰋼",
+            [vim.diagnostic.severity.WARN] = "󰀦",
+        },
     },
-  },
 })
