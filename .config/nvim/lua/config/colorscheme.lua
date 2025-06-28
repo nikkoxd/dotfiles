@@ -1,2 +1,2 @@
 vim.o.background = "dark"
-require("current-theme")
+vim.cmd("colorscheme " .. require("config.vars").colorscheme)

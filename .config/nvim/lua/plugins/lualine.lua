@@ -8,7 +8,14 @@ return {
 
     return {
       options = {
-        theme = "custom_neopywal",
+        theme = function()
+            local colorscheme = require("config.vars").colorscheme
+            if colorscheme == "neopywal" then
+                return "custom_neopywal"
+            else
+                return colorscheme
+            end
+        end,
         component_separators = "",
         section_separators = "",
         globalstatus = true,
