@@ -1,6 +1,6 @@
 anchor=(
   popup.align=center
-  script="$PLUGIN_DIR/volume.sh"
+  script="$HOME/.config/sketchybar/plugins/volume.sh"
 )
 
 slider=(

@@ -1,6 +1,6 @@
 battery=(
     update_freq=60
-    script="$PLUGIN_DIR/battery.sh"
+    script="$HOME/.config/sketchybar/plugins/battery.sh"
 )
 
 sketchybar --add item battery right \
