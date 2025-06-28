@@ -1,5 +1,0 @@
-[mgr]
-prepend_keymap = [
-  { on = [ "w" ], run = "plugin myou" },
-  { on = [ "W" ], run = "plugin myou --args='light'"}
-]

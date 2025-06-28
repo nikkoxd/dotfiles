@@ -7,3 +7,25 @@ run  = "git"
 id   = "git"
 name = "*/"
 run  = "git"
+
+[opener]
+matu = [
+    { run = "matu -i $0", desc = "Generate colorscheme", for = "unix" }
+]
+matu_light = [
+    { run = "matu -i $0 -l", desc = "Generate colorscheme (light)", for = "unix" }
+]
+
+[open]
+prepend_rules = [
+    { name = "*.png", use = [ "matu", "matu_light" ] },
+    { name = "*.jpg", use = [ "matu", "matu_light" ] },
+    { name = "*.jpeg", use = [ "matu", "matu_light" ] },
+]
+
+[preview]
+max_width = 1000
+max_height = 1000
+
+[tasks]
+image_bound = [ 10000, 10000 ]
