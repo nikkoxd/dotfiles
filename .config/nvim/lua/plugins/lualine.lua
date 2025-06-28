@@ -8,7 +8,7 @@ return {
 
     return {
       options = {
-        theme = "custom_neopywal",
+        theme = "lackluster",
         component_separators = "",
         section_separators = "",
         globalstatus = true,

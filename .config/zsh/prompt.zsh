@@ -8,22 +8,16 @@ load_version_control() {
 }
 
 path() {
-  echo "%F{blue}  %F{gray}%~%f"
+  echo "  %~%f"
 }
 
 git_info() {
   if [[ ${vcs_info_msg_0_} != "" ]]; then
     if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-      echo "  %F{gray}%{\x1b[3m%}${vcs_info_msg_0_}*%{\x1b[0m%}%f"
+      echo "  %{\x1b[3m%}${vcs_info_msg_0_}%F{9}*%{\x1b[0m%}%f"
     else
-      echo "  %F{gray}${vcs_info_msg_0_}%f"
+      echo "  ${vcs_info_msg_0_}%f"
     fi
-  fi
-}
-
-git_dirty() {
-  if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-    echo "%F{red}*%f"
   fi
 }
 
@@ -48,9 +42,9 @@ main() {
   load_version_control
   setopt PROMPT_SUBST
   PROMPT=' $(command_result) '
-  RPROMPT='%K{black} $(path)  $(git_info)%K{black} %k' 
+  RPROMPT='%K{1} $(path)  $(git_info)%K{1} %k' 
   command_result() {
-    echo "%(?.%F{blue}.%F{red})%K{black} 󰅂 %k%f"
+    echo "%(?.%F{6}.%F{9})%K{1} 󰅂 %k%f"
   }
 }
 

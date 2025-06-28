@@ -20,9 +20,10 @@ source "$HOME/.config/zsh/prompt.zsh"
 
 # plugins
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle atuinsh/atuin@main
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
 
 # clis
 eval "$(zoxide init zsh)"
