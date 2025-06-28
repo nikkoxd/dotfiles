@@ -1,7 +1,7 @@
 datetime=(
   update_freq=2
   icon=􀉉
-  script="$PLUGIN_DIR/datetime.sh"
+  script="$HOME/.config/sketchybar/plugins/datetime.sh"
   click_script="open -a Calendar"
 )
 

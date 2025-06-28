@@ -45,22 +45,22 @@ sketchybar --default "${default[@]}"
 
 ##### LEFT ITEMS #####
 
-source "$ITEM_DIR/front_app.sh"
-source "$ITEM_DIR/weather.sh"
-source "$ITEM_DIR/airpods.sh"
+source "$HOME/.config/sketchybar/items/front_app.sh"
+source "$HOME/.config/sketchybar/items/weather.sh"
+source "$HOME/.config/sketchybar/items/airpods.sh"
 
 ##### CENTER ITEMS #####
 
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/spotify.sh"
+source "$HOME/.config/sketchybar/items/spaces.sh"
+source "$HOME/.config/sketchybar/items/spotify.sh"
 
 ##### RIGHT ITEMS #####
 
-source "$ITEM_DIR/datetime.sh"
-source "$ITEM_DIR/layout.sh"
-source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/battery.sh"
-source "$ITEM_DIR/vpn.sh"
+source "$HOME/.config/sketchybar/items/datetime.sh"
+source "$HOME/.config/sketchybar/items/layout.sh"
+source "$HOME/.config/sketchybar/items/volume.sh"
+source "$HOME/.config/sketchybar/items/battery.sh"
+source "$HOME/.config/sketchybar/items/vpn.sh"
 
 sketchybar --update
 sketchybar --animate sin 20 --bar y_offset=5 y_offset=0

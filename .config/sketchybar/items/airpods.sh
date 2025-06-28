@@ -1,5 +1,10 @@
+airpods=(
+    icon="􀪷"
+    update_freq=5
+    script="$HOME/.config/sketchybar/plugins/airpods.sh"
+)
+
 sketchybar --add event bluetooth_change "com.apple.bluetooth.status" \
-            --add item headphones left \
-            --set headphones icon="􀪷" update_freq=5 \
-            script="$PLUGIN_DIR/airpods.sh" \
+            --add item airpods left \
+            --set airpods "${airpods[@]}" \
             --subscribe headphones mouse.entered mouse.exited

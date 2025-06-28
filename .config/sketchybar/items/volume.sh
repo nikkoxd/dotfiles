@@ -18,7 +18,7 @@ slider=(
   slider.background.height=4
   slider.background.color="$surface_container"
   slider.background.corner_radius=5
-  script="$PLUGIN_DIR/volume.sh"
+  script="$HOME/.config/sketchybar/plugins/volume.sh"
 )
 
 sketchybar --add item volume right \

@@ -16,7 +16,7 @@ spotify=(
   popup.align=center
   popup.height=185
   # popup.scroll_texts=on
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
 )
 
 spotify_cover=(
@@ -28,7 +28,7 @@ spotify_cover=(
   background.image.scale=0.2
   background.image.drawing=on
   background.drawing=on
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
 )
 
 spotify_label=(
@@ -77,7 +77,7 @@ spotify_shuffle=(
   label.drawing=off
   background.border_width=0
   padding_left=15
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
   y_offset=-45
   shadow=off
 )
@@ -92,7 +92,7 @@ spotify_prev=(
   icon.padding_left=10
   label.drawing=off
   background.border_width=0
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
   y_offset=-45
 )
 
@@ -106,7 +106,7 @@ spotify_play_pause=(
   icon.padding_left=32
   background.color="$primary"
   background.border_width=0
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
   y_offset=-45
 )
 
@@ -120,7 +120,7 @@ spotify_next=(
   icon.padding_left=10
   label.drawing=off
   background.border_width=0
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
   y_offset=-45
 )
 
@@ -135,7 +135,7 @@ spotify_repeat=(
   label.drawing=off
   padding_right=25
   background.border_width=0
-  script="$PLUGIN_DIR/spotify.sh"
+  script="$HOME/.config/sketchybar/plugins/spotify.sh"
   y_offset=-45
   shadow=off
 )

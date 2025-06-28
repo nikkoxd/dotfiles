@@ -17,7 +17,7 @@ do
     icon.padding_right=0
     icon.y_offset=1
     label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
+    script="$HOME/.config/sketchybar/plugins/space.sh"
   )
   sketchybar --add space space.$sid center \
              --set space.$sid "${space[@]}" \

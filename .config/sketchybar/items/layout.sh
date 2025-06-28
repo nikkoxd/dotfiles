@@ -1,5 +1,10 @@
+layout=(
+    icon="󰗊"
+    script="$HOME/.config/sketchybar/plugins/layout.sh"
+)
+
 sketchybar --add item layout right \
-           --set layout icon=󰗊 script="$PLUGIN_DIR/layout.sh" \
+           --set layout "${layout[@]}" \
            --add event layout_change "AppleSelectedInputSourcesChangedNotification" \
            --subscribe layout layout_change
 
