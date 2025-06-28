@@ -52,6 +52,7 @@ return {
           "diagnostics",
         },
         lualine_x = {
+          "overseer",
           {
             "branch",
             icon = { "", color = "lualine_icon_branch" }
