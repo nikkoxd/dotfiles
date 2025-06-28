@@ -36,6 +36,6 @@ return {
     { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>du", function() require("dap-view").toggle() end, desc = "Toggle dap-ui"}
+    { "<leader>dw", function() require("dap-view").toggle() end, desc = "Toggle dap-view"},
   },
 }
