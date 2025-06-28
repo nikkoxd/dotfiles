@@ -1,8 +1,6 @@
 #!/bin/bash
 
 front_app=(
-  popup.drawing=on
-  popup.y_offset=-100
   script="$HOME/.config/sketchybar/plugins/front_app.sh"
 )
 

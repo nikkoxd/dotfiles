@@ -23,13 +23,13 @@ esac
 
 if [[ "$CHARGING" != "" ]]; then
   ICON="􀢋"
-  BACKGROUND="$primary"
-  ICON_COLOR="$on_primary"
-  COLOR="$on_primary"
+  BACKGROUND="0xffdeeeed"
+  ICON_COLOR="0xff101010"
+  COLOR="0xff101010"
 else
-  BACKGROUND="$background"
-  ICON_COLOR="$primary"
-  COLOR="$on_surface"
+  BACKGROUND="0x00000000"
+  ICON_COLOR="0xffcccccc"
+  COLOR="0xffcccccc"
 fi
 
 # The item invoking this script (name $NAME) will get its icon and label

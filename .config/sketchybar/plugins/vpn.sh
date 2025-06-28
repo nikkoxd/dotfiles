@@ -7,9 +7,9 @@ update() {
   VPN=$(scutil --nc list | grep Connected | sed -E 's/.*"(.*)".*/\1/')
 
   if [[ $VPN != "" ]]; then
-    sketchybar --set "$NAME" background.color="$primary" icon.color="$on_primary"
+    sketchybar --set "$NAME" background.color="0xffcccccc"
   else
-    sketchybar --set "$NAME" background.color="$background" icon.color="$primary"
+    sketchybar --set "$NAME" background.color="0x00000000"
   fi
 }
 
@@ -18,10 +18,10 @@ mouse_clicked() {
 
   if [[ $VPN != "" ]]; then
     scutil --nc stop "$VPN_NAME"
-    sketchybar --set "$NAME" background.color="$background" icon.color="$primary"
+    sketchybar --set "$NAME" background.color="0x00000000"
   else
     scutil --nc start "$VPN_NAME"
-    sketchybar --set "$NAME" background.color="$primary" icon.color="$on_primary"
+    sketchybar --set "$NAME" background.color="0xffcccccc"
   fi
 }
 

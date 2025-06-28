@@ -5,40 +5,35 @@ source "$HOME/.config/sketchybar/constants.sh"
 sketchybar --hotload true
 
 bar=(
-  color="$0x00000000"
-  position=top
-  y_offset=-60
-  height=40
-  padding_right=10
-  padding_left=10
-  display=all
-  sticky=on
-  blur_radius=10
-  shadow=on
+    color="0xcc101010"
+    position=top
+    y_offset=7
+    height=30
+    margin=15
+    padding_right=5
+    padding_left=5
+    display=all
+    sticky=on
 )
 
 sketchybar --bar "${bar[@]}"
 
 default=(
-  padding_left=2
-  padding_right=2
-  icon.font="$ICON_FONT:Regular:16.0"
-  icon.color="$primary"
-  icon.padding_left=15
-  label.font="$FONT:Regular:15.0"
-  label.color="$on_surface"
-  label.padding_left=15
-  label.padding_right=15
-  label.y_offset=1
-  background.color="$background"
-  background.height=30
-  background.corner_radius=15
-  popup.background.color="$surface"
-  popup.background.border_color="$primary"
-  popup.background.corner_radius=10
-  popup.background.shadow.drawing=on
-  popup.y_offset=5
-  shadow=on
+    icon.font="$ICON_FONT:Regular:14.0"
+    icon.color="0xffcccccc"
+    icon.padding_left=15
+    label.font="$FONT:Book:14.0"
+    label.color="0xffcccccc"
+    label.padding_left=15
+    label.padding_right=15
+    label.y_offset=1
+    background.height=5
+    background.y_offset=-15
+    popup.background.color="$surface"
+    popup.background.border_color="$primary"
+    popup.background.corner_radius=10
+    popup.background.shadow.drawing=on
+    popup.y_offset=5
 )
 
 sketchybar --default "${default[@]}"
@@ -63,4 +58,4 @@ source "$HOME/.config/sketchybar/items/battery.sh"
 source "$HOME/.config/sketchybar/items/vpn.sh"
 
 sketchybar --update
-sketchybar --animate sin 20 --bar y_offset=5 y_offset=0
+# sketchybar --animate sin 20 --bar y_offset=5 y_offset=0

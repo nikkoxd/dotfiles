@@ -8,10 +8,10 @@ do
   space=(
     space="$sid"
     icon="${SPACE_ICONS[i]}"
-    icon.font="$FONT:Regular:14.0"
-    icon.background.color="$TRANSPARENT"
-    icon.color="$on_surface"
-    icon.highlight_color="$on_primary"
+    icon.font="$FONT:Book:14.0"
+    icon.background.color="0x00000000"
+    icon.color="0xffcccccc"
+    icon.highlight_color="0xffcccccc"
     icon.align=center
     icon.padding_left=0
     icon.padding_right=0
