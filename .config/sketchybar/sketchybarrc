@@ -5,32 +5,42 @@ source "$HOME/.config/sketchybar/constants.sh"
 sketchybar --hotload true
 
 bar=(
-    color="0xcc101010"
     position=top
-    y_offset=6
-    height=30
+    y_offset=5
+    height=32
+
     margin=15
     padding_right=5
     padding_left=5
-    display=all
+
+    color="0xcc101010"
+    blur_radius=10
+    
+    border_color="0xff464748"
+    border_width=1
     corner_radius=10
     shadow=on
+
+    display=all
     sticky=on
 )
 
 sketchybar --bar "${bar[@]}"
 
 default=(
+    background.height=3
+    background.y_offset=-15
+
     icon.font="$ICON_FONT:Regular:14.0"
     icon.color="0xffcccccc"
     icon.padding_left=15
+
     label.font="$FONT:Book:14.0"
     label.color="0xffcccccc"
     label.padding_left=15
     label.padding_right=15
     label.y_offset=1
-    background.height=3
-    background.y_offset=-15
+
     popup.background.color="$surface"
     popup.background.border_color="$primary"
     popup.background.corner_radius=10

@@ -42,9 +42,9 @@ main() {
   load_version_control
   setopt PROMPT_SUBST
   PROMPT=' $(command_result) '
-  RPROMPT='%K{1} $(path)  $(git_info)%K{1} %k' 
+  RPROMPT='%K{2} $(path)  $(git_info)%K{2} %k' 
   command_result() {
-    echo "%(?.%F{6}.%F{9})%K{1} 󰅂 %k%f"
+    echo "%(?.%F{6}.%F{9})%K{2} 󰅂 %k%f"
   }
 }
 

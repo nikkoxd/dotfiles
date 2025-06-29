@@ -7,10 +7,6 @@ end)
 return {
   entry = function(self, job)
     local url = get_url()
-    if (job.args.light == true) then
-      Command("matu"):arg("-i"):arg(url):arg("-l"):output()
-    else
-      Command("matu"):arg("-i"):arg(url):output()
-    end
+    Command("wal-gen"):arg("-i"):arg(url):output()
   end
 }

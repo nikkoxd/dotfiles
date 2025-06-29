@@ -12,7 +12,6 @@ autoload -Uz compinit
 compinit -i
 
 # source other parts of the config
-source "$HOME/.cache/wal/colors.sh"
 source "$HOME/.config/zsh/aliases.zsh"
 source "$HOME/.config/zsh/exports.zsh"
 source "$HOME/.config/zsh/functions.zsh"
@@ -22,8 +21,6 @@ source "$HOME/.config/zsh/prompt.zsh"
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle jeffreytse/zsh-vi-mode
 antigen bundle atuinsh/atuin@main
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
 
 # clis
 eval "$(zoxide init zsh)"
