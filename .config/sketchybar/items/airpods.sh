@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 airpods=(
     icon="􀪷"
     update_freq=5
@@ -7,4 +9,4 @@ airpods=(
 sketchybar --add event bluetooth_change "com.apple.bluetooth.status" \
             --add item airpods left \
             --set airpods "${airpods[@]}" \
-            --subscribe headphones mouse.entered mouse.exited
+            --subscribe airpods mouse.entered mouse.exited
