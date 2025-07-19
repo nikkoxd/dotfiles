@@ -23,9 +23,9 @@ esac
 
 if [[ "$CHARGING" != "" ]]; then
   ICON="􀢋"
-  BACKGROUND="0xffdeeeed"
-  ICON_COLOR="0xff101010"
-  COLOR="0xff101010"
+  BACKGROUND="0xffcccccc"
+  ICON_COLOR="0xffcccccc"
+  COLOR="0xffcccccc"
 else
   BACKGROUND="0x00000000"
   ICON_COLOR="0xffcccccc"
