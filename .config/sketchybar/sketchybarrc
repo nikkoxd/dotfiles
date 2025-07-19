@@ -13,7 +13,7 @@ bar=(
     padding_right=5
     padding_left=5
 
-    color="0xcc101010"
+    color="0xff101010"
     blur_radius=10
     
     border_color="0xff464748"
@@ -35,14 +35,15 @@ default=(
     icon.color="0xffcccccc"
     icon.padding_left=15
 
-    label.font="$FONT:Book:14.0"
+    label.font="$FONT:Regular:14.0"
     label.color="0xffcccccc"
     label.padding_left=15
     label.padding_right=15
     label.y_offset=1
 
-    popup.background.color="$surface"
-    popup.background.border_color="$primary"
+    popup.background.color="0xff101010"
+    popup.background.border_color="0xff464748"
+    popup.background.border_width=1
     popup.background.corner_radius=10
     popup.background.shadow.drawing=on
     popup.y_offset=5
@@ -55,10 +56,13 @@ sketchybar --default "${default[@]}"
 source "$HOME/.config/sketchybar/items/front_app.sh"
 source "$HOME/.config/sketchybar/items/weather.sh"
 source "$HOME/.config/sketchybar/items/airpods.sh"
+source "$HOME/.config/sketchybar/items/telegram.sh"
+source "$HOME/.config/sketchybar/items/discord.sh"
 
 ##### CENTER ITEMS #####
 
 source "$HOME/.config/sketchybar/items/spaces.sh"
+source "$HOME/.config/sketchybar/items/apple_music.sh"
 source "$HOME/.config/sketchybar/items/spotify.sh"
 
 ##### RIGHT ITEMS #####
