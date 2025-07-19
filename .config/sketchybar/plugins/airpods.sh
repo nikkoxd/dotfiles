@@ -17,7 +17,7 @@ update() {
         case="$(echo "$DEVICES" | jq -r .device_batteryLevelCase | tr -d '[:space:]')"
         icon="􀪷"
 
-        if [[ "$left" -gt "$right" ]]; then
+        if [[ "$( echo "$left" | tr -d '[:space:]%')" -gt "$( echo "$right" | tr -d '[:space:]%')" ]]; then
             percentage="$right"
         else
             percentage="$left"
