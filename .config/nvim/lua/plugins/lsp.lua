@@ -88,6 +88,8 @@ return {
                 typescript = { "prettier" },
                 typescriptreact = { "prettier" },
                 vue = { "prettier" },
+                bash = { "shfmt" },
+                sh = { "shfmt" },
             },
         })
         require("mason-conform").setup()
