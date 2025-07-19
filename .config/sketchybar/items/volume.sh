@@ -9,15 +9,19 @@ slider=(
   icon.drawing=off
   label.drawing=off
   background.drawing=off
+
   slider.width=100
-  slider.highlight_color="$primary"
+  slider.highlight_color="0xffcccccc"
+
   slider.knob="|"
   slider.knob.y_offset=1
   slider.knob.width=10
-  slider.knob.color="$primary"
+  slider.knob.color="0xffcccccc"
+
   slider.background.height=4
-  slider.background.color="$surface_container"
+  slider.background.color="0xff2a2a2a"
   slider.background.corner_radius=5
+
   script="$HOME/.config/sketchybar/plugins/volume.sh"
 )
 
