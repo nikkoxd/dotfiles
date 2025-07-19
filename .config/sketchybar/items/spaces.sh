@@ -7,16 +7,26 @@ do
   sid="$((i+1))"
   space=(
     space="$sid"
+
+    background.color="0xffcccccc"
+
     icon="${SPACE_ICONS[i]}"
-    icon.font="$FONT:Book:14.0"
+
     icon.background.color="0x00000000"
-    icon.color="0xffcccccc"
-    icon.highlight_color="0xffcccccc"
-    icon.align=center
+    icon.background.y_offset=-20
+
+    icon.width=30
     icon.padding_left=0
     icon.padding_right=0
-    icon.y_offset=1
+
+    icon.font="$FONT:Regular:14.0"
+    icon.align=center
+
+    icon.color="0xffcccccc"
+    icon.highlight_color="0xffcccccc"
+
     label.drawing=off
+
     script="$HOME/.config/sketchybar/plugins/space.sh"
   )
   sketchybar --add space space.$sid center \
