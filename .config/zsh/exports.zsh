@@ -5,6 +5,5 @@ export EDITOR="nvim"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export BAT_THEME="base16"
-export ATAC_KEY_BINDINGS=~/.config/atac/key_bindings.toml
 # export FZF_DEFAULT_OPTS="--style minimal --color fg:6,hl:4,current-hl:0,current-fg:6,current-bg:4,pointer:4,info:4,prompt:4 --padding 1,2"
 export FZF_DEFAULT_OPTS="--style minimal --padding 1,2"
