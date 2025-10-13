@@ -26,3 +26,5 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>c1", ":set conceallevel=1<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>c2", ":set conceallevel=2<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>c3", ":set conceallevel=3<CR>", { noremap = true })
+
+vim.keymap.set("v", "<leader>b", ":s/")

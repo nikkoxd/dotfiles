@@ -77,6 +77,8 @@ return {
             },
         })
 
+        vim.lsp.enable("prolog_ls")
+
         ---@type MasonSettings
         require("mason").setup()
 

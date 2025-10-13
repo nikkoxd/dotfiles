@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$HOME/.config/sketchybar/colors.sh"
+source "$HOME/.config/sketchybar/theme.sh"
 
 PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 CHARGING="$(pmset -g batt | grep 'AC Power')"
@@ -23,16 +23,12 @@ esac
 
 if [[ "$CHARGING" != "" ]]; then
   ICON="􀢋"
-  BACKGROUND="0xffcccccc"
-  ICON_COLOR="0xffcccccc"
-  COLOR="0xffcccccc"
+  BACKGROUND="$HIGHLIGHT_COLOR"
 else
   BACKGROUND="0x00000000"
-  ICON_COLOR="0xffcccccc"
-  COLOR="0xffcccccc"
 fi
 
 # The item invoking this script (name $NAME) will get its icon and label
 # updated with the current battery status
 # sketchybar --set "$NAME" icon="$ICON" label="${PERCENTAGE}%"
-sketchybar --animate sin 15 --set "$NAME" icon="$ICON" icon.color="$ICON_COLOR" label.color="$COLOR" background.color="$BACKGROUND" label="${PERCENTAGE}%"
+sketchybar --animate sin 15 --set "$NAME" icon="$ICON" background.color="$BACKGROUND" label="${PERCENTAGE}%"

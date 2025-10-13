@@ -8,7 +8,7 @@ do
   space=(
     space="$sid"
 
-    background.color="0xffcccccc"
+    background.color="$HIGHLIGHT_COLOR"
 
     icon="${SPACE_ICONS[i]}"
 
@@ -22,8 +22,8 @@ do
     icon.font="$FONT:Regular:14.0"
     icon.align=center
 
-    icon.color="0xffcccccc"
-    icon.highlight_color="0xffcccccc"
+    icon.color="$TEXT_COLOR"
+    icon.highlight_color="$HIGHLIGHT_COLOR"
 
     label.drawing=off
 

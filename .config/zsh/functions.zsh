@@ -11,3 +11,14 @@ yy() {
 	fi
 	rm -f -- "$tmp"
 }
+
+reload_configs() {
+  osascript ~/.config/ghostty/reload.scpt
+
+  sketchybar --reload &
+  nvim --headless \
+    -c 'lua require("config.colorscheme").set_colorscheme()' \
+    -c 'qa' &
+
+  wait
+}

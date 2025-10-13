@@ -1,27 +1,27 @@
 #!/bin/bash
 
 get_image() {
-  if [ -z "$1" ]; then
-    echo "Empty list of options" >&2
-    exit 1
-  fi
-
-  while getopts ":i:" option; do
-    case $option in
-      i)
-        image=$OPTARG
-        ;;
-      \?)
-        echo "Invalid option: -${OPTARG}" >&2
+    if [ -z "$1" ]; then
+        echo "Empty list of options" >&2
         exit 1
-        ;;
-    esac
-  done
+    fi
+
+    while getopts ":i:" option; do
+        case $option in
+        i)
+            image=$OPTARG
+            ;;
+        \?)
+            echo "Invalid option: -${OPTARG}" >&2
+            exit 1
+            ;;
+        esac
+    done
 }
 
 set_wallpaper() {
-  /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
-  pkill -f WallpaperAgent &
+    /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
+    pkill -f WallpaperAgent &
 }
 
 generate_colorscheme() {
@@ -31,7 +31,7 @@ generate_colorscheme() {
 }
 
 reload_apps() {
-  walogram -i "$image" &
+    walogram -i "$image" &
 }
 
 set_fastfetch() {

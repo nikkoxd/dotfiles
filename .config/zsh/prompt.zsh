@@ -8,15 +8,15 @@ load_version_control() {
 }
 
 path() {
-  echo "  %~%f"
+  echo "%~"
 }
 
 git_info() {
   if [[ ${vcs_info_msg_0_} != "" ]]; then
     if [[ -n $(git status -s --ignore-submodules=dirty 2> /dev/null) ]]; then
-      echo "    %{\x1b[3m%}${vcs_info_msg_0_}%F{9}*%{\x1b[0m%}%f"
+      echo "~"
     else
-      echo "    ${vcs_info_msg_0_}%f"
+      echo ""
     fi
   fi
 }
@@ -42,9 +42,9 @@ main() {
   load_version_control
   setopt PROMPT_SUBST
   PROMPT=' $(command_result) '
-  RPROMPT='%K{1} $(path)$(git_info)%K{1} %k' 
+  RPROMPT='$(path)$(git_info)' 
   command_result() {
-    echo "%(?.%F{5}.%F{9})%K{1} 󰅂 %k%f"
+    echo "%(?.%F{7}.%F{9}) > %k%f"
   }
 }
 

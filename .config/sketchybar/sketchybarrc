@@ -1,5 +1,6 @@
 #!/bin/bash
-source "$HOME/.config/sketchybar/colors.sh"
+
+source "$HOME/.config/sketchybar/theme.sh"
 source "$HOME/.config/sketchybar/constants.sh"
 
 sketchybar --hotload true
@@ -13,10 +14,10 @@ bar=(
     padding_right=5
     padding_left=5
 
-    color="0xff101010"
+    color="$BACKGROUND_COLOR"
     blur_radius=10
     
-    border_color="0xff464748"
+    border_color="$BORDER_COLOR"
     border_width=1
     corner_radius=10
     shadow=on
@@ -32,17 +33,17 @@ default=(
     background.y_offset=-15
 
     icon.font="$ICON_FONT:Regular:14.0"
-    icon.color="0xffcccccc"
+    icon.color="$ICON_COLOR"
     icon.padding_left=15
 
     label.font="$FONT:Regular:14.0"
-    label.color="0xffcccccc"
+    label.color="$TEXT_COLOR"
     label.padding_left=15
     label.padding_right=15
     label.y_offset=1
 
-    popup.background.color="0xff101010"
-    popup.background.border_color="0xff464748"
+    popup.background.color="$BACKGROUND_COLOR"
+    popup.background.border_color="$BORDER_COLOR"
     popup.background.border_width=1
     popup.background.corner_radius=10
     popup.background.shadow.drawing=on
@@ -63,7 +64,7 @@ source "$HOME/.config/sketchybar/items/discord.sh"
 
 source "$HOME/.config/sketchybar/items/spaces.sh"
 source "$HOME/.config/sketchybar/items/apple_music.sh"
-source "$HOME/.config/sketchybar/items/spotify.sh"
+# source "$HOME/.config/sketchybar/items/spotify.sh"
 
 ##### RIGHT ITEMS #####
 

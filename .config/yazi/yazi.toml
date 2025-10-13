@@ -10,7 +10,7 @@ run  = "git"
 
 [opener]
 wal-gen = [
-    { run = "wal-gen -i $0", desc = "Set wallpaper", for = "unix" }
+    { run = 'wal-gen -i "$0"', desc = "Set wallpaper", for = "unix" }
 ]
 
 [open]

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source "$HOME/.config/sketchybar/colors.sh"
-
 update() {
   sketchybar --set "$NAME" icon.highlight="$SELECTED"
 

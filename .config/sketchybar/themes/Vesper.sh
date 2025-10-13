@@ -1,0 +1,5 @@
+export BACKGROUND_COLOR="0xff101010"
+export BORDER_COLOR="0xff404040"
+export HIGHLIGHT_COLOR="0xffffc799"
+export ICON_COLOR="0xffffc799"
+export TEXT_COLOR="0xffa0a0a0"

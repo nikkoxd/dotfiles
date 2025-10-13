@@ -30,8 +30,8 @@ yabai -m config right_padding 15
 yabai -m config window_gap 15
 
 # animations
-# yabai -m config window_animation_duration 0.1
-# yabai -m config window_animation_easing ease_out_elastic
+# yabai -m config window_animation_easing ease_in_out
+# yabai -m config window_animation_duration 0.3
 
 # disable specific apps
 yabai -m rule --add app="^Calculator$" manage=off
