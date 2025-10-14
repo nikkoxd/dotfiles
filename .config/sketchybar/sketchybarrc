@@ -6,41 +6,44 @@ source "$HOME/.config/sketchybar/constants.sh"
 sketchybar --hotload true
 
 bar=(
-    position=top
-    y_offset=5
-    height=32
+    position=left
+    y_offset=11
+    height=50
 
-    margin=15
-    padding_right=5
-    padding_left=5
+    margin=10
+    padding_right=20
+    padding_left=20
 
     color="$BACKGROUND_COLOR"
     blur_radius=10
     
     border_color="$BORDER_COLOR"
     border_width=1
-    corner_radius=10
+    corner_radius=15
     shadow=on
 
     display=all
     sticky=on
+    topmost=off
+    font_smoothing=on
 )
 
 sketchybar --bar "${bar[@]}"
 
 default=(
-    background.height=3
-    background.y_offset=-15
+    width=25
 
-    icon.font="$ICON_FONT:Regular:14.0"
+    icon.font="$ICON_FONT"
+    icon.font.style="Regular"
+    icon.font.size=14
     icon.color="$ICON_COLOR"
-    icon.padding_left=15
 
-    label.font="$FONT:Regular:14.0"
+    label.font="$FONT"
+    label.font.style="Regular"
+    label.font.size=14
+
     label.color="$TEXT_COLOR"
-    label.padding_left=15
-    label.padding_right=15
-    label.y_offset=1
+    label.y_offset=0
 
     popup.background.color="$BACKGROUND_COLOR"
     popup.background.border_color="$BORDER_COLOR"
@@ -52,17 +55,17 @@ default=(
 
 sketchybar --default "${default[@]}"
 
-##### LEFT ITEMS #####
+##### LEFT (TOP) ITEMS #####
 
 source "$HOME/.config/sketchybar/items/front_app.sh"
 source "$HOME/.config/sketchybar/items/weather.sh"
 source "$HOME/.config/sketchybar/items/airpods.sh"
 source "$HOME/.config/sketchybar/items/telegram.sh"
 source "$HOME/.config/sketchybar/items/discord.sh"
+source "$HOME/.config/sketchybar/items/spaces.sh"
 
 ##### CENTER ITEMS #####
 
-source "$HOME/.config/sketchybar/items/spaces.sh"
 source "$HOME/.config/sketchybar/items/apple_music.sh"
 # source "$HOME/.config/sketchybar/items/spotify.sh"
 

@@ -8,7 +8,7 @@ yabai -m config mouse_drop_action stack
 yabai -m config window_origin_display focused
 
 # add padding for external bar
-yabai -m config external_bar all:30:0
+yabai -m config external_bar all:0:0
 
 # window rendering
 yabai -m config window_shadow all
@@ -23,11 +23,11 @@ yabai -m config normal_window_opacity 0.9
 yabai -m config window_opacity_duration 0.2
 
 # padding
-yabai -m config top_padding 15
-yabai -m config bottom_padding 15
-yabai -m config left_padding 15
-yabai -m config right_padding 15
-yabai -m config window_gap 15
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding 70
+yabai -m config right_padding 10
+yabai -m config window_gap 10
 
 # animations
 # yabai -m config window_animation_easing ease_in_out
