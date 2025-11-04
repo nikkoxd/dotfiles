@@ -1,0 +1,6 @@
+{
+  "type" => "imageFile"
+  "url" => {
+    "relative" => "file:///Users/nikko/wallpapers/anime/wallhaven-6dvj7w.jpg"
+  }
+}

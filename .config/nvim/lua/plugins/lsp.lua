@@ -54,9 +54,7 @@ return {
             lineFoldingOnly = true,
         }
 
-        local lspconfig = require("lspconfig")
-
-        lspconfig.qmlls.setup {}
+        vim.lsp.enable("qmlls")
 
         vim.lsp.config("ts_ls", {
             init_options = {

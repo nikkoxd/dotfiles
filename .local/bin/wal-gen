@@ -20,18 +20,32 @@ get_image() {
 }
 
 set_wallpaper() {
-    /usr/libexec/PlistBuddy -c "set AllSpacesAndDisplays:Desktop:Content:Choices:0:Files:0:relative file:///$image" ~/Library/Application\ Support/com.apple.wallpaper/Store/Index.plist
+    local index_plist="$HOME/Library/Application Support/com.apple.wallpaper/Store/Index.plist"
+    local tmp_config_plist="/tmp/wallpaper_config.plist"
+    local tmp_encoded="/tmp/wallpaper_config_encoded.b64"
+
+    plutil -extract "AllSpacesAndDisplays.Desktop.Content.Choices.0.Configuration" raw "$index_plist" \
+        | base64 --decode > "$tmp_config_plist"
+
+    /usr/libexec/PlistBuddy -c "Set :url:relative file:///$image" "$tmp_config_plist" 2>/dev/null \
+        || /usr/libexec/PlistBuddy -c "Add :url:relative string file:///$image" "$tmp_config_plist"
+
+    base64 < "$tmp_config_plist" > "$tmp_encoded"
+    plutil -replace "AllSpacesAndDisplays.Desktop.Content.Choices.0.Configuration" -data "$(cat "$tmp_encoded")" "$index_plist"
+
     pkill -f WallpaperAgent &
 }
 
 generate_colorscheme() {
     cp "$image" /tmp/wallpaper.jpg
 
-    wal -n -s --theme "$HOME/.config/wal/colorschemes/dark/lackluster.json"
+    wal -i "$image" --cols16 lighten
 }
 
 reload_apps() {
+    sketchybar --reload &
     walogram -i "$image" &
+    osascript ~/.config/ghostty/reload.scpt &
 }
 
 set_fastfetch() {
@@ -47,8 +61,9 @@ main() {
     get_image "$@"
     set_wallpaper
     generate_colorscheme
-    reload_apps
     set_fastfetch
+
+    reload_apps &
 
     wait
 }

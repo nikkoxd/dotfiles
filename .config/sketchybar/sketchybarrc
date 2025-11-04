@@ -24,6 +24,7 @@ bar=(
 
     display=all
     sticky=on
+    font_smoothing=on
 )
 
 sketchybar --bar "${bar[@]}"
@@ -62,7 +63,7 @@ source "$HOME/.config/sketchybar/items/discord.sh"
 
 ##### CENTER ITEMS #####
 
-source "$HOME/.config/sketchybar/items/spaces.sh"
+source "$HOME/.config/sketchybar/items/aerospace.sh"
 source "$HOME/.config/sketchybar/items/apple_music.sh"
 # source "$HOME/.config/sketchybar/items/spotify.sh"
 

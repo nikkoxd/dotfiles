@@ -2,7 +2,7 @@ require("config.remap")
 require("config.autocmds")
 require("config.opts")
 require("config.lazy")
-require("config.colorscheme").set_colorscheme()
+require("config.colorscheme")
 require("config.neovide")
 
 local langmapper = require("langmapper")

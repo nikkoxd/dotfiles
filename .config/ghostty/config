@@ -1,18 +1,11 @@
-font-family = "mononoki"
+font-family = "JetBrains Mono"
 font-size = 16
 
-# theme = Rose Pine
-theme = Kanagawa Dragon
-# # theme = lackluster
-# theme = kanso-zen
-# theme = Vesper
-custom-shader = shaders/cursor_blaze.glsl
-# custom-shader = shaders/manga_slash.glsl
-# custom-shader = shaders/cursor_smear.glsl
-# custom-shader = shaders/cursor_smear_fade.glsl
+theme = wal
+custom-shader = shaders/cursor_smear.glsl
 
-background-opacity = 0.9
-# background-blur-radius = 20
+background-opacity = 0.90
+background-blur-radius = 0
 
 macos-titlebar-style = "hidden"
 window-padding-x = 15

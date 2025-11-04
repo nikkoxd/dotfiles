@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-    enabled = false,
+    -- enabled = false,
 	dependencies = {
 		"echasnovski/mini.icons",
 	},
@@ -9,6 +9,7 @@ return {
 
 		return {
 			options = {
+                theme = "neopywal",
 				component_separators = "",
 				section_separators = "",
 				globalstatus = true,
