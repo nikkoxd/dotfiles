@@ -1,4 +1,4 @@
-sketchybar  --add   item discord left \
+sketchybar  --add   item discord right \
             --set   discord \
                     icon.font="Symbols Nerd Font:Regular:14.0" \
                     update_freq=60 \
