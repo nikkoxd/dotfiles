@@ -2,39 +2,39 @@ local M = require("neopywal.theme.plugins.lualine").get()
 local C = require("neopywal").get_colors()
 
 M.normal = {
-  a = { bg = C.color4, fg = C.color0 },
-  z = { bg = C.color4, fg = C.color0 },
+  a = { bg = C.none, fg = C.color4 },
+  z = { bg = C.none, fg = C.color4 },
 
-  b = { bg = C.color0 },
-  y = { bg = C.color0 },
+  b = { bg = C.none },
+  y = { bg = C.none },
 
-  c = { bg = C.color0 },
-  x = { bg = C.color0 },
+  c = { bg = C.none },
+  x = { bg = C.none },
 }
 
 M.visual = {
-  a = { bg = C.color5, fg = C.color0 },
-  z = { bg = C.color5, fg = C.color0 },
+  a = { bg = C.none, fg = C.color5 },
+  z = { bg = C.none, fg = C.color5 },
 }
 
 M.insert = {
-  a = { bg = C.color6, fg = C.color0 },
-  z = { bg = C.color6, fg = C.color0 },
+  a = { bg = C.none, fg = C.color6 },
+  z = { bg = C.none, fg = C.color6 },
 }
 
 M.command = {
-  a = { bg = C.color1, fg = C.color0 },
-  z = { bg = C.color1, fg = C.color0 },
+  a = { bg = C.none, fg = C.color1 },
+  z = { bg = C.none, fg = C.color1 },
 }
 
 M.replace = {
-  a = { bg = C.color2, fg = C.color0 },
-  z = { bg = C.color2, fg = C.color0 },
+  a = { bg = C.none, fg = C.color2 },
+  z = { bg = C.none, fg = C.color2 },
 }
 
 M.terminal = {
-  a = { bg = C.color3, fg = C.color0 },
-  z = { bg = C.color3, fg = C.color0 },
+  a = { bg = C.none, fg = C.color3 },
+  z = { bg = C.none, fg = C.color3 },
 }
 
 return M

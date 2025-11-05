@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-    -- enabled = false,
+	-- enabled = false,
 	dependencies = {
 		"echasnovski/mini.icons",
 	},
@@ -9,24 +9,16 @@ return {
 
 		return {
 			options = {
-                theme = "neopywal",
+				theme = "custom_neopywal",
 				component_separators = "",
 				section_separators = "",
 				globalstatus = true,
 			},
 			sections = {
-				lualine_a = {},
-				lualine_b = {},
-				lualine_c = {
-					{
-						"mode",
-						fmt = function(s)
-							if s == "V-LINE" then
-								s = "l"
-							end
-							return string.lower(s):sub(1, 1)
-						end,
-					},
+				lualine_a = {
+					"mode",
+				},
+				lualine_b = {
 					{
 						"filename",
 						symbols = {
@@ -36,24 +28,24 @@ return {
 							newfile = "new",
 						},
 					},
+				},
+				lualine_c = {
 					"diagnostics",
 				},
 				lualine_x = {
 					"overseer",
+                    "filetype",
 					{
 						"branch",
-						icon = { "" },
+                        icon = ""
 					},
-					{
-						"progress",
-						fmt = function(s)
-							return string.lower(s)
-						end,
-					},
+				},
+				lualine_y = {
+                    "progress",
+				},
+				lualine_z = {
 					"location",
 				},
-				lualine_y = {},
-				lualine_z = {},
 			},
 		}
 	end,
