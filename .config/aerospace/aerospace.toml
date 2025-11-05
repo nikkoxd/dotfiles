@@ -87,6 +87,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-shift-0 = 'move-node-to-workspace 10'
 
     alt-shift-c = 'reload-config'
+    alt-shift-s = 'exec-and-forget sketchybar --reload'
 
     alt-r = 'mode resize'
 
