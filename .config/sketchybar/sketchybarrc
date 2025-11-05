@@ -3,11 +3,9 @@
 source "$HOME/.config/sketchybar/theme.sh"
 source "$HOME/.config/sketchybar/constants.sh"
 
-sketchybar --hotload true
-
 bar=(
     position=top
-    y_offset=5
+    y_offset=-40
     height=32
 
     margin=15
@@ -58,14 +56,14 @@ sketchybar --default "${default[@]}"
 source "$HOME/.config/sketchybar/items/front_app.sh"
 source "$HOME/.config/sketchybar/items/weather.sh"
 source "$HOME/.config/sketchybar/items/airpods.sh"
-source "$HOME/.config/sketchybar/items/telegram.sh"
-source "$HOME/.config/sketchybar/items/discord.sh"
+# source "$HOME/.config/sketchybar/items/disk.sh"
+source "$HOME/.config/sketchybar/items/ram.sh"
+source "$HOME/.config/sketchybar/items/cpu.sh"
 
 ##### CENTER ITEMS #####
 
 source "$HOME/.config/sketchybar/items/aerospace.sh"
 source "$HOME/.config/sketchybar/items/apple_music.sh"
-# source "$HOME/.config/sketchybar/items/spotify.sh"
 
 ##### RIGHT ITEMS #####
 
@@ -73,7 +71,9 @@ source "$HOME/.config/sketchybar/items/datetime.sh"
 source "$HOME/.config/sketchybar/items/layout.sh"
 source "$HOME/.config/sketchybar/items/volume.sh"
 source "$HOME/.config/sketchybar/items/battery.sh"
-source "$HOME/.config/sketchybar/items/vpn.sh"
+# source "$HOME/.config/sketchybar/items/vpn.sh"
+source "$HOME/.config/sketchybar/items/telegram.sh"
+source "$HOME/.config/sketchybar/items/discord.sh"
 
 sketchybar --update
-# sketchybar --animate sin 20 --bar y_offset=5 y_offset=0
+sketchybar --animate sin 20 --bar y_offset=15 y_offset=5
