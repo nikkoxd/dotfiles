@@ -9,6 +9,7 @@ export path=(
     /opt/homebrew/opt/postgresql@12/bin
     /Applications/Docker.app/Contents/Resources/bin/
     /opt/homebrew/anaconda3/bin/
+    $HOME/.rbenv/bin
 )
 export ZLE_RPROMPT_INDENT=1
 export HOMEBREW_AUTO_UPDATE_SECS=10224480
@@ -21,3 +22,4 @@ export FZF_DEFAULT_OPTS="--style minimal --padding 1,2"
 # wine cyrillic fix
 export LC_ALL=ru_RU.UTF-8 
 export LANG=ru_RU.UTF-8
+eval "$(rbenv init -)"
