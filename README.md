@@ -7,6 +7,7 @@
 - [Ghostty](https://ghostty.org/)
 - [Tmux](https://github.com/tmux/tmux/wiki)
 - [Neovim](https://neovim.io/)
+- [Pywal](https://github.com/eylles/pywal16)
 - [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ### Generating colorschemes
