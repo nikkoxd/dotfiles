@@ -4,52 +4,72 @@ return {
 		"echasnovski/mini.icons",
 	},
 
-	opts = function()
-		require("mini.icons").mock_nvim_web_devicons()
-
-		return {
-			options = {
-				theme = "custom_neopywal",
-				component_separators = "",
-				section_separators = "",
-				globalstatus = true,
-			},
-			sections = {
-				lualine_a = {},
-				lualine_b = {
-					{
-						"filename",
-						symbols = {
-							modified = "􁚛",
-							readonly = "􀎠",
-							unnamed = "Unnamed",
-							newfile = "New File",
-						},
-						padding = {
-							left = 0,
-              right = 1,
-						},
-					},
-				},
-				lualine_c = {
-					"diagnostics",
-				},
-				lualine_x = {
-					"overseer",
-					-- "filetype",
-					-- "lsp_status",
-					-- {
-					-- 	"branch",
-					-- 	icons_enabled = false,
-					-- },
-				},
-				lualine_y = {
-					"location",
-				},
-				lualine_z = {
-					"progress",
-				},
-			},
-		}
-	end,
+    return {
+      options = {
+        theme = function()
+            local colorscheme = require("config.vars").colorscheme
+            if colorscheme == "neopywal" then
+                return "custom_neopywal"
+            else
+                return colorscheme
+            end
+        end,
+        component_separators = "",
+        section_separators = "",
+        globalstatus = true,
+      },
+      sections = {
+        lualine_a = {
+          {
+            "mode",
+            fmt = function(str)
+              return string.sub(str, 1, 1):upper()
+            end,
+          }
+        },
+        lualine_b = {
+          {
+            "filetype",
+            icon_only = true,
+            padding = {
+              left = 2,
+            },
+          },
+          {
+            "filename",
+            symbols = {
+              modified = "(modified)",
+              readonly = "(readonly)",
+              unnamed = "unnamed",
+              newfile = "new",
+            },
+          },
+          {
+            "lsp_status",
+            icon = "",
+            color = "lualine_lsp",
+            padding = {
+              left = 0,
+            }
+          },
+        },
+        lualine_c = {
+          "diagnostics",
+        },
+        lualine_x = {
+          "overseer",
+          {
+            "branch",
+            icon = { "", color = "lualine_icon_branch" }
+          },
+        },
+        lualine_y = {
+          "progress",
+        },
+        lualine_z = {
+          "location",
+        }
+      }
+    }
+  end,
 }
