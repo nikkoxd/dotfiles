@@ -25,10 +25,10 @@ return {
 					{
 						"filename",
 						symbols = {
-							modified = "(modified)",
-							readonly = "(readonly)",
-							unnamed = "unnamed",
-							newfile = "new",
+							modified = "􁚛",
+							readonly = "􀎠",
+							unnamed = "Unnamed",
+							newfile = "New File",
 						},
 						padding = {
 							left = 0,
