@@ -1,9 +1,9 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	-- enabled = false,
 	dependencies = {
 		"echasnovski/mini.icons",
 	},
+
 	opts = function()
 		require("mini.icons").mock_nvim_web_devicons()
 
@@ -15,17 +15,19 @@ return {
 				globalstatus = true,
 			},
 			sections = {
-				lualine_a = {
-					"mode",
-				},
+				lualine_a = {},
 				lualine_b = {
 					{
 						"filename",
 						symbols = {
-							modified = "(modified)",
-							readonly = "(readonly)",
-							unnamed = "unnamed",
-							newfile = "new",
+							modified = "􁚛",
+							readonly = "􀎠",
+							unnamed = "Unnamed",
+							newfile = "New File",
+						},
+						padding = {
+							left = 0,
+              right = 1,
 						},
 					},
 				},
@@ -34,17 +36,18 @@ return {
 				},
 				lualine_x = {
 					"overseer",
-                    "filetype",
-					{
-						"branch",
-                        icon = ""
-					},
+					-- "filetype",
+					-- "lsp_status",
+					-- {
+					-- 	"branch",
+					-- 	icons_enabled = false,
+					-- },
 				},
 				lualine_y = {
-                    "progress",
+					"location",
 				},
 				lualine_z = {
-					"location",
+					"progress",
 				},
 			},
 		}

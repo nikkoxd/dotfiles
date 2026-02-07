@@ -1,9 +1,11 @@
 local M = require("neopywal.theme.plugins.lualine").get()
 local C = require("neopywal").get_colors()
 
+vim.api.nvim_set_hl(0, "StatusLine", { bg = C.none, fg = C.foreground })
+
 M.normal = {
-  a = { bg = C.none, fg = C.color4 },
-  z = { bg = C.none, fg = C.color4 },
+  a = { bg = C.none, fg = C.color15 },
+  z = { bg = C.none, fg = C.color15 },
 
   b = { bg = C.none },
   y = { bg = C.none },
@@ -18,8 +20,8 @@ M.visual = {
 }
 
 M.insert = {
-  a = { bg = C.none, fg = C.color6 },
-  z = { bg = C.none, fg = C.color6 },
+  a = { bg = C.none, fg = C.color4 },
+  z = { bg = C.none, fg = C.color4 },
 }
 
 M.command = {

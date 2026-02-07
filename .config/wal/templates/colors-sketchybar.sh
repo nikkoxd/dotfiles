@@ -1,5 +1,0 @@
-export BACKGROUND_COLOR="0xFF{background.strip}"
-export BORDER_COLOR="0xFF{color0.strip}"
-export HIGHLIGHT_COLOR="0xFF{color4.strip}"
-export ICON_COLOR="0xFF{color4.strip}"
-export TEXT_COLOR="0xFF{color15.strip}"

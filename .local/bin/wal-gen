@@ -6,8 +6,11 @@ get_image() {
         exit 1
     fi
 
-    while getopts ":i:" option; do
+    while getopts ":li:" option; do
         case $option in
+        l)
+            light=true
+            ;;
         i)
             image=$OPTARG
             ;;
@@ -22,7 +25,11 @@ get_image() {
 generate_colorscheme() {
     cp "$image" /tmp/wallpaper.jpg
 
-    wal -i "$image" --cols16 lighten
+    if [ $light = true ]; then
+        wal -li "$image" --cols16 darken
+    else
+        wal -i "$image" --cols16 lighten
+    fi
 }
 
 reload_apps() {
@@ -39,12 +46,13 @@ set_fastfetch() {
 }
 
 main() {
+    light=false
     image=""
 
     get_image "$@"
     generate_colorscheme
-    set_fastfetch
 
+    set_fastfetch &
     reload_apps &
 
     wait

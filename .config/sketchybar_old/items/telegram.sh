@@ -1,4 +1,4 @@
-sketchybar  --add   item telegram right \
+sketchybar  --add   item telegram left \
             --set   telegram \
                     icon.font="Symbols Nerd Font:Regular:14.0" \
                     update_freq=60 \

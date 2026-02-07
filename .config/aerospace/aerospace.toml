@@ -12,8 +12,8 @@ exec-on-workspace-change = ['/bin/bash', '-c',
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
 # Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
 
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
@@ -23,7 +23,19 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-enter = '''exec-and-forget osascript -e '
     tell application "Ghostty"
         if it is running
-        tell application "System Events" to tell process termName
+        tell application "System Events" to tell process "Ghostty"
+            click menu item "New Window" of menu "File" of menu bar 1
+        end tell
+        else
+            activate
+        end if
+    end tell'
+    '''
+
+    alt-b = '''exec-and-forget osascript -e '
+    tell application "Helium"
+        if it is running
+        tell application "System Events" to tell process "Helium"
             click menu item "New Window" of menu "File" of menu bar 1
         end tell
         else
@@ -45,8 +57,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
     # Consider using 'join-with' command as a 'split' replacement if you want to enable
     # normalizations
-    alt-p = 'split horizontal'
-    alt-o = 'split vertical'
+    # alt-p = 'split horizontal'
+    # alt-o = 'split vertical'
+    alt-p = 'join-with left'
+    alt-o = 'join-with up'
 
     alt-f = 'fullscreen'
 
@@ -112,9 +126,9 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     esc = 'mode main'
 
 [gaps]
-    inner.horizontal = 15
-    inner.vertical = 15
-    outer.left = 15
-    outer.bottom = 15
-    outer.top = 45
-    outer.right = 15
+    inner.horizontal = 10
+    inner.vertical = 10
+    outer.left = 70
+    outer.bottom = 10
+    outer.top = 10
+    outer.right = 10

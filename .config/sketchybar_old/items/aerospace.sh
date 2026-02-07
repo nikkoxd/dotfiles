@@ -14,10 +14,10 @@ for WORKSPACE in $WORKSPACES; do
              icon="$WORKSPACE" \
              icon.background.color="0x00000000" \
              icon.background.y_offset=-20 \
-             icon.width=30 \
+             icon.width=25 \
              icon.padding_left=0 \
              icon.padding_right=0 \
-             icon.font="$FONT:Regular:14.0" \
+             icon.font="$FONT:Regular:12.0" \
              icon.align=center \
              icon.color="$TEXT_COLOR" \
              icon.highlight_color="$HIGHLIGHT_COLOR" \
@@ -28,3 +28,5 @@ for WORKSPACE in $WORKSPACES; do
   # Add to workspace items array
   WORKSPACE_ITEMS+=("space.$WORKSPACE")
 done
+
+sketchybar --add bracket spaces "${WORKSPACE_ITEMS[@]}"

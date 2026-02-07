@@ -1,15 +1,16 @@
-font-family = "JetBrains Mono"
+font-family = "IosevkaTermSlab Nerd Font"
 font-size = 16
+font-thicken = false
+adjust-cell-height = 12
 
 theme = wal
-custom-shader = shaders/cursor/cursor_smear.glsl
 
 background-opacity = 0.9
-background-blur-radius = 0
+background-blur-radius = 50
 
 macos-titlebar-style = "hidden"
 window-padding-x = 15
-window-padding-y = 15
+window-padding-y = 20
 window-padding-balance = true
 
 macos-option-as-alt = true

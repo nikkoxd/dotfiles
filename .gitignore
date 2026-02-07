@@ -20,6 +20,8 @@
 .config/zsh/.zsh_sessions
 .config/zsh/.zsh_history
 
+.config/old_sketchybar
+
 .config/fastfetch/logo.png
 
 .config/wal/colorschemes/dark/myou.json

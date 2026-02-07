@@ -10,6 +10,8 @@ export path=(
     /Applications/Docker.app/Contents/Resources/bin/
     /opt/homebrew/anaconda3/bin/
     $HOME/.rbenv/bin
+    $HOME/dev/flutter/bin
+    $HOME/.pub-cache/bin
 )
 export ZLE_RPROMPT_INDENT=1
 export HOMEBREW_AUTO_UPDATE_SECS=10224480
