@@ -1,24 +1,19 @@
+font-family = "IosevkaTermSlab Nerd Font"
+font-size = 16
+font-thicken = false
+adjust-cell-height = 12
+
 theme = wal
 
-macos-icon=blueprint
-
-font-family = "Iosevka"
-font-size = 17
-adjust-cell-height = 10%
-cursor-style = "block"
-font-feature = -calt, -liga, -dlig
-
-macos-option-as-alt = true
+background-opacity = 0.9
+background-blur-radius = 50
 
 macos-titlebar-style = "hidden"
 window-padding-x = 15
-window-padding-y = 15
+window-padding-y = 20
+window-padding-balance = true
 
-background-opacity = 0.8
-background-blur-radius = 20
-
-quick-terminal-position = center
-quick-terminal-autohide = true
+macos-option-as-alt = true
 
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 keybind = ctrl+s>p=toggle_quick_terminal

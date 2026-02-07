@@ -1,0 +1,75 @@
+#!/bin/bash
+
+source "$HOME/.config/sketchybar/theme.sh"
+source "$HOME/.config/sketchybar/constants.sh"
+
+bar=(
+    position=top
+    y_offset=-40
+    height=30
+
+    margin=15
+    padding_right=10
+    padding_left=10
+
+    color="$BACKGROUND_COLOR"
+    
+    border_color="$BORDER_COLOR"
+    border_width=1
+    corner_radius=15
+    shadow=on
+
+    display=all
+    sticky=on
+    font_smoothing=on
+)
+
+sketchybar --bar "${bar[@]}"
+
+default=(
+    background.height=3
+    background.y_offset=-15
+
+    icon.font="$ICON_FONT:Regular:12.0"
+    icon.color="$ICON_COLOR"
+    icon.padding_left=10
+
+    label.font="$FONT:Regular:12.0"
+    label.color="$TEXT_COLOR"
+    label.padding_left=10
+    label.padding_right=10
+
+    popup.background.color="$BACKGROUND_COLOR"
+    popup.background.border_color="$BORDER_COLOR"
+    popup.background.border_width=1
+    popup.background.corner_radius=10
+    popup.background.shadow.drawing=on
+    popup.y_offset=5
+)
+
+sketchybar --default "${default[@]}"
+
+##### LEFT ITEMS #####
+
+source "$HOME/.config/sketchybar/items/aerospace.sh"
+source "$HOME/.config/sketchybar/items/front_app.sh"
+source "$HOME/.config/sketchybar/items/airpods.sh"
+source "$HOME/.config/sketchybar/items/weather.sh"
+# source "$HOME/.config/sketchybar/items/telegram.sh"
+# source "$HOME/.config/sketchybar/items/discord.sh"
+
+##### CENTER ITEMS #####
+
+source "$HOME/.config/sketchybar/items/aerospace.sh"
+source "$HOME/.config/sketchybar/items/apple_music.sh"
+
+##### RIGHT ITEMS #####
+
+source "$HOME/.config/sketchybar/items/datetime.sh"
+source "$HOME/.config/sketchybar/items/layout.sh"
+source "$HOME/.config/sketchybar/items/volume.sh"
+source "$HOME/.config/sketchybar/items/battery.sh"
+source "$HOME/.config/sketchybar/items/stats.sh"
+
+sketchybar --update
+sketchybar --animate sin 20 --bar y_offset=15 y_offset=5

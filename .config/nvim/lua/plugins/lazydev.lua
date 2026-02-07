@@ -1,5 +1,9 @@
 return {
   "folke/lazydev.nvim",
   ft = "lua",
-  opts = {}
+  opts = {
+    library = {
+      "~/.local/share/sketchybar_lua/"
+    }
+  }
 }

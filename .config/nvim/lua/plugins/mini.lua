@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 return {
   { "echasnovski/mini.ai", version = "*", opts = {} },
   { "echasnovski/mini.align", version = "*", opts = {} },

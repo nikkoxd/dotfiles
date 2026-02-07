@@ -11,13 +11,13 @@ if which git > /dev/null; then
     git clone https://github.com/nikkoxd/dotfiles.git && cd dotfiles || exit
   fi
 else
-  echo "Git is not installed. Please install it first."
+  echo "Git is not installed. Please install Git before running this script."
   exit 1
 fi
 
 # Install Homebrew
 if which brew > /dev/null; then
-  echo "Homebrew is already installed."
+  echo "Homebrew is already installed. Skipping."
 else
   echo "Installing Homebrew."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -49,20 +49,3 @@ if [ -L "$HOME/.dotfiles" ]; then
 fi
 cd "$HOME/.dotfiles" || exit
 stow --adopt .
-
-# Install colorz
-pipx install colorz
-
-# Install Pywalfox
-pipx install pywalfox
-sudo pywalfox install --global
-
-# Install walogram
-cd "$HOME" || exit
-git clone https://github.com/nikkoxd/walogram.git
-(
-  cd walogram || return
-  sudo make install
-)
-rm -r walogram
-

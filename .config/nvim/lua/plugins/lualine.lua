@@ -1,10 +1,8 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = {
-    "echasnovski/mini.icons",
-  },
-  opts = function()
-    require("mini.icons").mock_nvim_web_devicons()
+	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"echasnovski/mini.icons",
+	},
 
     return {
       options = {

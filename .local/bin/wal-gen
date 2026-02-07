@@ -1,0 +1,61 @@
+#!/bin/bash
+
+get_image() {
+    if [ -z "$1" ]; then
+        echo "Empty list of options" >&2
+        exit 1
+    fi
+
+    while getopts ":li:" option; do
+        case $option in
+        l)
+            light=true
+            ;;
+        i)
+            image=$OPTARG
+            ;;
+        \?)
+            echo "Invalid option: -${OPTARG}" >&2
+            exit 1
+            ;;
+        esac
+    done
+}
+
+generate_colorscheme() {
+    cp "$image" /tmp/wallpaper.jpg
+
+    if [ $light = true ]; then
+        wal -li "$image" --cols16 darken
+    else
+        wal -i "$image" --cols16 lighten
+    fi
+}
+
+reload_apps() {
+    sketchybar --reload &
+    walogram -i "$image" &
+    osascript ~/.config/ghostty/reload.scpt &
+}
+
+set_fastfetch() {
+    magick -size 800x1000 xc:none -draw "roundrectangle 0,0,800,1000,100,100" /tmp/mask.png
+    magick /tmp/wallpaper.jpg -gravity Center -extent 8:10 -resize 800x1000 -alpha set /tmp/mask.png \
+        -compose DstIn -composite "$HOME/.config/fastfetch/logo.png"
+    rm /tmp/mask.png
+}
+
+main() {
+    light=false
+    image=""
+
+    get_image "$@"
+    generate_colorscheme
+
+    set_fastfetch &
+    reload_apps &
+
+    wait
+}
+
+main "$@"

@@ -1,9 +1,27 @@
-export PATH=$PATH:~/.spoof-dpi/bin:~/pickup/target/release:~/Library/Python/3.10/lib/python/site-packages:/Users/nikko/.local/bin:/usr/local/bin:/opt/homebrew/opt/postgresql@12/bin:/Applications/Docker.app/Contents/Resources/bin/
+export path=(
+    $path
+    ~/.spoof-dpi/bin
+    ~/pickup/target/release
+    ~/Library/Python/3.10/lib/python/site-packages
+    ~/Library/Frameworks/Python.framework/Versions/3.10/bin
+    /Users/nikko/.local/bin
+    /usr/local/bin
+    /opt/homebrew/opt/postgresql@12/bin
+    /Applications/Docker.app/Contents/Resources/bin/
+    /opt/homebrew/anaconda3/bin/
+    $HOME/.rbenv/bin
+    $HOME/dev/flutter/bin
+    $HOME/.pub-cache/bin
+)
 export ZLE_RPROMPT_INDENT=1
 export HOMEBREW_AUTO_UPDATE_SECS=10224480
 export EDITOR="nvim"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export BAT_THEME="base16"
-export ATAC_KEY_BINDINGS=~/.config/atac/key_bindings.toml
-export FZF_DEFAULT_OPTS="--style minimal --color fg:8,hl:4,current-hl:0,current-fg:0,current-bg:4,pointer:4,info:4,prompt:4 --padding 1,2"
+# export FZF_DEFAULT_OPTS="--style minimal --color fg:6,hl:4,current-hl:0,current-fg:6,current-bg:4,pointer:4,info:4,prompt:4 --padding 1,2"
+export FZF_DEFAULT_OPTS="--style minimal --padding 1,2"
+# wine cyrillic fix
+export LC_ALL=ru_RU.UTF-8 
+export LANG=ru_RU.UTF-8
+eval "$(rbenv init -)"

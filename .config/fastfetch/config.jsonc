@@ -1,63 +1,52 @@
 {
-    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "$schema": "https://raw.githubusercontent.com/fastfetch-cli/fastfetch/dev/doc/json_schema.json",
     "logo": {
       "type": "kitty-icat",
-      "source": "~/.config/fastfetch/logo.png",
-      "width": 22,
-      "height": 14
+      "source": "~/.config/fastfetch/teto.png",
+      "width": 32
     },
     "display": {
-      "separator": "  ",
       "key": {
         "paddingLeft": 1
-      },
-      "constants": [
-        "\u001b[44;30m",
-        "\u001b[0;40;91m",
-        "\u001b[0m"
-      ]
+      }
     },
     "modules": [
         "break",
         {
-          "type": "title",
-          "format": " {$1} {user-name}@{host-name} "
+          "type": "custom",
+          "format": "               おかえり􀆿"
+        },
+        {
+          "type": "custom",
+          "format": "┌────────────────────────────────────┐"
         },
         "break",
         {
-          "type": "os",
-          "key": "{$2} os   "
+          "type": "title",
+          "key": "  􀿓 ",
+          "format": "{#97}{user-name}@{host-name}"
         },
         {
           "type": "host",
-          "key": "{$2} host "
+          "key": "  􀟛 "
+        },
+        {
+          "type": "os",
+          "key": "  􀣺 "
         },
         {
           "type": "packages",
-          "key": "{$2} pkgs "
-        },
-        {
-          "type": "uptime",
-          "key": "{$2} up   "
-        },
-        {
-          "type": "memory",
-          "key": "{$2} ram  "
-        },
-        {
-          "type": "datetime",
-          "key": "{$2} date "
+          "key": "  􂊭 "
         },
         "break",
         {
+          "type": "custom",
+          "format": "└────────────────────────────────────┘"
+        },
+        {
           "type": "colors",
-          "paddingLeft": 1,
-          "block": {
-            "range": [
-              0,
-              7
-            ]
-          }
+          "symbol": "square",
+          "paddingLeft": 12
         }
     ]
 }

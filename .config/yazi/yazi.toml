@@ -9,18 +9,16 @@ name = "*/"
 run  = "git"
 
 [opener]
-matu = [
-    { run = "matu -i $0", desc = "Generate colorscheme", for = "unix" }
-]
-matu_light = [
-    { run = "matu -i $0 -l", desc = "Generate colorscheme (light)", for = "unix" }
+wal-gen = [
+    { run = 'wal-gen -i "$0"', desc = "Set wallpaper (dark)", for = "unix" },
+    { run = 'wal-gen -li "$0"', desc = "Set wallpaper (light)", for = "unix" }
 ]
 
 [open]
 prepend_rules = [
-    { name = "*.png", use = [ "matu", "matu_light" ] },
-    { name = "*.jpg", use = [ "matu", "matu_light" ] },
-    { name = "*.jpeg", use = [ "matu", "matu_light" ] },
+    { name = "*.png", use = [ "wal-gen" ] },
+    { name = "*.jpg", use = [ "wal-gen" ] },
+    { name = "*.jpeg", use = [ "wal-gen" ] },
 ]
 
 [preview]
