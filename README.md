@@ -1,53 +1,24 @@
-<img width="1680" alt="image" src="https://github.com/user-attachments/assets/419f564e-d038-4367-8a6f-16f1c2b87154" />
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/21108086-9aa1-4a39-8f65-34bdadd0c966" />
 
-<h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
+<h2 align="center"><i>✩₊˚.⋆ My macOS dotfiles ☾⋆⁺₊✧</i></h2>
 
-<p align="center">feat: yabai, sketchybar, pywal, stow</p>
-
-### Features
-- Custom menu bar featuring sketchybar
-- Window management featuring yabai & skhd
-- Material You colorscheme generation with pywal integration
-- Cool Spotify popup
-
-<p align="center">
-  <img width="598" alt="image" src="https://github.com/user-attachments/assets/300064f4-3565-44d3-815c-2adbca753648" />
-</p>
-
-- Dark and light theme genration
-<table>
-  <tr>
-    <td>Dark Mode</td>
-    <td>Light Mode</td>
-  </tr>
-  <tr>
-    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/419f564e-d038-4367-8a6f-16f1c2b87154" /></td>
-    <td><img width="1680" alt="image" src="https://github.com/user-attachments/assets/5037fec5-32a6-42af-9a4a-cc03049c47bd" /></td>
-  </tr>
-</table>
-
-
-
-### Installing
-
-```sh
-bash -c "$(curl -s https://raw.githubusercontent.com/nikkoxd/dotfiles/refs/heads/main/install.sh)"
-```
-
-> [!IMPORTANT]
-> Yabai requires System Integrity Protection to be partially disabled to be able to switch spaces  
-> Information on how to disable SIP can be found on the [yabai wiki](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
-
-> [!NOTE]
-> C++ compiler might be needed for TreeSitter to work
+- [Aerospace](https://github.com/nikitabobko/AeroSpace)
+- [SketchyBar](https://github.com/FelixKratz/SketchyBar)
+- [Ghostty](https://ghostty.org/)
+- [Tmux](https://github.com/tmux/tmux/wiki)
+- [Neovim](https://neovim.io/)
+- [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ### Generating colorschemes
+You can either use the command:
 ```bash
-matu [-l] -i path/to/your/image.png 
+wal-gen [-l] -i path/to/your/image.png 
 ```
-### Applying the wallpaper
-If your wallpaper doesn't apply automatically,
-enable `System Preferences > Wallpaper > Show on all Spaces`
+Or Yazi file manager:
+1. Open Yazi with `yy`
+2. Navigate to the wallpaper you want to set
+3. Press `o` to generate with dark theme by default, or `Shift+o` to view options
+
 
 ### Previous setups
 [Version 2:](https://github.com/nikkoxd/dotfiles/tree/sketchybar-redesign-v2?tab=readme-ov-file)
