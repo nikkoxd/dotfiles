@@ -6,4 +6,9 @@ return {
     left = "􀲎",
     right = "􀲍"
   },
+  network = {
+    connected = "􀤆",
+    disconnected = "􁣡",
+    vpn = "􁅏"
+  }
 }

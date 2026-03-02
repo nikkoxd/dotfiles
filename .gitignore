@@ -21,6 +21,7 @@
 .config/zsh/.zsh_history
 
 .config/old_sketchybar
+.config/nvim-old
 
 .config/fastfetch/logo.png
 

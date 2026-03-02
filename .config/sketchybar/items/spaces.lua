@@ -13,6 +13,10 @@ sbar.exec("aerospace list-workspaces --all", function(spaces)
 			},
 		})
 
+    space:subscribe("mouse_clicked", function()
+      sbar.exec("aerospace workspace " .. name)
+    end)
+
 		space:subscribe("aerospace_workspace_change", function(env)
 			focused = env.FOCUSED_WORKSPACE
 			if name == focused then

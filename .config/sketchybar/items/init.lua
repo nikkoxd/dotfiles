@@ -5,6 +5,7 @@ require("items.separator")("left")
 require("items.spaces")
 
 require("items.airpods")
+require("items.vpn")
 require("items.battery")
 require("items.kblayout")
 require("items.separator")("right")

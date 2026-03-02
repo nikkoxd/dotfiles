@@ -14,7 +14,8 @@
         "break",
         {
           "type": "custom",
-          "format": "               おかえり􀆿"
+          "format": "               おかえり􀆿",
+          "outputColor": "34"
         },
         {
           "type": "custom",

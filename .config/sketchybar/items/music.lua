@@ -1,13 +1,26 @@
 local colors = require("colors")
 
-sbar.add("event", "music_change", "com.apple.Music.playerInfo")
+local apps = {
+  ["com.apple.Music"] = {
+    whitelisted = true,
+    scale = 0.07
+  },
+  ["com.spotify.client"] = {
+    whitelisted = true,
+    scale = 0.07
+  },
+  ["ru.yandex.desktop.music"] = {
+    whitelisted = true,
+    scale = 0.25
+  },
+}
 
 local music = sbar.add("item", "music", {
 	position = "right",
 	background = {
 		color = 0x00ffffff,
 		image = {
-			scale = 0.07,
+			scale = 0.25,
 			border_color = colors.bar.border,
 			border_width = 1,
 			corner_radius = 10,
@@ -17,11 +30,12 @@ local music = sbar.add("item", "music", {
 		string = "123",
 		color = 0x00ffffff,
 	},
+  update_freq = 2,
 })
 
-music:subscribe({ "forced", "music_change" }, function()
+music:subscribe({ "forced", "routine", "system_woke" }, function()
 	sbar.exec("media-control get", function(info)
-		if info.isMusicApp then
+		if apps[info.bundleIdentifier].whitelisted then
 			if info.playing then
 				artworkBase64 = info.artworkData
 				tmpDir = "/tmp/cover.jpeg"
@@ -32,6 +46,7 @@ music:subscribe({ "forced", "music_change" }, function()
               drawing = "on",
 							background = {
 								image = tmpDir,
+                scale = apps[info.bundleIdentifier].scale,
 							},
 						})
 					end)

@@ -59,8 +59,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     # normalizations
     # alt-p = 'split horizontal'
     # alt-o = 'split vertical'
-    alt-p = 'join-with left'
-    alt-o = 'join-with up'
+    # alt-p = 'join-with left'
+    # alt-o = 'join-with up'
 
     alt-f = 'fullscreen'
 
@@ -77,6 +77,8 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     # `focus parent`/`focus child` are not yet supported, and it's not clear whether they
     # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
     # alt-a = 'focus parent'
+
+    alt-p = 'focus-back-and-forth'
 
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
