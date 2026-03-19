@@ -7,6 +7,6 @@ end)
 return {
   entry = function(self, job)
     local url = get_url()
-    Command("wal-gen"):arg("-i"):arg(url):output()
+    Command("scheme"):arg("--image"):arg(url):arg("--runner matugen"):output()
   end
 }

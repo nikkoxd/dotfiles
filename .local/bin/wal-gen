@@ -1,12 +1,12 @@
 #!/bin/bash
 
-get_image() {
+get_args() {
     if [ -z "$1" ]; then
         echo "Empty list of options" >&2
         exit 1
     fi
 
-    while getopts ":li:" option; do
+    while getopts ":lri:" option; do
         case $option in
         l)
             light=true
@@ -49,7 +49,7 @@ main() {
     light=false
     image=""
 
-    get_image "$@"
+    get_args "$@"
     generate_colorscheme
 
     set_fastfetch &

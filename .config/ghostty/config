@@ -3,7 +3,7 @@ font-size = 16
 font-thicken = false
 adjust-cell-height = 12
 
-theme = wal
+theme = matugen
 
 background-opacity = 0.9
 background-blur-radius = 50

@@ -9,16 +9,18 @@ name = "*/"
 run  = "git"
 
 [opener]
-wal-gen = [
-    { run = 'wal-gen -i "$0"', desc = "Set wallpaper (dark)", for = "unix" },
-    { run = 'wal-gen -li "$0"', desc = "Set wallpaper (light)", for = "unix" }
+scheme = [
+    { run = 'fish -c "source ~/.config/fish/functions/scheme.fish; scheme -i \"$0\" -r matugen"', desc = "Set colorscheme (dark, matugen)", for = "unix" },
+    { run = 'fish -c "source ~/.config/fish/functions/scheme.fish; scheme -li \"$0\" -r matugen"', desc = "Set colorscheme (light, matugen)", for = "unix" },
+    { run = 'fish -c "source ~/.config/fish/functions/scheme.fish; scheme -i \"$0\" -r pywal"', desc = "Set colorscheme (dark, pywal)", for = "unix" },
+    { run = 'fish -c "source ~/.config/fish/functions/scheme.fish; scheme -li \"$0\" -r pywal"' , desc = "Set colorscheme (light, pywal)", for = "unix" }
 ]
 
 [open]
 prepend_rules = [
-    { name = "*.png", use = [ "wal-gen" ] },
-    { name = "*.jpg", use = [ "wal-gen" ] },
-    { name = "*.jpeg", use = [ "wal-gen" ] },
+    { name = "*.png", use = [ "scheme" ] },
+    { name = "*.jpg", use = [ "scheme" ] },
+    { name = "*.jpeg", use = [ "scheme" ] },
 ]
 
 [preview]
