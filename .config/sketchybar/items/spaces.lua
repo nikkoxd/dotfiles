@@ -1,5 +1,4 @@
 local colors = require("colors")
-local icons = require("icons")
 
 sbar.add("event", "aerospace_workspace_change")
 
@@ -7,39 +6,75 @@ sbar.exec("aerospace list-workspaces --all", function(spaces)
 	for name in spaces:gmatch("[^\r\n]+") do
 		local space = sbar.add("item", "space." .. name, {
 			position = "left",
-			label = name,
-			icon = {
-				string = icons.active_workspace,
+			padding_left = 0,
+			padding_right = 5,
+			label = {
+				string = name,
+				align = "center",
+				width = 25,
+				color = colors.text.normal,
+			},
+			background = {
+				drawing = true,
+				color = colors.workspace.unfocused,
+				corner_radius = 5,
 			},
 		})
 
-    space:subscribe("mouse_clicked", function()
-      sbar.exec("aerospace workspace " .. name)
-    end)
+		space:subscribe("mouse_clicked", function()
+			sbar.exec("aerospace workspace " .. name)
+		end)
 
-		space:subscribe("aerospace_workspace_change", function(env)
+    local update = function(env)
 			focused = env.FOCUSED_WORKSPACE
 			if name == focused then
-				space:set({
-					drawing = "on",
-					label = { color = colors.icon },
-					icon = { drawing = "on" },
-				})
+				sbar:animate("circ", 15, function()
+					space:set({
+						drawing = "on",
+						label = {
+              string = name,
+              width = 35,
+              color = colors.text.focused
+            },
+						background = { color = colors.workspace.focused },
+					})
+				end)
 			else
-				---@param windows string
 				sbar.exec("aerospace list-windows --workspace " .. name, function(windows)
 					local count = select(2, windows:gsub("[^\r\n]+", ""))
 					if count == 0 then
-						space:set({ drawing = "off" })
+						sbar:animate("circ", 15, function()
+							space:set({
+								drawing = "on",
+								label = {
+                  string = name,
+                  width = 25,
+                  color = colors.text.normal
+                },
+								background = { color = colors.workspace.unfocused },
+							})
+						end)
 					else
-						space:set({
-							drawing = "on",
-							label = { color = colors.text },
-							icon = { drawing = "off" },
-						})
+            sbar:animate("circ", 15, function()
+              space:set({
+                drawing = "on",
+                label = {
+                  string = name,
+                  width = 25,
+                  color = colors.text.has_windows
+                },
+                background = { color = colors.workspace.has_windows },
+              })
+            end)
 					end
 				end)
 			end
-		end)
+    end
+
+		space:subscribe("aerospace_workspace_change", update)
+
+    update({
+      FOCUSED_WORKSPACE = 1
+    })
 	end
 end)

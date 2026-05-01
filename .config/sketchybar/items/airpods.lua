@@ -1,16 +1,37 @@
 local icons = require("icons")
-local json = require("helpers.json")
 
 sbar.add("event", "bluetooth_change", "com.apple.bluetooth.status")
 
 local airpods = sbar.add("item", "airpods", {
 	position = "right",
-	label = "100",
+	label = {
+		string = "100%",
+		width = 0,
+	},
 	icon = {
 		drawing = "on",
 		string = icons.airpods.both,
+		padding_right = 0,
 	},
 })
+
+airpods:subscribe({ "mouse.entered" }, function()
+	sbar:animate("circ", 15, function()
+		airpods:set({
+			label = { width = "dynamic" },
+			icon = { padding_right = 5 },
+		})
+	end)
+end)
+
+airpods:subscribe({ "mouse.exited" }, function()
+	sbar:animate("circ", 15, function()
+		airpods:set({
+			label = { width = 0 },
+			icon = { padding_right = 0 },
+		})
+	end)
+end)
 
 airpods:subscribe({ "forced", "bluetooth_change" }, function()
 	sbar.exec("system_profiler SPBluetoothDataType -json -detailLevel basic", function(data)
@@ -19,8 +40,8 @@ airpods:subscribe({ "forced", "bluetooth_change" }, function()
 		for _, device in ipairs(connected) do
 			for device_name, device_info in pairs(device) do
 				if device_info.device_minorType == "Headphones" and device_name:match("AirPods") then
-          local left = tonumber(device_info.device_batteryLevelLeft:match("(%d+)"))
-          local right = tonumber(device_info.device_batteryLevelRight:match("(%d+)"))
+					local left = tonumber(device_info.device_batteryLevelLeft:match("(%d+)"))
+					local right = tonumber(device_info.device_batteryLevelRight:match("(%d+)"))
 
 					local label = ""
 					local icon = icons.airpods.both
@@ -40,7 +61,7 @@ airpods:subscribe({ "forced", "bluetooth_change" }, function()
 					end
 
 					airpods:set({
-						label = label,
+						label = label .. "%",
 						icon = { string = icon },
 					})
 				end

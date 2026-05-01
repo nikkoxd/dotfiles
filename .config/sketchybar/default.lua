@@ -4,28 +4,31 @@ local colors = require("colors")
 sbar.default({
   padding_left = 5,
   padding_right = 5,
+  y_offset = 1,
   background = {
+    height = 21,
     image = {
       drawing = "on"
-    }
+    },
   },
 	icon = {
     drawing = "off",
 		font = {
-			family = settings.fonts.icon,
+			family = settings.icon.font,
 			style = "Regular",
-			size = 12,
+			size = settings.icon.size,
 		},
     color = colors.icon,
     padding_right = 5,
 	},
 	label = {
 		font = {
-			family = settings.fonts.text,
+			family = settings.text.font,
 			style = "Regular",
-			size = 14,
+			size = settings.text.size,
 		},
-		color = colors.text,
+    y_offset = 1,
+		color = colors.text.normal,
 	},
   popup = {
     background = {

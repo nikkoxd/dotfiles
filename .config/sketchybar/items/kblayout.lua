@@ -1,6 +1,15 @@
 local kblayout = sbar.add("item", "kblayout.label", {
 	position = "right",
-	label = "EN",
+	icon = {
+    drawing = true,
+    font = {
+      family = "Noto Color Emoji",
+    },
+    padding_right = 0,
+  },
+  label = {
+    drawing = false,
+  },
 	update_freq = 2,
 })
 
@@ -13,11 +22,11 @@ kblayout:subscribe({ "routine", "system_woke", "power_source_change" }, function
 
 		if layout then
 			if layout == "Russian" then
-				layout = "РУ"
+				layout = "🇷🇺"
 			elseif layout == "ABC" then
-				layout = "EN"
+				layout = "🇬🇧"
 			end
-			kblayout:set({ label = layout })
+			kblayout:set({ icon = { string = layout } })
 		end
 	end)
 end)

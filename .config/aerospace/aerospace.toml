@@ -91,16 +91,17 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-9 = 'workspace 9'
     alt-0 = 'workspace 10'
 
-    alt-shift-1 = 'move-node-to-workspace 1'
-    alt-shift-2 = 'move-node-to-workspace 2'
-    alt-shift-3 = 'move-node-to-workspace 3'
-    alt-shift-4 = 'move-node-to-workspace 4'
-    alt-shift-5 = 'move-node-to-workspace 5'
-    alt-shift-6 = 'move-node-to-workspace 6'
-    alt-shift-7 = 'move-node-to-workspace 7'
-    alt-shift-8 = 'move-node-to-workspace 8'
-    alt-shift-9 = 'move-node-to-workspace 9'
-    alt-shift-0 = 'move-node-to-workspace 10'
+    alt-shift-1 = [ 'move-node-to-workspace 1', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-2 = [ 'move-node-to-workspace 2', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-3 = [ 'move-node-to-workspace 3', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-4 = [ 'move-node-to-workspace 4', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-5 = [ 'move-node-to-workspace 5', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-6 = [ 'move-node-to-workspace 6', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-7 = [ 'move-node-to-workspace 7', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-8 = [ 'move-node-to-workspace 8', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-9 = [ 'move-node-to-workspace 9', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+    alt-shift-0 = [ 'move-node-to-workspace 10', 'exec-and-forget sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+
 
     alt-shift-c = 'reload-config'
     alt-shift-s = 'exec-and-forget sketchybar --reload'
@@ -128,9 +129,16 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     esc = 'mode main'
 
 [gaps]
-    inner.horizontal = 10
-    inner.vertical = 10
-    outer.left = 70
-    outer.bottom = 10
-    outer.top = 10
-    outer.right = 10
+    inner.horizontal = 5
+    inner.vertical = 5
+    outer.left = 5
+    outer.bottom = 5
+    outer.top = 45
+    outer.right = 5
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+  "layout tiling"
+]

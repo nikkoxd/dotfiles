@@ -1,12 +1,9 @@
-require("items.clock")
-require("items.separator")("left")
-require("items.date")
-require("items.separator")("left")
 require("items.spaces")
 
+require("items.clock")
+require("items.battery")
 require("items.airpods")
 require("items.vpn")
-require("items.battery")
 require("items.kblayout")
-require("items.separator")("right")
+
 require("items.music")
