@@ -9,6 +9,6 @@
 - **Bar:** SketchyBar
 - **Browser:** Helium
 - **Terminal:** Ghostty
-- **Editor:** Neovim (up-to-date config is [here](https://codeberg.org/nikkoxd/nvim))
+- **Editor:** Neovim (0.12 config is [here](https://codeberg.org/nikkoxd/nvim))
 - **Font:** JetBrains Mono
 - **Sharp corners:** [apple-sharpener](https://github.com/aspauldingcode/apple-sharpener)
