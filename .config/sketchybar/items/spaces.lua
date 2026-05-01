@@ -21,7 +21,8 @@ sbar.exec("aerospace list-workspaces --all", function(spaces)
 			},
 		})
 
-		space:subscribe("mouse_clicked", function()
+		space:subscribe("mouse.clicked", function()
+      print("clicked")
 			sbar.exec("aerospace workspace " .. name)
 		end)
 

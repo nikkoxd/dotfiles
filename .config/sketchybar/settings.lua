@@ -7,7 +7,7 @@ return {
     margin = 0,
     border = 0,
     radius = 0,
-    blur = 50,
+    blur = 0,
   },
   text = {
     font = "JetBrains Mono",
