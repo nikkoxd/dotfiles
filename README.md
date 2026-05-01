@@ -1,4 +1,4 @@
-<img width="1680" alt="image" src="https://github.com/user-attachments/assets/419f564e-d038-4367-8a6f-16f1c2b87154" />
+<img width="1680" height="1050" alt="image" src="https://github.com/user-attachments/assets/b9e30424-f07e-4662-97ff-157bbaaaa777" />
 
 <h2 align="center">My macOS dotfiles /ᐠ - ⩊ -マ Ⳋ</h2>
 
